@@ -6,6 +6,5 @@
     $result = $connection -> query("SELECT * from PRODOTTO WHERE Marca='".$marca."';'");
     $resultOkai = $connection -> f($result);
     print_r($resultOkai);
-    //$result = $connection -> query("SELECT * FROM PRODOTTI");
-    //$connection -> close();
+    $connection -> close();
 ?>
