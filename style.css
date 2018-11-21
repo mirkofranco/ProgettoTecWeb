@@ -76,12 +76,14 @@ body {
   padding: 7px 15px;
 }
 
-.menu a:hover {
-}
-
-.menu a:active {
+a.active {
   font-weight: bold;
 }
+
+.menu a:hover{
+
+}
+
  
 .target {
   position: absolute;
