@@ -4,36 +4,44 @@
     background-color: #FFFFFF;
 }
 
-#headerTop {
-    height: 90px;
-    width: auto;
-    background-color: black;
+.headerTop {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 2px 10px;
+  height: 100px;
+}
+
+i.headerTop, a.headerTop {
+  float: left;
+  padding: 12px;
+}
+
+.header-right {
+  float: right;
+  margin: 10px;
 }
 
 #logo {
     height: 80px;
     width: auto;
     float: left;
-    margin: 5px;
-    margin-right: 20px;
+    padding: 2px;
 }
 
-#search {
+/*#search {
+    position: absolute;
     float: left;
     padding-top: 3%;
     
 }
 
-.social {
+#social {
+    position: absolute;
     float: right;
-    margin:5px;
-    margin-left: 30px;
-    padding-top: 3%;
-}
-
-#headerTop img, i, a {
-   position: ;
-}
+    margin: 5px;
+    right: 3%;
+    top: 5%;
+}*/
 
 body {
     
@@ -52,14 +60,14 @@ ul li {
     display: inline;
 }
 
-li a {
+#menu li a {
     display: block;
     padding: 8px;
     color: black;
     text-align: center;
 }
 
-li a:hover{
+#menu li a:hover{
     color: #737373;
 }
 
