@@ -20,15 +20,19 @@
 
 #search {
     float: left;
-    padding-top: 50%;
+    padding-top: 3%;
     
 }
 
-#social {
+.social {
     float: right;
     margin:5px;
     margin-left: 30px;
-    padding-top: 50%;
+    padding-top: 3%;
+}
+
+#headerTop img, i, a {
+   position: ;
 }
 
 body {
