@@ -42,8 +42,7 @@
     text-align: left;
     height: 70px;
   }
-
-  @media screen and (max-width: 500px) {
+  
   .header i {
     margin: 15px 8px;
   }
