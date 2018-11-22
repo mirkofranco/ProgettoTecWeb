@@ -207,6 +207,7 @@ img.mySlides {
   position: sticky;
   padding-top: 50px;
   padding-bottom: 50px;
+  text-shadow: 3px 3px 10px #cacaca;
 }
 
 img.catalogo {
