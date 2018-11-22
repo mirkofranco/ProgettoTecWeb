@@ -281,6 +281,7 @@ img.catalogo {
 /* FOOTER */
 
 #footer {
+  position: fixed;
   float:left;
   left: 0;
   bottom: 0;
