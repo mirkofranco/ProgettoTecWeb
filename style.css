@@ -215,8 +215,6 @@ img.catalogo {
   height: auto;
   max-width: 700px;
   max-height: auto;
-  /* width: 500px;
-  height:auto;*/
   transition: .5s ease;
   /*backface-visibility: hidden;*/
   opacity: 1;
@@ -228,10 +226,8 @@ img.catalogo {
   /* z-index: -1;*/
   text-align: center;
   box-sizing: border-box;
-
-
 }
-.container:hover .catalogo {
+.catalogo:hover {
   opacity:0.8;
   filter: brightness(100%);
 }
