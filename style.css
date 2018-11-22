@@ -230,6 +230,7 @@ img.catalogo {
   vertical-align: middle;
   color: white;
   box-sizing: border-box;
+  font-size: 2vw;
 }
 /* Create three equal columns that floats next to each other */
 .column {
