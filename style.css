@@ -45,7 +45,7 @@
 }
 
 body {
-    
+
 }
 
 /*MENU*/
@@ -56,11 +56,11 @@ body {
   list-style-type: none;
   padding: 0;
 }
- 
+
 .menu li:not(:last-child) {
   margin-right: 20px;
 }
- 
+
 .menu a {
   display: block;
   font-size: 20px;
@@ -79,14 +79,14 @@ a.active {
   color: #ffffff;
 }
 
- 
+
 .target {
   position: absolute;
   border-bottom: 4px solid transparent;
   z-index: -1;
   transform: translateX(-60px);
 }
- 
+
 .menu a,
 .target {
   transition: all .35s ease-in-out;
@@ -191,25 +191,27 @@ img.mySlides {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 /* CSS DELLA PAGINA CATALOGO */
 .titoletto {
   text-align: center;
+  font-family: Georgia;
+
 }
 
 img.catalogo {
-  max-width: 500px;
-  max-height: auto;
-  width: 500px;
-  height:auto;
+  width: 100%;
+  height: auto;
+  /* width: 500px;
+  height:auto;*/
 }
 /*testo centrato nelle immagini*/
 .container {
@@ -234,8 +236,8 @@ img.catalogo {
     float: left;
     width: 50%;
     padding-top: 50px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 120px;
+    padding-right: 120px;
     padding-bottom: 50px;
 }
 
