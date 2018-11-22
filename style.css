@@ -229,7 +229,8 @@ img.catalogo {
 
 }
 .container:hover .catalogo {
-  opacity:0.3;
+  opacity:0.8;
+  filter: brightness(100%);
 }
 
 .testoCentrato {
