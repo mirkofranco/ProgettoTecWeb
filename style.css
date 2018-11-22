@@ -199,3 +199,63 @@ img.mySlides {
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+/* CSS DELLA PAGINA CATALOGO */
+.titoletto {
+  text-align: center;
+}
+
+img.catalogo {
+  max-width: 500px;
+  max-height: auto;
+  width: 500px;
+  height:auto;
+}
+/*testo centrato nelle immagini*/
+.container {
+  position: relative;
+  /* z-index: -1;*/
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.testoCentrato {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px black;
+  vertical-align: middle;
+  color: white;
+  box-sizing: border-box;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:900px) {
+    .column {
+        width: 100%;
+    }
+    .testoCentrato {
+      text-align: center;
+      transform: translate(-50%, -50%);
+
+      top: 50%;
+      left: 50%;
+    }
+}
