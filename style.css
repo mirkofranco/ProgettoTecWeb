@@ -204,7 +204,9 @@ img.mySlides {
 .titoletto {
   text-align: center;
   font-family: Georgia;
-
+  position: sticky;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 img.catalogo {
