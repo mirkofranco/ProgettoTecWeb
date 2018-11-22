@@ -257,7 +257,7 @@ img.catalogo {
     .testoCentrato {
       text-align: center;
       transform: translate(-50%, -50%);
-
+      font-size:7vw;
       top: 50%;
       left: 50%;
     }
