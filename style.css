@@ -214,6 +214,10 @@ img.catalogo {
   max-height: auto;
   /* width: 500px;
   height:auto;*/
+  transition: .5s ease;
+  /*backface-visibility: hidden;*/
+  opacity: 1;
+  filter: brightness(40%);
 }
 /*testo centrato nelle immagini*/
 .container {
@@ -221,6 +225,11 @@ img.catalogo {
   /* z-index: -1;*/
   text-align: center;
   box-sizing: border-box;
+
+
+}
+.container:hover .catalogo {
+  opacity:0.3;
 }
 
 .testoCentrato {
