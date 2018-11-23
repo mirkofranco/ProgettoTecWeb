@@ -248,9 +248,9 @@ img.catalogo {
   padding-right: 50px;
 }
 
-/*img.sinistra {
-  position: absolute;
-}*/
+img.sinistra {
+  margin-right: 30px;
+}
 
 .catalogo:hover {
   opacity: 0.8;
