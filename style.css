@@ -230,7 +230,7 @@ img.mySlides {
 }
 
 img.sinistra {
-  background-color: yellow;
+  background-color: yellow; /* per capire dove iniziano e finiscono i box*/
   padding-right: 0px;
   position: relative;
 }
