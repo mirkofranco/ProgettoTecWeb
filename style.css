@@ -4,6 +4,18 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
 /*HEADER INIZIO PAGINA*/
 .header {
   overflow: hidden;
@@ -288,7 +300,7 @@ img.catalogo {
 
 /* FOOTER */
 
-#footer {
+/*#footer {
   position: fixed;
   z-index: -1;
   float:left;
@@ -298,6 +310,16 @@ img.catalogo {
   width: 100%;
   background-color: #f1f1f1;
   color: black;
+  text-align: center;
+}*/
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
   text-align: center;
 }
 
