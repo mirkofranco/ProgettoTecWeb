@@ -8,7 +8,7 @@
 .header {
   overflow: hidden;
   background-color: #f1f1f1;
-  border-bottom: 2px solid #4c4a4a;
+  border-bottom: 2px solid rgba(0,0,0,0.5);;
 }
 
 .header a, i {
@@ -76,7 +76,7 @@ a.active {
 
 .menu a:hover{
   border-radius: 4px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   color: #ffffff;
 }
 
@@ -212,8 +212,8 @@ img.mySlides {
 }
 
 #catalogo {
-  background-color: #f1f1f1;
-  /*border-top: 2px solid #4c4a4a;
+  /*background-color: #f1f1f1;
+  border-top: 2px solid #4c4a4a;
   border-bottom: 2px solid #4c4a4a;*/
 }
 
@@ -261,7 +261,7 @@ img.catalogo {
 }
 
 .last {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 /* Clear floats after the columns */
