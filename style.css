@@ -225,15 +225,6 @@ img.mySlides {
   border-bottom: 2px solid #4c4a4a;*/
 }
 
-img.sinistra {
-  background-color: yellow; /* per capire dove iniziano e finiscono i box*/
-  padding-right: 0px;
-  position: relative;
-}
-
-img.destra {
-
-}
 
 img.catalogo {
   width: 75%;
@@ -253,9 +244,14 @@ img.catalogo {
   /* z-index: -1;*/
   text-align: center;
   box-sizing: border-box;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
+/*img.sinistra {
+  position: absolute;
+}*/
+
 .catalogo:hover {
   opacity: 0.8;
   filter: brightness(100%);
