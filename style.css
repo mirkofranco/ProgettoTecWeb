@@ -16,6 +16,16 @@ body {
   min-height: 95%;
 }
 
+h1 {
+  text-align: center;
+  font-family: Georgia;
+  position: sticky;
+  padding-top: 25px;
+  padding-bottom: 40px;
+  text-shadow: 3px 3px 10px #cacaca;
+  font-size: 4vw;
+}
+
 /*HEADER INIZIO PAGINA*/
 .header {
   overflow: hidden;
@@ -406,6 +416,7 @@ input [type=submit] {
   padding: 12px 20px;
   border: none;
   cursor: pointer;
+  text-align: center;
   float: center;
 }
 
