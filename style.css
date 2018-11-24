@@ -400,6 +400,28 @@ img.sinistra {
   .sidenav a {font-size: 18px;}
 }
 
+/*PAGINA CONSULENZE ONLINE*/
+.containerConsulenze {
+  position: relative;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  font-size: 2vw;
+}
+
+img.imgConsulenze {
+  width:50%;
+  height:auto;
+  filter: brightness(80%);
+}
+
+.textOverConsulenze {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* FORM PER LA CONSULENZA ONLINE */
 
 input[type=text], select, textarea {
@@ -473,25 +495,4 @@ input [type=submit] {
     width: 45%;
     margin-top: 0;
   }
-}
-
-.containerConsulenze {
-  position: relative;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 3px black;
-  font-size: 2vw;
-}
-
-img.imgConsulenze {
-  width:50%;
-  height:auto;
-  filter: brightness(80%);
-}
-
-.textOverConsulenze {
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
