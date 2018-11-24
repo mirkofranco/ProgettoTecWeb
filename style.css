@@ -26,6 +26,9 @@ h1 {
   font-size: 3.5vw;
 }
 
+.contenutoPagina {
+    margin-top: 20px;
+}
 /*HEADER INIZIO PAGINA*/
 .header {
   overflow: hidden;
