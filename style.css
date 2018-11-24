@@ -124,6 +124,10 @@ a.active {
   margin: auto;
 }
 
+.imgSlideshow {
+  width:100%;
+}
+
 .mySlides {
   display: none;
 }
