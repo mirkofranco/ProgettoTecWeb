@@ -340,6 +340,7 @@ img.sinistra {
   padding: 1rem;
   background-color: #f1f1f1;
   text-align: center;
+  border-top: 2px solid #4c4a4a;
 }
 
 .icone {
@@ -493,13 +494,4 @@ img.imgConsulenze {
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-#pageContent {
-  margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
