@@ -22,7 +22,7 @@ h1 {
   position: sticky;
   padding-top: 25px;
   padding-bottom: 40px;
-  text-shadow: 3px 3px 10px #cacaca;
+  /* text-shadow: 3px 3px 10px #cacaca; */
   font-size: 3.5vw;
 }
 
@@ -472,4 +472,34 @@ input [type=submit] {
     width: 45%;
     margin-top: 0;
   }
+}
+
+.containerConsulenze {
+  position: relative;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  font-size: 2vw;
+}
+
+img.imgConsulenze {
+  width:50%;
+  height:auto;
+  filter: brightness(80%);
+}
+
+.textOverConsulenze {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pageContent {
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
