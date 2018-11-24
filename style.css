@@ -414,9 +414,22 @@ input [type=submit] {
   float: center;
   background-color: white;
   padding: 20px;
-  width: 50%;
+  width: 45%;
+  border: 1px solid #f1f1f1;
+  margin: auto;
 }
 
+.fcontainer:focus {
+  border: 1px solid black;
+}
+
+.fInputBorder, #femail, #fname {
+  border: .5px solid #f1f1f1;
+}
+
+.fcontainer:focus-within, .fcontainer:hover, .fInputBorder:hover, .fInputBorder:active, #femail:hover, #femail:active, #fname:hover, #fname:active {
+  border: .5px solid black;
+}
 /*colonne con larghezza 25%: */
 .col-25 {
   float: left;
@@ -441,7 +454,7 @@ input [type=submit] {
 
 @media screen and (max-width: 600px) {
   .col-25, .col-75, input[type=submit] {
-    width: 50%;
+    width: 45%;
     margin-top: 0;
   }
 }
