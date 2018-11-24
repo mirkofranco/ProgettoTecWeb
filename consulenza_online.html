@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!-- content-type
         permette di dire il tipo di contenuto all'interno della pagina. si specificano i caratteri
         usati. -->
-    <title>Home - Studio AR</title>
+    <title>Consulenza Online - Studio AR</title>
     <meta name="title" content="Studio AR"/>
     <!-- gli dico che sto per dargli il titolo che sara' visualizzata nella ricerca di google
     con name="title" e con content gli do effettivamente il titolo. Il tag META
@@ -61,7 +61,60 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <form>
+
+    <div class="fcontainer">
+      <form action="action_page.php"> <!-- il file .php però non esiste -->
+      <!-- prima riga: NOME -->
+        <div class="frow">
+          <div class="col-25">
+            <label for="fname"> Nome: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="firstName" placeholder="Inserisci il tuo nome">
+          </div>
+        </div>
+
+        <!-- seconda riga: EMAIL -->
+        <div class="frow">
+          <div class="col-25">
+            <label for="femail"> E-Mail: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="femail" name="email" placeholder="Inserisci la tua email">
+          </div>
+        </div>
+
+        <!-- terza riga: CATEGORIA -->
+        <div class="frow">
+          <div class="col-25">
+            <label for="fcat"> In cosa possiamo aiutarti: </label>
+          </div>
+          <div class="col-75">
+            <select id="fcat" name="fcat">
+              <option value="zonagiorno">Zona Giorno</option>
+              <option value="zonanotte">Zona Notte </option>
+              <option value="cucina">Cucina</option>
+              <option value="bagno">Bagno</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- quarta riga: COMMENTO -->
+        <div class="frow">
+          <div class="col-25">
+            <label for="comment">Descrivici la tua richiesta: </label>
+          </div>
+          <div class="col-75">
+            <textarea id="comment" class="fTextBox" name="comment" placeholder="Scrivi qui"> </textarea>
+          </div>
+          <div class="frow">
+            <input type="submit" value="submit">
+          </div>
+      </form>
+    </div>
+
+
+    <!-- <form>
         <div class="formentry">
             <label for="name" class="title">Nome:</label>
             <input type="text" id="name" name="name">
@@ -86,7 +139,7 @@
         <div class="submit">
                     <input type="submit" value="Submit" id="submit"/>
                 </div>
-    </form>
+    </form> -->
 
     <!-- box footer -->
     <div id="footer">

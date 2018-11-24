@@ -384,3 +384,64 @@ img.sinistra {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+/* FORM PER LA CONSULENZA ONLINE */
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #fcfcfc;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input [type=submit] {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  float: center;
+}
+
+.fcontainer {
+  position: static;
+  float: center;
+  background-color: white;
+  padding: 20px;
+  width: 50%;
+}
+
+/*colonne con larghezza 25%: */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/*colonne con larghezza 75%: */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top:6px;
+}
+
+.frow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* form responsive*/
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 50%;
+    margin-top: 0;
+  }
+}
