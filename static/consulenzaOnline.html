@@ -1,0 +1,55 @@
+<!-- <h1>Consulenza Online</h1> tolto il titolo della pagina, era un po' ridondante -->
+<div class="containerConsulenze">
+  <img src="images/consulenza_cropped.jpg" class ="imgConsulenze" alt="palette di colori"/>
+  <p class="textOverConsulenze">Richiedici una consulenza compilando il modulo, e ti risponderemo il prima possibile!</p>
+</div>
+  <div class="fcontainer">
+    <form method="post"> <!-- il file .php però non esiste -->
+    <!-- prima riga: NOME -->
+      <div class="frow">
+        <div class="col-25">
+          <label for="fname"> Nome: </label>
+        </div>
+        <div class="col-75">
+          <input class="fInputBorder" type="text" id="fname" name="firstName" placeholder="Inserisci il tuo nome" required>
+        </div>
+      </div>
+
+      <!-- seconda riga: EMAIL -->
+      <div class="frow">
+        <div class="col-25">
+          <label for="femail"> E-Mail: </label>
+        </div>
+        <div class="col-75">
+          <input class="fInputBorder" type="text" id="femail" name="email" placeholder="Inserisci la tua email" required>
+        </div>
+      </div>
+
+      <!-- terza riga: CATEGORIA -->
+      <div class="frow">
+        <div class="col-25">
+          <label for="fcat"> In cosa possiamo aiutarti: </label>
+        </div>
+        <div class="col-75">
+          <select id="fcat" name="fcat">
+            <option value="zonagiorno">Zona Giorno</option>
+            <option value="zonanotte">Zona Notte </option>
+            <option value="cucina">Cucina</option>
+            <option value="bagno">Bagno</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- quarta riga: COMMENTO -->
+      <div class="frow">
+        <div class="col-25">
+          <label for="comment">Descrivici la tua richiesta: </label>
+        </div>
+        <div class="col-75">
+          <textarea id="comment" class="fTextBox fInputBorder" name="comment" placeholder="Scrivi qui" required></textarea>
+        </div>
+        <div class="frow">
+          <input type="submit" value="submit" name="chiediConsulenza">
+        </div>
+    </form>
+  </div>
