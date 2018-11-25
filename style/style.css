@@ -507,6 +507,10 @@ input[type="submit"]:hover {
   clear: both;
 }
 
+.fTextBox, .fInputBorder, #fcat, #fname, #femail {
+  font-size: 1.1vw;
+}
+
 /* form responsive*/
 
 @media screen and (max-width: 600px) {
