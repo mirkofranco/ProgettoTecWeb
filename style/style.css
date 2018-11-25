@@ -466,6 +466,7 @@ input[type="submit"]:hover {
 .fcontainer {
   position: static;
   float: center;
+  margin: auto;
   background-color: white;
   padding: 20px 45px;
   width: 45%;
