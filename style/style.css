@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: pink;
 }
 
 html {
@@ -344,6 +343,8 @@ img.sinistra {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
   background-color: #f1f1f1;
   text-align: center;
   border-top: 2px solid #4c4a4a;
@@ -452,6 +453,8 @@ input[type="submit"] {
   text-align: center;
   float: center;
   margin: 10px;
+  float: center;
+  margin: auto;
 }
 
 
@@ -460,26 +463,28 @@ input[type="submit"]:hover {
   background-color: #4c4a4a;
   color: #FFFFFF;
   cursor: pointer;
+  box-shadow: 0 0 6px grey;
 }
 
 .fcontainer {
   position: static;
   float: center;
+  margin: auto;
   background-color: white;
   padding: 20px 45px;
   width: 45%;
-  border: 1px solid #;
+  border: 1px solid #a4a4a4;
 }
 
-.fcontainer:focus {
+/* .fcontainer:focus {
   border: 1px solid black;
-}
+} */
 
 .fInputBorder, #femail, #fname {
   border: .5px solid #f1f1f1;
 }
 
-.fcontainer:focus-within, .fcontainer:hover, .fInputBorder:hover, .fInputBorder:active, #femail:hover, #femail:active, #fname:hover, #fname:active {
+/* .fcontainer:focus-within, .fcontainer:hover, */ .fInputBorder:hover, .fInputBorder:active, #femail:hover, #femail:active, #fname:hover, #fname:active {
   border: .5px solid black;
 }
 /*colonne con larghezza 25%: */
