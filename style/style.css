@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -14,7 +13,7 @@ body {
   position: relative;
   margin: 0;
   padding-bottom: 6rem;
-  height: 100%;
+  min-height: 100%;
 }
 
 h1 {
@@ -341,11 +340,7 @@ img.sinistra {
   right: 0;
   bottom: 0;
   left: 0;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 0rem;
-  margin-bottom: 0rem;
+  padding: 1rem;
   background-color: #f1f1f1;
   text-align: center;
   border-top: 2px solid #4c4a4a;
