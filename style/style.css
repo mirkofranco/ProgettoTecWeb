@@ -22,7 +22,6 @@ h1 {
   position: sticky;
   padding-top: 25px;
   padding-bottom: 40px;
-  /* text-shadow: 3px 3px 10px #cacaca; */
   font-size: 3.5vw;
 }
 
@@ -32,15 +31,15 @@ h1 {
 /*HEADER INIZIO PAGINA*/
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
-  border-bottom: 2px solid #4c4a4a;
+  background-color: #4c4a4a;
+  /*border-bottom: 2px solid #4c4a4a;*/
 }
 
 .header a, i {
-  color: black;
+  color: white;
   float: left;
   align-content: center;
-  padding: 8px;
+  padding: 10px;
 }
 
 #logo {
@@ -341,9 +340,9 @@ img.sinistra {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #f1f1f1;
+  background-color: #4c4a4a;
   text-align: center;
-  border-top: 2px solid #4c4a4a;
+  /*border-top: 2px solid #4c4a4a;*/
 }
 
 .icone {
