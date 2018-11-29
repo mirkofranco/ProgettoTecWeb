@@ -459,7 +459,7 @@ input[type="submit"] {
   color: black;
   font-size: 15px;
   padding: 12px 20px;
-  border: 1px solid black;
+  border: 1px solid #fcfcfc;
   cursor: pointer;
   text-align: center;
   float: center;
@@ -470,11 +470,11 @@ input[type="submit"] {
 
 
 input[type="submit"]:hover {
-  border: 1px solid black;
+  border: 1px solid #fcfcfc;
   background-color: #4c4a4a;
   color: #FFFFFF;
   cursor: pointer;
-  box-shadow: 0 0 6px grey;
+  box-shadow: 0 0 6px gray;
 }
 
 .fcontainer {
