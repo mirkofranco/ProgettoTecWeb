@@ -47,16 +47,13 @@ h1 {
   height: 20px;
   width: auto;
   padding: 10px;
+    float: right;
+  margin-top: 11px;
 }
 
 #logo {
   height: 70px;
   width: auto;
-}
-
-.header-right {
-  float: right;
-  margin-top: 11px;
 }
 
 @media screen and (max-width: 500px) {
