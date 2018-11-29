@@ -339,19 +339,19 @@ img.sinistra {
   /*border-top: 2px solid #4c4a4a;*/
 }
 
-.footer img, a {
+.testofooter img, a {
   height: 15px;
   width: auto;
   float: left;
 }
 
-.footer p{
+.footer p {
   color: #ffffff;
   float: left;
   margin-left: 5px;
 }
 
-.testofooter a, img {
+.testofooter img, a {
 	padding-left: 3rem;
 }
 
