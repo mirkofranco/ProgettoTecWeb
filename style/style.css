@@ -339,7 +339,7 @@ img.sinistra {
   /*border-top: 2px solid #4c4a4a;*/
 }
 
-.testofooter img, a {
+.testofooter, .imgfooter, a.imgfooter {
   height: 15px;
   width: auto;
   float: left;
