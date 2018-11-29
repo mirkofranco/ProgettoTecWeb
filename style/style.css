@@ -43,7 +43,7 @@ h1 {
   padding: 10px;
 }
 
-.header-right img {
+.header-right img, .header-right a {
   height: 20px;
   width: auto;
   padding: 10px;
