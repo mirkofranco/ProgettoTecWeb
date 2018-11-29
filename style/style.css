@@ -128,6 +128,7 @@ a.active {
 
 /*SLIDESHOW*/
 /*Container dello slideshow*/
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -215,7 +216,7 @@ img.mySlides {
   background-color: #717171;
 }
 
-/*Fading animation*/
+/*animazione che controlla il fading*/
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -297,14 +298,14 @@ img.catalogo {
   margin-bottom: 50px;
 }
 
-/* Clear floats after the columns */
+/* pulisce i float dopo le colonne */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Layout responsive: fa si che le due colonne si mettano una sopra l'altra invece che una accanto all'altra */
 @media screen and (max-width:900px) {
     .column {
         width: 100%;
