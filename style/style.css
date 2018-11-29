@@ -328,19 +328,6 @@ img.sinistra {
 
 /* FOOTER */
 
-/*#footer {
-  position: fixed;
-  z-index: -1;
-  float:left;
-  left: 0;
-  bottom: 0;
-  padding: 10px 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  color: black;
-  text-align: center;
-}*/
-
 .footer {
   position: absolute;
   right: 0;
@@ -355,10 +342,17 @@ img.sinistra {
 .footer img, a {
   height: 15px;
   width: auto;
+  float: left;
 }
 
 .footer p{
   color: #ffffff;
+  float: left;
+  margin-left: 5px;
+}
+
+.testofooter a, img {
+	padding-left: 3rem;
 }
 
 /*.icone {
