@@ -121,13 +121,9 @@ a.active {
   transition: all .35s ease-in-out;
 }
 
-/*
-.fas, .fa-search{
-    font-size:12px;
-}*/
-
 /*SLIDESHOW*/
 /*Container dello slideshow*/
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -173,7 +169,7 @@ img.mySlides {
   background-color: rgba(0,0,0,0.8);
 }
 
-/*Caption*/
+/*Testo all'interno dello slideshow*/
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -215,7 +211,7 @@ img.mySlides {
   background-color: #717171;
 }
 
-/*Fading animation*/
+/*animazione che controlla il fading*/
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -249,7 +245,6 @@ img.catalogo {
   max-width: 700px;
   max-height: auto;
   transition: .5s ease;
-  /*backface-visibility: hidden;*/
   opacity: 1;
   filter: brightness(40%);
 }
@@ -285,6 +280,7 @@ img.catalogo {
   box-sizing: border-box;
   font-size: 2vw;
 }
+
 /*Crea due colonne uguali posizionate una vicino all'altra*/
 .column {
     float: left;
@@ -297,14 +293,14 @@ img.catalogo {
   margin-bottom: 50px;
 }
 
-/* Clear floats after the columns */
+/* pulisce i float dopo le colonne */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Layout responsive: fa si che le due colonne si mettano una sopra l'altra invece che una accanto all'altra */
 @media screen and (max-width:900px) {
     .column {
         width: 100%;
@@ -346,10 +342,6 @@ img.catalogo {
 .testofooter img, a {
 	padding-left: 3rem;
 }
-
-/*.icone {
-  position: static;
-}*/
 
 /* MENU LATERALE CATALOGO */
 .openMenu {
@@ -474,17 +466,14 @@ input[type="submit"]:hover {
   border: 1px solid #a4a4a4;
 }
 
-/* .fcontainer:focus {
-  border: 1px solid black;
-} */
-
 .fInputBorder, #femail, #fname {
   border: .5px solid #f1f1f1;
 }
 
-/* .fcontainer:focus-within, .fcontainer:hover, */ .fInputBorder:hover, .fInputBorder:active, #femail:hover, #femail:active, #fname:hover, #fname:active {
+.fInputBorder:hover, .fInputBorder:active, #femail:hover, #femail:active, #fname:hover, #fname:active {
   border: .5px solid black;
 }
+
 /*colonne con larghezza 25%: */
 .col-25 {
   float: left;
