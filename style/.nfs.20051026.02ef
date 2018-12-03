@@ -33,29 +33,31 @@ h1 {
 .header {
   overflow: hidden;
   background-color: #4c4a4a;
+  height: 6rem;
   /*border-bottom: 2px solid #4c4a4a;*/
 }
 
-.header a {
+.header img {
   float: left;
   align-content: center;
   padding: 10px;
 }
 
-.header-right img {
+.header-right {
+  float: right;
+}
+
+.header-right img, .header-right a {
   height: 20px;
   width: auto;
   padding: 10px;
+  float: right;
+  margin-top: 11px;
 }
 
 #logo {
   height: 70px;
   width: auto;
-}
-
-.header-right {
-  float: right;
-  margin-top: 11px;
 }
 
 @media screen and (max-width: 500px) {
@@ -241,13 +243,6 @@ img.mySlides {
   text-shadow: 3px 3px 10px #cacaca;
 }
 
-#catalogo {
-  /*background-color: #f1f1f1;*/
-  /*border-top: 2px solid #4c4a4a;
-  border-bottom: 2px solid #4c4a4a;*/
-}
-
-
 img.catalogo {
   width: 75%;
   height: auto;
@@ -270,7 +265,7 @@ img.catalogo {
   padding-right: 50px;
 }
 
-img.sinistra {
+.sinistra {
   margin-right: 30px;
 }
 
@@ -295,8 +290,6 @@ img.sinistra {
     float: left;
     width: 50%;
     padding-top: 20px;
-    /*padding-left: 3%;
-    padding-right: 3%;*/
     padding-bottom: 20px;
 }
 
@@ -327,19 +320,6 @@ img.sinistra {
 
 /* FOOTER */
 
-/*#footer {
-  position: fixed;
-  z-index: -1;
-  float:left;
-  left: 0;
-  bottom: 0;
-  padding: 10px 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  color: black;
-  text-align: center;
-}*/
-
 .footer {
   position: absolute;
   right: 0;
@@ -351,13 +331,20 @@ img.sinistra {
   /*border-top: 2px solid #4c4a4a;*/
 }
 
-.footer img, a {
+.testofooter, .imgfooter, a.imgfooter {
   height: 15px;
   width: auto;
+  float: left;
 }
 
-.footer p{
+.footer p {
   color: #ffffff;
+  float: left;
+  margin-left: 5px;
+}
+
+.testofooter img, a {
+	padding-left: 3rem;
 }
 
 /*.icone {
