@@ -368,6 +368,7 @@ img.catalogo {
 }
 
 /*PAGINA CONSULENZE ONLINE*/
+
 .containerConsulenze {
   position: relative;
   text-align: center;
@@ -377,8 +378,10 @@ img.catalogo {
 }
 
 img.imgConsulenze {
-  width:50%;
-  height:auto;
+  width: 52%;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
   filter: brightness(80%);
 }
 
@@ -434,6 +437,8 @@ input[type="submit"]:hover {
   background-color: white;
   padding: 20px 45px;
   width: 45%;
+  margin-right: auto;
+  margin-left: auto;
   border: 1px solid #a4a4a4;
 }
 
