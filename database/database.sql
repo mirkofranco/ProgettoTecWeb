@@ -6,6 +6,7 @@ USE DatabaseTecnologieWeb;
 
 DROP TABLE IF EXISTS PRODOTTO;
 DROP TABLE IF EXISTS PRODOTTOSTORICO;
+DROP TABLE IF EXISTS UTENTE;
 
 CREATE TABLE PRODOTTO(
 	IDProdotto varchar(10) primary key,
@@ -13,7 +14,8 @@ CREATE TABLE PRODOTTO(
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
 	Prezzo float(2) not null,
-    DataInizio date not null
+    DataInizio date not null,
+	isOfferta boolean not null default 0
 )ENGINE = InnoDB;
 
 CREATE TABLE PRODOTTOSTORICO(
@@ -22,8 +24,18 @@ CREATE TABLE PRODOTTOSTORICO(
     Prezzo float(2) not null,
     DataInizio date not null,
     DataFine date not null,
+	isOffertaS boolean not null,
     primary key(IDStoricizzazione, IDProdotto),
     foreign key (IDProdotto) references PRODOTTO(IDProdotto) ON DELETE CASCADE
+)ENGINE = InnoDB;
+
+CREATE TABLE UTENTE(
+	UID integer auto_increment primary key,
+	NomeCognome varchar(20) not null,
+	Username varchar(20) not null,
+	Password varchar(20) not null,
+	Mail varchar(20) not null,
+	Tipo ENUM('1', '2') not null
 )ENGINE = InnoDB;
 
 DROP TRIGGER IF EXISTS aggiuntiProdottoStorico;
@@ -35,22 +47,9 @@ BEFORE UPDATE ON PRODOTTO
 FOR EACH ROW
 BEGIN
 	IF OLD.Prezzo <> NEW.Prezzo THEN
-		INSERT INTO PRODOTTOSTORICO(IDProdotto, Prezzo, DataInizio, DataFine) VALUES
-		(NEW.IDProdotto, OLD.Prezzo, OLD.DataInizio, curdate());
+		INSERT INTO PRODOTTOSTORICO(IDProdotto, Prezzo, DataInizio, DataFine, isOffertaS) VALUES
+		(NEW.IDProdotto, OLD.Prezzo, OLD.DataInizio, curdate(), OLD.isOfferta);
 	END IF;
 END; $$
 
 DELIMITER ;
-
-INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio) VALUES ('0000','Mobile', 'Tavolo', 'Apple', 35, 2018-07-12);
-INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio) VALUES ('0001','Armadio', 'Armadio Rosa', 'Google', 100, 2018-08-10);
-UPDATE PRODOTTO
-SET Nome = 'Armadio Nuovo'
-WHERE IDProdotto = '0001';
-UPDATE PRODOTTO
-SET Prezzo = 110
-WHERE IDProdotto = '0001';
-UPDATE PRODOTTO
-SET Prezzo = 120
-WHERE  IDProdotto = '0001';
-DELETE FROM PRODOTTO WHERE IDProdotto = '0001';
