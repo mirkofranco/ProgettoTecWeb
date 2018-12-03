@@ -378,9 +378,7 @@ img.catalogo {
 }
 
 img.imgConsulenze {
-  width: 52%;
-  margin-right: auto;
-  margin-left: auto;
+  width: 55%;
   height: auto;
   filter: brightness(80%);
 }
