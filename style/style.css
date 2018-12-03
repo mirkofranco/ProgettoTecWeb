@@ -18,7 +18,7 @@ body {
 
 h1 {
   text-align: center;
-  font-family: Georgia;
+  font-family: Arial;
   position: sticky;
   padding-top: 25px;
   padding-bottom: 40px;
@@ -84,10 +84,6 @@ h1 {
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
-}
-
-.menu li:not(:last-child) {
-  margin-right: 20px;
 }
 
 .menu a {
@@ -230,14 +226,60 @@ img.mySlides {
 }
 
 /* PAGINA CATALOGO */
-.titoletto {
+#titolocatalogo {
   text-align: center;
-  font-family: Georgia;
+  font-family: Arial;
+  font-size: 40px;
   position: sticky;
-  padding-top: 25px;
-  padding-bottom: 40px;
-  text-shadow: 3px 3px 10px #cacaca;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.column {
+  max-width: 400px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+    padding: 10px;
+}
+
+.column img {
+    width: 100%;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Codice per inserire il testo e l'opacità nei link!
 
 img.catalogo {
   width: 75%;
@@ -251,19 +293,14 @@ img.catalogo {
 
 
 /*testo centrato nelle immagini*/
-.container {
+/*.container {
   position: relative;
-  /* z-index: -1;*/
+  /* z-index: -1;
   text-align: center;
   box-sizing: border-box;
   padding-left: 50px;
   padding-right: 50px;
 }
-
-.sinistra {
-  margin-right: 30px;
-}
-
 .catalogo:hover {
   opacity: 0.8;
   filter: brightness(100%);
@@ -281,38 +318,13 @@ img.catalogo {
   font-size: 2vw;
 }
 
-/*Crea due colonne uguali posizionate una vicino all'altra*/
-.column {
-    float: left;
-    width: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.last {
-  margin-bottom: 50px;
-}
-
-/* pulisce i float dopo le colonne */
+pulisce i float dopo le colonne
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
-/* Layout responsive: fa si che le due colonne si mettano una sopra l'altra invece che una accanto all'altra */
-@media screen and (max-width:900px) {
-    .column {
-        width: 100%;
-    }
-    .testoCentrato {
-      text-align: center;
-      transform: translate(-50%, -50%);
-      font-size:7vw;
-      top: 50%;
-      left: 50%;
-    }
-}
+*/
 
 /* MENU LATERALE CATALOGO */
 .openMenu {
@@ -510,6 +522,6 @@ input[type="submit"]:hover {
   margin-left: 5px;
 }
 
-.testofooter img, a {
+.imgfooter {
   padding-left: 3rem;
 }
