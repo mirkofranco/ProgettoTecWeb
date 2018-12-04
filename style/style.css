@@ -262,18 +262,18 @@ div.column {
     padding: 10px;
 }
 
-.containerCatalogo {
+/*.containerCatalogo {
     position: relative;
     text-align: center;
     color: white;
 }
 
-p.testoCentrato {
+.testoCentrato {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+}*/
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
