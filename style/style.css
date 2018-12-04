@@ -335,17 +335,10 @@ div.column {
 
 /*PAGINA CONSULENZE ONLINE*/
 
-div.contenutoPaginaConsulenze{
+div.contenutoPaginaConsulenze {
   background-image: url("imgcss/consulenza_o.jpg");
   background-position: center;
   background-size: 100%;
-}
-
-img.imgConsulenze {
-  width: 100%;
-  height: auto;
-  filter: brightness(70%);
-  position: relative;
 }
 
 .textOverConsulenze {
