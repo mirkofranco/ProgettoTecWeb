@@ -403,7 +403,7 @@ pulisce i float dopo le colonne
 }
 
 img.imgConsulenze {
-  width: 55%;
+  width: 100%;
   height: auto;
   filter: brightness(80%);
 }
