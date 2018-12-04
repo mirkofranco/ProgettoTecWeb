@@ -226,6 +226,7 @@ img.mySlides {
 }
 
 /* PAGINA CATALOGO */
+
 #titolocatalogo {
   text-align: center;
   font-family: Arial;
@@ -261,6 +262,19 @@ div.column {
     padding: 10px;
 }
 
+.containerCatalogo {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+p.testoCentrato {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
     .column {
@@ -280,6 +294,17 @@ div.column {
 }
 
 /* Codice per inserire il testo e l'opacità nei link!
+
+.testoCentrato {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px black;
+  vertical-align: middle;
+  color: white;
+  box-sizing: border-box;
+  font-size: 2vw;
 
 img.catalogo {
   width: 75%;
@@ -304,18 +329,6 @@ img.catalogo {
 .catalogo:hover {
   opacity: 0.8;
   filter: brightness(100%);
-}
-
-.testoCentrato {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-shadow: 2px 2px 4px black;
-  vertical-align: middle;
-  color: white;
-  box-sizing: border-box;
-  font-size: 2vw;
 }
 
 pulisce i float dopo le colonne
