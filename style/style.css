@@ -12,7 +12,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 2.5rem; /*Da aggiustare il discorso del padding e del footer!*/
   min-height: 100%;
 }
 
@@ -30,11 +30,11 @@ h1 {
 }
 
 /*HEADER INIZIO PAGINA*/
+
 .header {
   overflow: hidden;
   background-color: #4c4a4a;
   height: 6rem;
-  /*border-bottom: 2px solid #4c4a4a;*/
 }
 
 .header img {
@@ -99,8 +99,7 @@ a.active {
 }
 
 .menu a:hover{
-  border-radius: 4px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: #4c4a4a;
   color: #ffffff;
 }
 
@@ -341,11 +340,11 @@ div.contenutoPaginaConsulenze {
   background-size: 100%;
 }
 
-.textOverConsulenze {
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.titoloForm {
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* FORM PER LA CONSULENZA ONLINE */
@@ -390,7 +389,7 @@ input[type="submit"]:hover {
 }
 
 .fcontainer {
-  width: 45%;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -457,7 +456,6 @@ input[type="submit"]:hover {
   padding: 1rem;
   background-color: #4c4a4a;
   text-align: center;
-  /*border-top: 2px solid #4c4a4a;*/
 }
 
 .testofooter, .imgfooter, a.imgfooter {
