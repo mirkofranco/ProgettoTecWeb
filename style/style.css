@@ -394,18 +394,18 @@ pulisce i float dopo le colonne
 
 /*PAGINA CONSULENZE ONLINE*/
 
-.containerConsulenze {
-  position: relative;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 3px black;
+div.contenutoPaginaConsulenze{
+  background-image: url("images/consulenza_o.jpg");
+  width: 100%;
+  height: auto;
   font-size: 2vw;
 }
 
 img.imgConsulenze {
   width: 100%;
   height: auto;
-  filter: brightness(80%);
+  filter: brightness(70%);
+  position: relative;
 }
 
 .textOverConsulenze {
@@ -454,14 +454,11 @@ input[type="submit"]:hover {
 }
 
 .fcontainer {
-  position: static;
-  float: center;
-  margin: auto;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   padding: 20px 45px;
-  width: 45%;
-  margin-right: auto;
-  margin-left: auto;
   border: 1px solid #a4a4a4;
 }
 
