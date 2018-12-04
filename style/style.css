@@ -293,52 +293,6 @@ div.column {
     }
 }
 
-/* Codice per inserire il testo e l'opacità nei link!
-
-.testoCentrato {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-shadow: 2px 2px 4px black;
-  vertical-align: middle;
-  color: white;
-  box-sizing: border-box;
-  font-size: 2vw;
-
-img.catalogo {
-  width: 75%;
-  height: auto;
-  max-width: 700px;
-  max-height: auto;
-  transition: .5s ease;
-  opacity: 1;
-  filter: brightness(40%);
-}
-
-
-/*testo centrato nelle immagini*/
-/*.container {
-  position: relative;
-  /* z-index: -1;
-  text-align: center;
-  box-sizing: border-box;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-.catalogo:hover {
-  opacity: 0.8;
-  filter: brightness(100%);
-}
-
-pulisce i float dopo le colonne
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-*/
-
 /* MENU LATERALE CATALOGO */
 .openMenu {
   font-size: 1.5vw;
@@ -395,10 +349,9 @@ pulisce i float dopo le colonne
 /*PAGINA CONSULENZE ONLINE*/
 
 div.contenutoPaginaConsulenze{
-  background-image: url("images/consulenza_o.jpg");
-  width: 100%;
-  height: auto;
-  font-size: 2vw;
+  background-image: url("imgcss/consulenza_o.jpg");
+  background-position: center;
+  background-size: 100%;
 }
 
 img.imgConsulenze {
@@ -422,7 +375,11 @@ input[type="text"], select, textarea {
   padding: 12px;
   border: 1px solid #fcfcfc;
   box-sizing: border-box;
-  resize: vertical;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
 }
 
 label {
@@ -440,7 +397,6 @@ input[type="submit"] {
   text-align: center;
   margin-top: 30px;
   float: right;
-  float: center;
   margin: 30px;
 }
 
@@ -492,6 +448,10 @@ input[type="submit"]:hover {
 
 .fTextBox, .fInputBorder, #fcat, #fname, #femail {
   font-size: 1.1vw;
+}
+
+#fcat {
+  height: 30px;
 }
 
 /* form responsive*/
