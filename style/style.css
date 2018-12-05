@@ -354,7 +354,7 @@ div.column {
 /*PAGINA CONSULENZE ONLINE*/
 
 div.contenutoPaginaConsulenze {
-  background-image: url("imgcss/consulenza_o.jpg");
+  background-image: url("../images/consulenza_o.jpg");
   background-position: center;
   background-size: 100%;
 }
