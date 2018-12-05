@@ -11,10 +11,9 @@ html {
 
 body {
   position: relative;
-  margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -503,9 +502,10 @@ a.imgfooter {
 }
 
 .footer p {
-  color: #ffffff;
-  float: left;
-  margin-left: 5px;
+    color: #ffffff;
+    float: left;
+    margin-left: 5px;
+    padding: 10px;
 }
 
 .imgfooter {
