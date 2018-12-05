@@ -493,7 +493,8 @@ input[type="submit"]:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  flex-shrink: 0;
+  //flex-shrink: 0;
+  padding:1rem;
   background-color: #4c4a4a;
   text-align: center;
 }
