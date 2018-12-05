@@ -12,8 +12,8 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 2.5rem;
-  /*Da aggiustare il discorso del padding e del footer!*/
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
 }
 
@@ -26,8 +26,8 @@ h1 {
   font-size: 3.5vw;
 }
 
-.contenutoPagina {
-  margin-top: 20px;
+.contenuto {
+  flex: 1 0 auto;
 }
 
 /*HEADER INIZIO PAGINA*/
@@ -489,7 +489,7 @@ input[type="submit"]:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  flex-shrink: 0;
   background-color: #4c4a4a;
   text-align: center;
 }
