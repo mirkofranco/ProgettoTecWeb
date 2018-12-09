@@ -11,15 +11,21 @@ html {
 
 body {
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
 =======
+=======
+>>>>>>> parent of 4ec9ae4... Footer e HTML
   position: relative;
   margin: 0;
   padding-bottom: 2.5rem; /*Da aggiustare il discorso del padding e del footer!*/
   min-height: 100%;
+<<<<<<< HEAD
+>>>>>>> parent of 4ec9ae4... Footer e HTML
+=======
 >>>>>>> parent of 4ec9ae4... Footer e HTML
 }
 
@@ -33,8 +39,13 @@ h1 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .contenuto {
   flex: 1 0 auto;
+=======
+.contenutoPagina {
+    margin-top: 20px;
+>>>>>>> parent of 4ec9ae4... Footer e HTML
 =======
 .contenutoPagina {
     margin-top: 20px;
@@ -501,8 +512,12 @@ input[type="submit"]:hover {
   bottom: 0;
   left: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*flex-shrink: 0;*/
   padding:1rem;
+=======
+  padding: 1rem;
+>>>>>>> parent of 4ec9ae4... Footer e HTML
 =======
   padding: 1rem;
 >>>>>>> parent of 4ec9ae4... Footer e HTML
