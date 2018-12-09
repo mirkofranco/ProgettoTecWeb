@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <!-- necessario quando si usa xhtml -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!-- content-type
+		permette di dire il tipo di contenuto all'interno della pagina. si specificano i caratteri
+		usati. -->
+	<title>Cucine - Studio AR</title>
+	<meta name="title" content="Studio AR"/>
+	<!-- gli dico che sto per dargli il titolo che sara' visualizzata nella ricerca di google
+	con name="title" e con content gli do effettivamente il titolo. Il tag META
+	si chiude da solo. -->
+	<meta name="description" content=""/>
+	<!-- quello che compare nella descrizione del sito nella ricerca di google -->
+	<meta name="keywords" content=""/>
+	<!-- le keywords non vanno messe a caso, ma solo quelle rilevanti. google penalizza troppe
+	o keywords non rilevanti-->
+	<meta name="language" content="italian it"/>
+	<!-- le informazioni sulla lingua si scrivono due volte. Quello scritto su e' per il
+	browser, mentre quello scritto qua piu' in basso viene usato da google. -->
+	<meta name="author" content=""/>
+
+	<!-- INSERIMENTO CSS -->
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="print_lavoro.css" media="print"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<script src="./scripts/js/menu_laterale.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <!-- box superiore con logo, ricerca e social -->
+    <div class="header">
+  <a href="index.html"><img src="logopng.png" id="logo" alt="Studio Architetti Riuniti"/></a>
+  <div class="header-right">
+   	<a href="#"><i class="fas fa-search" id="search" alt="barra di ricerca" xml:lang="en"></i></a>
+    <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank"><i class="fab fa-facebook-square" id="social" alt="profilo facebook del negozio"></i></a>
+  </div>
+</div>
+
+    <!-- barra di navigazione -->
+    <nav class="menu">
+        <ul>
+            <li xml:lang="en"><a href="index.php" class="active">Home</a></li>
+            <li xml:lang="en"><a href="about_us.html">About Us</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="consulenza_online.php">Consulenza <span xml:lang="en">Online</span></a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="offerte.html">Offerte</a></li>
+        </ul>
+    </nav>
+    <span class="target"></span>
+
+    <!-- CONTENUTO FILE -->
+    <a href="catalogo.html"><p>Ritorna al catalogo</p></a>
+
+    <!-- MENU DI NAVIGAZIONE LATERALE -->
+
+	<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="zona_notte.html"><h1>Zona notte</h1></a>
+    <a href="#"><h2>Letti</h2></a>
+    <a href="#"><h2>Comodini</h2></a>
+    <a href="#" xml:lang="fr"><h2>Abat-jour</h2></a>
+    <a href="#"><h2>Armadi</h2></a>
+    <a href="#"><h2>Lampade</h2></a>
+
+
+    <a href="zona_giorno.html"><h1>Zona giorno</h1></a>
+    <a href="#"><h2>Tavoli</h2></a>
+    <a href="#"><h2>Poltrone</h2></a>
+    <a href="#"><h2>Divani</h2></a>
+    <a href="#"><h2>Sedie</h2></a>
+    <a href="#"><h2>Lampade</h2></a>
+
+    <a href="cucine.html"><h1>Cucina</h1></a>
+    <a href="#"><h2>Tavoli</h2></a>
+    <a href="#"><h2>Piani cottura</h2></a>
+    <a href="#"><h2></h2></a>
+
+    <a href="bagni.html"><h1>Bagno</h1></a>
+    <a href="#"><h2>Lavandini</h2></a>
+    <a href="#"><h2>WC</h2></a>
+    <a href="#"><h2>Docce</h2></a>
+
+
+
+  </div>
+
+  <p><span class="openMenu" onclick="openNav()">&#9776; Catalogo</span></p>
+
+
+    <div class="contenutoPagina">
+
+
+    </div>
+		<!-- box footer -->
+    <div id="footer">
+        <div id="contatti">
+            <!-- <p class="footerText">Contattaci: </p> -->
+            <i class="fas fa-map-marker-alt icone"> Via San Francesco D'Assisi, 12, 34133 Trieste (TS)</i>
+            <i class="fas fa-phone icone"> +39 040 370 545</i>
+            <i class="fas fa-envelope icone"> studioar@hotmail.it</i>
+            <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank"><i class="fab fa-facebook-square" alt="profilo facebook del negozio"></i></a>
+        </div>
+    </div>
+</body>
+</html>
