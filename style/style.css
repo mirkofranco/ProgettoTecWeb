@@ -10,10 +10,17 @@ html {
 }
 
 body {
+<<<<<<< HEAD
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
+=======
+  position: relative;
+  margin: 0;
+  padding-bottom: 2.5rem; /*Da aggiustare il discorso del padding e del footer!*/
+  min-height: 100%;
+>>>>>>> parent of 4ec9ae4... Footer e HTML
 }
 
 h1 {
@@ -25,8 +32,13 @@ h1 {
   font-size: 3.5vw;
 }
 
+<<<<<<< HEAD
 .contenuto {
   flex: 1 0 auto;
+=======
+.contenutoPagina {
+    margin-top: 20px;
+>>>>>>> parent of 4ec9ae4... Footer e HTML
 }
 
 /*HEADER INIZIO PAGINA*/
@@ -488,8 +500,12 @@ input[type="submit"]:hover {
   right: 0;
   bottom: 0;
   left: 0;
+<<<<<<< HEAD
   /*flex-shrink: 0;*/
   padding:1rem;
+=======
+  padding: 1rem;
+>>>>>>> parent of 4ec9ae4... Footer e HTML
   background-color: #4c4a4a;
   text-align: center;
 }
