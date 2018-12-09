@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <!-- necessario quando si usa xhtml -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!-- content-type
+        permette di dire il tipo di contenuto all'interno della pagina. si specificano i caratteri
+        usati. -->
+    <title>Consulenza Online - Studio AR</title>
+    <meta name="title" content="Studio AR"/>
+    <!-- gli dico che sto per dargli il titolo che sara' visualizzata nella ricerca di google
+    con name="title" e con content gli do effettivamente il titolo. Il tag META
+    si chiude da solo. -->
+    <meta name="description" content=""/>
+    <!-- quello che compare nella descrizione del sito nella ricerca di google -->
+    <meta name="keywords" content=""/>
+    <!-- le keywords non vanno messe a caso, ma solo quelle rilevanti. google penalizza troppe
+    o keywords non rilevanti-->
+    <meta name="language" content="italian it"/>
+    <!-- le informazioni sulla lingua si scrivono due volte. Quello scritto su e' per il
+    browser, mentre quello scritto qua piu' in basso viene usato da google. -->
+    <meta name="author" content=""/>
+
+    <!-- INSERIMENTO CSS -->
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="print_lavoro.css" media="print"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+
+
+</head>
+
+<body>
+    <!-- box superiore con logo, ricerca e social -->
+    <div class="header">
+  <a href="./index.php"><img src="logopng.png" id="logo" alt="Studio Architetti Riuniti"/></a>
+  <div class="header-right">
+    <a href="#"><i class="fas fa-search" id="search" alt="barra di ricerca" xml:lang="en"></i></a>
+    <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank"><i class="fab fa-facebook-square" id="social" alt="profilo facebook del negozio"></i></a>
+  </div>
+</div>
+
+    <!-- barra di navigazione -->
+    <nav class="menu">
+        <ul>
+            <li xml:lang="en"><a href="index.php">Home</a></li>
+            <li xml:lang="en"><a href="about_us.html">About Us</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="consulenza_online.html" class="active">Consulenza <span xml:lang="en">Online</span></a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="offerte.html">Offerte</a></li>
+        </ul>
+    </nav>
+    <span class="target"></span>
+<div class="contenutoPagina">
+
+    <!-- <h1>Consulenza Online</h1> tolto il titolo della pagina, era un po' ridondante -->
+    <div class="containerConsulenze">
+      <img src="images/consulenza_cropped.jpg" class ="imgConsulenze" alt="palette di colori"/>
+      <p class="textOverConsulenze">Richiedici una consulenza compilando il modulo, e ti risponderemo il prima possibile!</p>
+    </div>
+      <div class="fcontainer">
+        <form action="form_consulenze.php"> <!-- il file .php però non esiste -->
+        <!-- prima riga: NOME -->
+          <div class="frow">
+            <div class="col-25">
+              <label for="fname"> Nome: </label>
+            </div>
+            <div class="col-75">
+              <input class="fInputBorder" type="text" id="fname" name="firstName" placeholder="Inserisci il tuo nome" required>
+            </div>
+          </div>
+
+          <!-- seconda riga: EMAIL -->
+          <div class="frow">
+            <div class="col-25">
+              <label for="femail"> E-Mail: </label>
+            </div>
+            <div class="col-75">
+              <input class="fInputBorder" type="text" id="femail" name="email" placeholder="Inserisci la tua email" required>
+            </div>
+          </div>
+
+          <!-- terza riga: CATEGORIA -->
+          <div class="frow">
+            <div class="col-25">
+              <label for="fcat"> In cosa possiamo aiutarti: </label>
+            </div>
+            <div class="col-75">
+              <select id="fcat" name="fcat">
+                <option value="zonagiorno">Zona Giorno</option>
+                <option value="zonanotte">Zona Notte </option>
+                <option value="cucina">Cucina</option>
+                <option value="bagno">Bagno</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- quarta riga: COMMENTO -->
+          <div class="frow">
+            <div class="col-25">
+              <label for="comment">Descrivici la tua richiesta: </label>
+            </div>
+            <div class="col-75">
+              <textarea id="comment" class="fTextBox fInputBorder" name="comment" placeholder="Scrivi qui" required></textarea>
+            </div>
+            <div class="frow">
+              <input type="submit" value="submit">
+            </div>
+        </form>
+      </div>
+
+    <!-- <form>
+        <div class="formentry">
+            <label for="name" class="title">Nome:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="formentry">
+            <label for="email" class="title">email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="formentry">
+            <span class="title">Categoria:</span>
+                    <select name="categoria">
+                        <option value="zonagiorno" selected>Zona Giorno</option>
+                        <option value="zonanotte">Zona Notte</option>
+                        <option value="cucina">Cucina</option>
+                        <option value="bagno">Bagno</option>
+                    </select>
+        </div>
+        <div class="formentry">
+            <label for="text" class="title">Il tuo messaggio:</label>
+            <input type="text" id="text" name="text">
+        </div>
+        <div class="submit">
+                    <input type="submit" value="Submit" id="submit"/>
+                </div>
+    </form> -->
+    </div>
+    <!-- box footer -->
+    <div id="footer">
+        <div id="contatti">
+            <!-- <p class="footerText">Contattaci: </p> -->
+            <i class="fas fa-map-marker-alt icone"> Via San Francesco D'Assisi, 12, 34133 Trieste (TS)</i>
+            <i class="fas fa-phone icone"> +39 040 370 545</i>
+            <i class="fas fa-envelope icone"> studioar@hotmail.it</i>
+            <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank"><i class="fab fa-facebook-square" alt="profilo facebook del negozio"></i></a>
+        </div>
+    </div>
+    </body>
+    </html>

@@ -10,10 +10,13 @@ html {
 }
 
 body {
-  position: relative;
-  margin: 0;
-  padding-bottom: 2.5rem; /*Da aggiustare il discorso del padding e del footer!*/
-  min-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenuto {
+    flex: 1 0 auto;
 }
 
 h1 {
@@ -23,10 +26,6 @@ h1 {
   padding-top: 25px;
   padding-bottom: 40px;
   font-size: 3.5vw;
-}
-
-.contenutoPagina {
-    margin-top: 20px;
 }
 
 /*HEADER INIZIO PAGINA*/
@@ -453,7 +452,7 @@ input[type="submit"]:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  flex-shrink: 0;
   background-color: #4c4a4a;
   text-align: center;
 }
