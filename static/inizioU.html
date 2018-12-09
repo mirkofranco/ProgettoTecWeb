@@ -1,30 +1,39 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
+<html lang="it">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Titolo</title>
-	<meta name="title" content="Studio AR"/>
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-	<meta name="language" content="italian it"/>
-	<meta name="author" content=""/>
+    <meta charset="UTF-8" />
+    <title>Titolo</title>
+    <!-- TODO: l'icona di fianco al titolo delle varie pagine -->
+    <!--[if IE]><link rel="shortcut icon" href="path/to/favicon.ico" typfe="image/png"><![endif]-->
+    <!-- <link rel="icon" href="path/to/favicon.ico" type="image/png" /> -->
 
-	<!-- INSERIMENTO CSS -->
-	<link rel="stylesheet" type="text/css" href="./style/style.css"/>
+    <meta name="title" content="Studio AR" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- serve per poter usare unità di misura dip. dalla viewport e in generale per avere responsive css che funzioni-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TODO: credo che gli script vadano in una funzioncina dentro <body onload()=....> -->
+    <!-- INSERIMENTO CSS -->
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+    <!-- TODO stylesheet per la stampa! -->
+    <!-- <link rel="stylesheet" type="text/css" href="print_style.css" media="print" />  -->
     <script src="./scripts/js/slideshow.js" type="text/javascript"></script>
-	<script src="./scripts/js/menu_laterale.js"></script>
-	<script src="./scripts/js/Utility.js"></script>
-
-
+    <script src="./scripts/js/menu_laterale.js"></script>
+    <script src="./scripts/js/Utility.js"></script>
 
 </head>
 
-<body> 
+<body>
     <!-- box superiore con logo, ricerca e social -->
     <div class="header">
-        <a href="index.php"><img src="./images/logopngB.png" id="logo" alt="Studio Architetti Riuniti"/></a>
+        <a href="index.php"><img src="./images/logopngB.png" id="logo" alt="Studio Architetti Riuniti" /></a>
         <div class="header-right">
-            <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank"><img src="images/facebook_icon.png" alt="profilo facebook del negozio"/></a>
-            <a href="#"><img src="images/search_icon.png" alt="barra di ricerca"/></a>
+            <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank"><img src="images/facebook_icon.png" alt="profilo facebook del negozio" /></a>
+            <a href="#"><img src="images/search_icon.png" alt="barra di ricerca" /></a>
         </div>
     </div>
 
@@ -39,4 +48,4 @@
             <li><a href="./offerte.php">Offerte</a></li>
         </ul>
     </nav>
-	<!--<span class="target"></span>-->
+    <!--<span class="target"></span>-->
