@@ -1,19 +1,11 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
-  height: 100%;
   box-sizing: border-box;
-}
-
-body {
-  /*position: relative;*/
-  margin: 0;
-  padding-bottom: 2.5rem; /*Da aggiustare il discorso del padding e del footer!*/
-  min-height: 100%;
 }
 
 h1 {
@@ -24,40 +16,33 @@ h1 {
   font-size: 3.5vw;
 }
 
-.contenuto {
-    margin-top: 20px;
-}
 
 /*HEADER INIZIO PAGINA*/
 
+/* FIXME ci va il clearfix????? */
 .header {
-  overflow: hidden;
   background-color: #4c4a4a;
-  height: 6rem;
+  height: 15vh;
 }
 
-.header img {
-  float: left;
-  align-content: center;
-  padding: 10px;
-}
-
-.header-right {
-  float: right;
-}
-
-.header-right img, .header-right a {
-  height: 20px;
-  width: auto;
-  padding: 10px;
-  float: right;
-  margin-top: 11px;
+.header a {
+  display: inline-block;
+  height: 100%;
 }
 
 #logo {
-  height: 70px;
-  width: auto;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 1.5vh;
 }
+
+.header-right {
+  height: 100%;
+  /* FIXME PLEASE */
+  float: right;
+}
+
+/* FIXME icons should be centered */
 
 @media screen and (max-width: 500px) {
   .header a {
@@ -77,7 +62,7 @@ h1 {
 }
 
 /*MENU*/
-.menu ul {
+.navbar ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -85,7 +70,7 @@ h1 {
   padding: 0;
 }
 
-.menu a {
+.navbar a {
   display: block;
   font-size: 20px;
   color: black;
@@ -97,12 +82,12 @@ a.active {
   font-weight: bold;
 }
 
-.menu a:hover{
+.navbar a:hover {
   background-color: #4c4a4a;
   color: #ffffff;
 }
 
-/* animazione menu TODO */
+/* TODO animazione menu */
 .target {
   position: absolute;
   border-bottom: 4px solid transparent;
@@ -110,9 +95,15 @@ a.active {
   transform: translateX(-60px);
 }
 
-.menu a,
+.navbar a,
 .target {
   transition: all .35s ease-in-out;
+}
+
+.contenuto {
+
+  /* padding: 1rem; */
+  /* margin-top: 20px; */
 }
 
 /*SLIDESHOW*/
@@ -125,7 +116,7 @@ a.active {
 }
 
 .imgSlideshow {
-  width:100%;
+  width: 100%;
 }
 
 .mySlides {
@@ -137,7 +128,8 @@ img.mySlides {
 }
 
 /*Bottoni next & previous*/
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -159,8 +151,9 @@ img.mySlides {
 }
 
 /*Quando faccio l'hover, aggiunge un background nero leggermente trasparente*/
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /*Testo all'interno dello slideshow*/
@@ -201,7 +194,8 @@ img.mySlides {
   transition: background-color 0.6s ease;
 }
 
-.dotactive, .dot:hover {
+.dotactive,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -214,13 +208,23 @@ img.mySlides {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 /* PAGINA CATALOGO */
@@ -234,11 +238,11 @@ img.mySlides {
 }
 
 .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 div.column {
@@ -247,34 +251,34 @@ div.column {
 
 /* Create four equal columns that sits next to each other */
 .column {
-    -ms-flex: 25%;
-    flex: 25%;
-    max-width: 25%;
-    padding: 10px;
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 10px;
 }
 
 .column img {
-    width: 100%;
-    vertical-align: middle;
-    padding: 10px;
+  width: 100%;
+  vertical-align: middle;
+  padding: 10px;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-    .column {
-        -ms-flex: 100%;
-        flex: 100%;
-        max-width: 100%;
-    }
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-    .column {
-        -ms-flex: 100%;
-        flex: 100%;
-        max-width: 100%;
-    }
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 /* MENU LATERALE CATALOGO */
@@ -284,24 +288,24 @@ div.column {
 }
 
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #f1f1f1;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    color: black;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: 0.3s;
 }
 
 .sidenav h1 {
@@ -313,27 +317,32 @@ div.column {
 }
 
 .sidenav a:hover {
-    color: #636363;
-    font-weight: bold;
+  color: #636363;
+  font-weight: bold;
 }
 
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 /*PAGINA CONSULENZE ONLINE*/
 
 div.contenutoPaginaConsulenze {
-  background-image: url("imgcss/consulenza_o.jpg");
+  background-image: url("../images/consulenza_o.jpg");
   background-position: center;
   background-size: 100%;
 }
@@ -347,7 +356,9 @@ div.contenutoPaginaConsulenze {
 
 /* FORM PER LA CONSULENZA ONLINE */
 
-input[type="text"], select, textarea {
+input[type="text"],
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #fcfcfc;
@@ -395,11 +406,18 @@ input[type="submit"]:hover {
   border: 1px solid #a4a4a4;
 }
 
-.fInputBorder, #femail, #fname {
+.fInputBorder,
+#femail,
+#fname {
   border: .5px solid #f1f1f1;
 }
 
-.fInputBorder:hover, .fInputBorder:active, #femail:hover, #femail:active, #fname:hover, #fname:active {
+.fInputBorder:hover,
+.fInputBorder:active,
+#femail:hover,
+#femail:active,
+#fname:hover,
+#fname:active {
   border: .5px solid black;
 }
 
@@ -423,7 +441,11 @@ input[type="submit"]:hover {
   clear: both;
 }
 
-.fTextBox, .fInputBorder, #fcat, #fname, #femail {
+.fTextBox,
+.fInputBorder,
+#fcat,
+#fname,
+#femail {
   font-size: 1.1vw;
 }
 
@@ -434,40 +456,56 @@ input[type="submit"]:hover {
 /* form responsive*/
 
 @media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
+
+  .col-25,
+  .col-75,
+  input[type=submit] {
     width: 45%;
     margin-top: 0;
   }
 }
 
-.jsIsActive{
-    display: none;
+.jsIsActive {
+  display: none;
 }
 
 /* FOOTER */
 
 .footer {
-  /*position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;*/
   padding: 1rem;
   background-color: #4c4a4a;
   text-align: center;
 }
 
-.testofooter, .imgfooter, a.imgfooter {
-  height: 15px;
-  width: auto;
+.footerElement {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 3rem;
+}
+
+.footerElement img {
   float: left;
 }
 
-.footer p {
-  color: #ffffff;
+.footerElement p {
   float: left;
-  margin-left: 5px;
+  margin-left: .5rem;
 }
 
-.imgfooter {
-  padding-left: 3rem;
+.icon {
+  height: 1em;
 }
+
+.icon-bigger {
+  height: 1.5em;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* .clearfix {
+  overflow: auto;
+} */
