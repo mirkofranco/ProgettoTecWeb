@@ -9,7 +9,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         3. Le credenziali per l'accesso al database
     */
     public function __construct($hostname, $databaseName, $username, $password){
-        parent::__construct($hostname, $databaseName, $username, $password);
+        parent::__construct($hostname, $databaseName, $username, $password); //parent chiama il costruttore della classe base 
     }//__construct
 
 
@@ -24,7 +24,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     }//connect*/
 
     /* Inserisce un prodotto nel database */
-    public function insertProdotto($prodotto){
+    public function insertProdotto($prodotto){ //insert vista dal punto di vista del database, non del prodotto: per questo è qui e non in una eventuale classe prodotto
         $toInsert = "INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio, isOfferta) VALUES (?, ?, ?, ?, ?, ?, ?);";
         //$this -> connect();
         $stmt = $this -> pdo -> prepare($toInsert);
@@ -33,6 +33,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $okai;
     }
 
+    // PRE: l'oggetto di invocazione è la connessione al database
     /* Ritorna un array con i prodotti estratti dal database */
     public function selectAllProdotti(){
         $prodotti = $this -> pdo -> query("SELECT * FROM PRODOTTO") -> fetchAll();
@@ -42,6 +43,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         }
         return $toReturn;
     }
+    // POST: ritorna un array con tutti i prodotti inseriti nel db, e con tutti i relativi campi dati messi in un array associativo
 
 
     /* Chiude la conenssione */

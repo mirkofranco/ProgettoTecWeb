@@ -1,4 +1,5 @@
 <?php
+  /* si usa la classe astratta in modo da implementare a necessità una connessione che si interfaccia al database in modi diversi */
     abstract class AbstractConnection{
         protected $hostname;
         protected $databaseName;
