@@ -10,3 +10,4 @@ function controllaMail(){
 function jsAttivo(){
     document.getElementById('forJs').disabled = false;
 }
+//se js è abilitato, questo attiva una casella di testo sentinella 

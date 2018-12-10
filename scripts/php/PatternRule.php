@@ -17,7 +17,7 @@
 
         public function check($value, $label){
             $value = trim($value);
-            if(!preg_match($this -> regex, $value)){
+            if(!preg_match($this -> regex, $value)){ //se l'intera mail non è valida rispetto all'espressione regolare usata per definirla (regex), ritorna errore 
                 $this -> errors[] = sprintf(BAD_PATTERN_MAIL, $label);
             }
         }

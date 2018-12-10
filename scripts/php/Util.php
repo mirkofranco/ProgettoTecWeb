@@ -22,4 +22,5 @@
             }
         }
     }
+    //funzione statica che manda la mail
 ?>
