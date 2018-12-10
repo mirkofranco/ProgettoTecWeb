@@ -10,5 +10,14 @@
                 session_start();
         }
 
+        public static function sessioneDestroy(){
+            if(Sessione::isStarted())
+                session_destroy();
+        }
+
+        public static function get($key){
+
+        }
+
     }
 ?>
