@@ -1,6 +1,13 @@
 <?php
     require_once('connection.php');
     require_once('Prodotto.php');
+    require_once('./Sessione.php');
+    echo "Test sessione non set<br/>";
+    echo Sessione::isStarted() . "<br/>";
+    echo "Avvio sessione <br/>";
+    Sessione::startSession();
+    echo "Sessione avviata<br/>";
+    echo Sessione::isStarted() . "<br/>";
     echo "Test DatabaseConnection<br/>";
     $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
     echo "Connessione costruita<br/>";
