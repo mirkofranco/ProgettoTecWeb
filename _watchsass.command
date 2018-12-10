@@ -1,1 +1,2 @@
-sass --no-source-map --watch ./style/style.scss:./style/temp_style.css
+sass --watch style/scss/style.scss:style/temp_style.css
+# USARE sass -h su da terminale e cercare parametro che rimuove la sourcemap: dovrebbe essere o --no-source-map o --sourcemap=none.....
