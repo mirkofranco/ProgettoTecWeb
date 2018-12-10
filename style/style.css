@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  position: relative;
+  /*position: relative;*/
   margin: 0;
   padding-bottom: 2.5rem; /*Da aggiustare il discorso del padding e del footer!*/
   min-height: 100%;
@@ -19,13 +19,12 @@ body {
 h1 {
   text-align: center;
   font-family: Arial;
-  position: sticky;
   padding-top: 25px;
   padding-bottom: 40px;
   font-size: 3.5vw;
 }
 
-.contenutoPagina {
+.contenuto {
     margin-top: 20px;
 }
 
@@ -230,7 +229,6 @@ img.mySlides {
   text-align: center;
   font-family: Arial;
   font-size: 40px;
-  position: sticky;
   padding-top: 10px;
   padding-bottom: 30px;
 }
@@ -449,10 +447,10 @@ input[type="submit"]:hover {
 /* FOOTER */
 
 .footer {
-  position: absolute;
+  /*position: absolute;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0;*/
   padding: 1rem;
   background-color: #4c4a4a;
   text-align: center;
