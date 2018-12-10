@@ -2,7 +2,7 @@
     require_once('connection.php');
     require_once('Prodotto.php');
     echo "Test DatabaseConnection<br/>";
-    $connection = new DatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+    $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
     echo "Connessione costruita<br/>";
     $connectio = null;
     echo "Connessione distrutta<br/>";
@@ -11,7 +11,7 @@
     $prodotto = new Prodotto(1, "Zona Giorno", "Mobile Nero", "Apple", 35, '2018-12-03', 0);
     echo "Ho creato il prodotto: <br/>";
     echo $prodotto . "<br/>";
-    $connection = new DatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+    $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
     $connection -> connect();
     $connection -> insertProdotto($prodotto);
     echo "Ho inserito il prodotto " . $prodotto . "<br/>";

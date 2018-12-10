@@ -1,10 +1,7 @@
 <?php
-class DatabaseConnection{
-    private $hostname;
-    private $databaseName;
-    private $username;
-    private $password;
-    private $pdo;
+require_once('./AbstractConnection.php');
+class MySqlDatabaseConnection extends AbstractConnection{
+
 
     /* Inzializza la connessione con:
         1. Il nome del server
@@ -12,11 +9,7 @@ class DatabaseConnection{
         3. Le credenziali per l'accesso al database
     */
     public function __construct($hostname, $databaseName, $username, $password){
-        $this -> hostname = $hostname;
-        $this -> databaseName = $databaseName;
-        $this -> username = $username;
-        $this -> password = $password;
-        $pdo = null;
+        parent::__construct($hostname, $databaseName, $username, $password);
     }//__construct
 
 
