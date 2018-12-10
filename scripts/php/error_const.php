@@ -9,7 +9,7 @@
             $this -> errors = array();
         }
 
-        public function isValid(){
+        public function isValid(){ //se è valido l'array è tutto a 0, perché se trovo errori ce li metto dentro 
             return count($this -> errors) == 0;
         }
 
