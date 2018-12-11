@@ -15,9 +15,5 @@
                 session_destroy();
         }
 
-        public static function get($key){
-
-        }
-
     }
 ?>

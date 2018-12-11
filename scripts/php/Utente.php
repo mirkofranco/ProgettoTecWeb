@@ -7,12 +7,21 @@
         private $mail;
         private $tipo;
 
-        public function __construct(){
-
+        public function __construct($id, $nome, $username, $password, $mail, $tipo){
+            $this -> indentificatoreUnico = $id;
+            $this -> nomeCognome = $nome;
+            $this -> username = $username;
+            $this -> password = $password;
+            $this -> mail = $mail;
+            $this -> tipo = $tipo;
         }
 
         public function login(){
 
+        }
+
+        public function getIdentifier(){
+            return $this -> indentificatoreUnico;
         }
 
         public function getUsername(){
@@ -21,6 +30,10 @@
 
         public function getMail(){
             return $this -> mail;
+        }
+
+        public function __toString(){
+            return "Identificatote: " . $this -> indentificatoreUnico . " Username: " . $this -> username ;
         }
 
     }
