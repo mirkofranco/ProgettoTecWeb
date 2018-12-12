@@ -22,7 +22,7 @@ h1 {
 /* FIXME ci va il clearfix????? */
 .header {
   background-color: #4c4a4a;
-  height: 14vh;
+  height: 15vh;
 }
 
 .header a {
@@ -62,6 +62,10 @@ h1 {
 }
 
 /*MENU*/
+.navbar {
+    min-height: 7vh;
+}
+
 .navbar ul {
   display: flex;
   justify-content: center;
@@ -101,7 +105,7 @@ a.active {
 }
 
 .contenuto {
-
+    min-height: 70vh;
   /* padding: 1rem; */
   /* margin-top: 20px; */
 }
@@ -472,15 +476,18 @@ input[type="submit"]:hover {
 /* FOOTER */
 
 .footer {
-  padding: 1rem;
+  min-height: 8vh;
   background-color: #4c4a4a;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footerElement {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 3rem;
+  margin: 0 2rem;
 }
 
 .footerElement img {
@@ -488,8 +495,9 @@ input[type="submit"]:hover {
 }
 
 .footerElement p {
-  float: left;
-  margin-left: .5rem;
+    float: left;
+    margin-left: .5rem;
+    color: #fff;
 }
 
 .icon {
