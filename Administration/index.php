@@ -2,7 +2,8 @@
     require_once('./scripts/php/Sessione.php');
     require_once('./scripts/php/Utente.php');
     $daSostituire =  array(
-        "Titolo" => "Login - Studio AR"
+        "Titolo" => "Login - Studio AR", 
+        "<link rel=\"stylesheet\" type=\"text/css\" href=\"./style/style.css\" />" => "<link rel=\"stylesheet\" type=\"text/css\" href=\"../style/style.css\" />"
     );
     Sessione::startSession();
     if(isset($_SESSION['user'])){
