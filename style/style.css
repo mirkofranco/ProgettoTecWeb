@@ -412,7 +412,8 @@ input[type="submit"]:hover {
 
 .fInputBorder,
 #femail,
-#fname {
+#fname,
+#fpsw{
   border: .5px solid #f1f1f1;
 }
 
@@ -517,3 +518,16 @@ input[type="submit"]:hover {
 /* .clearfix {
   overflow: auto;
 } */
+
+
+/*-------------------AMMINISTRAZIONE-------------------*/
+
+#verificaJavascriptAttivo {
+    display: none;
+}
+/* FORM LOGIN AMMINISTRAZIONE */
+
+input[type="password"] {
+    width: 100%;
+    height: inherit;
+}
