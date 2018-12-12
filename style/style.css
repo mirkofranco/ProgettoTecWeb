@@ -241,7 +241,7 @@ img.mySlides {
   padding-bottom: 30px;
 }
 
-.row {
+.containerCatalogo {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
