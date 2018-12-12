@@ -16,5 +16,7 @@
         }
 
         public abstract function connect();
+
+        public abstract function close();
     }
 ?>

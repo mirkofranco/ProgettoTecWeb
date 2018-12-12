@@ -11,8 +11,13 @@
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizioA.html'));
     echo file_get_contents('./static/login.html');
     if(isset($_POST['login'])){
-        $_SESSION['user'] = new Utente(1, "Utente Falso", "utentefalso", "password", "utente.falso@icloud.com", 1);
-        header("location: ./dashboard.php");
+        $utente = Utente::login($_POST['username'], $_POST['Password']);
+        if($utente ==  null){
+            echo  "Utente non presente!";
+        }else{
+            $_SESSION['user'] = $utente;
+            header("location: ./dashboard.php");
+        }
     }
     echo file_get_contents('./static/fineA.html');
 ?>

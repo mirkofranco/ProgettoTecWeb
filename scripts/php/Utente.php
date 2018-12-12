@@ -1,4 +1,5 @@
 <?php
+    require_once('connection.php');
     class Utente{
         private $indentificatoreUnico;
         private $nomeCognome;
@@ -16,8 +17,14 @@
             $this -> tipo = $tipo;
         }
 
-        public function login(){
 
+
+        public static function login($username, $password){
+            $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+            $connection -> connect();
+            $login = $connection -> searchUtenteForLogin($username, $password);
+            $connection -> close();
+            return $login;
         }
 
         public function getIdentifier(){
@@ -26,6 +33,10 @@
 
         public function getUsername(){
             return $this -> username;
+        }
+
+        public function getPassword(){
+            return $this -> password;
         }
 
         public function getMail(){

@@ -1,5 +1,6 @@
 <?php
-require_once('./AbstractConnection.php');
+require_once('AbstractConnection.php');
+require_once('Utente.php');
 class MySqlDatabaseConnection extends AbstractConnection{
 
 
@@ -9,7 +10,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         3. Le credenziali per l'accesso al database
     */
     public function __construct($hostname, $databaseName, $username, $password){
-        parent::__construct($hostname, $databaseName, $username, $password); //parent chiama il costruttore della classe base 
+        parent::__construct($hostname, $databaseName, $username, $password); //parent chiama il costruttore della classe base
     }//__construct
 
 
@@ -44,6 +45,15 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $toReturn;
     }
     // POST: ritorna un array con tutti i prodotti inseriti nel db, e con tutti i relativi campi dati messi in un array associativo
+
+
+    public function searchUtenteForLogin($username, $password){
+        $query = "SELECT * FROM UTENTE WHERE Username = \"$username\"  AND Password = \"$password\" ;";
+        $stmt = $this -> pdo -> prepare($query);
+        $stmt -> execute();
+        $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        return count($result) == 1 ? new Utente($result[0]['UID'], $result[0]['NomeCognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Tipo']) : null;
+    }
 
 
     /* Chiude la conenssione */
