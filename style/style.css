@@ -512,6 +512,11 @@ input[type="submit"]:hover {
 } */
 
 
+/*AMMINISTRAZIONE*/
+
+#verificaJavascriptAttivo {
+    display: none;
+}
 /* FORM LOGIN AMMINISTRAZIONE */
 
 input[type="password"] {
