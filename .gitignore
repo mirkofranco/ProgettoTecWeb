@@ -1,2 +1,5 @@
-#File da non tracciare
 ._*
+.DS_Stores
+.DS_Store
+.sass-cache
+*.css.map
