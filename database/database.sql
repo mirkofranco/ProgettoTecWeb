@@ -32,7 +32,7 @@ CREATE TABLE PRODOTTOSTORICO(
 CREATE TABLE UTENTE(
 	UID integer auto_increment primary key,
 	NomeCognome varchar(20) not null,
-	Username varchar(20) not null,
+	Username varchar(20) not null unique,
 	Password varchar(20) not null,
 	Mail varchar(20) not null,
 	Tipo ENUM('1', '2') not null
