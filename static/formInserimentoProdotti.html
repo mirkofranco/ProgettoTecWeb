@@ -1,20 +1,60 @@
 <html>
     <div class="contenuto">
-        <form method="post">
-            <input type="text" id="verificaJavascriptAttivo"/>
-            <label for="idProdotto">IDProdotto</label>
-            <input type="text" id="idProdotto" name="idProdotto" required/>
-            <label for="nomeCategoria">Categoria Prodotto</label>
-            <input type="text" id="nomeCategoria" name="nomeCategoria" required/>
-            <label for="nomeProdotto">Nome Prodotto</label>
-            <input type="text" id="nomeProdotto" name="nomeProdotto" required/>
-            <label for="marcaProdotto">Marca del prodotto</label>
-            <input type="text" id="marcaProdotto" name="marcaProdotto" required/>
-            <label for="prezzoProdotto"> Prezzo del prodotto</label>
-            <input type="number" id="prezzoProdotto" name="prezzoProdotto"  required/>
-            <label for="dataInizioPrezzo">Data inizio validità prezzo </label>
-            <input type="date" id="dataInizioPrezzo" name="dataInizioPrezzo"  required/>
-            <button type="submit" name="inserisciProdotto">Inserisci prodotto</button>
-        </form>
+        <div class="fcontainer">
+            <form method="post">
+                <input type="text" id="verificaJavascriptAttivo"/>
+                <div class="frow">
+                    <div class="col-25">
+                        <label for="idProdotto">IDProdotto</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="idProdotto" name="idProdotto" required/>
+                    </div>
+                </div>
+                <div class="frow">
+                    <div class="col-25">
+                        <label for="nomeCategoria">Categoria Prodotto</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nomeCategoria" name="nomeCategoria" required/>
+                    </div>
+                </div>
+                <div class="frow">
+                    <div class="col-25">
+                        <label for="nomeProdotto">Nome Prodotto</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nomeProdotto" name="nomeProdotto" required/>
+                    </div>
+                </div>
+                <div class="frow">
+                    <div class="col-25">
+                        <label for="marcaProdotto">Marca del prodotto</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="marcaProdotto" name="marcaProdotto" required/>
+                    </div>
+                </div>
+                <div class="frow">
+                    <div class="col-25">
+                        <label for="prezzoProdotto"> Prezzo del 
+                        prodotto</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="prezzoProdotto" name="prezzoProdotto"  required/>
+                    </div>
+                </div>
+                <div class="frow">
+                    <div class="col-25">
+                        <label for="dataInizioPrezzo">Data inizio validità prezzo </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" id="dataInizioPrezzo" name="dataInizioPrezzo"  required/>
+                    </div>
+                    <button type="submit" name="inserisciProdotto">Inserisci prodotto</button>
+                </div>
+                
+            </form>
+        </div>
     </div>
 </html>
