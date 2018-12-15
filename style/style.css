@@ -249,14 +249,12 @@ img.mySlides {
   justify-content: center;
 }
 
-.containerCatalogo a {
-  /*border: 1px solid black;*/
-  display: block;
+.elementoCatalogo {
   position: relative;
-}
+padding:10px; /* TODO PX BAD REM GOOD */
 
-.containerCatalogo p {
-  /* .containerimg div { */
+}
+.elementoCatalogo a {
   display: block;
   position: absolute;
   top: 50%;
@@ -270,29 +268,26 @@ img.mySlides {
   border: .5px solid #fff;
   background-color: rgba(0, 0, 0, 0.5);
   font-weight: 500;
+  text-decoration: none;
 }
 
-.containerCatalogo p:hover {
+.elementoCatalogo a:hover {
   background-color: #fff;
   color: #000;
 }
 
-div.column {
-  max-width: 400px;
-}
-
-/* Create four equal columns that sits next to each other */
+/* Create four equal columns that sit next to each other */
 .column {
   -ms-flex: 25%;
   flex: 25%;
   max-width: 25%;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .column img {
   width: 100%;
   vertical-align: middle;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
