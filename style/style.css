@@ -233,7 +233,7 @@ img.mySlides {
 
 /* PAGINA CATALOGO */
 
-#titolocatalogo {
+#titoloCatalogo {
   text-align: center;
   font-family: Arial;
   font-size: 40px;
@@ -249,17 +249,34 @@ img.mySlides {
   justify-content: center;
 }
 
-.containerimg a {
-  position: relative;
-  text-align: center;
+.containerCatalogo a {
+  border: 1px solid black;
   display: block;
+  position: relative;
 }
 
-.containerimg div {
+.containerCatalogo img {
+  opacity: .5;
+}
+
+.containerCatalogo img:hover {
+
+  opacity: 1;
+}
+
+.containerCatalogo p {
+  /* .containerimg div { */
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  font-size: 1.5rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 div.column {
