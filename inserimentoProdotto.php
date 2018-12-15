@@ -2,7 +2,9 @@
     require_once('./scripts/php/connection.php');
     require_once('./scripts/php/Prodotto.php');
     $daSostituire = array(
-            "Titolo" => "Inserimento Prodotti - Studio AR"
+            "{{pageTitle}}" => "Inserimento Prodotti - Studio AR",
+            "{{pageDescription}}"=>"TODO",
+            "{{pageKeywords}}"=>"TODO"
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizioA.html'));
     echo file_get_contents('./static/formInserimentoProdotti.html');

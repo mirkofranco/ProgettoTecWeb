@@ -1,6 +1,8 @@
 <?php
     $daSostituire = array(
-        "Titolo" => "About Us - Studio AR",
+        "{{pageTitle}}" => "About Us - Studio AR",
+        "{{pageDescription}}"=>"TODO",
+        "{{pageKeywords}}"=>"TODO",
         "<a href=\"./about_us.php\">" => "<a href=\"./about_us.php\" class=\"active\">"
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizioU.html'));

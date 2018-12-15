@@ -2,7 +2,9 @@
     require_once('./scripts/php/PatternRule.php');
     require_once('./scripts/php/Util.php');
     $daSostituire = array(
-            "Titolo" => "Consulenza Online - AR",
+            "{{pageTitle}}" => "Consulenza Online - AR",
+            "{{pageDescription}}"=>"TODO",
+            "{{pageKeywords}}"=>"TODO",
             "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"active\">",
             "<body>" => "<body onload=\"jsAttivo()\">"
     );
