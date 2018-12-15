@@ -250,18 +250,9 @@ img.mySlides {
 }
 
 .containerCatalogo a {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   display: block;
   position: relative;
-}
-
-.containerCatalogo img {
-  opacity: .5;
-}
-
-.containerCatalogo img:hover {
-
-  opacity: 1;
 }
 
 .containerCatalogo p {
@@ -272,11 +263,18 @@ img.mySlides {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  font-size: 1.5rem;
-  padding: .5rem;
-  border-radius: .5rem;
+  font-size: 1.2rem;
+  padding: .8rem 2rem;
+  border-radius: .3rem;
   color: white;
+  border: .5px solid #fff;
   background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+.containerCatalogo p:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 div.column {
