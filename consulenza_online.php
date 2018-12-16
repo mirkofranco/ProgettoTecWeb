@@ -5,7 +5,7 @@
             "{{pageTitle}}" => "Consulenza Online - AR",
             "{{pageDescription}}"=>"TODO",
             "{{pageKeywords}}"=>"TODO",
-            "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"active\">",
+            "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"navbar-active\">",
             "<body>" => "<body onload=\"jsAttivo()\">"
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_user.html')); //cerca il primo parametro, e nel terzo ci
