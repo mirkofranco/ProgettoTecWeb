@@ -256,7 +256,7 @@ img.mySlides {
 
 /* PAGINA CATALOGO */
 
-.titoloCatalogo {
+.titolo-catalogo {
   padding-top: 10px;
   padding-bottom: 30px;
 
@@ -265,7 +265,7 @@ img.mySlides {
   font-size: 40px;
 }
 
-.containerCatalogo {
+.container-catalogo {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -273,13 +273,13 @@ img.mySlides {
   justify-content: center;
 }
 
-.elementoCatalogo {
+.elemento-catalogo {
   position: relative;
 
   padding: .8rem;
 }
 
-.elementoCatalogo a {
+.elemento-catalogo a {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -298,10 +298,12 @@ img.mySlides {
   text-decoration: none;
 }
 
-.elementoCatalogo a:hover {
+.elemento-catalogo a:hover {
   background-color: #fff;
   color: #000;
 }
+
+/* FIXME item order on small screens. remember the breakpoints! */
 
 /* Create four equal columns that sit next to each other */
 .column {
@@ -373,7 +375,7 @@ img.mySlides {
 
 /*PAGINA CONSULENZE ONLINE*/
 
-div.contenutoPaginaConsulenze {
+.bg-pagina-consulenze {
   background-image: url("../images/consulenza_o.jpg");
   background-position: center;
   background-size: 100%;
@@ -440,8 +442,7 @@ input[type="submit"]:hover {
   width: 40%;
   padding: 20px 45px;
   border: 1px solid #a4a4a4;
-  margin-left: auto;
-  margin-right: auto;
+  margin:auto;
 
   background-color: white;
 }
