@@ -8,9 +8,9 @@
             "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"active\">",
             "<body>" => "<body onload=\"jsAttivo()\">"
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizioU.html')); //cerca il primo parametro, e nel terzo ci
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_user.html')); //cerca il primo parametro, e nel terzo ci
     //mette quello che trova nel secondo
-    echo file_get_contents('./static/consulenzaOnline.html');
+    echo file_get_contents('./static/consulenza_online.html');
     if(isset($_POST['chiediConsulenza'])){ //si chiede se il bottone è stato cliccato
         if(!isset($_POST['forJs'])){ //se sì => controlla se js è attivo, fino a riga 20 js NON È ATTIVO
             $mail = new MailRule('/^[A-Za-z0-9-_.+%]+@[A-Za-z0-9-.]+.[A-Za-z]{2,4}$/'); //la mail è nel formato corretto?  (esp reg che definisce il formato della mail)
@@ -25,5 +25,5 @@
             echo "Mail has been sent!";
         }
     }
-    echo file_get_contents('./static/fineU.html');
+    echo file_get_contents('./static/fine_user.html');
 ?>

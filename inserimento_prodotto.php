@@ -6,8 +6,8 @@
             "{{pageDescription}}"=>"TODO",
             "{{pageKeywords}}"=>"TODO"
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizioA.html'));
-    echo file_get_contents('./static/formInserimentoProdotti.html');
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_admin.html'));
+    echo file_get_contents('./static/form_inserimento_prodotti.html');
     if(isset($_POST['inserisciProdotto'])){
         $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
         $connection -> connect();
@@ -16,5 +16,5 @@
         $connection = null;
         echo "Prodotto inserito";
     }
-    echo file_get_contents('./static/fineA.html');
+    echo file_get_contents('./static/fine_admin.html');
 ?>
