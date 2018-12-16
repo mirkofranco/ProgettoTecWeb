@@ -5,30 +5,30 @@
 .a-selector-with-multiple-words,
 #another-selector-goes-on-a-newline {
   /*-------------------- Positioning --------------------*/
-  position: absolute;
-  /* a comment explaining something about a property goes on a separate line above the property */
+  position: relative;
+  float: left;
+  /* a comment explaining something about a property goes on a separate line above the property it refers */
   z-index: 10;
   top: 0;
   right: 0;
 
   /*-------------------- Display & Box Model --------------------*/
-  display: inline-block;
+  display: block;
   overflow: hidden;
   box-sizing: border-box;
-  /* use viewport units for sizing elements */
   width: 100vw;
   height: 100vh;
-  /* padding and margins should depend on the size of text: use em and rem!!
-   * border in px is fine
-   */
+  /* the order of these properties respects the box model from the inside-out */
   padding: 1em;
+  /* border in px is fine */
   border: 10px solid #333;
+  /* padding and margins should depend on the size of text: use em and rem!! */
   margin: 1em;
 
   /*-------------------- Color --------------------*/
   background: #000;
   color: #fff;
-  
+
   /*-------------------- Text --------------------*/
   font-family: sans-serif;
   font-size: 16px;
