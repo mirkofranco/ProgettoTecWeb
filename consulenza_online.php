@@ -8,7 +8,7 @@
             "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"navbar-active\">",
             "<body>" => "<body onload=\"jsAttivo()\">"
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_user.html')); //cerca il primo parametro, e nel terzo ci
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html')); //cerca il primo parametro, e nel terzo ci
     //mette quello che trova nel secondo
     echo file_get_contents('./static/consulenza_online.html');
     if(isset($_POST['chiediConsulenza'])){ //si chiede se il bottone è stato cliccato

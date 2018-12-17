@@ -10,7 +10,7 @@
     if(isset($_SESSION['user'])){
         header("location: ./dashboard.php");
     }
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_admin.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
     echo file_get_contents('./static/login.html');
     if(isset($_POST['login'])){
         $utente = Utente::login($_POST['username'], $_POST['Password']);

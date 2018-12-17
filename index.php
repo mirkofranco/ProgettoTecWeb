@@ -8,7 +8,7 @@
         /*"<li xml:lang=\"en\"><a href=\"./index.php\">Home</a></li>" => "<li xml:lang=\"en\">Home</li>"*/
     );
 
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_user.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
     echo file_get_contents('./static/index.html');
     echo file_get_contents('./static/_fine.html');
 ?>
