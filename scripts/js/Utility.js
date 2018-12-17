@@ -12,8 +12,9 @@ function jsAttivo(){
 }
 //se js è abilitato, questo attiva una casella di testo sentinella
 
-$(
-    function(){
-        $("#dataInizioPrezzo").datepicker();
-    }
-);
+// l'ho commentato perché da errore quando carico pagine; se non vi serve eliminatelo pure -Luca
+// $(
+//     function(){
+//         $("#dataInizioPrezzo").datepicker();
+//     }
+// );
