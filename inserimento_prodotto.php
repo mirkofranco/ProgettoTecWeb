@@ -16,5 +16,5 @@
         $connection = null;
         echo "Prodotto inserito";
     }
-    echo file_get_contents('./static/fine_admin.html');
+    echo file_get_contents('./static/_fine.html');
 ?>

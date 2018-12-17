@@ -10,5 +10,5 @@
 
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizio_user.html'));
     echo file_get_contents('./static/index.html');
-    echo file_get_contents('static/fine_user.html');
+    echo file_get_contents('static/_fine.html');
 ?>

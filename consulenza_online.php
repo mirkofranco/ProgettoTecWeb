@@ -25,5 +25,5 @@
             echo "Mail has been sent!";
         }
     }
-    echo file_get_contents('./static/fine_user.html');
+    echo file_get_contents('./static/_fine.html');
 ?>
