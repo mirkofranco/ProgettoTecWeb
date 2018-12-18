@@ -26,10 +26,10 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /* Inserisce un prodotto nel database */
     public function insertProdotto($prodotto){ //insert vista dal punto di vista del database, non del prodotto: per questo è qui e non in una eventuale classe prodotto
-        $toInsert = "INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio, isOfferta) VALUES (?, ?, ?, ?, ?, ?, ?);";
+        $toInsert = "INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         //$this -> connect();
         $stmt = $this -> pdo -> prepare($toInsert);
-        $okai = $stmt -> execute([$prodotto -> getID(), $prodotto -> getCategoria(), $prodotto -> getNome(), $prodotto -> getMarca(), $prodotto -> getPrezzo(), $prodotto -> getDataInizioPrezzo(), $prodotto -> getOfferta()]);
+        $okai = $stmt -> execute([$prodotto -> getID(), $prodotto -> getCategoria(), $prodotto -> getNome(), $prodotto -> getMarca(), $prodotto -> getPrezzo(), $prodotto -> getDataInizioPrezzo(), $prodotto -> getOfferta(), $prodotto -> getNomeImmagine()]);
         //$this -> close();
         return $okai;
     }

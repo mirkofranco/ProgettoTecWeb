@@ -15,7 +15,8 @@ CREATE TABLE PRODOTTO(
 	Marca varchar(50) not null,
 	Prezzo float(2) not null,
     DataInizio date not null,
-	isOfferta boolean not null default 0
+	isOfferta boolean not null default 0,
+	NomeImmagine varchar(255) not null
 )ENGINE = InnoDB;
 
 CREATE TABLE PRODOTTOSTORICO(
