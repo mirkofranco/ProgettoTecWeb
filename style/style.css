@@ -265,7 +265,7 @@ h1 {
 
 /* file catalogo.html */
 
-.container-catalogo {
+.flex-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -273,13 +273,15 @@ h1 {
   justify-content: center;
 }
 
-.elemento-catalogo {
+.flex-element {
   position: relative;
+
+  max-width: 50%;
 
   padding: .8rem;
 }
 
-.elemento-catalogo a {
+.flex-element a {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -298,9 +300,15 @@ h1 {
   text-decoration: none;
 }
 
-.elemento-catalogo a:hover {
+.flex-element a:hover {
   background-color: #fff;
   color: #000;
+}
+
+.flex-element img {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
 }
 
 /* FIXME item order on small screens. remember the breakpoints! */
