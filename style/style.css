@@ -488,6 +488,13 @@ input[type="submit"]:hover {
   margin-top: 6px;
 }
 
+/*commento col messaggio di errore nei form*/
+.messaggio-errore-form {
+  color: red;  
+  text-align: left;
+  font-weight: bold;
+}
+
 /* FIXME this should be delegated to the "clearfix" selector */
 .frow:after {
   clear: both;
