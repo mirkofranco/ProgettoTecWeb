@@ -65,6 +65,7 @@
         public function getDescrizione() {
             return $this -> Descrizione;
         }
+
         /* Ritorna una rappresentazione a stringa di un $this */
         public function __toString(){
             return "Identificativo: " . $this -> getID() . " Categoria: " . $this -> getCategoria() . " Nome: " . $this -> getNome() . "Marca: " . $this -> getMarca() .
