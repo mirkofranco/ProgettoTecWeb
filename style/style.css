@@ -24,7 +24,7 @@ html {
   box-sizing: border-box;
 }
 
-body {
+body, textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -40,53 +40,53 @@ h1 {
   text-align: center;
 }
 
+/* --------------- REUSABLE CLASSES --------------- */
+
+/*apply to an <a> element with a nested <img>. Becomes as big as its parent. */
+a.clickable-image {
+  display: inline-block;
+  height: 100%;
+}
+
+.clickable-image img {
+  height: 100%;
+  padding: 1.5vh;
+}
+
+.icon {
+  height: 1.0em;
+}
+
+/* apply class="clearfix" to the container with floated elements inside */
+.clearfix::after {
+  clear: both;
+
+  display: table;
+
+  content: "";
+}
+
 /* file _inizio_user.html */
 
 /* ---------- HEADER ---------- */
 
 .header {
-  position: relative;
+
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 15vh;
 
   background-color: #4c4a4a;
-
-  vertical-align: middle;
-}
-
-.header a {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-
-#logo {
-  height: 100%;
-  padding: 1.5vh;
 }
 
 .header-right {
-  position: absolute;
-  top: 50%;
-  right: 0;
-
-  transform: translate(0, -50%);
-
-  height: 2rem;
+  height: 2em;
 }
 
-.header-right img {
-  /* display: block; */
-
-}
-
-/* .header-right a {
+.header-right a {
   display: inline;
-} */
-
-/* FIXME icons should be centered */
-
-.icon-bigger {
-  height: 1.5em;
 }
 
 /* ---------- NAVIGATION BAR ---------- */
@@ -427,7 +427,7 @@ textarea {
 label {
   display: inline-block;
 
-  padding: 12px 12px 12px 0;
+  padding: .75rem .75rem .75rem 0;
 }
 
 input[type="submit"] {
@@ -459,8 +459,7 @@ input[type="submit"]:hover {
 }
 
 .fcontainer {
-  width: 40%;
-  padding: 20px 45px;
+  padding: 1rem 1rem;
   border: 1px solid #a4a4a4;
   margin: auto;
 
@@ -483,19 +482,11 @@ input[type="submit"]:hover {
   border: .5px solid black;
 }
 
-/*colonne con larghezza 25%: */
-.col-25 {
+/* colonne di larghezza 25% e 75%, impostate a 100% per essere mobile-first */
+.col-25, .col-75 {
   float: left;
 
-  width: 25%;
-  margin-top: 6px;
-}
-
-/*colonne con larghezza 75%: */
-.col-75 {
-  float: left;
-
-  width: 75%;
+  width: 100%;
   margin-top: 6px;
 }
 
@@ -520,7 +511,7 @@ input[type="submit"]:hover {
 #fcat,
 #fname,
 #femail {
-  font-size: 1.1vw;
+  font-size: .8rem;
 }
 
 #fcat {
@@ -578,18 +569,6 @@ input[type="submit"]:hover {
   color: #fff;
 }
 
-.icon {
-  height: 1em;
-}
-
-.clearfix::after {
-  clear: both;
-
-  display: table;
-
-  content: "";
-}
-
 /* AMMINISTRAZIONE */
 
 #verificaJavascriptAttivo {
@@ -622,66 +601,69 @@ button[type="submit"] {
 
 /* -------------------- MEDIA QUERIES SHOULD ALL GO AT THE BOTTOM -------------------- */
 
-@media only screen and (min-width: 425px){ /*PER TABLET*/
-  
+/*PER TABLET*/
+@media only screen and (min-width: 425px) {
+  .fcontainer {
+    width: 80vw;
+  }
+
+  /*colonne con larghezza 25% */
+  .col-25 {
+    width: 25%;
+  }
+
+  /*colonne con larghezza 75% */
+  .col-75 {
+    width: 75%;
+  }
+
+  .col-25, .col-75 {
+    margin-top: 0;
+  }
 }
 
-@media only screen and (min-width: 768px){ /*DESKTOP*/
-  
+/*DESKTOP*/
+@media only screen and (min-width: 768px) {
+  .fcontainer {
+    width: 50vw;
+  }
+
+
 }
+
 /*!!!!!!VECCHIE DA RISTRUTTURARE!!!!!!*/
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-
-    display: block;
-    height: 70px;
-
-    text-align: left;
-  }
-
-  .header i {
-    margin: 15px 8px;
-  }
-
-  .header-right {
-    float: none;
-  }
-}
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-  .column {
+  /* .column {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
-  }
+  } */
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
+  /* .column {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
-  }
+  } */
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {
+  /* .sidenav {
     padding-top: 15px;
   }
 
   .sidenav a {
     font-size: 18px;
-  }
+  } */
 }
 
 /* form responsive */
 @media screen and (max-width: 600px) {
 
-  .col-25,
-  .col-75,
   input[type=submit] {
     width: 45%;
     margin-top: 0;
