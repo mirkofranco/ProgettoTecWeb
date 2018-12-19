@@ -499,13 +499,10 @@ input[type="submit"]:hover {
 }
 
 .frow {
-  margin-top: .5rem;
+  margin: .5rem 1rem;
 }
 
 /* FIXME this should be delegated to the "clearfix" selector */
-.frow {
-  padding: .3rem 1rem;
-}
 
 .frow:after {
   clear: both;
