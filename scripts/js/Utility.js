@@ -1,14 +1,15 @@
 function controllaMail(){
     var email_reg_exp = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
     if (!email_reg_exp.test(document.getElementById('femail').value) || (document.getElementById('femail').value == "")) {
-        document.getElementById('erroriForm').innerHTML = 'Il contenuto di \'email\' non è una mail valida';
+        document.getElementById('messaggio-errore-form').innerHTML = 'La mail non è valida';
     }else{
-        document.getElementById('erroriForm').innerHTML = "";
+        document.getElementById('messaggio-errore-form').innerHTML = "";
     }
 }
 
 function jsAttivo(){
     document.getElementById('forJs').disabled = false;
+    //document.getElementById('messaggio-errore-form').innerHTML = "";
 }
 //se js è abilitato, questo attiva una casella di testo sentinella
 
