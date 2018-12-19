@@ -6,15 +6,16 @@
         private $username;
         private $password;
         private $mail;
-        private $tipo;
+        private $permessi;
 
-        public function __construct($id, $nome, $username, $password, $mail, $tipo){
+        public function __construct($id, $nome, $username, $password, $mail, $permessi){
             $this -> indentificatoreUnico = $id;
             $this -> nomeCognome = $nome;
             $this -> username = $username;
             $this -> password = $password;
             $this -> mail = $mail;
             $this -> tipo = $tipo;
+            $this -> permessi = $permessi;
         }
 
 
@@ -41,6 +42,11 @@
 
         public function getMail(){
             return $this -> mail;
+        }
+
+
+        public function getPermessi(){
+            return $this -> permessi;
         }
 
         public function __toString(){

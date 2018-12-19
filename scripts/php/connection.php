@@ -52,7 +52,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $stmt = $this -> pdo -> prepare($query);
         $stmt -> execute();
         $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        return count($result) == 1 ? new Utente($result[0]['UID'], $result[0]['NomeCognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Tipo']) : null;
+        return count($result) == 1 ? new Utente($result[0]['UID'], $result[0]['NomeCognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi']) : null;
     }
 
 
