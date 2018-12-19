@@ -6,6 +6,6 @@
         echo "Oh! Ti sei loggato!<br/>";
         echo $_SESSION['user'];
     }else {
-        header('location: ./index.php');
+        header('location: ./ index.php');
     }
 ?>

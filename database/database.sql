@@ -37,8 +37,21 @@ CREATE TABLE UTENTE(
 	Username varchar(20) not null unique,
 	Password varchar(20) not null,
 	Mail varchar(20) not null,
-	Tipo ENUM('1', '2') not null
+	Permessi varchar(2) not null default '01'
+	/* 0: pagine amministrazione, 1: utente normale */
 )ENGINE = InnoDB;
+
+CREATE TABLE Commenti(
+	IDCommento integer auto_increment,
+	UID integer not null,
+	IDProdotto varchar(10) not null,
+	Commento varchar(512) not null,
+	primary key(IDCommento),
+	unique(UID, IDProdotto),
+	foreign key (UID) references UTENTE(UID) ON DELETE CASCADE,
+	foreign key (IDProdotto) references PRODOTTO(IDProdotto) ON DELETE CASCADE
+)ENGINE = InnoDB;
+
 
 DROP TRIGGER IF EXISTS aggiuntiProdottoStorico;
 
@@ -56,4 +69,4 @@ END; $$
 
 DELIMITER ;
 
-INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Tipo) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', 1);
+INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi ) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', '11');
