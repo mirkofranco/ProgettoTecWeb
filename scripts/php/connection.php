@@ -26,10 +26,10 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /* Inserisce un prodotto nel database */
     public function insertProdotto($prodotto){ //insert vista dal punto di vista del database, non del prodotto: per questo è qui e non in una eventuale classe prodotto
-        $toInsert = "INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+        $toInsert = "INSERT INTO PRODOTTO(IDProdotto, Categoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
         //$this -> connect();
         $stmt = $this -> pdo -> prepare($toInsert);
-        $okai = $stmt -> execute([$prodotto -> getID(), $prodotto -> getCategoria(), $prodotto -> getNome(), $prodotto -> getMarca(), $prodotto -> getPrezzo(), $prodotto -> getDataInizioPrezzo(), $prodotto -> getOfferta(), $prodotto -> getNomeImmagine()]);
+        $okai = $stmt -> execute([$prodotto -> getID(), $prodotto -> getCategoria(), $prodotto -> getNome(), $prodotto -> getMarca(), $prodotto -> getPrezzo(), $prodotto -> getDataInizioPrezzo(), $prodotto -> getOfferta(), $prodotto -> getNomeImmagine(), $prodotto->getDescrizione()]);
         //$this -> close();
         return $okai;
     }
@@ -40,7 +40,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $prodotti = $this -> pdo -> query("SELECT * FROM PRODOTTO") -> fetchAll();
         $toReturn = array();
         foreach($prodotti as $row){
-            array_push($toReturn, new Prodotto($row['IDProdotto'], $row['Categoria'], $row['Nome'], $row['Marca'], $row['Prezzo'], $row['DataInizio'], $row['isOfferta']));
+            array_push($toReturn, new Prodotto($row['IDProdotto'], $row['Categoria'], $row['Nome'], $row['Marca'], $row['Prezzo'], $row['DataInizio'], $row['isOfferta'], $row ['Descrizione']));
         }
         return $toReturn;
     }
