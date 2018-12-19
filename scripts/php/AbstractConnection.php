@@ -21,8 +21,8 @@
 
         public abstract function insertProdotto($prodotto);
 
-        public function selectAllProdotti();
+        public abstract function selectAllProdotti();
 
-        public function searchUtenteForLogin($username, $password);
+        public abstract function searchUtenteForLogin($username, $password);
     }
 ?>
