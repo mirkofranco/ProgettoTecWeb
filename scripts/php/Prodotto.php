@@ -8,6 +8,7 @@
         private $dataInizioValiditaPrezzo;
         private $offerta;
         private $nomeImmagine;
+        private $Descrizione;
 
         /* Costruisce un ogeetto Prodotto in modo completo */
         public function __construct($idProdotto, $categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine){
@@ -19,6 +20,7 @@
             $this -> dataInizioValiditaPrezzo = $dataInizioValiditaPrezzo;
             $this -> offerta = $offerta;
             $this -> nomeImmagine = $nomeImmagine;
+            $this -> Descrizione = $Descrizione;
         }
 
         /* Ritorna l'identificativo del prodotto */
@@ -60,6 +62,9 @@
             return $this -> nomeImmagine;
         }
 
+        public function getDescrizione() {
+            return $this -> Descrizione;
+        }
         /* Ritorna una rappresentazione a stringa di un $this */
         public function __toString(){
             return "Identificativo: " . $this -> getID() . " Categoria: " . $this -> getCategoria() . " Nome: " . $this -> getNome() . "Marca: " . $this -> getMarca() .

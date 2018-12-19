@@ -18,5 +18,11 @@
         public abstract function connect();
 
         public abstract function close();
+
+        public abstract function insertProdotto($prodotto);
+
+        public function selectAllProdotti();
+
+        public function searchUtenteForLogin($username, $password);
     }
 ?>
