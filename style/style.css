@@ -622,6 +622,14 @@ button[type="submit"] {
 
 /* -------------------- MEDIA QUERIES SHOULD ALL GO AT THE BOTTOM -------------------- */
 
+@media only screen and (min-width: 425px){ /*PER TABLET*/
+  
+}
+
+@media only screen and (min-width: 768px){ /*DESKTOP*/
+  
+}
+/*!!!!!!VECCHIE DA RISTRUTTURARE!!!!!!*/
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
