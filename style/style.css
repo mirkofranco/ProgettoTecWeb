@@ -45,14 +45,18 @@ h1 {
 /* ---------- HEADER ---------- */
 
 .header {
+  position: relative;
   height: 15vh;
 
   background-color: #4c4a4a;
+
+  vertical-align: middle;
 }
 
 .header a {
   display: inline-block;
   height: 100%;
+  vertical-align: middle;
 }
 
 #logo {
@@ -61,16 +65,23 @@ h1 {
 }
 
 .header-right {
-  /* FIXME PLEASE */
-  float: right;
+  position: absolute;
+  top: 50%;
+  right: 0;
 
-  /* height: 100%; */
+  transform: translate(0, -50%);
+
+  height: 2rem;
 }
 
 .header-right img {
-  display: block;
+  /* display: block; */
 
 }
+
+/* .header-right a {
+  display: inline;
+} */
 
 /* FIXME icons should be centered */
 
@@ -490,7 +501,7 @@ input[type="submit"]:hover {
 
 /*commento col messaggio di errore nei form*/
 .messaggio-errore-form {
-  color: red;  
+  color: red;
   text-align: left;
   font-weight: bold;
 }
