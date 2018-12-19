@@ -22,6 +22,7 @@ ul, ol {
 
 html {
   box-sizing: border-box;
+  font-size: 100%;
 }
 
 body, textarea {
@@ -405,7 +406,7 @@ a.clickable-image {
 .titoloForm {
   padding: 30px;
 
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
 }
@@ -421,7 +422,7 @@ textarea {
 
 textarea {
   resize: none;
-  height: 150px;
+  height: 10rem;
 }
 
 label {
@@ -433,15 +434,15 @@ label {
 input[type="submit"] {
   float: right;
 
-  padding: 12px 20px;
+  padding: .8rem 1.5rem;
   border: 1px solid #fcfcfc;
-  margin-top: 30px;
-  margin: 30px;
+  margin-top: 2rem;
+  margin: 2rem;
 
   background-color: #f1f1f1;
   color: black;
 
-  font-size: 15px;
+  font-size: 1rem;
   text-align: center;
 
   cursor: pointer;
@@ -495,6 +496,10 @@ input[type="submit"]:hover {
   color: red;
   text-align: left;
   font-weight: bold;
+}
+
+.frow {
+  margin-top: .5rem;
 }
 
 /* FIXME this should be delegated to the "clearfix" selector */
@@ -620,6 +625,10 @@ button[type="submit"] {
   .col-25, .col-75 {
     margin-top: 0;
   }
+
+  input[type="submit"] {
+    margin-top: 0;
+  }
 }
 
 /*DESKTOP*/
@@ -662,13 +671,7 @@ button[type="submit"] {
 }
 
 /* form responsive */
-@media screen and (max-width: 600px) {
-
-  input[type=submit] {
-    width: 45%;
-    margin-top: 0;
-  }
-}
+@media screen and (max-width: 600px) {}
 
 /*------------------- PRINT STYLE -------------------*/
 
