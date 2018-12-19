@@ -52,6 +52,10 @@ CREATE TABLE Commenti(
 	foreign key (IDProdotto) references PRODOTTO(IDProdotto) ON DELETE CASCADE
 )ENGINE = InnoDB;
 
+CREATE TABLE Categoria(
+	
+)ENGINE = InnoDB;
+
 
 DROP TRIGGER IF EXISTS aggiuntiProdottoStorico;
 
