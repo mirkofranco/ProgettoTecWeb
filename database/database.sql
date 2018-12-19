@@ -16,9 +16,8 @@ CREATE TABLE PRODOTTO(
 	Prezzo float(2) not null,
     DataInizio date not null,
 	isOfferta boolean not null default 0,
-	NomeImmagine varchar(255) not null
-	Descrizione varchar(400) not null,
-
+	NomeImmagine varchar(255) not null,
+	Descrizione varchar(400) not null
 )ENGINE = InnoDB;
 
 CREATE TABLE PRODOTTOSTORICO(
@@ -56,3 +55,5 @@ BEGIN
 END; $$
 
 DELIMITER ;
+
+INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Tipo) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', 1);
