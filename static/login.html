@@ -7,7 +7,7 @@
                     <label for="username">Nome utente</label>
                 </div>
                 <div class="col-75">
-                    <input id="fname" class="fInputBorder" type="text" name="username" placeholder="Scrivi qui il tuo nome" required/>
+                    <input id="fname" class="fInputBorder" type="text" name="username" {{previousUN}} placeholder="Scrivi qui il tuo nome" required/>
                 </div>
             </div>
             <div class="frow">
@@ -19,6 +19,7 @@
                 </div>
             </div>
             <div class="frow">
+                <div class="messaggio-errore-form">{{errorForm}}</div>
                 <input type="submit" name="login" value="Login"/>
             </div>
         </form>
