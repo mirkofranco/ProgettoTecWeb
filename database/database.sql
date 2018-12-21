@@ -8,18 +8,27 @@ DROP TABLE IF EXISTS PRODOTTO;
 DROP TABLE IF EXISTS PRODOTTOSTORICO;
 DROP TABLE IF EXISTS UTENTE;
 
+CREATE TABLE CATEGORIA(
+	IDC integer auto_increment primary key,
+	Nome varchar(30) not null,
+	IDCatPadre	integer,
+	foreign key (IDCatPadre) references CATEGORIA(IDC)
+)ENGINE = InnoDB;
+
 CREATE TABLE PRODOTTO(
 	IDProdotto varchar(10) primary key,
-	Categoria varchar(50) not null,
+	sottoCategoria integer not null,
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
 	Prezzo float(2) not null,
     DataInizio date not null,
 	isOfferta boolean not null default 0,
 	NomeImmagine varchar(255) not null,
-	Descrizione varchar(400) not null
+	Descrizione varchar(400) not null,
+	foreign key (sottoCategoria) references CATEGORIA(IDC) ON DELETE CASCADE
 )ENGINE = InnoDB;
 
+/*
 CREATE TABLE PRODOTTOSTORICO(
     IDStoricizzazione integer auto_increment,
     IDProdotto varchar(10),
@@ -29,7 +38,7 @@ CREATE TABLE PRODOTTOSTORICO(
 	isOffertaS boolean not null,
     primary key(IDStoricizzazione, IDProdotto),
     foreign key (IDProdotto) references PRODOTTO(IDProdotto) ON DELETE CASCADE
-)ENGINE = InnoDB;
+)ENGINE = InnoDB; */
 
 CREATE TABLE UTENTE(
 	UID integer auto_increment primary key,
@@ -41,7 +50,7 @@ CREATE TABLE UTENTE(
 	/* 0: pagine amministrazione, 1: utente normale */
 )ENGINE = InnoDB;
 
-CREATE TABLE Commenti(
+CREATE TABLE COMMENTI(
 	IDCommento integer auto_increment,
 	UID integer not null,
 	IDProdotto varchar(10) not null,
@@ -52,11 +61,9 @@ CREATE TABLE Commenti(
 	foreign key (IDProdotto) references PRODOTTO(IDProdotto) ON DELETE CASCADE
 )ENGINE = InnoDB;
 
-CREATE TABLE Categoria(
-	
-)ENGINE = InnoDB;
 
 
+/*
 DROP TRIGGER IF EXISTS aggiuntiProdottoStorico;
 
 DELIMITER $$
@@ -71,6 +78,7 @@ BEGIN
 	END IF;
 END; $$
 
-DELIMITER ;
+DELIMITER ; */
 
-INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi ) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', '11');
+INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', '11');
+INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (2, 'utente', 'utente', 'utente', 'utente@utente.it', '01');
