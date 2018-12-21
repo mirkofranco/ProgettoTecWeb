@@ -11,7 +11,7 @@
         private $Descrizione;
 
         /* Costruisce un ogeetto Prodotto in modo completo */
-        public function __construct($idProdotto, $categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine){
+        public function __construct($idProdotto, $categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine, $Descrizione){
             $this -> idProdotto = $idProdotto;
             $this -> categoria = $categoria;
             $this -> nome = $nome;
