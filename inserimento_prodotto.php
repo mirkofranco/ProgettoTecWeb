@@ -16,7 +16,7 @@
             "{{pageKeywords}}"=>"TODO",
             "{{elencoCategorie}}" => $elencoCategorie
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/form_inserimento_prodotti.html'));
     if(isset($_POST['inserisciProdotto'])){
         $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
