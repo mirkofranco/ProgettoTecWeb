@@ -3,7 +3,11 @@
     require_once('./scripts/php/Utente.php');
     Sessione::startSession();
     if(isset($_SESSION['user'])){
-        header("location: ./dashboard.php");
+        if($_SESSION['user'] -> getPermessi() == '11'){
+            header("location: ./menu_admin.php");
+        }else if($_SESSION['user'] -> getPermessi() == '01'){
+            header("location: ./index.php");
+        }
     }
     $errorLogin = "";
     if(isset($_POST['login'])){
@@ -12,7 +16,11 @@
             $errorLogin = "Nome utente e\o password non corretti";
         }else{
             $_SESSION['user'] = $utente;
-            header("location: ./dashboard.php");
+            if($utente -> getPermessi() == '11'){
+                header("location: ./menu_admin.php");
+            }else {
+                header("location: ./index.php");
+            }
         }
     }
     $previousUS = isset($_POST['username']) ? "value=\"". $_POST['username']. "\"" : "";
