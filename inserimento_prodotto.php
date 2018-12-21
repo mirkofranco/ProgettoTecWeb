@@ -21,7 +21,7 @@
     if(isset($_POST['inserisciProdotto'])){
         $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
         $connection -> connect();
-        $connection -> insertProdotto(new Prodotto($_POST['idProdotto'], $_POST['nomeCategoria'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], $_POST['dataInizioPrezzo'], 0, $_FILES['immagineProdotto']['name']));
+        $connection -> insertProdotto(new Prodotto($_POST['idProdotto'], $_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), 0, $_FILES['immagineProdotto']['name'], $_POST['Descrizione']));
         $connection -> close();
         $connection = null;
         $uploadDir = '../ProgettoTecWeb/images/Catalogo/';
