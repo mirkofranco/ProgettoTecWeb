@@ -55,6 +55,15 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return count($result) == 1 ? new Utente($result[0]['UID'], $result[0]['NomeCognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi']) : null;
     }
 
+    public function listSottoCategorie(){
+        $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NOT NULL;";
+        $result = $this -> pdo -> query($query) -> fetchAll();
+        $toReturn =  array();
+        foreach($result as $row){
+            array_push($toReturn, ["CodiceCategoria" => $row['IDC'], "NomeCategoria" => $row['Nome']]);
+        }
+        return $toReturn;
+    }
 
     /* Chiude la conenssione */
     public function close(){
