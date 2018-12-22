@@ -5,7 +5,7 @@ CREATE DATABASE DatabaseTecnologieWeb;
 USE DatabaseTecnologieWeb;
 
 DROP TABLE IF EXISTS PRODOTTO;
-DROP TABLE IF EXISTS PRODOTTOSTORICO;
+/* DROP TABLE IF EXISTS PRODOTTOSTORICO; */
 DROP TABLE IF EXISTS UTENTE;
 
 CREATE TABLE CATEGORIA(
@@ -21,7 +21,7 @@ CREATE TABLE PRODOTTO(
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
 	Prezzo float(2) not null,
-    DataInizio date not null,
+  DataInizio date not null,
 	isOfferta boolean not null default 0,
 	NomeImmagine varchar(255) not null,
 	Descrizione varchar(400) not null,
@@ -81,7 +81,7 @@ END; $$
 DELIMITER ; */
 
 INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', '11');
-INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (2, 'utente', 'utente', 'utente', 'utente@utente.it', '01');
+INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (2, 'user', 'user', 'user', 'user@user.it', '01');
 
 /* INSERIMENTO DELLE CATEGORIE PRINCIPALI */
 
@@ -89,3 +89,34 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (1, 'Zona Notte', NULL);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (2, 'Zona Giorno', NULL);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (3, 'Cucine', NULL);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Bagni', NULL);
+
+/* INSERIMENTO DELLE SOTTOCATEGORIE */
+
+/* Sottocategorie camere da letto: */
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (5, 'Letti', 1);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (6, 'Abat-jour', 1);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (7, 'Armadi', 1);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (8, 'Tappeti', 1);
+
+/* Sottocategorie zona giorno */
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (9, 'Tavoli', 2);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (10, 'Divani', 2);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Tappeti', 2); /* non so se ha senso mettere tappeti sia in zona giorno che zona notte,
+non so se ci siano differenze, mal che vada si levano (esempio gonna-pantalone della Gaggi)*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (12, 'Poltrone', 2);
+
+/* Sottocategorie cucine*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (13, 'Tavoli', 3); /* stesso discorso dei tappeti: tavoli da salotto vs tavoli da cucine? */
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (14, 'Sedie', 3);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (15, 'Scaffali', 3);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (16, 'Frigorigeri', 3);
+
+/* Sottocategorie bagni*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (17, 'Lavandini', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (18, 'Vasche', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (19, 'Docce', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (20, 'Sanitari', 4);
+
+/* Prova inserimenti prodotti tramite sql FORMATO DATA: 'YYYY-MM-DD'*/
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (1, 5, 'Letto bellissimo', 'Ikea', 200, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Un letto bellissimoooooo soffice e puffoso');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (2, 10, 'Divano pazzesco', 'Ikea', 200, '2018-12-22', 0, "divano1.jpg", 'Un divano pazzeschissimo non di pelle però che schifo i divani di pelle');
