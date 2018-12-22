@@ -82,3 +82,10 @@ DELIMITER ; */
 
 INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', '11');
 INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (2, 'utente', 'utente', 'utente', 'utente@utente.it', '01');
+
+/* INSERIMENTO DELLE CATEGORIE PRINCIPALI */
+
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (1, 'Zona Notte', NULL);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (2, 'Zona Giorno', NULL);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (3, 'Cucine', NULL);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Bagni', NULL);
