@@ -8,7 +8,11 @@
     //$previosCat = "value=\"" . (isset($_POST['fcat']) ? "value=\"". $_POST['fcat']. "\"" : "") . "\"" ;
     $elencoCategorie = "<select id=\"fcat\" name=\"fcat\">";
     foreach ($listaCategorie as $categoria) {
-        $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\">" . $categoria['NomeCategoria'] . "</option>";
+        $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
+        if(isset($_POST['fcat']) && $_POST['fcat'] == $categoria['CodiceCategoria']){
+            $elencoCategorie .= " selected";
+        }
+        $elencoCategorie .=  ">" . $categoria['NomeCategoria'] . "</option>";
     }
     $elencoCategorie .= "</select>";
     $errorForm = "";
@@ -18,7 +22,6 @@
     $previousPrezzo = "";
     $previousData = "";
     $previousDescrizione = "";
-    $previousImmagine = "";
     if(isset($_POST['inserisciProdotto'])){
         if(strlen($_POST['idProdotto']) < 3){
             $errorForm .= "Il codice del prodotto deve contenere almento 3 caratteri<br/>";
@@ -33,7 +36,6 @@
             $errorForm .= "La descrizione deve contenere almeno 10 caratteri<br/>";
         }
         if($errorForm == ""){
-            $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
             $connection -> connect();
             $connection -> insertProdotto(new Prodotto($_POST['idProdotto'], $_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), 0, $_FILES['immagineProdotto']['name'], $_POST['Descrizione']));
             $connection -> close();
@@ -51,7 +53,6 @@
             $previousPrezzo = isset($_POST['prezzoProdotto']) ? "value=\"". $_POST['prezzoProdotto']. "\"" : "" ;
             $previousData = isset($_POST['dataInizioPrezzo']) ? "value=\"". $_POST['dataInizioPrezzo']. "\"" : "" ;
             $previousDescrizione = isset($_POST['Descrizione']) ? "value=\"". $_POST['Descrizione']. "\"" : "" ;
-            $previousImmagine = isset($_FILES['immagineProdotto']) ? "value=\"". $_FILES['immagineProdotto']['name']. "\"" : "";
         }
     }
     $daSostituire = array(
@@ -65,8 +66,7 @@
             "{{previousMarca}}" => $previousMarca,
             "{{previousPrezzo}}" => $previousPrezzo,
             "{{previousData}}" => $previousData,
-            "{{previousDescrizione}}" => $previousDescrizione,
-            "{{previousImmagine}}" => $previousImmagine
+            "{{previousDescrizione}}" => $previousDescrizione
         );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/form_inserimento_prodotti.html'));
