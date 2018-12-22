@@ -7,7 +7,7 @@
           <label for="idProdotto">IDProdotto</label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="text" maxlength="10" id="idProdotto" name="idProdotto" placeholder="Scrivi qui" required />
+          <input class="fInputBorder" type="text" maxlength="10" {{previousCodProd}} id="idProdotto" name="idProdotto" placeholder="Scrivi qui" required />
         </div>
       </div>
       <div class="frow">
@@ -26,7 +26,7 @@
           <label for="nomeProdotto">Nome Prodotto</label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="text" maxlength="50" id="nomeProdotto" name="nomeProdotto" placeholder="Scrivi qui" required />
+          <input class="fInputBorder" type="text" maxlength="50" {{previousNome}} id="nomeProdotto" name="nomeProdotto" placeholder="Scrivi qui" required />
         </div>
       </div>
       <div class="frow">
@@ -34,7 +34,7 @@
           <label for="marcaProdotto">Marca del prodotto</label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="text" maxlength="50" id="marcaProdotto" name="marcaProdotto" placeholder="Scrivi qui" required />
+          <input class="fInputBorder" type="text" maxlength="50" {{previousMarca}} id="marcaProdotto" name="marcaProdotto" placeholder="Scrivi qui" required />
         </div>
       </div>
       <div class="frow">
@@ -43,7 +43,7 @@
             prodotto</label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="number" min="0" id="prezzoProdotto" name="prezzoProdotto" required />
+          <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" required />
         </div>
       </div>
       <div class="frow">
@@ -51,7 +51,7 @@
           <label for="dataInizioPrezzo">Data inizio validità prezzo </label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="date" id="dataInizioPrezzo" name="dataInizioPrezzo" required />
+          <input class="fInputBorder" type="date" {{previousData}} id="dataInizioPrezzo" name="dataInizioPrezzo" required />
         </div>
       </div>
       <div class="frow">
@@ -59,7 +59,7 @@
           <label for="dataInizioPrezzo">Inserisci la descrizione del prodotto</label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="text" maxlength="400" id="Descrizione" name="Descrizione" required />
+          <input class="fInputBorder" type="text"  {{previousDescrizione}} maxlength="400" id="Descrizione" name="Descrizione" required />
         </div>
       </div>
       <div class="frow">
@@ -67,9 +67,10 @@
           <label for="immagineProdotto">Seleziona un'immagine</label>
         </div>
         <div class="col-75">
-          <input class="fInputBorder" type="file" id="immagineProdotto" name="immagineProdotto" required />
+          <input class="fInputBorder" type="file" {{previousImmagine}} accept="image/*" id="immagineProdotto" name="immagineProdotto" required />
         </div>
         <button type="submit" name="inserisciProdotto">Inserisci prodotto</button>
+        <div class="messaggio-errore-form">{{errorForm}}</div>
       </div>
     </form>
   </div>
