@@ -102,7 +102,7 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (8, 'Tappeti', 1);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (9, 'Tavoli', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (10, 'Divani', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Tappeti', 2); /* non so se ha senso mettere tappeti sia in zona giorno che zona notte,
-																																					non so se ci siano differenze, mal che vada si levano (esempio gonna-pantalone della Gaggi)*/
+non so se ci siano differenze, mal che vada si levano (esempio gonna-pantalone della Gaggi)*/
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (12, 'Poltrone', 2);
 
 /* Sottocategorie cucine*/
