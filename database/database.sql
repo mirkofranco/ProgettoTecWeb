@@ -94,29 +94,51 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Uffici', NULL);
 
 /* Sottocategorie camere da letto: */
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (5, 'Letti', 1);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (6, 'Abat-jour', 1);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (23, 'Materassi', 1); /*!!!!!!!*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (6, 'Comodini', 1);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (7, 'Armadi', 1);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (8, 'Tappeti', 1);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (8, 'Cassettiere', 1);
 
 /* Sottocategorie zona giorno */
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (9, 'Tavoli', 2);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (9, 'Tavoli e sedie', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (10, 'Divani', 2);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Tappeti', 2); /* non so se ha senso mettere tappeti sia in zona giorno che zona notte,
-non so se ci siano differenze, mal che vada si levano (esempio gonna-pantalone della Gaggi)*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Librerie', 2); 
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (12, 'Poltrone', 2);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (13, 'Elementi Divisori', 2);
 
 /* Sottocategorie cucine*/
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (13, 'Tavoli', 3); /* stesso discorso dei tappeti: tavoli da salotto vs tavoli da cucine? */
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (14, 'Sedie', 3);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (15, 'Scaffali', 3);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (16, 'Frigorigeri', 3);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (14, 'Tavoli', 3); 
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (15, 'Sedie', 3);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (16, 'Elettrodomestici da incasso', 3);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (17, 'Mobili componibili', 3);
 
 /* Sottocategorie uffici*/
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (17, 'Scrivanie', 4);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (18, 'Poltrone', 4);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (19, 'Scaffali', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (18, 'Scrivanie', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (19, 'Sedute per ufficio', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (20, 'Armadi', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (21, 'Classificatori', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (22, 'Sistemi di sedute per collettività', 4);
 
 
-/* Prova inserimenti prodotti tramite sql FORMATO DATA: 'YYYY-MM-DD'*/
-INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (1, 5, 'Letto bellissimo', 'Ikea', 200, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Un letto bellissimoooooo soffice e puffoso');
-INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (2, 10, 'Divano pazzesco', 'Ikea', 200, '2018-12-22', 0, "divano1.jpg", 'Un divano pazzeschissimo non di pelle però che schifo i divani di pelle');
+/* Inserimento prodotti tramite sql FORMATO DATA: 'YYYY-MM-DD'*/
+/*INSERIMENTO LETTI*/
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (3, 5, 'Wing', 'Bside', 1400, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L178xP233xH122 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (4, 5, 'Happy', 'Bside', 1000, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L183xP232xH88 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (5, 5, 'Special', 'Bside', 1800, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L250xP250xH112 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (6, 5, 'Pad', 'Colombini', 700, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L185xP208xH112 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x190 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: No;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (7, 5, 'Snug', 'Colombini', 850, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L190xP213xH101 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: No;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (8, 5, 'Gruppo Letto Avalon', 'Giellesse', 3500, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L307xP226xH84 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x190 (non compreso nel prezzo); Materiale: Rovere; Contenitore: Sì;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (9, 5, 'Music', 'Giellesse', 2600, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Ingombro esterno letto: L188xP230xH95 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x190 (non compreso nel prezzo); Materiale: Ecopelle a scelta a campionario; Contenitore: Sì;');
+/*INSERIMENTO MATERASSI*/
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (10, 23, 'Rodi', 'Maretto Marflex', 400, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Dimensioni materasso: L160xP190xH20 oppure L160xP200xH20; Tipologia: Molle tradizionali');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (11, 23, 'Memo Dream', 'Maretto Marflex', 1000, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Dimensioni materasso: L160xP190xH20 oppure L160xP200xH20; Tipologia: Molle insacchettate');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (12, 23, 'Eden', 'Maretto Marflex', 1100, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Dimensioni materasso: L160xP190xH19 oppure L160xP200xH19; Tipologia: Lattice');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (13, 23, 'EcoCell', 'Maretto Marflex', 550, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Dimensioni materasso: L160xP190xH19 oppure L160xP200xH19; Tipologia: Schiumato tecnico');
+/*INSERIMENTO COMODINI*/
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (14, 6, 'Chic', 'Colombini', 160, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Misure: L55xP45xH35; Cassetti: 2; Materiale: Melaminico;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (15, 6, 'Stick', 'Colombini', 160, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Misure: L54xP46xH42; Cassetti: 2; Materiale: Melaminico;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (16, 6, 'Flat', 'Giellesse', 550, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Misure: L57xP45xH35; Cassetti: 2; Materiale: Rovere;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (17, 6, 'Twist', 'Giellesse', 500, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Misure: L57xP47xH35; Cassetti: 2; Materiale: Rovere;');
+/*INSERIMENTO ARMADI*/
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (18, 7, 'Golf Battente', 'Colombini', 380, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per un modulo: Misure: L90xP57xH262; Ante: 2; Ripiani interni: 1; Tubo appendiabiti: 2; Tipologia anta: Battente; Materiale: Melaminico; In foto mostrati 3 moduli;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (18, 7, 'Golf Scorrevole', 'Colombini', 800, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per due moduli: Misure: L189xP62xH262; Ante: 2; Ripiani interni: 2; Tubo appendiabiti: 4; Tipologia anta: Scorrevole; Materiale: Melaminico; In foto mostrati 3 moduli;');
