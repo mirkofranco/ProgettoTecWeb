@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS DatabaseTecnologieWeb;
 
-CREATE DATABASE DatabaseTecnologieWeb;
+CREATE DATABASE DatabaseTecnologieWeb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE DatabaseTecnologieWeb;
 
@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS UTENTE;
 
 CREATE TABLE CATEGORIA(
 	IDC integer auto_increment primary key,
-	Nome varchar(30) not null,
+	Nome varchar(50) not null,
 	IDCatPadre	integer,
 	foreign key (IDCatPadre) references CATEGORIA(IDC)
 )ENGINE = InnoDB;
@@ -21,7 +21,7 @@ CREATE TABLE PRODOTTO(
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
 	Prezzo float(2) not null,
-  DataInizio date not null,
+	DataInizio date not null,
 	isOfferta boolean not null default 0,
 	NomeImmagine varchar(255) not null,
 	Descrizione varchar(400) not null,
@@ -141,4 +141,4 @@ INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizi
 INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (17, 6, 'Twist', 'Giellesse', 500, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Misure: L57xP47xH35; Cassetti: 2; Materiale: Rovere;');
 /*INSERIMENTO ARMADI*/
 INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (18, 7, 'Golf Battente', 'Colombini', 380, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per un modulo: Misure: L90xP57xH262; Ante: 2; Ripiani interni: 1; Tubo appendiabiti: 2; Tipologia anta: Battente; Materiale: Melaminico; In foto mostrati 3 moduli;');
-INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (18, 7, 'Golf Scorrevole', 'Colombini', 800, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per due moduli: Misure: L189xP62xH262; Ante: 2; Ripiani interni: 2; Tubo appendiabiti: 4; Tipologia anta: Scorrevole; Materiale: Melaminico; In foto mostrati 3 moduli;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (19, 7, 'Golf Scorrevole', 'Colombini', 800, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per due moduli: Misure: L189xP62xH262; Ante: 2; Ripiani interni: 2; Tubo appendiabiti: 4; Tipologia anta: Scorrevole; Materiale: Melaminico; In foto mostrati 3 moduli;');
