@@ -88,7 +88,7 @@ INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (1, 'Zona Notte', NULL);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (2, 'Zona Giorno', NULL);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (3, 'Cucine', NULL);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Bagni', NULL);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Uffici', NULL);
 
 /* INSERIMENTO DELLE SOTTOCATEGORIE */
 
@@ -111,11 +111,11 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (14, 'Sedie', 3);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (15, 'Scaffali', 3);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (16, 'Frigorigeri', 3);
 
-/* Sottocategorie bagni*/
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (17, 'Lavandini', 4);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (18, 'Vasche', 4);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (19, 'Docce', 4);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (20, 'Sanitari', 4);
+/* Sottocategorie uffici*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (17, 'Scrivanie', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (18, 'Poltrone', 4);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (19, 'Scaffali', 4);
+
 
 /* Prova inserimenti prodotti tramite sql FORMATO DATA: 'YYYY-MM-DD'*/
 INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (1, 5, 'Letto bellissimo', 'Ikea', 200, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Un letto bellissimoooooo soffice e puffoso');
