@@ -16,7 +16,7 @@ CREATE TABLE CATEGORIA(
 )ENGINE = InnoDB;
 
 CREATE TABLE PRODOTTO(
-	IDProdotto varchar(10) primary key,
+	IDProdotto varchar(10) auto_increment primary key,
 	sottoCategoria integer not null,
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
@@ -94,7 +94,7 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Uffici', NULL);
 
 /* Sottocategorie camere da letto: */
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (5, 'Letti', 1);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (23, 'Materassi', 1); /*!!!!!!!*/
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (23, 'Materassi', 1);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (6, 'Comodini', 1);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (7, 'Armadi', 1);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (8, 'Cassettiere', 1);
@@ -141,4 +141,4 @@ INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizi
 INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (17, 6, 'Twist', 'Giellesse', 500, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Misure: L57xP47xH35; Cassetti: 2; Materiale: Rovere;');
 /*INSERIMENTO ARMADI*/
 INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (18, 7, 'Golf Battente', 'Colombini', 380, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per un modulo: Misure: L90xP57xH262; Ante: 2; Ripiani interni: 1; Tubo appendiabiti: 2; Tipologia anta: Battente; Materiale: Melaminico; In foto mostrati 3 moduli;');
-INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (18, 7, 'Golf Scorrevole', 'Colombini', 800, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per due moduli: Misure: L189xP62xH262; Ante: 2; Ripiani interni: 2; Tubo appendiabiti: 4; Tipologia anta: Scorrevole; Materiale: Melaminico; In foto mostrati 3 moduli;');
+INSERT INTO PRODOTTO (IDProdotto, sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, Descrizione) VALUES (19, 7, 'Golf Scorrevole', 'Colombini', 800, '2018-12-22', 0, "zonanotte_link_cropped.jpg", 'Per due moduli: Misure: L189xP62xH262; Ante: 2; Ripiani interni: 2; Tubo appendiabiti: 4; Tipologia anta: Scorrevole; Materiale: Melaminico; In foto mostrati 3 moduli;');
