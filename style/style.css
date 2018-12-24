@@ -344,22 +344,6 @@ a.clickable-image {
   height: 100%;
 }
 
-/* FIXME item order on small screens. remember the breakpoints! */
-
-/* Create four equal columns that sit next to each other */
-/* .column {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-}
-
-.column img {
-  width: 100%;
-  vertical-align: middle;
-} */
-/* ^^^^ FIXME questo css non era utilizzato da nessuna parte */
-
-
 /* MENU LATERALE CATALOGO */
 .openMenu {
   font-size: 1.5vw;
@@ -519,16 +503,6 @@ label {
 
 .frow {
   margin: .5rem 1rem;
-}
-
-/* FIXME this should be delegated to the "clearfix" selector */
-
-.frow:after {
-  clear: both;
-
-  display: table;
-
-  content: "";
 }
 
 .fTextBox,
