@@ -197,7 +197,7 @@ a.clickable-image {
 
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
 
   user-select: none;
   cursor: pointer;
@@ -224,7 +224,6 @@ a.clickable-image {
 
   color: #f2f2f2;
 
-  font-size: 15px;
   text-align: center;
 }
 
@@ -237,7 +236,7 @@ a.clickable-image {
 
   color: #f2f2f2;
 
-  font-size: 12px;
+  font-size: .75rem;
 }
 
 .dot-container {
@@ -338,7 +337,7 @@ a.clickable-image {
 /* FIXME item order on small screens. remember the breakpoints! */
 
 /* Create four equal columns that sit next to each other */
-.column {
+/* .column {
   -ms-flex: 25%;
   flex: 25%;
   max-width: 25%;
@@ -347,7 +346,9 @@ a.clickable-image {
 .column img {
   width: 100%;
   vertical-align: middle;
-}
+} */
+/* ^^^^ FIXME questo css non era utilizzato da nessuna parte */
+
 
 /* MENU LATERALE CATALOGO */
 .openMenu {
@@ -402,7 +403,7 @@ a.clickable-image {
 
   margin-left: 50px;
 
-  font-size: 36px;
+  font-size: 2rem;
 }
 
 /* file consulenza_online.html */
@@ -454,7 +455,6 @@ input[type="submit"] {
   background-color: #f1f1f1;
   color: black;
 
-  /* font-size: 1rem; */
   text-align: center;
 
   cursor: pointer;
@@ -607,7 +607,6 @@ button[type="submit"] {
   background-color: #f1f1f1;
   color: black;
 
-  font-size: 15px;
   text-align: center;
 
   cursor: pointer;
@@ -680,7 +679,7 @@ button[type="submit"] {
   }
 
   .sidenav a {
-    font-size: 18px;
+    font-size: 1.1rem;
   }
   } */
 
