@@ -134,7 +134,11 @@ a.clickable-image {
 }
 
 .breadcrumb {
-  height: 4vh;
+  display: block;
+
+  font-size: .8rem;
+  text-align: center;
+  line-height: 5vh;
 }
 
 /* TODO animazione menu */
