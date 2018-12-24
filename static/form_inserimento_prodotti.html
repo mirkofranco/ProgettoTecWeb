@@ -2,7 +2,7 @@
   <div class="fcontainer">
     <form method="post" enctype="multipart/form-data">
       <input type="text" id="verificaJavascriptAttivo" />
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="idProdotto">IDProdotto</label>
         </div>
@@ -10,7 +10,7 @@
           <input class="fInputBorder" type="text" maxlength="10" {{previousCodProd}} id="idProdotto" name="idProdotto" placeholder="Scrivi qui" required />
         </div>
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="nomeCategoria">Categoria Prodotto</label>
         </div>
@@ -21,7 +21,7 @@
           <input class="fInputBorder" type="text" id="nomeCategoria" name="nomeCategoria" placeholder="Scrivi qui" required />
         </div>-->
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="nomeProdotto">Nome Prodotto</label>
         </div>
@@ -29,7 +29,7 @@
           <input class="fInputBorder" type="text" maxlength="50" {{previousNome}} id="nomeProdotto" name="nomeProdotto" placeholder="Scrivi qui" required />
         </div>
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="marcaProdotto">Marca del prodotto</label>
         </div>
@@ -37,7 +37,7 @@
           <input class="fInputBorder" type="text" maxlength="50" {{previousMarca}} id="marcaProdotto" name="marcaProdotto" placeholder="Scrivi qui" required />
         </div>
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="prezzoProdotto"> Prezzo del
             prodotto</label>
@@ -46,7 +46,7 @@
           <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" required />
         </div>
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="dataInizioPrezzo">Data inizio validità prezzo </label>
         </div>
@@ -54,7 +54,7 @@
           <input class="fInputBorder" type="date" {{previousData}} id="dataInizioPrezzo" name="dataInizioPrezzo" required />
         </div>
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="dataInizioPrezzo">Inserisci la descrizione del prodotto</label>
         </div>
@@ -62,14 +62,14 @@
           <input class="fInputBorder" type="text"  {{previousDescrizione}} maxlength="400" id="Descrizione" name="Descrizione" required />
         </div>
       </div>
-      <div class="frow">
+      <div class="frow clearfix">
         <div class="col-25">
           <label for="immagineProdotto">Seleziona un'immagine</label>
         </div>
         <div class="col-75">
           <input class="fInputBorder" type="file"  accept="image/*" id="immagineProdotto" name="immagineProdotto" required />
         </div>
-        <button type="submit" name="inserisciProdotto">Inserisci prodotto</button>
+        <button type="submit" name="inserisciProdotto" class="submit-action">Inserisci prodotto</button>
         <div class="messaggio-errore-form">{{errorForm}}</div>
       </div>
     </form>

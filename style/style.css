@@ -40,6 +40,14 @@ h1 {
   text-align: center;
 }
 
+
+/* TODO: stile generico ed univoco per i link */
+a:link {}
+
+a:visited {}
+
+a:hover, a:active {}
+
 /* --------------- REUSABLE CLASSES --------------- */
 
 /*apply to an <a> element with a nested <img>. Becomes as big as its parent. */
@@ -57,15 +65,6 @@ a.clickable-image {
   height: 1em;
 }
 
-/* apply class="clearfix" to the container with floated elements inside */
-.clearfix::after {
-  clear: both;
-
-  display: table;
-
-  content: "";
-}
-
 .padded-small {
   padding: 5px;
 }
@@ -81,6 +80,15 @@ a.clickable-image {
 
 .flex-centered {
   justify-content: center;
+}
+
+/* apply class="clearfix" to the container with floated elements inside */
+.clearfix::after {
+  clear: both;
+
+  display: table;
+
+  content: "";
 }
 
 /* file _inizio_user.html */
@@ -157,7 +165,7 @@ a.clickable-image {
 
 .contenuto {
   min-height: 60vh;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
 }
 
 /* file index.html */
@@ -167,7 +175,9 @@ a.clickable-image {
 .slideshow-container {
   position: relative;
 
-  max-width: 1000px;
+  /* non ingrandire a più della dimensione delle immagini stesse */
+  max-width: 1440px;
+  max-height: 810px;
   margin: auto;
 }
 
@@ -334,22 +344,6 @@ a.clickable-image {
   height: 100%;
 }
 
-/* FIXME item order on small screens. remember the breakpoints! */
-
-/* Create four equal columns that sit next to each other */
-/* .column {
-  -ms-flex: 25%;
-  flex: 25%;
-  max-width: 25%;
-}
-
-.column img {
-  width: 100%;
-  vertical-align: middle;
-} */
-/* ^^^^ FIXME questo css non era utilizzato da nessuna parte */
-
-
 /* MENU LATERALE CATALOGO */
 .openMenu {
   font-size: 1.5vw;
@@ -444,12 +438,12 @@ label {
   padding: .75rem .75rem .75rem 0;
 }
 
-input[type="submit"] {
+/* stile pulsanti submit dei form */
+.submit-action {
   float: right;
 
   padding: .8rem 1.5rem;
   border: 1px solid #fcfcfc;
-  margin-top: 2rem;
   margin: 2rem;
 
   background-color: #f1f1f1;
@@ -460,10 +454,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-
-input[type="submit"]:hover {
-  border: 1px solid #fcfcfc;
-
+.submit-action:hover {
   background-color: #4c4a4a;
   box-shadow: 0 0 6px gray;
   color: #FFFFFF;
@@ -514,16 +505,6 @@ input[type="submit"]:hover {
   margin: .5rem 1rem;
 }
 
-/* FIXME this should be delegated to the "clearfix" selector */
-
-.frow:after {
-  clear: both;
-  
-  display: table;
-
-  content: "";
-}
-
 .fTextBox,
 .fInputBorder,
 #fcat,
@@ -562,8 +543,6 @@ input[type="submit"]:hover {
   height: 10vh;
 
   background-color: #4c4a4a;
-
-  text-align: center;
 }
 
 .footerElement {
@@ -593,23 +572,6 @@ input[type="submit"]:hover {
 input[type="password"] {
   width: 100%;
   height: inherit;
-}
-
-/* TODO: codice duplicato con input type submit; rifattorizzare a classe */
-button[type="submit"] {
-  float: right;
-
-  padding: 12px 20px;
-  border: 1px solid #fcfcfc;
-  margin-top: 30px;
-  margin: 30px;
-
-  background-color: #f1f1f1;
-  color: black;
-
-  text-align: center;
-
-  cursor: pointer;
 }
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
@@ -642,7 +604,16 @@ button[type="submit"] {
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
-  
+
+  .contenuto {
+    width: 70vw;
+    margin: auto;
+  }
+
+  .bg-pagina-consulenze {
+    width: 100vw;
+  }
+
   .flex-element {
     width: 50%;
   }
@@ -689,3 +660,10 @@ button[type="submit"] {
 /*------------------- PRINT STYLE -------------------*/
 
 /* TODO print style should go at the end of our unique stylesheet! */
+
+/* aggiunge l'indirizzo del link nel testo stampato */
+@media print {
+  a[href]:after {
+    content: " ("attr(href)") ";
+  }
+}

@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" type="text/css" href="./style/style.css" />
 
+  <!-- FIXME: usare versioni minificate di jquery; il link allo stilesheet è senza protocollo, è normale? -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -25,26 +26,23 @@
 </head>
 
 <body>
-  <!-- box superiore con logo, ricerca e social -->
   <div class="header">
-    <a href="./index.php" class="clickable-image">
+    <a href="./index.php" class="clickable-image padded-small">
       <img src="./images/logopngB.png" id="logo" alt="Studio Architetti Riuniti" />
     </a>
     <div class="header-right">
-      <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank" class="clickable-image">
-        <img src="./icons/facebook.png" alt="profilo facebook del negozio" />
-      </a>
-      <!-- aggiungere pulsanti di login/registrazione qua dentro! -->
+      <a href="index_admin.php" class="header-button" target="_blank">Login</a>
+      <a href="#TODO" class="header-button" target="_blank">Registrati</a> <!-- TODO implementare registrazione... -->
     </div>
   </div>
 
   <!-- barra di navigazione -->
   <nav class="navbar">
     <ul class="flex-container flex-centered">
-      <li lang="en"><a href="./index.php">Home</a></li>
-      <li lang="en"><a href="./about_us.php">About Us</a></li>
+      <li><a href="./index.php" lang="en">Home</a></li>
+      <li><a href="./about_us.php" lang="en">About Us</a></li>
       <li><a href="./catalogo.php">Catalogo</a></li>
-      <li><a href="./consulenza_online.php">Consulenza <span xml:lang="en">Online</span></a></li>
+      <li><a href="./consulenza_online.php">Consulenza <span lang="en">Online</span></a></li>
       <li><a href="./contatti.php">Contatti</a></li>
       <li><a href="./offerte.php">Offerte</a></li>
     </ul>
