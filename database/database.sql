@@ -16,7 +16,7 @@ CREATE TABLE CATEGORIA(
 )ENGINE = InnoDB;
 
 CREATE TABLE PRODOTTO(
-	IDProdotto varchar(10) auto_increment primary key,
+	IDProdotto integer auto_increment primary key,
 	sottoCategoria integer not null,
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
