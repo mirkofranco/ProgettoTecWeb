@@ -70,44 +70,47 @@ a.clickable-image {
   padding: 5px;
 }
 
+
+/* contenitore riutilizzabile per wrapped flexbox */
+.flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-centered {
+  justify-content: center;
+}
+
 /* file _inizio_user.html */
 
 /* ---------- HEADER ---------- */
 
 .header {
 
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 15vh;
 
   background-color: #4c4a4a;
 }
 
 .header-right {
-  height: 2em;
+  float: right;
+
+  line-height: 15vh;
 }
 
 
 .header-button {
-  padding: 1em;
+  padding: 0 1em;
 
   color: white;
 }
 
 /* ---------- NAVIGATION BAR ---------- */
 .navbar {
-  min-height: 7vh;
-}
-
-.navbar ul {
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 0;
+  /* FIXME: altezza footer sballata */
+  min-height: 10vh;
 }
 
 .navbar a {
@@ -149,7 +152,7 @@ a.clickable-image {
 }
 
 .contenuto {
-  min-height: 65vh;
+  min-height: 60vh;
   padding: 0 1rem;
 }
 
@@ -288,18 +291,12 @@ a.clickable-image {
 
 /* file catalogo.html */
 
-.flex-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 
 .flex-element {
   position: relative;
 
-  max-width: 50%;
+  width: 100%;
 
   padding: .8rem;
 }
@@ -556,14 +553,9 @@ input[type="submit"]:hover {
 /* FOOTER */
 
 .footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
 
-  min-height: 8vh;
+  height: 10vh;
 
   background-color: #4c4a4a;
 
