@@ -3,66 +3,64 @@
 </p>
 <div class="contenuto bg-pagina-consulenze">
 
-  <!-- FIXME questo è un div di troppo! -->
-  <div class="fcontainer">
-    <form method="post">
-      <!-- il file .php però non esiste -->
-      <h1 class="titoloForm">Richiedi una consulenza compilando il modulo, ti risponderemo il prima possibile!</h1>
-      <div class="frow clearfix">
-        <div class="col-75">
-          <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled>
-        </div>
+  <form method="post" class="fcontainer">
+    <!-- il file .php però non esiste -->
+    <h1 class="titoloForm">Richiedi una consulenza compilando il modulo, ti risponderemo il prima possibile!</h1>
+    <div class="frow clearfix">
+      <div class="col-75">
+        <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled>
+      </div>
+    </div>
+
+    <!-- prima riga: NOME -->
+    <div class="frow clearfix">
+      <!-- FIXME questi div qua andrebbero tolti e le classi spostate sul figlio -->
+      <div class="col-25">
+        <label for="fname"> Nome: </label>
+      </div>
+      <div class="col-75">
+        <input class="fInputBorder" type="text" id="fname" name="firstName" placeholder="Inserisci il tuo nome" required>
+      </div>
+    </div>
+
+    <!-- seconda riga: EMAIL -->
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="femail"> E-Mail: </label>
+      </div>
+      <div class="col-75">
+        <input class="fInputBorder" type="text" id="femail" name="email" placeholder="Inserisci la tua email" onkeyup="controllaMail()" required>
+      </div>
+    </div>
+
+    <!-- terza riga: CATEGORIA -->
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="fcat">In cosa possiamo aiutarti:</label>
+      </div>
+      <div class="col-75">
+        <select id="fcat" name="fcat">
+          <option value="zonagiorno">Zona Giorno</option>
+          <option value="zonanotte">Zona Notte </option>
+          <option value="cucina">Cucina</option>
+          <option value="bagno">Bagno</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- quarta riga: COMMENTO -->
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="comment">La tua richiesta:</label>
+      </div>
+      <div class="col-75">
+        <textarea id="comment" class="fTextBox fInputBorder" name="comment" placeholder="Scrivi qui" required></textarea>
       </div>
 
-      <!-- prima riga: NOME -->
       <div class="frow clearfix">
-        <div class="col-25">
-          <label for="fname"> Nome: </label>
-        </div>
-        <div class="col-75">
-          <input class="fInputBorder" type="text" id="fname" name="firstName" placeholder="Inserisci il tuo nome" required>
-        </div>
+        <div class="messaggio-errore-form" id="messaggio-errore-form"> {{errorForm}} </div>
+        <input type="submit" value="Richiedi Consulenza" name="chiediConsulenza" class="submit-action">
       </div>
-
-      <!-- seconda riga: EMAIL -->
-      <div class="frow clearfix">
-        <div class="col-25">
-          <label for="femail"> E-Mail: </label>
-        </div>
-        <div class="col-75">
-          <input class="fInputBorder" type="text" id="femail" name="email" placeholder="Inserisci la tua email" onkeyup="controllaMail()" required>
-        </div>
-      </div>
-
-      <!-- terza riga: CATEGORIA -->
-      <div class="frow clearfix">
-        <div class="col-25">
-          <label for="fcat">In cosa possiamo aiutarti:</label>
-        </div>
-        <div class="col-75">
-          <select id="fcat" name="fcat">
-            <option value="zonagiorno">Zona Giorno</option>
-            <option value="zonanotte">Zona Notte </option>
-            <option value="cucina">Cucina</option>
-            <option value="bagno">Bagno</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- quarta riga: COMMENTO -->
-      <div class="frow clearfix">
-        <div class="col-25">
-          <label for="comment">La tua richiesta:</label>
-        </div>
-        <div class="col-75">
-          <textarea id="comment" class="fTextBox fInputBorder" name="comment" placeholder="Scrivi qui" required></textarea>
-        </div>
-
-        <div class="frow clearfix">
-            <div class="messaggio-errore-form" id="messaggio-errore-form"> {{errorForm}} </div>
-          <input type="submit" value="Richiedi Consulenza" name="chiediConsulenza" class="submit-action">
-        </div>
-      </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
