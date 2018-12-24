@@ -40,6 +40,14 @@ h1 {
   text-align: center;
 }
 
+
+/* TODO: stile generico ed univoco per i link */
+a:link {}
+
+a:visited {}
+
+a:hover, a:active {}
+
 /* --------------- REUSABLE CLASSES --------------- */
 
 /*apply to an <a> element with a nested <img>. Becomes as big as its parent. */
@@ -73,8 +81,6 @@ a.clickable-image {
 .flex-centered {
   justify-content: center;
 }
-
-
 
 /* apply class="clearfix" to the container with floated elements inside */
 .clearfix::after {
@@ -159,7 +165,7 @@ a.clickable-image {
 
 .contenuto {
   min-height: 60vh;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
 }
 
 /* file index.html */
@@ -169,7 +175,9 @@ a.clickable-image {
 .slideshow-container {
   position: relative;
 
-  max-width: 1000px;
+  /* non ingrandire a più della dimensione delle immagini stesse */
+  max-width: 1440px;
+  max-height: 810px;
   margin: auto;
 }
 
@@ -463,8 +471,6 @@ label {
 }
 
 .submit-action:hover {
-  border: 1px solid #fcfcfc;
-
   background-color: #4c4a4a;
   box-shadow: 0 0 6px gray;
   color: #FFFFFF;
@@ -519,7 +525,7 @@ label {
 
 .frow:after {
   clear: both;
-  
+
   display: table;
 
   content: "";
@@ -624,7 +630,16 @@ input[type="password"] {
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
-  
+
+  .contenuto {
+    width: 70vw;
+    margin: auto;
+  }
+
+  .bg-pagina-consulenze {
+    width: 100vw;
+  }
+
   .flex-element {
     width: 50%;
   }
@@ -675,6 +690,6 @@ input[type="password"] {
 /* aggiunge l'indirizzo del link nel testo stampato */
 @media print {
   a[href]:after {
-    content: " (" attr(href) ") ";
+    content: " ("attr(href)") ";
   }
 }
