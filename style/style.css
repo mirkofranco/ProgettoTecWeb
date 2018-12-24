@@ -672,3 +672,9 @@ input[type="password"] {
 
 /* TODO print style should go at the end of our unique stylesheet! */
 
+/* aggiunge l'indirizzo del link nel testo stampato */
+@media print {
+  a[href]:after {
+    content: " (" attr(href) ") ";
+  }
+}
