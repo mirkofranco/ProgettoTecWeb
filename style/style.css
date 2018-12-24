@@ -57,15 +57,6 @@ a.clickable-image {
   height: 1em;
 }
 
-/* apply class="clearfix" to the container with floated elements inside */
-.clearfix::after {
-  clear: both;
-
-  display: table;
-
-  content: "";
-}
-
 .padded-small {
   padding: 5px;
 }
@@ -81,6 +72,17 @@ a.clickable-image {
 
 .flex-centered {
   justify-content: center;
+}
+
+
+
+/* apply class="clearfix" to the container with floated elements inside */
+.clearfix::after {
+  clear: both;
+
+  display: table;
+
+  content: "";
 }
 
 /* file _inizio_user.html */
@@ -444,12 +446,12 @@ label {
   padding: .75rem .75rem .75rem 0;
 }
 
-input[type="submit"] {
+/* stile pulsanti submit dei form */
+.submit-action {
   float: right;
 
   padding: .8rem 1.5rem;
   border: 1px solid #fcfcfc;
-  margin-top: 2rem;
   margin: 2rem;
 
   background-color: #f1f1f1;
@@ -460,8 +462,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-
-input[type="submit"]:hover {
+.submit-action:hover {
   border: 1px solid #fcfcfc;
 
   background-color: #4c4a4a;
@@ -562,8 +563,6 @@ input[type="submit"]:hover {
   height: 10vh;
 
   background-color: #4c4a4a;
-
-  text-align: center;
 }
 
 .footerElement {
@@ -593,23 +592,6 @@ input[type="submit"]:hover {
 input[type="password"] {
   width: 100%;
   height: inherit;
-}
-
-/* TODO: codice duplicato con input type submit; rifattorizzare a classe */
-button[type="submit"] {
-  float: right;
-
-  padding: 12px 20px;
-  border: 1px solid #fcfcfc;
-  margin-top: 30px;
-  margin: 30px;
-
-  background-color: #f1f1f1;
-  color: black;
-
-  text-align: center;
-
-  cursor: pointer;
 }
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
@@ -689,3 +671,4 @@ button[type="submit"] {
 /*------------------- PRINT STYLE -------------------*/
 
 /* TODO print style should go at the end of our unique stylesheet! */
+
