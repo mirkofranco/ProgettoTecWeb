@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS DatabaseTecnologieWeb;
 
-CREATE DATABASE DatabaseTecnologieWeb;
+CREATE DATABASE DatabaseTecnologieWeb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE DatabaseTecnologieWeb;
 
@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS UTENTE;
 
 CREATE TABLE CATEGORIA(
 	IDC integer auto_increment primary key,
-	Nome varchar(30) not null,
+	Nome varchar(50) not null,
 	IDCatPadre	integer,
 	foreign key (IDCatPadre) references CATEGORIA(IDC)
 )ENGINE = InnoDB;
@@ -21,7 +21,7 @@ CREATE TABLE PRODOTTO(
 	Nome varchar(50) not null,
 	Marca varchar(50) not null,
 	Prezzo float(2) not null,
-  DataInizio date not null,
+	DataInizio date not null,
 	isOfferta boolean not null default 0,
 	NomeImmagine varchar(255) not null,
 	Descrizione varchar(400) not null,

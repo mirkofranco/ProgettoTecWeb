@@ -34,8 +34,7 @@ html, body {
 }
 
 h1 {
-  padding-top: 1em;
-  padding-bottom: 1.5em;
+  padding: 1rem 0;
 
   font-size: 2rem;
   text-align: center;
@@ -51,11 +50,11 @@ a.clickable-image {
 
 .clickable-image img {
   height: 100%;
-  padding: 1.5vh;
 }
 
 .icon {
-  height: 1.0em;
+  display: inline-block;
+  height: 1em;
 }
 
 /* apply class="clearfix" to the container with floated elements inside */
@@ -67,50 +66,61 @@ a.clickable-image {
   content: "";
 }
 
+.padded-small {
+  padding: 5px;
+}
+
+
+/* contenitore riutilizzabile per wrapped flexbox */
+.flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-centered {
+  justify-content: center;
+}
+
 /* file _inizio_user.html */
 
 /* ---------- HEADER ---------- */
 
 .header {
 
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 15vh;
 
   background-color: #4c4a4a;
 }
 
 .header-right {
-  height: 2em;
+  float: right;
+
+  line-height: 15vh;
 }
 
-.header-right a {
-  display: inline;
+
+.header-button {
+  padding: 0 1em;
+
+  color: white;
 }
 
 /* ---------- NAVIGATION BAR ---------- */
 .navbar {
-  min-height: 7vh;
-}
-
-.navbar ul {
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 0;
+  /* FIXME: altezza footer sballata */
+  min-height: 10vh;
 }
 
 .navbar a {
   display: block;
-  padding: 15px;
+
+  padding: 1rem;
 
   color: black;
 
-  font-size: 20px;
+  font-size: 1.3rem;
   text-decoration: none;
 }
 
@@ -121,6 +131,14 @@ a.clickable-image {
 .navbar a:hover {
   background-color: #4c4a4a;
   color: #ffffff;
+}
+
+.breadcrumb {
+  display: block;
+
+  font-size: .8rem;
+  text-align: center;
+  line-height: 5vh;
 }
 
 /* TODO animazione menu */
@@ -138,7 +156,7 @@ a.clickable-image {
 }
 
 .contenuto {
-  min-height: 70vh;
+  min-height: 60vh;
   padding: 0 1rem;
 }
 
@@ -179,7 +197,7 @@ a.clickable-image {
 
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
 
   user-select: none;
   cursor: pointer;
@@ -206,7 +224,6 @@ a.clickable-image {
 
   color: #f2f2f2;
 
-  font-size: 15px;
   text-align: center;
 }
 
@@ -219,7 +236,7 @@ a.clickable-image {
 
   color: #f2f2f2;
 
-  font-size: 12px;
+  font-size: .75rem;
 }
 
 .dot-container {
@@ -277,18 +294,12 @@ a.clickable-image {
 
 /* file catalogo.html */
 
-.flex-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 
 .flex-element {
   position: relative;
 
-  max-width: 50%;
+  width: 100%;
 
   padding: .8rem;
 }
@@ -326,7 +337,7 @@ a.clickable-image {
 /* FIXME item order on small screens. remember the breakpoints! */
 
 /* Create four equal columns that sit next to each other */
-.column {
+/* .column {
   -ms-flex: 25%;
   flex: 25%;
   max-width: 25%;
@@ -335,7 +346,9 @@ a.clickable-image {
 .column img {
   width: 100%;
   vertical-align: middle;
-}
+} */
+/* ^^^^ FIXME questo css non era utilizzato da nessuna parte */
+
 
 /* MENU LATERALE CATALOGO */
 .openMenu {
@@ -390,7 +403,7 @@ a.clickable-image {
 
   margin-left: 50px;
 
-  font-size: 36px;
+  font-size: 2rem;
 }
 
 /* file consulenza_online.html */
@@ -442,14 +455,13 @@ input[type="submit"] {
   background-color: #f1f1f1;
   color: black;
 
-  font-size: 1rem;
   text-align: center;
 
   cursor: pointer;
 }
 
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   border: 1px solid #fcfcfc;
 
   background-color: #4c4a4a;
@@ -545,14 +557,9 @@ input[type="submit"]:hover{
 /* FOOTER */
 
 .footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
 
-  min-height: 8vh;
+  height: 10vh;
 
   background-color: #4c4a4a;
 
@@ -560,7 +567,7 @@ input[type="submit"]:hover{
 }
 
 .footerElement {
-  margin: 0 2rem;
+  margin: .5rem 2rem;
 }
 
 .footerElement img {
@@ -588,6 +595,7 @@ input[type="password"] {
   height: inherit;
 }
 
+/* TODO: codice duplicato con input type submit; rifattorizzare a classe */
 button[type="submit"] {
   float: right;
 
@@ -599,16 +607,16 @@ button[type="submit"] {
   background-color: #f1f1f1;
   color: black;
 
-  font-size: 15px;
   text-align: center;
 
   cursor: pointer;
 }
 
-/* -------------------- MEDIA QUERIES SHOULD ALL GO AT THE BOTTOM -------------------- */
+/* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 
-/*PER TABLET*/
-@media only screen and (min-width: 425px) {
+/*PER TABLET (PORTRAIT)*/
+@media only screen and (min-width: 768px) {
+
   .fcontainer {
     width: 80vw;
   }
@@ -632,47 +640,51 @@ button[type="submit"] {
   }
 }
 
-/*DESKTOP*/
-@media only screen and (min-width: 768px) {
+/*PER DESKTOP E TABLET (LANDSCAPE) */
+@media only screen and (min-width: 1024px) {
+  
+  .flex-element {
+    width: 50%;
+  }
+
   .fcontainer {
     width: 50vw;
   }
-
 
 }
 
 /*!!!!!!VECCHIE DA RISTRUTTURARE!!!!!!*/
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  /* .column {
+/* @media screen and (max-width: 800px) {
+.column {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
+  }
   } */
-}
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  /* .column {
+/* @media screen and (max-width: 600px) {
+.column {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
-  } */
 }
+/* } */
 
-@media screen and (max-height: 450px) {
-  /* .sidenav {
+/* @media screen and (max-height: 450px) {
+.sidenav {
     padding-top: 15px;
   }
 
   .sidenav a {
-    font-size: 18px;
+    font-size: 1.1rem;
+  }
   } */
-}
 
 /* form responsive */
-@media screen and (max-width: 600px) {}
+/* @media screen and (max-width: 600px) {} */
 
 /*------------------- PRINT STYLE -------------------*/
 
