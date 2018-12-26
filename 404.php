@@ -8,6 +8,6 @@
     );
 
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
-    echo file_get_contents('./static/not-found.html');
+    echo file_get_contents('./static/404.html');
     echo file_get_contents('./static/_fine.html');
 ?>
