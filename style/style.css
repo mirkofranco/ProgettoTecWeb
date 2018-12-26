@@ -581,6 +581,9 @@ input[type="password"] {
   min-height: 65vh;
 }
 
+#requested-url-error {
+  /* TODO */
+}
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 
 /*PER TABLET (PORTRAIT)*/
