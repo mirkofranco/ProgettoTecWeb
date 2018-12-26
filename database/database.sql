@@ -54,7 +54,7 @@ CREATE TABLE UTENTE(
 CREATE TABLE COMMENTI(
 	IDCommento integer auto_increment,
 	UID integer not null,
-	IDProdotto varchar(10) not null,
+	IDProdotto integer not null,
 	Commento varchar(512) not null,
 	primary key(IDCommento),
 	unique(UID, IDProdotto),
