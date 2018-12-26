@@ -420,6 +420,7 @@ a.clickable-image {
 
 
 input[type="text"],
+input[type="password"],
 select,
 textarea {
   width: 100%;
@@ -572,6 +573,12 @@ label {
 input[type="password"] {
   width: 100%;
   height: inherit;
+}
+
+/* ERROR PAGE */
+
+#error-page-content {
+  min-height: 65vh;
 }
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
