@@ -1,0 +1,58 @@
+<p class="breadcrumb">
+  Ti trovi nella pagina di registrazione.
+</p>
+
+<div class="contenuto">
+  <form name="registrazione" method="post" class="fcontainer">
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nome">Nome:</label>
+      </div>
+      <div class="col-75">
+        <input id="fname" class="fInputBorder" type="text" name="nome" {{previousUN}} placeholder="Scrivi qui il tuo nome" required />
+      </div>
+    </div>
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="cognome">Cognome:</label>
+      </div>
+      <div class="col-75">
+        <input id="cognome" class="fInputBorder" type="text" name="cognome" {{previousUN}} placeholder="Scrivi qui il tuo nome" required />
+      </div>
+    </div>
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="dataNascita">Data di nascita:</label>
+      </div>
+      <div class="col-75">
+        <input id="dataNascita" class="fInputBorder" type="date" name="dataNascita" {{previousUN}} placeholder="Scrivi qui il tuo nome" required />
+      </div>
+    </div>
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="email">Email:</label>
+      </div>
+      <div class="col-75">
+        <input id="email" class="fInputBorder" type="text" name="email" {{previousUN}} placeholder="Scrivi qui il tuo nome" required />
+      </div>
+    </div>
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="password">Password:</label>
+      </div>
+      <div class="col-75">
+        <input id="password" class="fInputBorder" type="password" name="password" placeholder="Scrivi qui" required />
+      </div>
+    </div>
+
+    <div class="frow clearfix">
+      <div class="messaggio-errore-form">{{errorForm}}</div>
+      <input type="submit" name="registrati" value="Registrati" class="submit-action" />
+    </div>
+
+  </form>
+</div>
