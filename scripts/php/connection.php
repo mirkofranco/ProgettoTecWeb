@@ -52,7 +52,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $stmt = $this -> pdo -> prepare($query);
         $stmt -> execute();
         $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        return count($result) == 1 ? new Utente($result[0]['UID'], $result[0]['Nome'], $result[0][$cognome], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi']) : null;
+        return count($result) == 1 ? new Utente($result[0]['Nome'], $result[0]['Cognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi']) : null;
     }
 
     public function listSottoCategorie(){
@@ -68,7 +68,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     public function insertUtente($utente){
         $toInsert = "INSERT INTO UTENTE(Nome, Cognome, Username, Password, Mail, Permessi) VALUES(?, ?, ?, ?, ?, ?);";
         $stmt = $this -> pdo -> prepare($toInsert);
-        $result = $stmt -> execute($utente-> getNome(), $utente -> getCognome(), $utente -> getUsername(), $utente -> getPassword(), $utente -> getMail(), $utente -> getPermessi());
+        $result = $stmt -> execute([$utente-> getNome(), $utente -> getCognome(), $utente -> getUsername(), $utente -> getPassword(), $utente -> getMail(), $utente -> getPermessi()]);
         return $result;
     }
 

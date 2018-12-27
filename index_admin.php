@@ -11,7 +11,7 @@
     }
     $errorLogin = "";
     if(isset($_POST['login'])){
-        $utente = Utente::login($_POST['username'], $_POST['Password']);
+        $utente = Utente::login($_POST['username'], md5($_POST['Password']));
         if($utente ==  null){
             $errorLogin = "Nome utente e\o password non corretti";
         }else{

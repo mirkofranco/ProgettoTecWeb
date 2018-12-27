@@ -46,7 +46,7 @@ CREATE TABLE UTENTE(
 	Nome varchar(20) not null,
 	Cognome varchar(20) not null,
 	Username varchar(20) not null unique,
-	Password varchar(20) not null,
+	Password varchar(100) not null,
 	Mail varchar(30) not null,
 	Permessi varchar(2) not null default '01'
 	/* 0: pagine amministrazione, 1: utente normale */

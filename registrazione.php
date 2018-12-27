@@ -1,38 +1,46 @@
 <?php
-    /*require_once('./scripts/php/Sessione.php');
     require_once('./scripts/php/Utente.php');
-    Sessione::startSession();
-    if(isset($_SESSION['user'])){
-        if($_SESSION['user'] -> getPermessi() == '11'){
-            header("location: ./menu_admin.php");
-        }else if($_SESSION['user'] -> getPermessi() == '01'){
-            header("location: ./index.php");
-        }
-    }
-    $errorLogin = "";
-    if(isset($_POST['login'])){
-        $utente = Utente::login($_POST['username'], $_POST['Password']);
-        if($utente ==  null){
-            $errorLogin = "Nome utente e\o password non corretti";
-        }else{
-            $_SESSION['user'] = $utente;
-            if($utente -> getPermessi() == '11'){
-                header("location: ./menu_admin.php");
-            }else {
-                header("location: ./index.php");
-            }
-        }
-    }
-    $previousUS = isset($_POST['username']) ? "value=\"". $_POST['username']. "\"" : ""; */
+    require_once('./scripts/php/connection.php');
     $errorForm = "";
+    $previousNome = "";
+    $previousCognome = "";
+    $previousUsername = "";
+    $previousEmail = "";
 
+    if(isset($_POST['registrati'])){
+        if(strlen($_POST['nome']) < 4){
+            $errorForm .= "Il nome deve contenere almeno quattro caratteri<br/>";
+        }
+        if(strlen($_POST['cognome']) < 4){
+            $errorForm .= "Il cognome deve contenere almeno quattro caratteri<br/>";
+        }
+        if(strlen($_POST['username']) < 4){
+            $errorForm .= "Lo username deve contenere almeno quattro caratteri<br/>";
+        }
+        if(strlen($_POST['password'])  < 5){
+            $errorForm .= "La password deve contenere almeno cinque caratteri<br/>";
+        }
+        if($errorForm == ""){
+            $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+            $connection -> connect();
+            $connection -> insertUtente(new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email'])) ;
+            $connection -> close();
+        }else{
+            $previousNome = isset($_POST['nome']) ? "value=\"". $_POST['nome']. "\"" : "" ;
+            $previousCognome = isset($_POST['cognome']) ? "value=\"". $_POST['cognome']. "\"" : "" ;
+            $previousUsername = isset($_POST['username']) ? "value=\"". $_POST['username']. "\"" : "" ;
+            $previousEmail = isset($_POST['email']) ? "value=\"". $_POST['email']. "\"" : "" ;
+        }
+    }
     $daSostituire =  array(
         "{{pageTitle}}" => "Login - Studio AR",
         "{{pageDescription}}"=>"TODO",
         "{{pageKeywords}}"=>"TODO",
-        "{{errorForm}}" => $errorForm
-        /* "{{errorForm}}" => $errorLogin,
-        "{{previousUN}}" => $previousUS */
+        "{{errorForm}}" => $errorForm,
+        "{{previousNome}}" => $previousNome,
+        "{{previousCognome}}" => $previousCognome,
+        "{{previousUsername}}" => $previousUsername,
+        "{{previousEmail}}" => $previousEmail
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/registrazione.html'));

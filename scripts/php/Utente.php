@@ -1,7 +1,6 @@
 <?php
     require_once('connection.php');
     class Utente{
-        private $indentificatoreUnico;
         private $nome;
         private $Cognome;
         private $username;
@@ -9,14 +8,12 @@
         private $mail;
         private $permessi;
 
-        public function __construct($id, $nome, $cognome,  $username, $password, $mail, $permessi){
-            $this -> indentificatoreUnico = $id;
+        public function __construct($nome, $cognome,  $username, $password, $mail, $permessi = "01"){
             $this -> nome = $nome;
-            $this -> cognome = $cognome;
+            $this -> Cognome = $cognome;
             $this -> username = $username;
             $this -> password = $password;
             $this -> mail = $mail;
-            $this -> tipo = $tipo;
             $this -> permessi = $permessi;
         }
 
@@ -46,13 +43,16 @@
             return $this -> mail;
         }
 
+        public function getNome(){
+            return $this -> nome;
+        }
 
         public function getPermessi(){
             return $this -> permessi;
         }
 
         public function getCognome(){
-            return $this -> cognome;
+            return $this -> Cognome;
         }
 
         public function __toString(){
