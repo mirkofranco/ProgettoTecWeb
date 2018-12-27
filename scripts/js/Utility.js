@@ -19,3 +19,9 @@ $(
          $("#dataInizioPrezzo").datepicker();
     }
 );
+
+$(
+     function(){
+         $("#dataNascita").datepicker();
+    }
+);

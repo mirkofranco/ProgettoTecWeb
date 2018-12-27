@@ -22,15 +22,17 @@
                 header("location: ./index.php");
             }
         }
-    } 
+    }
     $previousUS = isset($_POST['username']) ? "value=\"". $_POST['username']. "\"" : ""; */
-    $daSostituire =  array( 
+    $errorForm = "";
+    $daSostituire =  array(
         "{{pageTitle}}" => "Login - Studio AR",
         "{{pageDescription}}"=>"TODO",
         "{{pageKeywords}}"=>"TODO",
+        "{{errorForm}}" => $errorForm
         /* "{{errorForm}}" => $errorLogin,
         "{{previousUN}}" => $previousUS */
-    ); 
+    );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/registrazione.html'));
     echo file_get_contents('./static/_fine.html');
