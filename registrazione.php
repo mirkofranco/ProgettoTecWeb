@@ -33,8 +33,8 @@
         }
     }
     $daSostituire =  array(
-        "{{pageTitle}}" => "Login - Studio AR",
-        "{{pageDescription}}"=>"TODO",
+        "{{pageTitle}}" => "Registrazione - Studio AR",
+        "{{pageDescription}}"=>"pagina di registrazione al sito dello Studio AR",
         "{{pageKeywords}}"=>"TODO",
         "{{errorForm}}" => $errorForm,
         "{{previousNome}}" => $previousNome,

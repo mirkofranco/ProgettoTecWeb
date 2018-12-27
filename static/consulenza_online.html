@@ -29,7 +29,7 @@
         <label for="femail"> E-Mail: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" id="femail" name="email" placeholder="Inserisci la tua email" onkeyup="controllaMail()" required>
+        <input class="fInputBorder" type="email" id="femail" name="email" placeholder="Inserisci la tua email" onkeyup="controllaMail()" required>
       </div>
     </div>
 
@@ -39,7 +39,8 @@
         <label for="fcat">In cosa possiamo aiutarti:</label>
       </div>
       <div class="col-75">
-        <select id="fcat" name="fcat">
+        <select class= "fInputBorder" id="fcat" name="fcat">
+          <option disabled selected hidden value> -- Seleziona un'opzione dalla lista -- </option>
           <option value="zonagiorno">Zona Giorno</option>
           <option value="zonanotte">Zona Notte </option>
           <option value="cucina">Cucina</option>
