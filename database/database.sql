@@ -43,7 +43,8 @@ CREATE TABLE PRODOTTOSTORICO(
 
 CREATE TABLE UTENTE(
 	UID integer auto_increment primary key,
-	NomeCognome varchar(20) not null,
+	Nome varchar(20) not null,
+	Cognome varchar(20) not null,
 	Username varchar(20) not null unique,
 	Password varchar(20) not null,
 	Mail varchar(20) not null,
@@ -81,8 +82,8 @@ END; $$
 
 DELIMITER ; */
 
-INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (1, 'admin', 'admin', 'admin', 'admin@admin.it', '11');
-INSERT INTO UTENTE (UID, NomeCognome, Username, Password, Mail, Permessi) VALUES (2, 'user', 'user', 'user', 'user@user.it', '01');
+/*INSERT INTO UTENTE (UID, Nome, Cognome,  Username, Password, Mail, Permessi) VALUES (1, 'admin', "Piombin", 'admin', 'admin', 'admin@admin.it', '11');
+INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALUES (2, 'user', "Piombin", 'user', 'user', 'user@user.it', '01');*/
 
 /* INSERIMENTO DELLE CATEGORIE PRINCIPALI */
 
@@ -103,7 +104,7 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (7, 'Armadi', 1);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (8, 'Sedie', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (9, 'Tavoli', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (10, 'Divani', 2);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Librerie', 2); 
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Librerie', 2);
 
 /* Sottocategorie uffici*/
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (12, 'Scrivanie', 4);
