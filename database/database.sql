@@ -18,8 +18,8 @@ CREATE TABLE CATEGORIA(
 CREATE TABLE PRODOTTO(
 	IDProdotto integer auto_increment primary key,
 	sottoCategoria integer not null,
-	Nome varchar(50) not null,
-	Marca varchar(50) not null,
+	Nome varchar(20) not null,
+	Marca varchar(20) not null,
 	Prezzo float(2) not null,
 	DataInizio date not null,
 	isOfferta boolean not null default 0,
@@ -47,7 +47,7 @@ CREATE TABLE UTENTE(
 	Cognome varchar(20) not null,
 	Username varchar(20) not null unique,
 	Password varchar(20) not null,
-	Mail varchar(20) not null,
+	Mail varchar(30) not null,
 	Permessi varchar(2) not null default '01'
 	/* 0: pagine amministrazione, 1: utente normale */
 )ENGINE = InnoDB;
