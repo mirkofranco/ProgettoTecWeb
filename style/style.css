@@ -582,7 +582,7 @@ input[type="password"] {
 }
 
 #requested-url-error {
-  /* TODO */
+  background-color: lightgrey;
 }
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 
