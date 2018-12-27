@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{Progetto di Tecnologie Web: Studio AR}
+
+
+
+
+
+\begin{document}
+
+\title {Relazione del progetto del corso di Tecnologie Web: Studio AR}
+
+\author {Elisabetta Piombin \\ Mirko Franco \\ Nicoletta Fabro \\ Luca Ercole}
+\date{}
+\maketitle
+
+\centerline{Link al sito:}
+\centerline{https://..........}
+
+%\begin{figure}[h!]
+%	\includegraphics{./images/logo_relazione.jpg}
+%\end{figure}
+
+\tableofcontents
+
+\section{Introduzione}
+
+\section{Progettazione}
+\subsection{Studio dell'utenza finale}
+\paragraph{Utente generico}
+\paragraph{Amministratore}
+\subsection{Layout del sito}
+\paragraph{Utente generico}
+\subparagraph{Barra di navigazione}
+\subparagraph{Corpo}
+\subparagraph{Pié di pagina}
+\subsection{Contenuti veicolati}
+
+\section{Realizzazione}
+\subsection{Linguaggi e strumenti}
+\paragraph{HTML5}
+\paragraph{CSS3}
+\paragraph{PHP}
+\paragraph{JavaScript}
+\subsection{Divisione tra presentazione, struttura e comportamento}
+\paragraph{Presentazione}
+\paragraph{Comportamento}
+\paragraph{Struttura}
+
+\section{Validazione}
+\subsection{Scelte di progetto}
+\subsection{Strumenti automatici}
+\paragraph{TotalValidator}
+\paragraph{Contrast-Ratio}
+\subsection{Test effettuati}
+
+\section{Suddivisione del lavoro}
+\subsection{Elisabetta Piombin}
+\subsection{Mirko Franco}
+\subsection{Nicoletta Fabro} 
+\subsection{Luca Ercole}
+\end{document}
