@@ -65,6 +65,16 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $toReturn;
     }
 
+    public function listaCategorie(){
+        $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NULL;";
+        $result = $this -> pdo -> query($query) -> fetchAll();
+        $toReturn = array();
+        foreach ($result as $row) {
+            array_push($toReturn, ["CodiceCategoria" => $row['IDC'], "NomeCategoria" => $row['Nome']]);
+        }
+        return $toReturn;
+    }
+
     public function insertUtente($utente){
         $toInsert = "INSERT INTO UTENTE(Nome, Cognome, Username, Password, Mail, Permessi) VALUES(?, ?, ?, ?, ?, ?);";
         $stmt = $this -> pdo -> prepare($toInsert);
