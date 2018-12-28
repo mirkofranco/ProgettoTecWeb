@@ -16,6 +16,7 @@
     }
     $elencoCategorie .= "</select>";
     $errorForm = "";
+    $successForm = "";
     $previousNome = "";
     $previousMail = "";
     $previousCommento = "";
@@ -27,10 +28,11 @@
             $errorForm .= "Il messaggio deve contenere almeno venti caratteri.<br/>";
         }
         if($errorForm == ""){
-            Util::sendMail("barinmonica.66@gmail.com", $_POST['fcat'], $_POST['comment']);
-            echo "Mail has been sent!";
+            $mail = Util::sendMail("barinmonica.66@gmail.com", $_POST['fcat'], $_POST['comment']);
+            $errorForm .=  $mail == false  ?  "Si è verificato un errore grave nell'invio della mail. Riprovare più tardi.<br/>" : "";
+            $successForm .= $mail == true ? "Complimenti! La mail è stata inviata con successo! Riceverai una risposta entro 48 ore.<br/>" : "";
         }else{
-            $previousNome = "value=\"". $_POST['firstName'] . "\"";
+            $previousNome = "value=\"" . $_POST['firstName'] . "\"";
             $previousMail = "value=\"". $_POST['email'] . "\"";
             $previousCommento =  $_POST['comment'];
         }
@@ -45,7 +47,8 @@
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{previousNome}}" => $previousNome,
             "{{previousMail}}" => $previousMail,
-            "{{previousCommento}}" => $previousCommento
+            "{{previousCommento}}" => $previousCommento,
+            "{{successMessage}}" => $successForm
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html')); //cerca il primo parametro, e nel terzo ci
     //mette quello che trova nel secondo

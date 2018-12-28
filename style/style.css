@@ -501,6 +501,12 @@ label {
   font-weight: bold;
 }
 
+.messaggio-successo-form {
+  color: green;
+  text-align: left;
+  font-weight: bold;
+}
+
 .frow {
   margin: .5rem 1rem;
 }
