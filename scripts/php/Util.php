@@ -15,11 +15,7 @@
             $mail -> AddReplyTo($to);
             $mail->Subject = $subject;
             $mail->Body = $body;
-            if(!$mail->Send()) {
-                echo "Mailer Error: " . $mail->ErrorInfo;
-            } else {
-                echo "Message has been sent";
-            }
+            return $mail->Send();
         }
     }
     //funzione statica che manda la mail
