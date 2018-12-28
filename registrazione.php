@@ -17,8 +17,8 @@
         if(strlen($_POST['username']) < 4){
             $errorForm .= "Lo username deve contenere almeno quattro caratteri<br/>";
         }
-        if(strlen($_POST['password'])  < 5){
-            $errorForm .= "La password deve contenere almeno cinque caratteri<br/>";
+        if(strlen($_POST['password'])  < 4){
+            $errorForm .= "La password deve contenere almeno quattro caratteri<br/>";
         }
         if($errorForm == ""){
             $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
