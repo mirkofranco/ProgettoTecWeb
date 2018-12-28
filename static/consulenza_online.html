@@ -19,7 +19,7 @@
         <label for="fname"> Nome: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" id="fname" name="firstName" maxlength="20" placeholder="Inserisci il tuo nome" required>
+        <input class="fInputBorder" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
         <label for="femail"> E-Mail: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="email" id="femail" name="email" maxlength="30" placeholder="Inserisci la tua email" required>
+        <input class="fInputBorder" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required>
       </div>
     </div>
 
@@ -56,7 +56,7 @@
         <label for="comment">La tua richiesta:</label>
       </div>
       <div class="col-75">
-        <textarea id="comment" class="fTextBox fInputBorder" name="comment"maxlength="10000" placeholder="Scrivi qui" required></textarea>
+        <textarea id="comment" class="fTextBox fInputBorder" name="comment" maxlength="10000" placeholder="Scrivi qui" required>{{previousCommento}}</textarea>
       </div>
 
       <div class="frow clearfix">
