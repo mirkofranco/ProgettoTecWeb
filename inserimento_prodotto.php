@@ -6,7 +6,7 @@
     $listaCategorie = $connection -> listSottoCategorie();
     $connection -> close();
     //$previosCat = "value=\"" . (isset($_POST['fcat']) ? "value=\"". $_POST['fcat']. "\"" : "") . "\"" ;
-    $elencoCategorie = "<select id=\"fcat\" name=\"fcat\">";
+    $elencoCategorie = "<select id=\"fcat\" name=\"fcat\" required>";
     foreach ($listaCategorie as $categoria) {
         $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
         if(isset($_POST['fcat']) && $_POST['fcat'] == $categoria['CodiceCategoria']){
