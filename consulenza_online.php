@@ -6,7 +6,7 @@
     $connection -> connect();
     $listaCategorie = $connection -> listaCategorie();
     $connection -> close();
-    $elencoCategorie = "<select class=\"fInputBorder\" id=\"fcat\" name=\"fcat\">";
+    $elencoCategorie = "<select class=\"fInputBorder\" id=\"fcat\" name=\"fcat\" required>";
     $elencoCategorie .= "<option disabled selected hidden value> -- Seleziona un'opzione dalla lista -- </option>";
     foreach ($listaCategorie as $categoria) {
         $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
