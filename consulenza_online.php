@@ -1,6 +1,8 @@
 <?php
     require_once('./scripts/php/Util.php');
     require_once('./scripts/php/connection.php');
+    require_once('./scripts/php/Sessione.php');
+    Sessione::startSession();
     $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
     $connection -> connect();
     $listaCategorie = $connection -> listaCategorie();
@@ -20,6 +22,10 @@
     $previousNome = "";
     $previousMail = "";
     $previousCommento = "";
+    if(isset($_SESSION['user'])){
+        $previousNome = "value=\"" . $_SESSION['user'] -> getNome() . "\"";
+        $previousMail = "value=\"" . $_SESSION['user'] -> getMail() . "\"";
+    }
     if(isset($_POST['chiediConsulenza'])){ //si chiede se il bottone è stato cliccato
         if(strlen($_POST['firstName']) < 4){
             $errorForm .= "Il nome deve contenere almeno quattro caratteri.<br/>";
