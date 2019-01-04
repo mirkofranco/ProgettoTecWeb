@@ -6,7 +6,7 @@
     $previousCognome = "";
     $previousUsername = "";
     $previousEmail = "";
-
+    $successForm = "";
     if(isset($_POST['registrati'])){
         if(isset($_POST['forJS'])){
             if(strlen($_POST['nome']) < 4){
@@ -25,7 +25,9 @@
         if($errorForm == ""){
             $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
             $connection -> connect();
-            $connection -> insertUtente(new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email'])) ;
+            if($connection -> insertUtente(new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email'])) ){
+                $successForm .= "Complimenti! Utente inserito correttamente!";
+            }
             $connection -> close();
         }else{
             $previousNome = isset($_POST['nome']) ? "value=\"". $_POST['nome']. "\"" : "" ;
@@ -43,7 +45,8 @@
         "{{previousNome}}" => $previousNome,
         "{{previousCognome}}" => $previousCognome,
         "{{previousUsername}}" => $previousUsername,
-        "{{previousEmail}}" => $previousEmail
+        "{{previousEmail}}" => $previousEmail,
+        "{{successForm}}" => $successForm
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/registrazione.html'));

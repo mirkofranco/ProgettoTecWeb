@@ -22,6 +22,7 @@
     $previousPrezzo = "";
     $previousData = "";
     $previousDescrizione = "";
+    $successForm = "";
     if(isset($_POST['inserisciProdotto'])){
         if(strlen($_POST['idProdotto']) < 3){
             $errorForm .= "Il codice del prodotto deve contenere almento 3 caratteri<br/>";
@@ -37,15 +38,17 @@
         }
         if($errorForm == ""){
             $connection -> connect();
-            $connection -> insertProdotto(new Prodotto($_POST['idProdotto'], $_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), 0, $_FILES['immagineProdotto']['name'], $_POST['Descrizione']));
+            if($connection -> insertProdotto(new Prodotto($_POST['idProdotto'], $_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), 0, $_FILES['immagineProdotto']['name'], $_POST['Descrizione']))){
+                $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
+            }
             $connection -> close();
             $connection = null;
-            $uploadDir = '../ProgettoTecWeb/images/Catalogo/';
+            $uploadDir = '../ProgettoTecWeb/images/catalogo/';
             $tmp = $_FILES['immagineProdotto']['tmp_name'];
             if(move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name'])){
                 echo "Immagine caricata con successo!<br/>";
             }
-            echo "Prodotto inserito";
+
         }else{
             $previousCodProd = isset($_POST['idProdotto']) ? "value=\"". $_POST['idProdotto']. "\"" : "" ;
             $previousNome = isset($_POST['nomeProdotto']) ? "value=\"". $_POST['nomeProdotto']. "\"" : "" ;
@@ -66,7 +69,8 @@
             "{{previousMarca}}" => $previousMarca,
             "{{previousPrezzo}}" => $previousPrezzo,
             "{{previousData}}" => $previousData,
-            "{{previousDescrizione}}" => $previousDescrizione
+            "{{previousDescrizione}}" => $previousDescrizione,
+            "{{successForm}}" => $successForm
         );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/form_inserimento_prodotti.html'));
