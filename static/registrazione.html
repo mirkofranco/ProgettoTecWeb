@@ -3,7 +3,12 @@
 </p>
 
 <div class="contenuto">
-  <form name="registrazione" method="post" class="fcontainer">
+  <form name="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione()" method="post" class="fcontainer">
+    <div class="frow clearfix">
+        <div class="col-75">
+          <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled>
+        </div>
+    </div>
     <div class="frow clearfix">
       <div class="col-25">
         <label for="nome">Nome:</label>

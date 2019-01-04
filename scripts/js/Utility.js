@@ -1,11 +1,11 @@
-function controllaMail(){
-    var email_reg_exp = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
-    if (!email_reg_exp.test(document.getElementById('femail').value) || (document.getElementById('femail').value == "")) {
-        document.getElementById('messaggio-errore-form').innerHTML = 'La mail non è valida';
-    }else{
-        document.getElementById('messaggio-errore-form').innerHTML = "";
-    }
-}
+//function controllaMail(){
+//    var email_reg_exp = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
+//    if (!email_reg_exp.test(document.getElementById('femail').value) || (document.getElementById('femail').value == "")) {
+//        document.getElementById('messaggio-errore-form').innerHTML = 'La mail non è valida';
+//    }else{
+//        document.getElementById('messaggio-errore-form').innerHTML = "";
+//    }
+//}
 
 function jsAttivo(){
     document.getElementById('forJs').disabled = false;
@@ -20,8 +20,12 @@ $(
     }
 );
 
-$(
-     function(){
-         $("#dataNascita").datepicker();
+
+
+function controllaRegistrazione(){
+    if('1' == '1'){
+        document.getElementById('messaggio-errore-form').innerHTML = "Il nome deve contenere almeno 4 caratteri";
+        return false;
     }
-);
+    return true;
+}
