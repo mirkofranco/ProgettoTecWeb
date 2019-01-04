@@ -24,7 +24,7 @@ function controllaRegistrazione(){
     if(document.registrazione.nome.value.length < 4){
         alert("Il nome deve contenere almeno quattro caratteri");
         document.getElementById('alertNome').style.display = "block";
-        document.getElementById("alertNome").focus();
+        document.getElementById('alertNome').focus();
         return false;
     }
     if(document.registrazione.cognome.value.length < 4){
