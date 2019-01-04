@@ -573,6 +573,37 @@ label {
   display: none;
 }
 
+/* CATALOGO AMMINISTRAZIONE */
+
+.elemento-anteprima-catalogo {
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
+
+.elemento-anteprima-catalogo img {
+  padding: .5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.anteprima-nome-prodotto {
+  padding: .5rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.anteprima-pulsanti {
+  padding: .5rem;
+  display: inline; 
+  width: 50%;
+  float:center;
+}
+
+.modifica {
+  border-right: 1px solid black;
+}
 /* FORM AMMINISTRAZIONE */
 
 input[type="password"] {

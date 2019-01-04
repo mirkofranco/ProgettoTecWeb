@@ -82,8 +82,8 @@ END; $$
 
 DELIMITER ; */
 
-/*INSERT INTO UTENTE (UID, Nome, Cognome,  Username, Password, Mail, Permessi) VALUES (1, 'admin', "Piombin", 'admin', 'admin', 'admin@admin.it', '11');
-INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALUES (2, 'user', "Piombin", 'user', 'user', 'user@user.it', '01');*/
+INSERT INTO UTENTE (UID, Nome, Cognome,  Username, Password, Mail, Permessi) VALUES (1, 'admin', "Piombin", 'admin', 'admin', 'admin@admin.it', '11');
+INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALUES (2, 'user', "Piombin", 'user', 'user', 'user@user.it', '01');
 
 /* INSERIMENTO DELLE CATEGORIE PRINCIPALI */
 
