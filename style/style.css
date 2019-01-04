@@ -683,3 +683,7 @@ input[type="password"] {
     content: " ("attr(href)") ";
   }
 }
+
+.alert{
+    display: none;
+}

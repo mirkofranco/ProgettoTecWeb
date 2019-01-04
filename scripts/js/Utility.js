@@ -20,11 +20,23 @@ $(
     }
 );
 
-
-
 function controllaRegistrazione(){
-    if('1' == '1'){
-        document.getElementById('messaggio-errore-form').innerHTML = "Il nome deve contenere almeno 4 caratteri";
+    if(document.registrazione.nome.value.length < 4){
+        alert("Il nome deve contenere almeno quattro caratteri");
+        document.getElementById('alertNome').style.display = "block";
+        document.getElementById("alertNome").focus();
+        return false;
+    }
+    if(document.registrazione.cognome.value.length < 4){
+        alert("Il cognome deve contenere almeno quattro caratteri");
+        return false;
+    }
+    if(document.registrazione.username.value.length < 4){
+        alert("Il nome utente deve contenre almeno caratteri");
+        return false;
+    }
+    if(document.registrazione.password.value.length < 4){
+        alert("La password deve contenere almeno quattro caratteri");
         return false;
     }
     return true;
