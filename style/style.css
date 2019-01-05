@@ -598,12 +598,12 @@ label {
   padding: .5rem;
   display: inline; 
   width: 50%;
-  float:center;
+  float: left;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
-.modifica {
-  border-right: 1px solid black;
-}
 /* FORM AMMINISTRAZIONE */
 
 input[type="password"] {
