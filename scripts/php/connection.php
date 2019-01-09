@@ -55,7 +55,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return count($result) == 1 ? new Utente($result[0]['Nome'], $result[0]['Cognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi']) : null;
     }
 
-    public function listSottoCategorie(){
+    public function listaSottoCategorie(){
         $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NOT NULL;";
         $result = $this -> pdo -> query($query) -> fetchAll();
         $toReturn =  array();

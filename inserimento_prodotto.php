@@ -3,7 +3,7 @@
     require_once('./scripts/php/Prodotto.php');
     $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
     $connection -> connect();
-    $listaCategorie = $connection -> listSottoCategorie();
+    $listaCategorie = $connection -> listaSottoCategorie();
     $connection -> close();
     //$previosCat = "value=\"" . (isset($_POST['fcat']) ? "value=\"". $_POST['fcat']. "\"" : "") . "\"" ;
     $elencoCategorie = "<select id=\"fcat\" name=\"fcat\" required>";
