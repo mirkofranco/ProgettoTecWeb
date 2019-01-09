@@ -176,13 +176,14 @@ a.clickable-image {
 
 /* ---------- SLIDESHOW ---------- */
 
-.slideshow-container {
+div.slideshow-container {
   position: relative;
 
   /* non ingrandire a più della dimensione delle immagini stesse */
   max-width: 1440px;
   max-height: 810px;
   margin: auto;
+  padding: 0;
 }
 
 .imgSlideshow {
@@ -191,6 +192,7 @@ a.clickable-image {
 
 .slideshow-element {
   display: none;
+  position: relative;
 }
 
 .slideshow-element img {
@@ -225,32 +227,20 @@ a.clickable-image {
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*Testo all'interno dello slideshow*/
 .slideshow-text {
   position: absolute;
-  bottom: 8px;
-
-  width: 100%;
-  padding: 8px 12px;
-
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
   color: #f2f2f2;
-
+  font-size: 1.3rem;
   text-align: center;
-}
-
-/*Numero della slide (1/3 etc)*/
-.numbertext {
-  position: absolute;
-  top: 0;
-
-  padding: 8px 12px;
-
-  color: #f2f2f2;
-
-  font-size: .75rem;
+  width: 100%;
+  padding: 1.5rem;
 }
 
 .dot-container {
