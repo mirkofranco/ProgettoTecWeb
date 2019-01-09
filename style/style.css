@@ -338,42 +338,33 @@ a.clickable-image {
 }
 
 /* MENU LATERALE CATALOGO */
-.openMenu {
-  font-size: 1.5vw;
-
-  cursor: pointer;
-}
 
 .sidenav {
-  position: fixed;
-  z-index: 1;
-  top: 0;
+  position: absolute;
+  top: 30vh;
   left: 0;
 
-  overflow-x: hidden;
-  height: 100%;
-  width: 0;
-  padding-top: 60px;
-  transition: 0.5s;
+  min-height: 59.5vh; /* FIXME con 60 sbrodola sul footer. mistero */
+  width: 20vw;
 
   background-color: #f1f1f1;
 }
 
 .sidenav a {
   display: block;
-  padding: 8px 8px 8px 32px;
-  transition: 0.3s;
+  padding: 8px;
+  padding-left: 32px;
 
   color: black;
 
   text-decoration: none;
 }
 
-.sidenav h1 {
+.sidenav h2 {
   font-size: 1.5vw;
 }
 
-.sidenav h2 {
+.sidenav h3 {
   font-size: 1vw;
 }
 
@@ -385,9 +376,8 @@ a.clickable-image {
 
 /* FILE CATEGORIA_CATALOGO.HTML */
 
-  margin-left: 50px;
-
-  font-size: 2rem;
+#categoria-catalogo {
+  width: 55vw;
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */
