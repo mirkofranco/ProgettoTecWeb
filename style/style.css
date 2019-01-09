@@ -168,6 +168,10 @@ a.clickable-image {
   padding: .4rem;
 }
 
+.contenuto>div {
+  padding: 2rem .5rem 0;
+}
+
 /* file index.html */
 
 /* ---------- SLIDESHOW ---------- */
@@ -538,7 +542,7 @@ label {
 
     /* workaround per mantenere un'aspect ratio fissa a 16:9 */
     height: 0;
-    padding-bottom: 56.25%;
+    padding-top: 56.25%;
     margin: 2%;
 
     /* overflow: hidden; */
@@ -553,6 +557,17 @@ label {
     height: 100%;
   border: none;
   margin: auto;
+}
+
+.orari-apertura {
+    border-collapse: collapse;
+
+    text-align: left;
+    font-size: .8rem;
+}
+
+.orari-apertura td, .orari-apertura th {
+    padding: .5rem;
 }
 
 /* file _fine.html */
@@ -662,6 +677,10 @@ input[type="password"] {
   
    .flex-element {
     width: 50%;
+  }
+
+  .orari-apertura {
+    font-size: 1rem;
   }
   
 }
