@@ -647,6 +647,10 @@ input[type="password"] {
     margin-top: 0;
   }
   
+   .flex-element {
+    width: 50%;
+  }
+  
 }
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
@@ -659,10 +663,6 @@ input[type="password"] {
 
   .bg-pagina-consulenze {
     width: 100%;
-  }
-
-  .flex-element {
-    width: 50%;
   }
 
   .fcontainer {
