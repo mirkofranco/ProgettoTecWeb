@@ -39,13 +39,6 @@
         <label for="fcat">In cosa possiamo aiutarti:</label>
       </div>
       <div class="col-75">
-        <!--<select class= "fInputBorder" id="fcat" name="fcat">
-          <option disabled selected hidden value> -- Seleziona un'opzione dalla lista -- </option>
-          <option value="zonagiorno">Zona Giorno</option>
-          <option value="zonanotte">Zona Notte </option>
-          <option value="cucina">Cucina</option>
-          <option value="bagno">Bagno</option>
-        </select>-->
         {{elencoCategorie}}
       </div>
     </div>
@@ -62,8 +55,8 @@
       <div class="frow clearfix">
         <div class="messaggio-errore-form" id="messaggio-errore-form"> {{errorForm}} </div>
         <div class="messaggio-successo-form" id="messaggio-successo-form"> {{successMessage}} </div>
-        <input type="submit" value="Richiedi Consulenza" name="chiediConsulenza" class="submit-action">
       </div>
+       <input type="submit" value="Richiedi Consulenza" name="chiediConsulenza" class="submit-action">
     </div>
   </form>
 </div>

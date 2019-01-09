@@ -165,7 +165,7 @@ a.clickable-image {
 
 .contenuto {
   min-height: 60vh;
-  padding: 0 1rem 1rem;
+  padding: .4rem;
 }
 
 /* file index.html */
@@ -404,7 +404,8 @@ a.clickable-image {
 
 .bg-pagina-consulenze {
   background-image: url("../images/consulenza_o.jpg");
-  background-position: center;
+  background-position: top;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 
@@ -440,11 +441,13 @@ label {
 
 /* stile pulsanti submit dei form */
 .submit-action {
-  float: right;
+  /*float: center;*/
+  display: block;
 
   padding: .8rem 1.5rem;
   border: 1px solid #fcfcfc;
-  margin: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 
   background-color: #f1f1f1;
   color: black;
@@ -643,10 +646,7 @@ input[type="password"] {
   .col-25, .col-75 {
     margin-top: 0;
   }
-
-  input[type="submit"] {
-    margin-top: 0;
-  }
+  
 }
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
