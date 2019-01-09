@@ -152,17 +152,7 @@ a.clickable-image {
   line-height: 5vh;
 }
 
-/* TODO animazione menu */
-.target {
-  position: absolute;
-  z-index: -1;
-  transform: translateX(-60px);
-
-  border-bottom: 4px solid transparent;
-}
-
-.navbar a,
-.target {
+.navbar a {
   transition: all .35s ease-in-out;
 }
 
