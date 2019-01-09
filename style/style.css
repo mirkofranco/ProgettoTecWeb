@@ -95,7 +95,7 @@ a.clickable-image {
   content: "";
 }
 
-/* file _inizio_user.html */
+/* FILE _INIZIO_USER.HTML */
 
 /* ---------- HEADER ---------- */
 
@@ -120,15 +120,14 @@ a.clickable-image {
 }
 
 /* ---------- NAVIGATION BAR ---------- */
-.navbar {
-  /* FIXME: altezza footer sballata */
-  min-height: 10vh;
+.navbar ul {
+  line-height: 10vh;
 }
 
 .navbar a {
   display: block;
 
-  padding: 1rem;
+  padding: 0 1rem;
 
   color: black;
 
@@ -136,13 +135,13 @@ a.clickable-image {
   text-decoration: none;
 }
 
-.current-page {
-  font-weight: bold;
-}
-
 .navbar a:hover {
   background-color: #4c4a4a;
   color: #ffffff;
+}
+
+.current-page {
+  font-weight: bold;
 }
 
 .breadcrumb {
@@ -172,7 +171,7 @@ a.clickable-image {
   padding: .4rem;
 }
 
-/* file index.html */
+/* FILE INDEX.HTML */
 
 /* ---------- SLIDESHOW ---------- */
 
@@ -296,7 +295,7 @@ a.clickable-image {
   }
 }
 
-/* file catalogo.html */
+/* FILE CATALOGO.HTML */
 
 
 
@@ -384,17 +383,14 @@ a.clickable-image {
   font-weight: bold;
 }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
+/* FILE CATEGORIA_CATALOGO.HTML */
 
   margin-left: 50px;
 
   font-size: 2rem;
 }
 
-/* file consulenza_online.html */
+/* FILE CONSULENZA_ONLINE.HTML */
 
 .bg-pagina-consulenze {
   background-image: url("../images/consulenza_o.jpg");
@@ -525,7 +521,7 @@ label {
 }
 
 
-/* file contatti.html */
+/* FILE CONTATTI.HTML */
 
 #embeddedMap {
     position: relative;
@@ -562,7 +558,7 @@ label {
     padding: .5rem;
 }
 
-/* file _fine.html */
+/* FILE _FINE.HTML */
 
 /* FOOTER */
 
@@ -620,8 +616,11 @@ label {
 .anteprima-pulsanti {
   padding: .5rem;
   display: inline; 
-  width: 50%;
-  float: left;
+  /* tolto perché
+  With 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect.
+  */
+  /* width: 50%;
+  float: left; */
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
