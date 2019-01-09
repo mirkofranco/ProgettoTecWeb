@@ -82,6 +82,10 @@ a.clickable-image {
   justify-content: center;
 }
 
+.padded-text-container {
+  padding: 2rem .5rem 0;
+}
+
 /* apply class="clearfix" to the container with floated elements inside */
 .clearfix::after {
   clear: both;
@@ -168,15 +172,11 @@ a.clickable-image {
   padding: .4rem;
 }
 
-.contenuto>div {
-  padding: 2rem .5rem 0;
-}
-
 /* file index.html */
 
 /* ---------- SLIDESHOW ---------- */
 
-div.slideshow-container {
+.slideshow-container {
   position: relative;
 
   /* non ingrandire a più della dimensione delle immagini stesse */
@@ -550,10 +550,12 @@ label {
 }
 
 .orari-apertura {
-    border-collapse: collapse;
+  margin-top: 1rem;
+  
+  text-align: left;
+  font-size: .8rem;
 
-    text-align: left;
-    font-size: .8rem;
+  border-collapse: collapse;
 }
 
 .orari-apertura td, .orari-apertura th {
