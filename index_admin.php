@@ -31,7 +31,7 @@
         "{{errorForm}}" => $errorLogin,
         "{{previousUN}}" => $previousUS
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/login.html'));
     echo file_get_contents('./static/_fine.html');
 ?>
