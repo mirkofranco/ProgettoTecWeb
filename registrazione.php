@@ -36,6 +36,16 @@
             $previousEmail = isset($_POST['email']) ? "value=\"". $_POST['email']. "\"" : "" ;
         }
     }
+
+    require_once('./scripts/php/Sessione.php');
+    Sessione::startSession();
+    $gestioneLogin = "";
+    if(!isset($_SESSION['user'])){
+        $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+    }else{
+        $gestioneLogin = "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+    }
+
     $daSostituire =  array(
         "{{pageTitle}}" => "Registrazione - Studio AR",
         "{{pageDescription}}"=>"pagina di registrazione al sito dello Studio AR",
@@ -46,7 +56,8 @@
         "{{previousCognome}}" => $previousCognome,
         "{{previousUsername}}" => $previousUsername,
         "{{previousEmail}}" => $previousEmail,
-        "{{successForm}}" => $successForm
+        "{{successForm}}" => $successForm,
+        "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/registrazione.html'));

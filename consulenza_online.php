@@ -43,6 +43,16 @@
             $previousCommento =  $_POST['comment'];
         }
     }
+
+    require_once('./scripts/php/Sessione.php');
+    Sessione::startSession();
+    $gestioneLogin = "";
+    if(!isset($_SESSION['user'])){
+        $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+    }else{
+        $gestioneLogin = "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+    }
+
     $daSostituire = array(
             "{{pageTitle}}" => "Consulenza Online - AR",
             "{{pageDescription}}"=>"TODO",
@@ -54,7 +64,8 @@
             "{{previousNome}}" => $previousNome,
             "{{previousMail}}" => $previousMail,
             "{{previousCommento}}" => $previousCommento,
-            "{{successMessage}}" => $successForm
+            "{{successMessage}}" => $successForm,
+            "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html')); //cerca il primo parametro, e nel terzo ci
     //mette quello che trova nel secondo

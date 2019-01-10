@@ -1,4 +1,12 @@
 <?php
+    require_once('./scripts/php/Sessione.php');
+    Sessione::startSession();
+    $gestioneLogin = "";
+    if(!isset($_SESSION['user'])){
+        $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+    }else{
+        $gestioneLogin = "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+    }
     require_once './scripts/php/DomUtils.php';
 
     // TODO: prendere lista categorie da db!
@@ -16,7 +24,8 @@
         "{{pageTitle}}" => "$currentCategory - Studio AR",
         "{{pageDescription}}"=>"TODO",
         "{{pageKeywords}}"=>"TODO",
-        "{{nomeCategoria}}" => $currentCategory
+        "{{nomeCategoria}}" => $currentCategory,
+        "{{gestioneLogin}}" => $gestioneLogin
     );
 
     $page = file_get_contents('./static/_inizio_user.html').
