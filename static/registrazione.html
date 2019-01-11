@@ -3,7 +3,7 @@
 </p>
 
 <div class="contenuto">
-  <form name="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione()" method="post" class="fcontainer">
+  <form name="registrazione" id="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione();" method="post" class="fcontainer">
     <div class="frow clearfix">
         <div class="col-75">
           <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled>
@@ -14,9 +14,8 @@
         <label for="nome">Nome:</label>
       </div>
       <div class="col-75">
-        <input id="fname" maxlength="20" class="fInputBorder" type="text" name="nome" {{previousNome}} placeholder="Scrivi qui il tuo nome" required />
+        <input id="fname" maxlength="20" class="fInputBorder" type="text" name="nome"  {{previousNome}} placeholder="Scrivi qui il tuo nome" required />
       </div>
-      <div role="alert" class="alert" id="alertNome" >Il nome deve contenere almeno quattro caratteri</div>
     </div>
 
     <div class="frow clearfix">
@@ -28,7 +27,7 @@
       </div>
     </div>
 
-    
+
     <div class="frow clearfix">
       <div class="col-25">
         <label for="email">Username:</label>

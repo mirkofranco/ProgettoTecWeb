@@ -8,19 +8,17 @@
     $previousEmail = "";
     $successForm = "";
     if(isset($_POST['registrati'])){
-        if(isset($_POST['forJS'])){
-            if(strlen($_POST['nome']) < 4){
-                $errorForm .= "Il nome deve contenere almeno quattro caratteri<br/>";
-            }
-            if(strlen($_POST['cognome']) < 4){
-                $errorForm .= "Il cognome deve contenere almeno quattro caratteri<br/>";
-            }
-            if(strlen($_POST['username']) < 4){
-                $errorForm .= "Lo username deve contenere almeno quattro caratteri<br/>";
-            }
-            if(strlen($_POST['password'])  < 4){
-                $errorForm .= "La password deve contenere almeno quattro caratteri<br/>";
-            }
+        if(strlen($_POST['nome']) < 4){
+            $errorForm .= "Il nome deve contenere almeno quattro caratteri<br/>";
+        }
+        if(strlen($_POST['cognome']) < 4){
+            $errorForm .= "Il cognome deve contenere almeno quattro caratteri<br/>";
+        }
+        if(strlen($_POST['username']) < 4){
+            $errorForm .= "Lo username deve contenere almeno quattro caratteri<br/>";
+        }
+        if(strlen($_POST['password'])  < 4){
+            $errorForm .= "La password deve contenere almeno quattro caratteri<br/>";
         }
         if($errorForm == ""){
             $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");

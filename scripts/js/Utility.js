@@ -20,24 +20,46 @@ $(
     }
 );
 
+
+function checkForm(nomeInput){
+    togliErrore(nomeInput);
+    var pattern = new RegExp('^[a-zA-Z]{4,}$')
+    if (pattern.test(nomeInput.value)){
+        return true;
+    }else{
+        document.getElementById("registrazione").addEventListener("submit", function(event){
+            event.preventDefault()
+        });
+        mostraErrore(nomeInput, "Il campo  deve contenere almeno 4 caratteri");
+        return false;
+    }
+}
+
+
+
+function togliErrore(input){
+    var parent = input.parentNode;
+    if(parent.children.length > 1){
+        parent.removeChild(parent.children[1]);
+    }
+}
+
+function mostraErrore(input, testo){
+    var parent = input.parentNode;
+    var span = document.createElement("span");
+    span.className = "messaggio-errore-form";
+    span.appendChild(document.createTextNode(testo));
+    parent.appendChild(span);
+}
+
 function controllaRegistrazione(){
-    if(document.registrazione.nome.value.length < 4){
-        alert("Il nome deve contenere almeno quattro caratteri");
-        document.getElementById('alertNome').style.display = "block";
-        document.getElementById('alertNome').focus();
-        return false;
-    }
-    if(document.registrazione.cognome.value.length < 4){
-        alert("Il cognome deve contenere almeno quattro caratteri");
-        return false;
-    }
-    if(document.registrazione.username.value.length < 4){
-        alert("Il nome utente deve contenre almeno caratteri");
-        return false;
-    }
-    if(document.registrazione.password.value.length < 4){
-        alert("La password deve contenere almeno quattro caratteri");
-        return false;
-    }
-    return true;
+    var nome = document.getElementById('fname');
+    var cognome = document.getElementById('fcognome');
+    var username = document.getElementById('fusername');
+    var password = document.getElementById('fpsw');
+    var risultatoTestNome = checkForm(nome);
+    var risultatoTestCognome = checkForm(cognome);
+    var risultatoTestUsername = checkForm(username);
+    var risultatoTestPassoword = checkForm(password);
+    return risultatoTestNome && risultatoTestCognome && risultatoTestUsername && risultatoTestPassoword;
 }
