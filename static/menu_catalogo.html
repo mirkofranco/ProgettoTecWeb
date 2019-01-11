@@ -1,40 +1,35 @@
 <!-- MENU DI NAVIGAZIONE LATERALE -->
 <div id="mySidenav" class="sidenav">
 
-  <!-- CONTENUTO FILE -->
   <a href="./catalogo.php"><p>Ritorna al catalogo</p></a>
-
-  <div>
-    <a href="#placeholderLink"><h2>placeholderCategoria</h2></a>
-    <a href="#placeholderSottocategoria"><h3>placeholderSottoCategoria</h3></a>
-  </div>
 
   {{contenutoDinamicoSidebar}}
 
+  <!-- ESEMPIO DEL CONTENUTO DINAMICO:
+  $sidebar = new SidebarBuilder("categoria attuale");
+
+  $sidebar->addCategory("categoria attuale");
+  $sidebar->addCategory("altra categoria");
+
+  $sidebar->addSubCategory("categoria attuale", "sottocategoria 1");
+  $sidebar->addSubCategory("categoria attuale", "sottocategoria 2");
+  $sidebar->addSubCategory("altra categoria", "altra sottocategoria")
+
+  $sidebar->buildHTML();
+  
+  OUTPUT DELLA CHIAMATA buildHTML():
+
+  <div class="category-container sidebar-current-page">
+    <a href="./categoria_attuale.php"><h2>categoria attuale</h2></a>
+    <a href="#sottocategoria-1"><h3>sottocategoria 1</h3></a>
+    <a href="#sottocategoria-2"><h3>sottocategoria 2</h3></a>
+  </div>
+  <div class="category-container">
+    <a href="./altra_categoria.php"><h2>altra categoria</h2></a>
+    <a href="./altra_categoria.php/#altra-sottocategoria"><h3>altra sottocategoria</h3></a>
+  </div>
+
+  (la classe sidebar-current-page è presente solo sulla parte di menu corrispondente alla pagina attuale)
+  -->
+
 </div>
-
-<!-- 
-  <a href="./zona_notte.php"><h2>Zona notte</h2></a>
-  <a href="#"><h3>Letti</h3></a>
-  <a href="#"><h3>Comodini</h3></a>
-  <a href="#" lang="fr"><h3>Abat-jour</h3></a>
-  <a href="#"><h3>Armadi</h3></a>
-  <a href="#"><h3>Lampade</h3></a>
-
-  <a href="./zona_giorno.php"><h2>Zona giorno</h2></a>
-  <a href="#"><h3>Tavoli</h3></a>
-  <a href="#"><h3>Poltrone</h3></a>
-  <a href="#"><h3>Divani</h3></a>
-  <a href="#"><h3>Sedie</h3></a>
-  <a href="#"><h3>Lampade</h3></a>
-
-  <a href="./cucine.php"><h2>Cucina</h2></a>
-  <a href="#"><h3>Tavoli</h3></a>
-  <a href="#"><h3>Piani cottura</h3></a>
-  <a href="#"><h3></h3></a>
-
-  <a href="./bagni.php"><h2>Bagno</h2></a>
-  <a href="#"><h3>Lavandini</h3></a>
-  <a href="#"><h3>WC</h3></a>
-  <a href="#"><h3>Docce</h3></a>
--->

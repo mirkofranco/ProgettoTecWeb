@@ -364,10 +364,15 @@ a.clickable-image {
   font-weight: bold;
 }
 
+.sidebar-current-page {
+  background-color: yellow;
+}
+
 /* FILE CATEGORIA_CATALOGO.HTML */
 
 #categoria-catalogo {
   width: 55vw;
+  margin: auto;
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */

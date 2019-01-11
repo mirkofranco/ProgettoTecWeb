@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zona Notte - Studio AR</title>
+  <!-- TODO: l'icona di fianco al titolo delle varie pagine -->
+  <!--[if IE]><link rel="shortcut icon" href="../path/to/favicon.ico" typfe="image/png"><![endif]-->
+  <!-- <link rel="icon" href="../path/to/favicon.ico" type="image/png" /> -->
+
+  <meta name="title" content="Zona Notte - Studio AR" />
+  <meta name="description" content="TODO" />
+  <meta name="keywords" content="TODO" />
+  <meta name="author" content="Elisabetta Piombin, Mirko Franco, Nicoletta Fabro, Luca Ercole" />
+
+  <!-- serve per poter usare unità di misura dip. dalla viewport e in generale per avere responsive css che funzioni-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="../style/style.css" />
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script async src="../scripts/js/menu_laterale.js"></script>
+  <script async src="../scripts/js/Utility.js"></script>
+
+</head>
+
+<body>
+  <div class="header">
+    <a href="../index.php" class="clickable-image padded-small">
+      <img src="../images/logopngB.png" id="logo" alt="Studio Architetti Riuniti" />
+    </a>
+    <div class="header-right">
+      <a href="index_admin.php" class="header-button" >Login</a><a href="registrazione.php" class="header-button" >Registrati</a>
+    </div>
+  </div>
+
+  <!-- barra di navigazione -->
+  <nav class="navbar">
+    <ul class="flex-container flex-centered">
+      <li><a href="../index.php" lang="en">Home</a></li>
+      <li><a href="../about_us.php" lang="en">About Us</a></li>
+      <li><a href="../catalogo.php">Catalogo</a></li>
+      <li><a href="../consulenza_online.php">Consulenza <span lang="en">Online</span></a></li>
+      <li><a href="../contatti.php">Contatti</a></li>
+      <li><a href="../offerte.php">Offerte</a></li>
+    </ul>
+  </nav>
+<!-- MENU DI NAVIGAZIONE LATERALE -->
+<div id="mySidenav" class="sidenav">
+
+  <a href="../catalogo.php"><p>Ritorna al catalogo</p></a>
+
+  <div class="category-container sidebar-current-page">
+  <a href="#">
+    <h2>Zona Notte</h2>
+  </a>
+  <a href="#letti">
+    <h3>Letti</h3>
+  </a>
+  <a href="#comodini">
+    <h3>Comodini</h3>
+  </a>
+  <a href="#armadi">
+    <h3>Armadi</h3>
+  </a>
+  <a href="#materassi">
+    <h3>Materassi</h3>
+  </a>
+</div>
+<div class="category-container">
+  <a href="../zona_giorno.php">
+    <h2>Zona Giorno</h2>
+  </a>
+  <a href="../zona_giorno.php#sedie">
+    <h3>Sedie</h3>
+  </a>
+  <a href="../zona_giorno.php#tavoli">
+    <h3>Tavoli</h3>
+  </a>
+  <a href="../zona_giorno.php#divani">
+    <h3>Divani</h3>
+  </a>
+  <a href="../zona_giorno.php#librerie">
+    <h3>Librerie</h3>
+  </a>
+</div>
+<div class="category-container">
+  <a href="../cucine.php">
+    <h2>Cucine</h2>
+  </a>
+</div>
+<div class="category-container">
+  <a href="../uffici.php">
+    <h2>Uffici</h2>
+  </a>
+  <a href="../uffici.php#scrivanie">
+    <h3>Scrivanie</h3>
+  </a>
+  <a href="../uffici.php#sedute-per-ufficio">
+    <h3>Sedute per ufficio</h3>
+  </a>
+  <a href="../uffici.php#armadi">
+    <h3>Armadi</h3>
+  </a>
+</div>
+
+  <!-- ESEMPIO DEL CONTENUTO DINAMICO:
+  $sidebar = new SidebarBuilder("categoria attuale");
+
+  $sidebar->addCategory("categoria attuale");
+  $sidebar->addCategory("altra categoria");
+
+  $sidebar->addSubCategory("categoria attuale", "sottocategoria 1");
+  $sidebar->addSubCategory("categoria attuale", "sottocategoria 2");
+  $sidebar->addSubCategory("altra categoria", "altra sottocategoria")
+
+  $sidebar->buildHTML();
+  
+  OUTPUT DELLA CHIAMATA buildHTML():
+
+  <div class="category-container sidebar-current-page">
+    <a href="../categoria_attuale.php"><h2>categoria attuale</h2></a>
+    <a href="#sottocategoria-1"><h3>sottocategoria 1</h3></a>
+    <a href="#sottocategoria-2"><h3>sottocategoria 2</h3></a>
+  </div>
+  <div class="category-container">
+    <a href="../altra_categoria.php"><h2>altra categoria</h2></a>
+    <a href="../altra_categoria.php/#altra-sottocategoria"><h3>altra sottocategoria</h3></a>
+  </div>
+
+  (la classe sidebar-current-page è presente solo sulla parte di menu corrispondente alla pagina attuale)
+  -->
+
+</div>
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; Zona Notte
+</p>
+
+<div id="categoria-catalogo" class="contenuto">
+
+  <h1>Zona Notte</h1>
+<!-- 
+  <h2>placeholder</h2>
+  <img src="../icons/_placeholder_black.png" alt="" class="img-prodotto-catalogo" /> -->
+  
+  <h2>sottocategoria #1</h2>
+<div class="flex-container subcategory-container">
+  <img src="../icons/_placeholder_black.png" alt="alt text"/>
+  <img src="../icons/_placeholder_black.png" alt="alt text"/>
+  <img src="../icons/_placeholder_black.png" alt="alt text"/>
+  <img src="../icons/_placeholder_black.png" alt="alt text"/>
+</div>
+</div>
+<div class="footer flex-container flex-centered">
+  <div class="footerElement">
+    <img src="../icons/location.png" alt="Dove trovarci" class="icon" />
+    <p>Via San Francesco D'Assisi, 12, 34133 Trieste (TS)</p>
+  </div>
+  <div class="footerElement">
+    <img src="../icons/phone.png" alt="Numero di telefono" class="icon" />
+    <p>+39 040 370 545</p>
+  </div>
+  <div class="footerElement">
+    <a href="mailto:studioar@hotmail.it">
+      <img src="../icons/email.png" alt="email" class="icon" />
+      <p>studioar@hotmail.it</p>
+    </a>
+  </div>
+  <div class="footerElement">
+    <a href="https://www.facebook.com/studioarchitettiriuniti/" target="_blank">
+      <img src="../icons/facebook.png" alt="Profilo facebook del negozio" class="icon" />
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
     }
 
     $daSostituire = array(
-        "{{pageTitle}}" => "Zona giorno - Studio AR",
+        "{{pageTitle}}" => "Zona Giorno - Studio AR",
         "{{pageDescription}}"=>"TODO",
         "{{pageKeywords}}"=>"TODO",
         "{{gestioneLogin}}" => $gestioneLogin

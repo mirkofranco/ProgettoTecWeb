@@ -75,6 +75,19 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $toReturn;
     }
 
+    /**
+     * restituisce una mappa di tutte le categorie, indicizzate sull'id
+     */
+    public function mappaCategorie() {
+        $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre;";
+        $result = $this -> pdo -> query($query) -> fetchAll();
+        $toReturn = array();
+        foreach ($result as $row) {
+            $toReturn[$row['IDC']] = ['Nome' => $row['Nome'], 'IDCatPadre' => $row['IDCatPadre']];
+        }
+        return $toReturn;
+    }
+
     public function insertUtente($utente){
         $toInsert = "INSERT INTO UTENTE(Nome, Cognome, Username, Password, Mail, Permessi) VALUES(?, ?, ?, ?, ?, ?);";
         $stmt = $this -> pdo -> prepare($toInsert);
@@ -82,7 +95,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $result;
     }
 
-    /* Chiude la conenssione */
+    /* Chiude la connessione */
     public function close(){
         $pdo = null;
     }//close

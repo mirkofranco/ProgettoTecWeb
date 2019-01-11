@@ -1,4 +1,7 @@
 <?php
+    require_once './scripts/php/connection.php';
+    require_once './scripts/php/DomUtils.php';
+
     require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
     $gestioneLogin = "";
@@ -7,16 +10,9 @@
     }else{
         $gestioneLogin = "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
-    require_once './scripts/php/DomUtils.php';
 
-    // TODO: prendere lista categorie da db!
-    // require_once './scripts/php/connection.php';
-    // $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
-    // $connection -> connect();
-    // $listaCategorie = $connection -> listaCategorie();
-    // $connection -> close();
-
-    $currentCategory = "Zona notte";
+    // definisce variabili della pagina corrente
+    $currentCategory = "Zona Notte";
 
     $file = ".".$_SERVER["PHP_SELF"];
 
@@ -33,20 +29,37 @@
             file_get_contents('./static/categoria_catalogo.html').
             file_get_contents("./static/_fine.html");
 
-    // costruisce dinamicamente il menu laterale
+    $page = str_replace(array_keys($daSostituire), array_values($daSostituire), $page);
+
+    // prende dal db una mappa delle categorie, indicizzata sull'id
+    $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+    $connection -> connect();
+    $categorie = $connection->mappaCategorie();
+
+    // assembla dinamicamente il menu laterale
     $sidebar = new SidebarBuilder($currentCategory);
 
-    $sidebar->addCategory("Zona notte", $file);
-    $sidebar->addSubCategory("Zona notte", "Letti", "#letti");
+    foreach ($categorie as $id => $categoria) {
+        $nome = $categoria['Nome'];
+        $idPadre = $categoria['IDCatPadre'];
 
-    $sidebar->addCategory("cat1", "./cat1");
-    $sidebar->addSubCategory("cat1", "subcat11", "#subcat11");
-    $sidebar->addSubCategory("cat1", "subcat12", "#subcat12");
+        if (is_null($idPadre)) { // se non ha padre, è una categoria
+            $sidebar->addCategory($nome);
+        } else { // altrimenti è una sottocategoria quindi recupero il nome del padre
+            $nomePadre = $categorie[$categoria['IDCatPadre']]['Nome'];
 
-    $sidebar->addCategory("cat2", "./cat2");
-    $sidebar->addSubCategory("cat2", "subcat21", "#subcat21");
+            $sidebar->addSubCategory($nomePadre, $nome);
+        }
+    }
 
-    $daSostituire["{{contenutoDinamicoSidebar}}"] = $sidebar->getHTML();
+    // costruisce l'html del menu laterale usando gli elementi aggiunti finora
+    // e lo inserisce nella pagina
+    $page = str_replace("{{contenutoDinamicoSidebar}}", $sidebar->buildHTML(), $page);
+
+    // prende dal db i prodotti......
+    // $products = $connection->getProdotti();
+
+    $connection -> close();
 
     // costruisce dinamicamente il contenuto della pagina
     $subCategory = new SubCategoryBuilder("sottocategoria #1");
@@ -56,7 +69,16 @@
     $subCategory->addImg("./icons/_placeholder_black.png", "alt text");
     $subCategory->addImg("./icons/_placeholder_black.png", "alt text");
 
-    $daSostituire["{{contenutoDinamicoCategoria}}"] = $subCategory->getHTML();
+    // costruisce l'html della pagina usando gli elementi aggiunti finora
+    // e lo inserisce nella pagina
+    $page = str_replace("{{contenutoDinamicoCategoria}}", $subCategory->buildHTML(), $page);
 
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), $page);
+    // TODO rimuovere questo prima della consegna!
+    // salva file html in ./cache_catalogo/
+    $cacheFilename = str_replace(" ", "_", strtolower($currentCategory)).".html";
+    $file = fopen("cache_catalogo/$cacheFilename", "w") or die("Cannot create file to write into!");
+    fwrite($file, str_replace("./", "../", $page));
+
+
+    echo $page;
 ?>
