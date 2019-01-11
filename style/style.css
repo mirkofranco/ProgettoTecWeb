@@ -395,7 +395,7 @@ select,
 textarea {
   width: 100%;
   padding: .7rem;
-  border: 1px solid #fcfcfc;
+  border: .5px solid #f1f1f1;
 }
 
 textarea {
@@ -423,6 +423,7 @@ label {
   color: black;
 
   text-align: center;
+  font-size: .8rem;
 
   cursor: pointer;
 }
@@ -441,13 +442,6 @@ label {
   margin: auto;
 
   background-color: white;
-}
-
-.fInputBorder,
-#femail,
-#fname,
-#fpsw {
-  border: .5px solid #f1f1f1;
 }
 
 .fInputBorder:hover,
