@@ -453,12 +453,19 @@ label {
   border: .5px solid black;
 }
 
-/* colonne di larghezza 25% e 75%, impostate a 100% per essere mobile-first */
+/* colonne di larghezza 25% e 75%*/
 .col-25, .col-75 {
   float: left;
 
-  width: 100%;
   margin-top: 6px;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-75 {
+  width: 75%;
 }
 
 /*commento col messaggio di errore nei form*/
@@ -515,8 +522,8 @@ label {
 
     width: 100%;
     height: 100%;
-  border: none;
-  margin: auto;
+    border: none;
+    margin: auto;
 }
 
 .orari-apertura {
@@ -620,9 +627,12 @@ input[type="password"] {
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 /*PER MOBILE*/
 @media only screen and (max-width: 425px) {
-  
- 
-  
+
+/*FORM*/
+  .col-25, .col-75 {
+  width: 100%;
+}
+
 }
 
 /*PER TABLET (PORTRAIT)*/
@@ -660,7 +670,6 @@ input[type="password"] {
     background-position: top;
     background-size: cover;
 }
-  
   
   /*FOOTER*/
   .footer {
