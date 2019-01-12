@@ -445,6 +445,8 @@ label {
   padding: 1rem;
   border: 1px solid #a4a4a4;
   margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
 
   background-color: white;
 }
