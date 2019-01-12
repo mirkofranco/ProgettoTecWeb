@@ -135,10 +135,10 @@ a.clickable-image {
   text-decoration: none;
 }
 
-.navbar a:hover {
+/*.navbar a:hover {
   background-color: #4c4a4a;
   color: #ffffff;
-}
+}*/
 
 .current-page {
   font-weight: bold;
@@ -292,7 +292,7 @@ a.clickable-image {
 .flex-element {
   position: relative;
 
-  width: 100%;
+  width: 50%;
 
   padding: .8rem;
 }
@@ -631,17 +631,37 @@ input[type="password"] {
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 /*PER MOBILE*/
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 320px) {
+  
+  /*CATALOGO*/
+  .flex-element {
+  /*position: relative;*/
 
-/*FORM*/
-  .col-25, .col-75 {
   width: 100%;
+
+  padding: .8rem;
 }
+
+  /*FORM*/
+    .col-25, .col-75 {
+    width: 100%;
+  }
+   /*FORM CONSULENZA ONLINE*/
+  .bg-pagina-consulenze {
+    background-image: url("../images/consulenza_o.jpg");
+    background-position: top;
+    background-size: cover;
+}
+  
+  /*FOOTER*/
+  .footer {
+    height: auto;
+  }
 
 }
 
 /*PER TABLET (PORTRAIT)*/
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
 
   .fcontainer {
     width: 80vw;
@@ -676,10 +696,10 @@ input[type="password"] {
     background-size: cover;
 }
   
-  /*FOOTER*/
+  /*FOOTER
   .footer {
     height: auto;
-  }
+  }*/
 }
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
@@ -697,6 +717,19 @@ input[type="password"] {
   .fcontainer {
     width: 50vw;
   }
+  
+  /*FOOTER*/
+  .footer {
+  align-items: center;
+
+  height: 10vh;
+
+  background-color: #4c4a4a;
+}
+
+.footerElement {
+  margin: .5rem 2rem;
+}
 
 }
 
