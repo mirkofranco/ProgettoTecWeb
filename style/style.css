@@ -720,11 +720,12 @@ input[type="password"] {
   
   /*FOOTER*/
   .footer {
-  align-items: center;
+    align-items: center;
+    margin-bottom: 0;
 
-  height: 10vh;
+    height: 10vh;
 
-  background-color: #4c4a4a;
+    background-color: #4c4a4a;
 }
 
 .footerElement {
