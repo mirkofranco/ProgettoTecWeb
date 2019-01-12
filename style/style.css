@@ -652,6 +652,7 @@ input[type="password"] {
     background-image: url("../images/consulenza_o.jpg");
     background-position: top;
     background-size: cover;
+    padding: .4vh;
 }
   
   /*FOOTER*/
