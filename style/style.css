@@ -131,7 +131,7 @@ a.clickable-image {
 
   color: black;
 
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -157,8 +157,7 @@ a.clickable-image {
 }
 
 .contenuto {
-  min-height: 60vh;
-  padding: .4rem;
+  min-height: 75vh;
 }
 
 /* FILE INDEX.HTML */
@@ -382,6 +381,7 @@ a.clickable-image {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100%;
+  padding: .4rem;
 }
 
 /* FORM CONSULENZE */
@@ -445,8 +445,8 @@ label {
   padding: 1rem;
   border: 1px solid #a4a4a4;
   margin: auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 
   background-color: white;
 }
@@ -634,7 +634,6 @@ input[type="password"] {
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 /*PER MOBILE*/
 @media only screen and (min-width: 320px) {
-  
   /*CATALOGO*/
   .flex-element {
   /*position: relative;*/
