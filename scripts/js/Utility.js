@@ -32,6 +32,17 @@ function checkForm(nomeInput){
     }
 }
 
+function checkPassowrd(nomeInput){
+    togliErrore(nomeInput)
+    var pattern = new RegExp('^[a-zA-Z0-9]{4,}$');
+    if(pattern.test(nomeInput.value)){
+        return true;
+    }else{
+        mostraErrore(nomeInput, "La password deve contenere almeno 4 caratteri alfanumerici");
+        return false;
+    }
+}
+
 
 
 function togliErrore(input){
@@ -57,6 +68,6 @@ function controllaRegistrazione(){
     var risultatoTestNome = checkForm(nome);
     var risultatoTestCognome = checkForm(cognome);
     var risultatoTestUsername = checkForm(username);
-    var risultatoTestPassword = checkForm(password);
+    var risultatoTestPassword = checkPassowrd(password);
     return risultatoTestNome && risultatoTestCognome && risultatoTestUsername && risultatoTestPassword;
 }
