@@ -25,6 +25,8 @@
             $connection -> connect();
             if($connection -> insertUtente(new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email'])) ){
                 $successForm .= "Complimenti! Utente inserito correttamente!";
+            }else{
+                $errorForm .= "Si è verificato un errore durante l'inserimento. Riprova!";
             }
             $connection -> close();
         }else{

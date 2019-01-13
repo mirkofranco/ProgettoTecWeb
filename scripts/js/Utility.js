@@ -27,9 +27,6 @@ function checkForm(nomeInput){
     if (pattern.test(nomeInput.value)){
         return true;
     }else{
-        document.getElementById("registrazione").addEventListener("submit", function(event){
-            event.preventDefault()
-        });
         mostraErrore(nomeInput, "Il campo  deve contenere almeno 4 caratteri");
         return false;
     }
@@ -60,6 +57,6 @@ function controllaRegistrazione(){
     var risultatoTestNome = checkForm(nome);
     var risultatoTestCognome = checkForm(cognome);
     var risultatoTestUsername = checkForm(username);
-    var risultatoTestPassoword = checkForm(password);
-    return risultatoTestNome && risultatoTestCognome && risultatoTestUsername && risultatoTestPassoword;
+    var risultatoTestPassword = checkForm(password);
+    return risultatoTestNome && risultatoTestCognome && risultatoTestUsername && risultatoTestPassword;
 }
