@@ -1,16 +1,4 @@
-//function controllaMail(){
-//    var email_reg_exp = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-]{2,})+.)+([a-zA-Z0-9]{2,})+$/;
-//    if (!email_reg_exp.test(document.getElementById('femail').value) || (document.getElementById('femail').value == "")) {
-//        document.getElementById('messaggio-errore-form').innerHTML = 'La mail non è valida';
-//    }else{
-//        document.getElementById('messaggio-errore-form').innerHTML = "";
-//    }
-//}
 
-function jsAttivo(){
-    document.getElementById('forJs').disabled = false;
-    //document.getElementById('messaggio-errore-form').innerHTML = "";
-}
 //se js è abilitato, questo attiva una casella di testo sentinella
 
 // l'ho commentato perché da errore quando carico pagine; se non vi serve eliminatelo pure -Luca
@@ -43,6 +31,17 @@ function checkPassowrd(nomeInput){
     }
 }
 
+function checkCommento(nomeInput){
+    togliErrore(nomeInput);
+    var pattern = new RegExp('^[a-zA-Z0-9\s\W]{20,}$'); //Non funziona questa regex, bisogna trovarne una che vada bene
+    if(pattern.test(nomeInput.value)){
+        return true;
+    }else{
+        mostraErrore(nomeInput, "Il commento deve contenere almeno 20 caratteri");
+        return false;
+    }
+}
+
 
 
 function togliErrore(input){
@@ -70,4 +69,12 @@ function controllaRegistrazione(){
     var risultatoTestUsername = checkForm(username);
     var risultatoTestPassword = checkPassowrd(password);
     return risultatoTestNome && risultatoTestCognome && risultatoTestUsername && risultatoTestPassword;
+}
+
+function controllaConsulenza(){
+    var nome = document.getElementById('fname');
+    var commento = document.getElementById('comment');
+    var risultatoNome = checkForm(nome);
+    var risutatoCommento = checkCommento(commento);
+    return risultatoNome && risutatoCommento;
 }

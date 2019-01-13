@@ -58,7 +58,6 @@
             "{{pageDescription}}"=>"TODO",
             "{{pageKeywords}}"=>"TODO",
             "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"current-page\">",
-            "<body>" => "<body onload=\"jsAttivo()\">",
             "{{errorForm}}" => $errorForm,
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{previousNome}}" => $previousNome,
