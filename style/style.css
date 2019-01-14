@@ -700,12 +700,12 @@ input[type="password"] {
 }
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1024px) {
 
-  .contenuto {
+  /*.contenuto {
     width: 70vw;
     margin: auto;
-  }
+  }*/
 
   .bg-pagina-consulenze {
     width: 100%;
@@ -732,7 +732,9 @@ input[type="password"] {
 
 }
 
-
+@media only screen and (min-width: 2560px) {
+  
+}
 
 /*!!!!!!VECCHIE DA RISTRUTTURARE!!!!!!*/
 
