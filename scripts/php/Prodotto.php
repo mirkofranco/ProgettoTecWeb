@@ -8,10 +8,11 @@
         private $dataInizioValiditaPrezzo;
         private $offerta;
         private $nomeImmagine;
+        private $nomeImmaginePiccola;
         private $Descrizione;
 
         /* Costruisce un ogeetto Prodotto in modo completo */
-        public function __construct($categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine, $Descrizione, $idProdotto = NULL){
+        public function __construct($categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine, $nomeImmaginePiccola, $Descrizione, $idProdotto = NULL){
             $this -> idProdotto = $idProdotto;
             $this -> categoria = $categoria;
             $this -> nome = $nome;
@@ -20,6 +21,7 @@
             $this -> dataInizioValiditaPrezzo = $dataInizioValiditaPrezzo;
             $this -> offerta = $offerta;
             $this -> nomeImmagine = $nomeImmagine;
+            $this -> nomeImmaginePiccola = $nomeImmaginePiccola;
             $this -> Descrizione = $Descrizione;
         }
 
@@ -60,6 +62,10 @@
 
         public function getNomeImmagine(){
             return $this -> nomeImmagine;
+        }
+
+        public function getNomeImmaginePiccola(){
+            return $this -> nomeImmaginePiccola;
         }
 
         public function getDescrizione() {

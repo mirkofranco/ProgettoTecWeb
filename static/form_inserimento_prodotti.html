@@ -70,10 +70,18 @@
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="immagineProdotto">Seleziona un'immagine</label>
+        <label for="immagineProdotto">Seleziona l'immagine principale del prodotto:</label>
       </div>
       <div class="col-75">
         <input class="fInputBorder" type="file" accept="image/*" id="immagineProdotto" name="immagineProdotto" required />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="immaginePiccolaProdotto">Seleziona l'immagine piccola del prodotto:</label>
+      </div>
+      <div class="col-75">
+        <input class="fInputBorder" type="file" accept="image/*" id="immaginePiccolaProdotto" name="immaginePiccolaProdotto" required />
       </div>
       <div class="messaggio-errore-form">{{errorForm}}</div>
       <div class="messaggio-successo-form">{{successForm}}</div>

@@ -35,14 +35,19 @@
         }
         if($errorForm == ""){
             $connection -> connect();
-            if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_POST['Descrizione']))){
+            if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_FILES['immaginePiccolaProdotto']['name'],  $_POST['Descrizione']))){
                 $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
             }
             $connection -> close();
             $connection = null;
             $uploadDir = '../ProgettoTecWeb/images/catalogo/';
+            $uploarDirPiccole = '../ProgettoTecWeb/images/catalogo/thumbnails/';
             $tmp = $_FILES['immagineProdotto']['tmp_name'];
+            $tmpPiccola = $_FILES['immaginePiccolaProdotto']['tmp_name'];
             if(move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name'])){
+            }
+            if(move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name'])){
+
             }
 
         }else{
