@@ -33,7 +33,7 @@ function checkPassowrd(nomeInput){
 
 function checkCommento(nomeInput){
     togliErrore(nomeInput);
-    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{20,}$'); //Non funziona questa regex, bisogna trovarne una che vada bene
+    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{20,}$'); 
     if(pattern.test(nomeInput.value)){
         return true;
     }else{

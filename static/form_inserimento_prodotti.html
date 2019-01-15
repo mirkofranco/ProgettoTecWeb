@@ -2,14 +2,14 @@
   <a href="menu_admin.php">Ritorna al pannello amministratore</a>
   <form method="post" enctype="multipart/form-data" class="fcontainer">
     <input type="text" id="verificaJavascriptAttivo" />
-    <div class="frow clearfix">
+    <!--<div class="frow clearfix">
       <div class="col-25">
         <label for="idProdotto">IDProdotto</label>
       </div>
       <div class="col-75">
         <input class="fInputBorder" type="text" maxlength="10" {{previousCodProd}} id="idProdotto" name="idProdotto" placeholder="Scrivi qui" required />
       </div>
-    </div>
+    </div>-->
     <div class="frow clearfix">
       <div class="col-25">
         <label for="nomeCategoria">Categoria Prodotto</label>
@@ -41,6 +41,15 @@
       </div>
       <div class="col-75">
         <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" required />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="isOfferta">Il prodotto è in offerta?</label>
+      </div>
+      <div class="col-75">
+        <input  type="radio" name="isOfferta" value="0" checked>No</input>
+        <input  type="radio" name="isOfferta" value="1">Si</input>
       </div>
     </div>
     <div class="frow clearfix">

@@ -24,9 +24,6 @@
     $previousDescrizione = "";
     $successForm = "";
     if(isset($_POST['inserisciProdotto'])){
-        if(strlen($_POST['idProdotto']) < 3){
-            $errorForm .= "Il codice del prodotto deve contenere almento 3 caratteri<br/>";
-        }
         if(strlen($_POST['nomeProdotto']) < 3){
             $errorForm .= "Il nome del prodotto deve contenere almeno 3 caratteri<br/>";
         }
@@ -38,7 +35,7 @@
         }
         if($errorForm == ""){
             $connection -> connect();
-            if($connection -> insertProdotto(new Prodotto($_POST['idProdotto'], $_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), 0, $_FILES['immagineProdotto']['name'], $_POST['Descrizione']))){
+            if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_POST['Descrizione']))){
                 $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
             }
             $connection -> close();
