@@ -5,13 +5,13 @@
     $connection -> connect();
     $listaCategorie = $connection -> listaSottoCategorie();
     $connection -> close();
-    //$previosCat = "value=\"" . (isset($_POST['fcat']) ? "value=\"". $_POST['fcat']. "\"" : "") . "\"" ;
+    //$previosCat = "value=\"" . (isset($_POST['fcat']) ? "value=\"". $_POST['fcat']. "\"" : "") . "\""
     $elencoCategorie = "<select id=\"fcat\" name=\"fcat\" required>";
     foreach ($listaCategorie as $categoria) {
         $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
-        if(isset($_POST['fcat']) && $_POST['fcat'] == $categoria['CodiceCategoria']){
+        /*if(isset($_POST['fcat']) && $_POST['fcat'] == $categoria['CodiceCategoria']){
             $elencoCategorie .= " selected";
-        }
+        }*/
         $elencoCategorie .=  ">" . $categoria['NomeCategoria'] . "</option>";
     }
     $elencoCategorie .= "</select>";
@@ -43,7 +43,6 @@
             $uploadDir = '../ProgettoTecWeb/images/catalogo/';
             $tmp = $_FILES['immagineProdotto']['tmp_name'];
             if(move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name'])){
-                echo "Immagine caricata con successo!<br/>";
             }
 
         }else{
