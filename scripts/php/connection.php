@@ -55,7 +55,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     }
 
     public function listaSottoCategorie(){
-        $query = "SELECT IDC, Nome FROM categoria WHERE IDCatPadre IS NOT NULL;";
+        $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NOT NULL;";
         $result = $this -> pdo -> query($query) -> fetchAll();
         $toReturn =  array();
         foreach($result as $row){
