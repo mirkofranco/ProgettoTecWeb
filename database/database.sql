@@ -4,9 +4,15 @@ CREATE DATABASE DatabaseTecnologieWeb CHARACTER SET utf8mb4 COLLATE utf8mb4_unic
 
 USE DatabaseTecnologieWeb;
 
+SET FOREIGN_KEY_CHECKS=0;
+
+DROP TABLE IF EXISTS CATEGORIA;
+DROP TABLE IF EXISTS COMMENTI;
 DROP TABLE IF EXISTS PRODOTTO;
-/* DROP TABLE IF EXISTS PRODOTTOSTORICO; */
+-- DROP TABLE IF EXISTS PRODOTTOSTORICO;
 DROP TABLE IF EXISTS UTENTE;
+
+SET FOREIGN_KEY_CHECKS=1;
 
 CREATE TABLE CATEGORIA(
 	IDC integer auto_increment primary key,
@@ -48,8 +54,8 @@ CREATE TABLE UTENTE(
 	Username varchar(20) not null unique,
 	Password varchar(100) not null,
 	Mail varchar(30) not null,
-	Permessi varchar(2) not null default '01'
 	/* 0: pagine amministrazione, 1: utente normale */
+	Permessi varchar(2) not null default '01'
 )ENGINE = InnoDB;
 
 CREATE TABLE COMMENTI(
