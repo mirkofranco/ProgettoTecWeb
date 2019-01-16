@@ -10,7 +10,7 @@
             // libxml_use_internal_errors(true);
         }
 
-        public function buildHTML() {
+        public function buildHtml() {
             $result = array();
 
             foreach ($this->document->childNodes as $childNode) {
@@ -42,18 +42,20 @@
             $categoryContainer = $this->categories[$name];
 
             if ($name === $this->currentPage) {
-                $categoryContainer->setAttribute("class", "category-container sidebar-current-page");
+                $categoryContainer->setAttribute("class", "sidebar-category-container sidebar-current-page");
                 $href = "#";
             } else {
                 $href = "./".strtolower(str_replace(" ", "_", $name)).".php";
-                $categoryContainer->setAttribute("class", "category-container");
+                $categoryContainer->setAttribute("class", "sidebar-category-container");
             }
 
             $this->document->appendChild($categoryContainer);
 
 
             $link = $this->document->createElement("a");
-            $link->setAttribute("href", $href); // TODO: alt???
+            $link->setAttribute("href", $href);
+            // alt text vuoto perchè il testo di questo link è già descrittivo
+            $link->setAttribute("alt", " ");
             $categoryContainer->appendChild($link);
 
             $h2 = $this->document->createElement("h2", $name);
@@ -71,11 +73,35 @@
             $href .= "#".strtolower(str_replace(" ", "-", $name));
 
             $link = $this->document->createElement("a");
-            $link->setAttribute("href", $href); // TODO: alt???
+            $link->setAttribute("href", $href);
+            // alt text vuoto perchè il testo di questo link è già descrittivo
+            $link->setAttribute("alt", " ");
             $parentCategory->appendChild($link);
 
             $h3 = $this->document->createElement("h3", $name);
             $link->appendChild($h3);
+        }
+
+        /**
+         * aggiunge categorie e sottocategorie a partire da un'array associativo con questa struttura:
+         * 
+         * array($idCategoria => array('Nome' => '$nome','IDCatPadre' => "$idPadre"), ... );
+         */
+        public function parseMap($categoryMap) {
+
+            foreach (array_values($categoryMap) as $category) {
+                $name = $category['Nome'];
+                $parentId = $category['IDCatPadre'];
+    
+                if (is_null($parentId)) { // se non ha padre, è una categoria
+                    $this->addCategory($name);
+                } else { // altrimenti è una sottocategoria
+                    // recupero il nome del padre
+                    $parentName = $categoryMap[$category['IDCatPadre']]['Nome'];
+        
+                    $this->addSubCategory($parentName, $name);
+                }
+            }
         }
 
     }

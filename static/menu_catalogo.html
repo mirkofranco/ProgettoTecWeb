@@ -1,32 +1,32 @@
 <!-- MENU DI NAVIGAZIONE LATERALE -->
 <div id="mySidenav" class="sidenav">
 
-  <a href="./catalogo.php"><p>Ritorna al catalogo</p></a>
-
+  <a href="./catalogo.php"><h1>Pagina principale catalogo</h1></a>
   {{contenutoDinamicoSidebar}}
 
-  <!-- ESEMPIO DEL CONTENUTO DINAMICO:
+  <!-- ESEMPIO DI CONTENUTO DINAMICO
+  CODICE:
   $sidebar = new SidebarBuilder("categoria attuale");
 
   $sidebar->addCategory("categoria attuale");
   $sidebar->addCategory("altra categoria");
 
-  $sidebar->addSubCategory("categoria attuale", "sottocategoria 1");
-  $sidebar->addSubCategory("categoria attuale", "sottocategoria 2");
-  $sidebar->addSubCategory("altra categoria", "altra sottocategoria")
+  $sidebar->addSubCategory("categoria attuale", "Sottocategoria 1");
+  $sidebar->addSubCategory("categoria attuale", "Sottocategoria 2");
+  $sidebar->addSubCategory("altra categoria", "altra Sottocategoria")
 
-  $sidebar->buildHTML();
+  echo $sidebar->buildHtml();
   
-  OUTPUT DELLA CHIAMATA buildHTML():
+  OUTPUT:
 
-  <div class="category-container sidebar-current-page">
+  <div class="sidebar-category-container sidebar-current-page">
     <a href="./categoria_attuale.php"><h2>categoria attuale</h2></a>
-    <a href="#sottocategoria-1"><h3>sottocategoria 1</h3></a>
-    <a href="#sottocategoria-2"><h3>sottocategoria 2</h3></a>
+    <a href="#sottocategoria-1"><h3>Sottocategoria 1</h3></a>
+    <a href="#sottocategoria-2"><h3>Sottocategoria 2</h3></a>
   </div>
-  <div class="category-container">
+  <div class="sidebar-category-container">
     <a href="./altra_categoria.php"><h2>altra categoria</h2></a>
-    <a href="./altra_categoria.php/#altra-sottocategoria"><h3>altra sottocategoria</h3></a>
+    <a href="./altra_categoria.php/#altra-sottocategoria"><h3>altra Sottocategoria</h3></a>
   </div>
 
   (la classe sidebar-current-page è presente solo sulla parte di menu corrispondente alla pagina attuale)

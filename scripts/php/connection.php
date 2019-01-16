@@ -40,12 +40,11 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $prodotti = $this -> pdo -> query("SELECT * FROM PRODOTTO") -> fetchAll();
         $toReturn = array();
         foreach($prodotti as $row){
-            array_push($toReturn, new Prodotto($row['IDProdotto'], $row['sottoCategoria'], $row['Nome'], $row['Marca'], $row['Prezzo'], $row['DataInizio'], $row['isOfferta'], $row ['Descrizione']));
+            array_push($toReturn, new Prodotto($row['sottoCategoria'], $row['Nome'], $row['Marca'], $row['Prezzo'], $row['DataInizio'], $row['isOfferta'], $row ['Descrizione'], $row['IDProdotto']));
         }
         return $toReturn;
     }
     // POST: ritorna un array con tutti i prodotti inseriti nel db, e con tutti i relativi campi dati messi in un array associativo
-
 
     public function searchUtenteForLogin($username, $password){
         $query = "SELECT * FROM UTENTE WHERE Username = \"$username\"  AND Password = \"$password\" ;";
@@ -56,7 +55,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     }
 
     public function listaSottoCategorie(){
-        $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NOT NULL;";
+        $query = "SELECT IDC, Nome FROM categoria WHERE IDCatPadre IS NOT NULL;";
         $result = $this -> pdo -> query($query) -> fetchAll();
         $toReturn =  array();
         foreach($result as $row){
@@ -66,7 +65,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     }
 
     public function listaCategorie(){
-        $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NULL;";
+        $query = "SELECT IDC, Nome FROM categoria WHERE IDCatPadre IS NULL;";
         $result = $this -> pdo -> query($query) -> fetchAll();
         $toReturn = array();
         foreach ($result as $row) {
@@ -79,13 +78,35 @@ class MySqlDatabaseConnection extends AbstractConnection{
      * restituisce una mappa di tutte le categorie, indicizzate sull'id
      */
     public function mappaCategorie() {
-        $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre;";
-        $result = $this -> pdo -> query($query) -> fetchAll();
-        $toReturn = array();
-        foreach ($result as $row) {
-            $toReturn[$row['IDC']] = ['Nome' => $row['Nome'], 'IDCatPadre' => $row['IDCatPadre']];
-        }
-        return $toReturn;
+        $query = "SELECT * FROM categoria ORDER BY IDCatPadre;";
+        // FETCH_GROUP indicizza il risultato della query rispetto alla prima colonna;
+        // FETCH_UNIQUE semplifica la struttura dell'array ritornato (si può usare perché la prima colonna in questa query ha valori unici)
+        $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_GROUP|\PDO::FETCH_UNIQUE);
+
+        return $result;
+    }
+
+    /**
+     * ritorna una mappa di tutti i prodotti di una categoria, indicizzati per la loro sottocategoria
+     */
+    public function mappaProdotti($categoria) {
+        $query = "  SELECT
+                        subcat.Nome AS sottocat,
+                        p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto
+                    FROM
+                        prodotto p
+                    JOIN categoria subcat ON
+                        p.sottoCategoria = subcat.IDC
+                    LEFT JOIN categoria catpadre ON
+                        subcat.IDCatPadre = catpadre.IDC
+                    WHERE
+                        catpadre.Nome = '$categoria' OR subcat.Nome = '$categoria' AND catpadre.IDCatPadre IS NULL
+                    ORDER BY
+                        subcat.IDC, p.IDProdotto";
+
+        $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
+
+        return $result;
     }
 
     public function insertUtente($utente){

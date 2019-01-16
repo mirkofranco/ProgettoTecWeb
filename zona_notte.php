@@ -31,52 +31,54 @@
 
     $page = str_replace(array_keys($daSostituire), array_values($daSostituire), $page);
 
-    // prende dal db una mappa delle categorie, indicizzata sull'id
     $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
-    $connection -> connect();
+    $connection->connect();
+    // prende dal db una mappa delle categorie, indicizzata sull'id
     $categorie = $connection->mappaCategorie();
+
+    // prende dal db una mappa di tutti i prodotti per la categoria attuale, indicizzata sulla sottocategoria
+    $productsMap = $connection->mappaProdotti($currentCategory);
+    $connection -> close();
+
+    // echo '<pre>' , var_export($productsMap) , '</pre>';
+    // die();
 
     // assembla dinamicamente il menu laterale
     $sidebar = new SidebarBuilder($currentCategory);
 
-    foreach ($categorie as $id => $categoria) {
-        $nome = $categoria['Nome'];
-        $idPadre = $categoria['IDCatPadre'];
+    // inserisce le categorie prese dal db
+    $sidebar->parseMap($categorie);
 
-        if (is_null($idPadre)) { // se non ha padre, è una categoria
-            $sidebar->addCategory($nome);
-        } else { // altrimenti è una sottocategoria quindi recupero il nome del padre
-            $nomePadre = $categorie[$categoria['IDCatPadre']]['Nome'];
+    // costruisce l'html del menu laterale usando gli elementi aggiunti finora e lo inserisce nella pagina
+    $page = str_replace("{{contenutoDinamicoSidebar}}", $sidebar->buildHtml(), $page);
 
-            $sidebar->addSubCategory($nomePadre, $nome);
-        }
-    }
-
-    // costruisce l'html del menu laterale usando gli elementi aggiunti finora
-    // e lo inserisce nella pagina
-    $page = str_replace("{{contenutoDinamicoSidebar}}", $sidebar->buildHTML(), $page);
-
-    // prende dal db i prodotti......
-    // $products = $connection->getProdotti();
-
-    $connection -> close();
 
     // costruisce dinamicamente il contenuto della pagina
     $subCategory = new SubCategoryBuilder("sottocategoria #1");
 
-    $subCategory->addImg("./icons/_placeholder_black.png", "alt text");
-    $subCategory->addImg("./icons/_placeholder_black.png", "alt text");
-    $subCategory->addImg("./icons/_placeholder_black.png", "alt text");
-    $subCategory->addImg("./icons/_placeholder_black.png", "alt text");
+    foreach ($productsMap as $subCategoryName => $products) {
+        $subCategory = new SubCategoryBuilder($subCategoryName);
 
-    // costruisce l'html della pagina usando gli elementi aggiunti finora
-    // e lo inserisce nella pagina
-    $page = str_replace("{{contenutoDinamicoCategoria}}", $subCategory->buildHTML(), $page);
+        foreach ($products as $product) {
+            $unpackedProduct = new Prodotto(...$product);
+
+            echo $unpackedProduct."<br>";
+
+            // $subCategory->addProduct($unpackedProduct);
+        }
+    }
+    die();
+
+    // costruisce l'html di una sottocategoria usando gli elementi aggiunti finora e lo inserisce nella pagina
+    $page = str_replace("{{contenutoDinamicoCategoria}}", $subCategory->buildHtml(), $page);
 
     // TODO rimuovere questo prima della consegna!
     // salva file html in ./cache_catalogo/
     $cacheFilename = str_replace(" ", "_", strtolower($currentCategory)).".html";
-    $file = fopen("cache_catalogo/$cacheFilename", "w") or die("Cannot create file to write into!");
+    $folder = "cache_catalogo";
+    if (!is_dir($folder))
+        mkdir($folder);
+    $file = fopen("$folder/$cacheFilename", "w") or die("Cannot create file to write into!");
     fwrite($file, str_replace("./", "../", $page));
 
 

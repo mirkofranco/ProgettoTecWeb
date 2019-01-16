@@ -74,10 +74,22 @@
 
         /* Ritorna una rappresentazione a stringa di un $this */
         public function __toString(){
-            return "Identificativo: " . $this -> getID() . " Categoria: " . $this -> getCategoria() . " Nome: " . $this -> getNome() . "Marca: " . $this -> getMarca() .
+            return "Identificativo: " . $this -> getID() . " Categoria: " . $this -> getCategoria() . " Nome: " . $this -> getNome() . " Marca: " . $this -> getMarca() .
                     " Prezzo: " . $this -> getPrezzo() . " Data inizio validità prezzo: " . $this -> getDataInizioPrezzo() . " Offerta: " . $this -> getOfferta();
         }
 
+        public function buildHtml() {
+            $document = new DOMDocument('1.0', 'utf-8');
 
+            $node = $document->createElement("div");
+            $document->appendChild($node);
+
+            $node->setAttribute("id", $this->idProdotto);
+            $node->setAttribute("class", "product");
+
+            return $document->saveXML($node);
+        }
+
+        
     }
 ?>
