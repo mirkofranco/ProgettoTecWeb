@@ -50,14 +50,9 @@ a:hover, a:active {}
 
 /* --------------- REUSABLE CLASSES --------------- */
 
-/*apply to an <a> element with a nested <img>. Becomes as big as its parent. */
-a.clickable-image {
+/* classe da applicare a link che contengono elementi complessi */
+a.linked-content {
   display: inline-block;
-  height: 100%;
-}
-
-.clickable-image img {
-  height: 100%;
 }
 
 .icon {
@@ -106,6 +101,10 @@ a.clickable-image {
   background-color: #4c4a4a;
 }
 
+#logo {
+    height: 15vh;
+}
+
 .header-right {
   float: right;
 
@@ -133,6 +132,8 @@ a.clickable-image {
 
   font-size: 1.1rem;
   text-decoration: none;
+
+  transition: all .35s ease-in-out;
 }
 
 .current-page {
@@ -147,9 +148,6 @@ a.clickable-image {
   line-height: 5vh;
 }
 
-.navbar a {
-  transition: all .35s ease-in-out;
-}
 
 .contenuto {
   min-height: 75vh;
