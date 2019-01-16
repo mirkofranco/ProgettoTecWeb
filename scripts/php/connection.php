@@ -65,7 +65,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     }
 
     public function listaCategorie(){
-        $query = "SELECT IDC, Nome FROM categoria WHERE IDCatPadre IS NULL;";
+        $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NULL;";
         $result = $this -> pdo -> query($query) -> fetchAll();
         $toReturn = array();
         foreach ($result as $row) {
@@ -78,7 +78,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
      * restituisce una mappa di tutte le categorie, indicizzate sull'id
      */
     public function mappaCategorie() {
-        $query = "SELECT * FROM categoria ORDER BY IDCatPadre;";
+        $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre;";
         // FETCH_GROUP indicizza il risultato della query rispetto alla prima colonna;
         // FETCH_UNIQUE semplifica la struttura dell'array ritornato (si può usare perché la prima colonna in questa query ha valori unici)
         $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_GROUP|\PDO::FETCH_UNIQUE);
@@ -94,10 +94,10 @@ class MySqlDatabaseConnection extends AbstractConnection{
                         subcat.Nome AS sottocat,
                         p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto
                     FROM
-                        prodotto p
-                    JOIN categoria subcat ON
+                        PRODOTTO p
+                    JOIN CATEGORIA subcat ON
                         p.sottoCategoria = subcat.IDC
-                    LEFT JOIN categoria catpadre ON
+                    LEFT JOIN CATEGORIA catpadre ON
                         subcat.IDCatPadre = catpadre.IDC
                     WHERE
                         catpadre.Nome = '$categoria' OR subcat.Nome = '$categoria' AND catpadre.IDCatPadre IS NULL
