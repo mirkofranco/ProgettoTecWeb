@@ -9,10 +9,10 @@
         private $offerta;
         private $nomeImmagine;
         private $nomeImmaginePiccola;
-        private $Descrizione;
+        private $descrizione;
 
         /* Costruisce un ogeetto Prodotto in modo completo */
-        public function __construct($categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine, $nomeImmaginePiccola, $Descrizione, $idProdotto = NULL){
+        public function __construct($categoria, $nome, $marca, $prezzo, $dataInizioValiditaPrezzo, $offerta, $nomeImmagine, $nomeImmaginePiccola, $descrizione, $idProdotto = NULL){
             $this -> idProdotto = $idProdotto;
             $this -> categoria = $categoria;
             $this -> nome = $nome;
@@ -22,7 +22,7 @@
             $this -> offerta = $offerta;
             $this -> nomeImmagine = $nomeImmagine;
             $this -> nomeImmaginePiccola = $nomeImmaginePiccola;
-            $this -> Descrizione = $Descrizione;
+            $this -> descrizione = $descrizione;
         }
 
         /* Ritorna l'identificativo del prodotto */
@@ -69,7 +69,7 @@
         }
 
         public function getDescrizione() {
-            return $this -> Descrizione;
+            return $this -> descrizione;
         }
 
         /* Ritorna una rappresentazione a stringa di un $this */
@@ -90,6 +90,6 @@
             return $document->saveXML($node);
         }
 
-        
+
     }
 ?>
