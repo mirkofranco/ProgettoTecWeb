@@ -1,6 +1,6 @@
 <?php
     require_once './scripts/php/connection.php';
-    require_once './scripts/php/DomUtils.php';
+    require_once './scripts/php/CatalogPageBuilder.php';
 
     require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
