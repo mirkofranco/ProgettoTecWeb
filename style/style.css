@@ -281,6 +281,12 @@ a.linked-content {
   }
 }
 
+/*!!!!!! NON FUNZIONA !!!!!!*/
+#descrizioneAzienda > img {
+  width: 1px;
+  height: auto;
+}
+
 /* FILE CATALOGO.HTML */
 
 
