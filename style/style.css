@@ -307,9 +307,12 @@ a.linked-content {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 
-  font-size: 1.2rem;
-  font-weight: 500;
   text-decoration: none;
+}
+
+.catalogo {
+  width: 80%;
+  margin: auto;
 }
 
 .flex-element a:hover {
@@ -441,6 +444,7 @@ label {
 .fcontainer {
   padding: 1rem;
   border: 1px solid #a4a4a4;
+  width: 80%;
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -630,10 +634,10 @@ input[type="password"] {
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
 /*PER MOBILE*/
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 320px) {
   /*CATALOGO*/
   .flex-element {
-  /*position: relative;*/
+  position: relative;
 
   width: 100%;
 
@@ -660,7 +664,7 @@ input[type="password"] {
 }
 
 /*PER TABLET (PORTRAIT)*/
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
 
   .fcontainer {
     width: 80vw;
@@ -704,11 +708,6 @@ input[type="password"] {
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
 
-  /*.contenuto {
-    width: 70vw;
-    margin: auto;
-  }*/
-
   .bg-pagina-consulenze {
     width: 100%;
   }
@@ -716,6 +715,11 @@ input[type="password"] {
   .fcontainer {
     width: 50vw;
     height: auto;
+  }
+  
+  .flex-element a {
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 
   /*FOOTER*/
@@ -731,10 +735,6 @@ input[type="password"] {
 .footerElement {
   margin: .5rem 2rem;
 }
-
-}
-
-@media only screen and (min-width: 2560px) {
 
 }
 
