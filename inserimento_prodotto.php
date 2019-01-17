@@ -33,30 +33,36 @@
         if(strlen($_POST['Descrizione']) < 10){
             $errorForm .= "La descrizione deve contenere almeno 10 caratteri<br/>";
         }
+        $erroreFoto = false;
         if($errorForm == ""){
-            $connection -> connect();
-            if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_FILES['immaginePiccolaProdotto']['name'],  $_POST['Descrizione']))){
-                $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
-            }
-            $connection -> close();
-            $connection = null;
             $uploadDir = '../ProgettoTecWeb/images/catalogo/';
             $uploarDirPiccole = '../ProgettoTecWeb/images/catalogo/thumbnails/';
             $tmp = $_FILES['immagineProdotto']['tmp_name'];
             $tmpPiccola = $_FILES['immaginePiccolaProdotto']['tmp_name'];
-            if(move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name'])){
+            if(!move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name'])){
+                $erroreFoto = true;
             }
-            if(move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name'])){
+            if(!move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name'])){
+                $erroreFoto = true;
 
             }
-
+            if($erroreFoto == false){
+                $connection -> connect();
+                if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_FILES['immaginePiccolaProdotto']['name'],  $_POST['Descrizione']))){
+                    $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
+                }
+                $connection -> close();
+                $connection = null;
+            }else{
+                $errorForm .= "Si è verificato un errore con l'inserimento dell'immagine. Riprova!";
+            }
         }else{
-            $previousCodProd = isset($_POST['idProdotto']) ? "value=\"". $_POST['idProdotto']. "\"" : "" ;
-            $previousNome = isset($_POST['nomeProdotto']) ? "value=\"". $_POST['nomeProdotto']. "\"" : "" ;
-            $previousMarca = isset($_POST['marcaProdotto']) ? "value=\"". $_POST['marcaProdotto']. "\"" : "" ;
-            $previousPrezzo = isset($_POST['prezzoProdotto']) ? "value=\"". $_POST['prezzoProdotto']. "\"" : "" ;
-            $previousData = isset($_POST['dataInizioPrezzo']) ? "value=\"". $_POST['dataInizioPrezzo']. "\"" : "" ;
-            $previousDescrizione = isset($_POST['Descrizione']) ? "value=\"". $_POST['Descrizione']. "\"" : "" ;
+            $previousCodProd =  "value=\"". $_POST['idProdotto']. "\"";
+            $previousNome =  "value=\"". $_POST['nomeProdotto']. "\"";
+            $previousMarca =  "value=\"". $_POST['marcaProdotto']. "\"";
+            $previousPrezzo = "value=\"". $_POST['prezzoProdotto']. "\"";
+            $previousData =  "value=\"". $_POST['dataInizioPrezzo']. "\"";
+            $previousDescrizione =  "value=\"". $_POST['Descrizione']. "\"";
         }
     }
 
