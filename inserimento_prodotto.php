@@ -16,7 +16,6 @@
     }
     $elencoCategorie .= "</select>";
     $errorForm = "";
-    $previousCodProd = "";
     $previousNome = "";
     $previousMarca = "";
     $previousPrezzo = "";
@@ -33,31 +32,29 @@
         if(strlen($_POST['Descrizione']) < 10){
             $errorForm .= "La descrizione deve contenere almeno 10 caratteri<br/>";
         }
-        $erroreFoto = false;
+        $uploadDir = '../ProgettoTecWeb/images/catalogo/';
+        $uploarDirPiccole = '../ProgettoTecWeb/images/catalogo/thumbnails/';
+        $tmp = $_FILES['immagineProdotto']['tmp_name'];
+        $tmpPiccola = $_FILES['immaginePiccolaProdotto']['tmp_name'];
+        if(file_exists($uploadDir . $_FILES['immagineProdotto']['name'])){
+            $errorForm .= "L'immmagine del prodotto è gia presente<br/>";
+        }
+        if(file_exists($uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name'])){
+            $errorForm .= "La miniatura del prodotto gia esiste<br/>";
+        }
+        if($_FILES['immagineProdotto']['name'] != $_FILES['immaginePiccolaProdotto']['name']){
+            $errorForm .= "Le due immagini devono avere lo stesso nome<br/>";
+        }
         if($errorForm == ""){
-            $uploadDir = '../ProgettoTecWeb/images/catalogo/';
-            $uploarDirPiccole = '../ProgettoTecWeb/images/catalogo/thumbnails/';
-            $tmp = $_FILES['immagineProdotto']['tmp_name'];
-            $tmpPiccola = $_FILES['immaginePiccolaProdotto']['tmp_name'];
-            if(!move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name'])){
-                $erroreFoto = true;
+            move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name']);
+            move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name']);
+            $connection -> connect();
+            if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_FILES['immaginePiccolaProdotto']['name'],  $_POST['Descrizione']))){
+                $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
             }
-            if(!move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name'])){
-                $erroreFoto = true;
-
-            }
-            if($erroreFoto == false){
-                $connection -> connect();
-                if($connection -> insertProdotto(new Prodotto($_POST['fcat'], $_POST['nomeProdotto'], $_POST['marcaProdotto'], $_POST['prezzoProdotto'], date_format(date_create($_POST['dataInizioPrezzo']), "Y/m/d"), $_POST['isOfferta'], $_FILES['immagineProdotto']['name'], $_FILES['immaginePiccolaProdotto']['name'],  $_POST['Descrizione']))){
-                    $successForm .= "Complimenti! Il prodotto è stato inserito correttamente!";
-                }
-                $connection -> close();
-                $connection = null;
-            }else{
-                $errorForm .= "Si è verificato un errore con l'inserimento dell'immagine. Riprova!";
-            }
+            $connection -> close();
+            $connection = null;
         }else{
-            $previousCodProd =  "value=\"". $_POST['idProdotto']. "\"";
             $previousNome =  "value=\"". $_POST['nomeProdotto']. "\"";
             $previousMarca =  "value=\"". $_POST['marcaProdotto']. "\"";
             $previousPrezzo = "value=\"". $_POST['prezzoProdotto']. "\"";
@@ -81,7 +78,6 @@
             "{{pageKeywords}}"=>"TODO",
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{errorForm}}" => $errorForm,
-            "{{previousCodProd}}" => $previousCodProd,
             "{{previousNome}}" => $previousNome,
             "{{previousMarca}}" => $previousMarca,
             "{{previousPrezzo}}" => $previousPrezzo,
