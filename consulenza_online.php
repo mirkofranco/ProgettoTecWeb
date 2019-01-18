@@ -35,8 +35,8 @@
         }
         if($errorForm == ""){
             $mail = Util::sendMail("barinmonica.66@gmail.com", $_POST['fcat'], $_POST['comment']);
-            $errorForm .=  $mail == false  ?  "Si è verificato un errore grave nell'invio della mail. Riprovare più tardi.<br/>" : "";
-            $successForm .= $mail == true ? "Complimenti! La mail è stata inviata con successo! Riceverai una risposta entro 48 ore.<br/>" : "";
+            $errorForm .=  $mail == false  ?  "Si è verificato un errore nell'invio della mail. Riprovare più tardi.<br/>" : "";
+            $successForm .= $mail == true ? "La mail è stata inviata con successo! Riceverai una risposta entro 48 ore.<br/>" : "";
         }else{
             $previousNome = "value=\"" . $_POST['firstName'] . "\"";
             $previousMail = "value=\"". $_POST['email'] . "\"";
