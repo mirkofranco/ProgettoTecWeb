@@ -131,7 +131,7 @@ a.clickable-content {
   
   color: #fff;
   padding: .5rem;
-  border-radius: .3rem;
+  /*border-radius: .3rem;*/
   border: .5px solid #fff;
   margin: .3rem;
 }
@@ -362,7 +362,7 @@ a.clickable-content {
 
   display: block;
   padding: .8rem;
-  border-radius: .3rem;
+  /*border-radius: .3rem;*/
   border: .5px solid #fff;
 
   background-color: rgba(0, 0, 0, 0.5);
