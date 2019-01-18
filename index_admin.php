@@ -39,8 +39,8 @@
     $previousUS = isset($_POST['username']) ? "value=\"". $_POST['username']. "\"" : "";
     $daSostituire =  array(
         "{{pageTitle}}" => "Login - Studio AR",
-        "{{pageDescription}}"=>"TODO",
-        "{{pageKeywords}}"=>"TODO",
+        "{{pageDescription}}"=>"Pagina con il menù per gli amministratori del sito dello studio AR - architetti riuniti",
+        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "{{errorForm}}" => $errorLogin,
         "{{previousUN}}" => $previousUS,
         "{{gestioneLogin}}" => $gestioneLogin
