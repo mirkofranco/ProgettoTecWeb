@@ -132,8 +132,6 @@ a.linked-content {
 
   font-size: 1.1rem;
   text-decoration: none;
-
-  transition: all .35s ease-in-out;
 }
 
 .current-page {
@@ -165,10 +163,6 @@ a.linked-content {
   max-height: 810px;
   margin: auto;
   padding: 0;
-  
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .imgSlideshow {
@@ -281,10 +275,18 @@ a.linked-content {
   }
 }
 
-/*!!!!!! NON FUNZIONA !!!!!!*/
+#descrizioneAzienda {
+  margin: 4rem;
+}
+
 #descrizioneAzienda > img {
-  width: 1px;
-  height: auto;
+  width: 15vw;
+  margin: 2rem;
+  border-radius: 100vh;
+  align-content: center;
+}
+
+#descrizioneAzienda > p {
 }
 
 /* FILE CATALOGO.HTML */
@@ -314,11 +316,6 @@ a.linked-content {
   color: white;
 
   text-decoration: none;
-}
-
-.catalogo {
-  width: 80%;
-  margin: auto;
 }
 
 .flex-element a:hover {
@@ -713,6 +710,11 @@ input[type="password"] {
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
+  
+  .contenuto {
+    width: 70vw;
+    margin: auto;
+  }
 
   .bg-pagina-consulenze {
     width: 100%;

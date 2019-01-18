@@ -54,7 +54,7 @@
     }
 
     $daSostituire = array(
-            "{{pageTitle}}" => "Consulenza Online - AR",
+            "{{pageTitle}}" => "Consulenza Online - Studio AR",
             "{{pageDescription}}"=>"TODO",
             "{{pageKeywords}}"=>"TODO",
             "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"current-page\">",
