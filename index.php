@@ -1,5 +1,6 @@
 <?php
     require_once('./scripts/php/Sessione.php');
+    require_once('./scripts/php/Utente.php');
     Sessione::startSession();
     $gestioneLogin = "";
     if(!isset($_SESSION['user'])){
