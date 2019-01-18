@@ -132,8 +132,14 @@ a.linked-content {
 
   font-size: 1.1rem;
   text-decoration: none;
+  
+  transition: all .35s ease-in-out;
 }
 
+.navbar a:hover {
+  background-color: #4c4a4a;
+  color: #ffffff;
+}
 .current-page {
   font-weight: bold;
 }

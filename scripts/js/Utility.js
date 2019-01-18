@@ -15,7 +15,7 @@ function checkForm(nomeInput){
     if (pattern.test(nomeInput.value)){
         return true;
     }else{
-        mostraErrore(nomeInput, "Il campo  deve contenere almeno 4 caratteri");
+        mostraErrore(nomeInput, "Il campo deve contenere almeno 4 caratteri");
         return false;
     }
 }
@@ -33,7 +33,7 @@ function checkPassowrd(nomeInput){
 
 function checkCommento(nomeInput){
     togliErrore(nomeInput);
-    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{20,}$'); 
+    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{20,}$');
     if(pattern.test(nomeInput.value)){
         return true;
     }else{
@@ -42,7 +42,16 @@ function checkCommento(nomeInput){
     }
 }
 
-
+function checkDescrizioneProdotto(nomeInput){
+    togliErrore(nomeInput);
+    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{10,}$');
+    if(pattern.test(nomeInput.value)){
+        return true;
+    }else {
+        mostraErrore(nomeInput, "La descrizione deve contenere almeno 10 caratteri");
+        return false;
+    }
+}
 
 function togliErrore(input){
     var parent = input.parentNode;
@@ -77,4 +86,14 @@ function controllaConsulenza(){
     var risultatoNome = checkForm(nome);
     var risutatoCommento = checkCommento(commento);
     return risultatoNome && risutatoCommento;
+}
+
+function controllaInserimentoProdotto(){
+    var nome = document.getElementById('nomeProdotto');
+    var marca = document.getElementById('marcaProdotto');
+    var descrizione = document.getElementById('Descrizione');
+    var risultatoNome = checkForm(nome);
+    var risultatoMarca = checkForm(marca);
+    var risultatoDescrizione = checkDescrizioneProdotto(descrizione);
+    return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
