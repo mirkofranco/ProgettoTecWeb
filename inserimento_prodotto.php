@@ -23,10 +23,10 @@
     $previousDescrizione = "";
     $successForm = "";
     if(isset($_POST['inserisciProdotto'])){
-        if(strlen($_POST['nomeProdotto']) < 3){
+        if(strlen($_POST['nomeProdotto']) < 4){
             $errorForm .= "Il nome del prodotto deve contenere almeno 3 caratteri<br/>";
         }
-        if(strlen($_POST['marcaProdotto']) < 3){
+        if(strlen($_POST['marcaProdotto']) < 4){
             $errorForm .= "La marca del prodotto deve contenere almeno 3 caratteri<br/>";
         }
         if(strlen($_POST['Descrizione']) < 10){
@@ -66,7 +66,10 @@
     if(!isset($_SESSION['user'])){
         $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
     }else{
-        $gestioneLogin = "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+        if($_SESSION['user'] -> getPermessi() == '11'){
+            $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
+        }
+        $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
     $daSostituire = array(
