@@ -52,7 +52,7 @@
     $daSostituire =  array(
         "{{pageTitle}}" => "Registrazione - Studio AR",
         "{{pageDescription}}"=>"Pagina di registrazione al sito dello Studio AR - architetti riuniti",
-        "{{pageKeywords}}"=>"TODO",
+        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "<body>" => "<body onload=\"jsAttivo()\">",
         "{{errorForm}}" => $errorForm,
         "{{previousNome}}" => $previousNome,
@@ -62,7 +62,7 @@
         "{{successForm}}" => $successForm,
         "{{gestioneLogin}}" => $gestioneLogin
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_admin.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/registrazione.html'));
     echo file_get_contents('./static/_fine.html');
 ?>
