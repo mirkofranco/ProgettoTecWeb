@@ -148,12 +148,6 @@ nav a:hover {
 
   font-size: .8rem;
   text-align: center;
-  line-height: 5vh;
-}
-
-
-.contenuto {
-  min-height: 75vh;
 }
 
 /* FILE INDEX.HTML */
@@ -341,7 +335,8 @@ nav a:hover {
   top: 30vh;
   left: 0;
 
-  min-height: 59.5vh; /* FIXME con 60 sbrodola sul footer. mistero */
+  /* FIXME con 60 sbrodola sul footer. mistero */
+  /* min-height: 59.5vh; */
   width: 20vw;
 
   background-color: #f1f1f1;
@@ -385,11 +380,14 @@ nav a:hover {
 /* FILE CONSULENZA_ONLINE.HTML */
 
 .bg-pagina-consulenze {
+  /*
+  background-repeat: no-repeat;
+  background-size: 100%; */
+
   background-image: url("../images/consulenza_o.jpg");
   background-position: top;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding: .4rem;
+  background-size: cover;
+  padding: .4vh;
 }
 
 /* FORM CONSULENZE */
@@ -476,13 +474,17 @@ label {
   margin-top: 6px;
 }
 
-.col-25 {
+.col-25, .col-75 {
+  width: 100%;
+}
+
+/* .col-25 {
   width: 25%;
 }
 
 .col-75 {
   width: 75%;
-}
+} */
 
 /*commento col messaggio di errore nei form*/
 .messaggio-errore-form {
@@ -562,8 +564,6 @@ label {
 .footer {
   align-items: center;
 
-  height: 10vh;
-
   background-color: #4c4a4a;
 }
 
@@ -611,13 +611,9 @@ label {
 }
 
 .anteprima-pulsanti {
-  padding: .5rem;
   display: inline;
-  /* tolto perché
-  With 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect.
-  */
-  /* width: 50%;
-  float: left; */
+  
+  padding: .5rem;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -632,44 +628,11 @@ input[type="password"] {
 
 /* ERROR PAGE */
 
-#error-page-content {
-  min-height: 65vh;
-}
-
 #requested-url-error {
   background-color: lightgrey;
 }
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
-/*PER MOBILE*/
-@media only screen and (min-width: 320px) {
-  /*CATALOGO*/
-  .flex-element {
-  position: relative;
-
-  width: 100%;
-
-  padding: .8rem;
-}
-
-  /*FORM*/
-    .col-25, .col-75 {
-    width: 100%;
-  }
-   /*FORM CONSULENZA ONLINE*/
-  .bg-pagina-consulenze {
-    background-image: url("../images/consulenza_o.jpg");
-    background-position: top;
-    background-size: cover;
-    padding: .4vh;
-}
-
-  /*FOOTER*/
-  .footer {
-    height: auto;
-  }
-
-}
 
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
@@ -707,10 +670,6 @@ input[type="password"] {
     background-size: cover;
 }
 
-  /*FOOTER*/
-  .footer {
-    height: auto;
-  }
 }
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
@@ -739,8 +698,6 @@ input[type="password"] {
   .footer {
     align-items: center;
     margin-bottom: 0;
-
-    height: 10vh;
 
     background-color: #4c4a4a;
 }
