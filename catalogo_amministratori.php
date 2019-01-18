@@ -1,4 +1,12 @@
 <?php
+    require_once('./scripts/php/Sessione.php');
+    require_once('./scripts/php/Utente.php');
+    Sessione::startSession();
+    if(isset($_SESSION['user'])){
+        if($_SESSION['user'] -> getPermessi() == '01'){
+            header("location: index.php");
+        }
+    }
     $gestioneLogin = "";
     if(!isset($_SESSION['user'])){
         $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
