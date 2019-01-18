@@ -1,5 +1,5 @@
 <?php
-
+	require_once('./scripts/php/Utente.php');
 	require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
     $gestioneLogin = "";
