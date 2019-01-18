@@ -42,9 +42,6 @@
         if(file_exists($uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name'])){
             $errorForm .= "La miniatura del prodotto gia esiste<br/>";
         }
-        if($_FILES['immagineProdotto']['name'] != $_FILES['immaginePiccolaProdotto']['name']){
-            $errorForm .= "Le due immagini devono avere lo stesso nome<br/>";
-        }
         if($errorForm == ""){
             move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name']);
             move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name']);
