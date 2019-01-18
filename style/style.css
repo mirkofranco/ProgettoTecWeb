@@ -1,3 +1,5 @@
+/* RESET STILI CROSS-BROWSER */
+
 /* Remove inconsistent default padding or margin */
 * {
   margin: 0;
@@ -33,9 +35,11 @@ html, body {
   height: 100%;
 }
 
-/* our custom h1 style */
+/* FINE RESET CSS */
+
+/* stile personalizzato per h1 */
 h1 {
-  padding: 1rem 0;
+  padding: 1rem;
 
   font-size: 2rem;
   text-align: center;
@@ -51,7 +55,7 @@ a:hover, a:active {}
 /* --------------- REUSABLE CLASSES --------------- */
 
 /* classe da applicare a link che contengono elementi complessi */
-a.linked-content {
+a.clickable-content {
   display: inline-block;
 }
 
@@ -60,10 +64,9 @@ a.linked-content {
   height: 1em;
 }
 
-.padded-small {
-  padding: 5px;
+.padded-text-container {
+  padding: 2rem .5rem 0;
 }
-
 
 /* contenitore riutilizzabile per wrapped flexbox */
 .flex-container {
@@ -77,11 +80,7 @@ a.linked-content {
   justify-content: center;
 }
 
-.padded-text-container {
-  padding: 2rem .5rem 0;
-}
-
-/* apply class="clearfix" to the container with floated elements inside */
+/* applicare la classe clearfix al contenitore degli elementi floated */
 .clearfix::after {
   clear: both;
 
@@ -92,38 +91,38 @@ a.linked-content {
 
 /* FILE _INIZIO_USER.HTML */
 
-/* ---------- HEADER ---------- */
+/* ---------- header ---------- */
+
+#logo {
+  width: 100%;
+  padding: 5px;
+}
 
 .header {
-
-  height: 15vh;
-
   background-color: #4c4a4a;
 }
 
-#logo {
-    height: 15vh;
+.header-left {
+  display: inline-block;
+
+  width: 50%;
 }
 
 .header-right {
   float: right;
-
-  line-height: 15vh;
 }
 
-
 .header-button {
-  padding: 0 1em;
-
+  display: block;
   color: white;
 }
 
-/* ---------- NAVIGATION BAR ---------- */
-.navbar ul {
-  line-height: 10vh;
+/* ---------- navigation bar ---------- */
+nav ul {
+  line-height: 3rem;
 }
 
-.navbar a {
+nav a {
   display: block;
 
   padding: 0 1rem;
@@ -136,7 +135,7 @@ a.linked-content {
   transition: all .35s ease-in-out;
 }
 
-.navbar a:hover {
+nav a:hover {
   background-color: #4c4a4a;
   color: #ffffff;
 }
