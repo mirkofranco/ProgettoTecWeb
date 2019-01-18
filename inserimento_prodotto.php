@@ -74,8 +74,8 @@
 
     $daSostituire = array(
             "{{pageTitle}}" => "Inserimento Prodotti - Studio AR",
-            "{{pageDescription}}"=>"TODO",
-            "{{pageKeywords}}"=>"TODO",
+            "{{pageDescription}}"=>"Pagina per l'inserimento dei prodotti del sito dello studio AR - architetti riuniti",
+            "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{errorForm}}" => $errorForm,
             "{{previousNome}}" => $previousNome,

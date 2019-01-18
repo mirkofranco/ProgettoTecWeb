@@ -13,8 +13,8 @@
     }
     $daSostituire = array(
         "{{pageTitle}}" => "About Us - Studio AR",
-        "{{pageDescription}}"=>"TODO",
-        "{{pageKeywords}}"=>"TODO",
+        "{{pageDescription}}"=>"Pagina about us del sito degllo studio AR - architetti riuniti",
+        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "<a href=\"./about_us.php\" lang=\"en\">" => "<a href=\"./about_us.php\" class=\"current-page\">",
         "{{gestioneLogin}}" => $gestioneLogin
     );

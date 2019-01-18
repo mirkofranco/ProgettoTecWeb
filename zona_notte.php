@@ -21,8 +21,8 @@
 
     $daSostituire = array(
         "{{pageTitle}}" => "$currentCategory - Studio AR",
-        "{{pageDescription}}"=>"TODO",
-        "{{pageKeywords}}"=>"TODO",
+        "{{pageDescription}}"=>"Pagina del catalogo dedicata alla zona notte dello studio AR - architetti riuniti",
+        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "{{nomeCategoria}}" => $currentCategory,
         "{{gestioneLogin}}" => $gestioneLogin
     );

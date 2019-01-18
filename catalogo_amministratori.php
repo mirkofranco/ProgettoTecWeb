@@ -10,8 +10,8 @@
     }
     $daSostituire = array(
         "{{pageTitle}}" => "Catalogo Amminstratori - Studio AR",
-        "{{pageDescription}}"=>"TODO",
-        "{{pageKeywords}}"=>"TODO",
+        "{{pageDescription}}"=>"Pagina per il catalogo degli amministratori del sito dello studio AR - architetti riuniti",
+        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "{{gestioneLogin}}" => $gestioneLogin
     );
     if(!isset($_SESSION['user'])){

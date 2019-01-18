@@ -51,7 +51,7 @@
 
     $daSostituire =  array(
         "{{pageTitle}}" => "Registrazione - Studio AR",
-        "{{pageDescription}}"=>"pagina di registrazione al sito dello Studio AR",
+        "{{pageDescription}}"=>"Pagina di registrazione al sito dello Studio AR - architetti riuniti",
         "{{pageKeywords}}"=>"TODO",
         "<body>" => "<body onload=\"jsAttivo()\">",
         "{{errorForm}}" => $errorForm,
