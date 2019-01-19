@@ -28,7 +28,12 @@ html {
 }
 
 body, textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Questrial', sans-serif;
+  
+}
+
+p, dd {
+  line-height: 1.5rem;
 }
 
 html, body {
@@ -39,18 +44,18 @@ html, body {
 
 /* stile personalizzato per h1 */
 h1 {
-  padding: 1rem;
+  width: 95vw;
+  margin: auto;
+  padding: 1.5rem 0 0 .5rem;
+  border-bottom: 1px solid #4c4a4a;
+  margin-bottom: 1.5rem;
 
   font-size: 2rem;
-  text-align: center;
 }
 
 /* TODO: stile generico ed univoco per i link */
 a {
   text-decoration: none;
-  /*padding: .5rem 1rem;
-  border-radius: .3rem;
-  border: .5px solid #000;*/
 }
 
 a:link {}
@@ -237,7 +242,6 @@ a.clickable-content {
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5);
   color: #f2f2f2;
-  font-size: 1.3rem;
   text-align: center;
   width: 100%;
   padding: 1rem;
@@ -373,7 +377,7 @@ a.clickable-content {
 
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .catalogo img {
@@ -440,7 +444,9 @@ a.clickable-content {
 /* FORM CONSULENZE */
 
 .titoloForm {
+  width: 70vw;
   padding: 30px;
+  border-bottom: #fff;
 
   font-size: 1.2rem;
   font-weight: bold;
@@ -657,7 +663,7 @@ input[type="password"] {
 
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
-
+  
   /*HEADER*/
     .header-left {
       width: 30%;
@@ -672,6 +678,10 @@ input[type="password"] {
   }
   
   /*HOME*/
+  .slideshow-text {
+    font-size: 1.3rem;
+  }
+  
   #descrizioneAzienda > img {
     width: 20vw;
   }
@@ -722,10 +732,20 @@ input[type="password"] {
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
+  h1 {
+    width: 70vw;
+    padding: 1.5rem 0 0 0;
+  }
+  
   /*HEADER*/
    
   .header-left {
     width: 25%;
+  }
+  
+  .header-button {
+    font-size: 1rem;
+    margin: .6rem;
   }
   
   .header-button:hover {
@@ -746,8 +766,9 @@ input[type="password"] {
   }
   
   /*HOME*/
-  .slideshow-container {
-    
+  .slideshow-text {
+    font-size: 1.5rem;
+    padding: 1.5rem;
   }
   
   #descrizioneAzienda > img {
@@ -764,10 +785,14 @@ input[type="password"] {
   }
   
   /*CATALOGO*/
-    .catalogo a:hover {
-      background-color: #fff;
-      color: #000;
-      transition: all .35s ease-in-out;
+  .catalogo a {
+    font-size: 1.3rem;
+  }
+  
+  .catalogo a:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all .35s ease-in-out;
   }
 
   /*CONSULENZA ONLINE*/
@@ -786,6 +811,10 @@ input[type="password"] {
 
   .col-75 {
     width: 75%;
+  }
+  
+  .titoloForm {
+    width: auto;
   }
   
   .fInputBorder:hover,
