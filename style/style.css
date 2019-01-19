@@ -513,6 +513,7 @@ label {
 
 /*messaggio di errore nei form*/
 .messaggio-errore-form {
+  line-height: 2rem;
   color: red;
   text-align: left;
   font-weight: bold;
@@ -520,6 +521,7 @@ label {
 
 /*messaggio di successo dell'invio nei form*/
 .messaggio-successo-form {
+  line-height: 2rem;
   color: green;
   text-align: left;
   font-weight: bold;
