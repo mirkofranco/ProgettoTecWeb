@@ -317,8 +317,12 @@ a.clickable-content {
   width:100%;
 }
 
-#descrAzienda>p {
+#descrAzienda>div {
   padding: 2rem;
+}
+
+#descrAzienda>div>p {
+  padding: .5rem;
 }
 
 .descrSocio {
@@ -751,6 +755,10 @@ input[type="password"] {
 }
   
   /*ABOUT_US*/
+  .descrSocio {
+    min-height: 20vh;
+  }
+  
   .descrSocio>img {
     width: 10vw;
   }
@@ -801,6 +809,7 @@ input[type="password"] {
   
   /*FOOTER*/
   #footer {
+    height: auto;
   }
   
 }
