@@ -126,11 +126,12 @@ a.clickable-content {
 
 .header-button {
   text-align: center; 
+  font-size: .8rem;
   
   display: block;
   
   color: #fff;
-  padding: .5rem;
+  padding: .6rem 1.3rem;
   /*border-radius: .3rem;*/
   border: .5px solid #fff;
   margin: .3rem;
@@ -361,7 +362,7 @@ a.clickable-content {
   transform: translate(-50%, -50%);
 
   display: block;
-  padding: .8rem;
+  padding: .8rem 1.5rem;
   /*border-radius: .3rem;*/
   border: .5px solid #fff;
 
@@ -466,7 +467,7 @@ label {
   display: block;
 
   padding: .8rem 1.5rem;
-  border: 1px solid #fcfcfc;
+  border: 1px solid #4c4a4a;
   margin-left: auto;
   margin-right: auto;
 
@@ -651,13 +652,37 @@ input[type="password"] {
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
 
+  /*HEADER*/
+    .header-left {
+      width: 30%;
+  }
+  
+  #logo {
+    margin-top: .3rem;
+  }
+  
   .flex-element {
     width: auto;
+  }
+  
+  /*HOME*/
+  #descrizioneAzienda > img {
+    width: 20vw;
+  }
+  
+  /*ABOUT_US*/
+  .descrSocio>img {
+    width: 20vw;
   }
 
   /*CATALOGO*/
   .flex-catalogo {
     width: 50%;
+    padding-left: .8rem;
+  }
+  
+  .add-padding {
+    padding-right: .8rem;
   }
 
   /*CONSULENZA ONLINE*/
@@ -677,6 +702,11 @@ input[type="password"] {
 
   .col-25, .col-75 {
     margin-top: 0;
+  }
+  
+  /*CONTATTI*/
+  .padded-text-container {
+    padding: 2rem 4rem 0;
   }
 
   .orari-apertura {
