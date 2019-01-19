@@ -46,9 +46,9 @@ html, body {
 h1 {
   width: 95vw;
   margin: auto;
-  padding: 1.5rem 0 0 .5rem;
+  padding: 1.5rem 0 .3rem .5rem;
   border-bottom: 1px solid #4c4a4a;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 
   font-size: 2rem;
 }
@@ -734,7 +734,9 @@ input[type="password"] {
 @media only screen and (min-width: 1024px) {
   h1 {
     width: 70vw;
-    padding: 1.5rem 0 0 0;
+    padding: 1.5rem 0 .3rem .5rem;
+    
+    font-size: 2.5rem;
   }
   
   /*HEADER*/
@@ -777,7 +779,7 @@ input[type="password"] {
   
   /*ABOUT_US*/
   .descrSocio {
-    min-height: 20vh;
+    min-height: 30vh;
   }
   
   .descrSocio>img {
