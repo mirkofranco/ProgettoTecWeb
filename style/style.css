@@ -107,7 +107,7 @@ a.clickable-content {
 
 #logo {
   width: 100%;
-  padding: 5px;
+  padding: .3rem;
 }
 
 .header {
@@ -324,6 +324,7 @@ a.clickable-content {
 .descrSocio {
   padding: 2rem;
   padding-top: 0;
+  min-height: 35vh;
 }
 
 .descrSocio>img {
@@ -473,6 +474,7 @@ label {
 
   background-color: #f1f1f1;
   color: black;
+  box-shadow: 0 0 6px gray;
 
   text-align: center;
   font-size: .8rem;
@@ -582,7 +584,7 @@ label {
 }
 
 #footer li {
-  margin: .5rem 1rem;
+  margin: .5rem;
 }
 
 #footer img {
@@ -657,9 +659,9 @@ input[type="password"] {
       width: 30%;
   }
   
-  #logo {
+  /*#logo {
     margin-top: .3rem;
-  }
+  }*/
   
   .flex-element {
     width: auto;
@@ -667,11 +669,6 @@ input[type="password"] {
   
   /*HOME*/
   #descrizioneAzienda > img {
-    width: 20vw;
-  }
-  
-  /*ABOUT_US*/
-  .descrSocio>img {
     width: 20vw;
   }
 
@@ -683,6 +680,10 @@ input[type="password"] {
   
   .add-padding {
     padding-right: .8rem;
+  }
+  
+  .catalogo a {
+    font-size: 1rem;
   }
 
   /*CONSULENZA ONLINE*/
@@ -717,10 +718,10 @@ input[type="password"] {
 
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
-  
-  .contenuto {
-    width: 70vw;
-    margin: auto;
+  /*HEADER*/
+   
+  .header-left {
+    width: 25%;
   }
   
   .header-button:hover {
@@ -735,9 +736,28 @@ input[type="password"] {
     transition: all .35s ease-in-out;
   }
   
+  .contenuto {
+    width: 70vw;
+    margin: auto;
+  }
+  
+  /*HOME*/
+  .slideshow-container {
+    
+  }
+  
+  #descrizioneAzienda > img {
+    width: 15vw;
+}
+  
+  /*ABOUT_US*/
+  .descrSocio>img {
+    width: 10vw;
+  }
+  
   /*CATALOGO*/
     .catalogo a:hover {
-     background-color: #fff;
+      background-color: #fff;
       color: #000;
       transition: all .35s ease-in-out;
   }
@@ -778,20 +798,11 @@ input[type="password"] {
 
   cursor: pointer;
 }
-
   
   /*FOOTER*/
-  #footer ul { 
-    align-items: center;
-    margin-bottom: 0;
-
-    background-color: #4c4a4a;
+  #footer {
   }
-
-  #footer li {
-    margin: .5rem 2rem;
-  } 
-
+  
 }
 
 /*!!!!!!VECCHIE DA RISTRUTTURARE!!!!!!*/
