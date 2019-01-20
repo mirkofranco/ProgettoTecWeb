@@ -150,7 +150,24 @@ a.clickable-content {
 
 /* ---------- navigation bar ---------- */
 
+label.mobile-toggle {
+}
+
+input#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked+ul {
+  max-height: 999px;
+}
+
 #navbar ul {
+  overflow: hidden;
+  max-height: 0;
+  
+  -webkit-transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease;
+
   line-height: 3rem;
 }
 
@@ -174,32 +191,6 @@ a.clickable-content {
   background-color: #4c4a4a;
   color: #ffffff;
   transition: all .35s ease-in-out;
-}
-
-.mobile-toggle label {
-  height: 20px;
-  width: 800px;
-  margin-bottom: 10px;
-  border: 1px solid #fff;
-  display: inline-block;
-}
-
-#menu-toggle {
-  /*display: none;*/
-}
-
-#navbar ul {
-  overflow: hidden;
-  /*max-height: 0;*/
-  display: none;
-  padding: 0;
-  margin: 0 auto;
-  -webkit-transition: all 0.3s ease;
-}
-
-#menu-toggle:checked + #navbar>ul {
-  /*max-height: 500px;*/
-  display: initial;
 }
 
 .current-page {
@@ -700,10 +691,17 @@ input[type="password"] {
 
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
-  .mobile-toggle {
+
+  /* rimuove il pulsante per nascondere la navbar */
+  label.mobile-toggle {
     display: none;
   }
-  
+
+  /* resetta l'altezza della navbar */
+  #navbar ul {
+    max-height: none;
+  }
+
   /*HEADER*/
     .header-left {
       width: 30%;
@@ -765,8 +763,8 @@ input[type="password"] {
   }
   
   #footer li {
-  margin: .5rem;
-}
+    margin: .5rem;
+  }
 
 }
 
@@ -832,7 +830,7 @@ input[type="password"] {
     height: auto;
   }
 
-    .col-25 {
+  .col-25 {
     width: 25%;
   }
 
