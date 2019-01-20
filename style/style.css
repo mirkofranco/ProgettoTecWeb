@@ -142,11 +142,11 @@ a.clickable-content {
   margin: .3rem;
 }
 
-  .header-button:hover {
-    background-color: #fff;
-    color: #000;
-    transition: all .35s ease-in-out;
-  }
+.header-button:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all .35s ease-in-out;
+}
 
 /* ---------- navigation bar ---------- */
 
@@ -170,11 +170,37 @@ a.clickable-content {
   transition: all .35s ease-in-out;
 }
 
-    #navbar a:hover {
-    background-color: #4c4a4a;
-    color: #ffffff;
-    transition: all .35s ease-in-out;
-  }
+#navbar a:hover {
+  background-color: #4c4a4a;
+  color: #ffffff;
+  transition: all .35s ease-in-out;
+}
+
+.mobile-toggle label {
+  height: 20px;
+  width: 800px;
+  margin-bottom: 10px;
+  border: 1px solid #fff;
+  display: inline-block;
+}
+
+#menu-toggle {
+  /*display: none;*/
+}
+
+#navbar ul {
+  overflow: hidden;
+  /*max-height: 0;*/
+  display: none;
+  padding: 0;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s ease;
+}
+
+#menu-toggle:checked + #navbar>ul {
+  /*max-height: 500px;*/
+  display: initial;
+}
 
 .current-page {
   font-weight: bold;
@@ -443,6 +469,8 @@ a.clickable-content {
   margin: auto;
 }
 
+
+
 /* FILE CONSULENZA_ONLINE.HTML */
 
 .bg-pagina-consulenze {
@@ -672,6 +700,9 @@ input[type="password"] {
 
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
+  .mobile-toggle {
+    display: none;
+  }
   
   /*HEADER*/
     .header-left {
