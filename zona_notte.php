@@ -24,6 +24,7 @@
         "{{pageTitle}}" => "$currentCategory - Studio AR",
         "{{pageDescription}}"=>"Pagina del catalogo dedicata alla zona notte dello studio AR - architetti riuniti",
         "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
+        "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
         "{{nomeCategoria}}" => $currentCategory,
         "{{gestioneLogin}}" => $gestioneLogin
     );

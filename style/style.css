@@ -398,7 +398,7 @@ a.clickable-content {
 
 /* MENU LATERALE CATALOGO */
 
-.sidenav {
+#sidebar-catalogo {
   position: absolute;
   top: 30vh;
   left: 0;
@@ -410,7 +410,7 @@ a.clickable-content {
   background-color: #f1f1f1;
 }
 
-.sidenav a {
+#sidebar-catalogo a {
   display: block;
   padding: 8px;
   padding-left: 32px;
@@ -418,15 +418,15 @@ a.clickable-content {
   color: black;
 }
 
-.sidenav h2 {
+#sidebar-catalogo h2 {
   font-size: 1.5vw;
 }
 
-.sidenav h3 {
+#sidebar-catalogo h3 {
   font-size: 1vw;
 }
 
-.sidenav a:hover {
+#sidebar-catalogo a:hover {
   color: #636363;
 
   font-weight: bold;
@@ -860,11 +860,11 @@ input[type="password"] {
 /* } */
 
 /* @media screen and (max-height: 450px) {
-.sidenav {
+#sidebar-catalogo {
     padding-top: 15px;
   }
 
-  .sidenav a {
+  #sidebar-catalogo a {
     font-size: 1.1rem;
   }
   } */
