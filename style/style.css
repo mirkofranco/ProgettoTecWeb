@@ -606,10 +606,6 @@ label {
   background-color: #4c4a4a;
 }
 
-#footer li {
-  margin: .5rem;
-}
-
 #footer img {
   float: left;
 }
@@ -682,10 +678,6 @@ input[type="password"] {
       width: 30%;
   }
   
-  /*#logo {
-    margin-top: .3rem;
-  }*/
-  
   .flex-element {
     width: auto;
   }
@@ -740,6 +732,10 @@ input[type="password"] {
   .orari-apertura {
     font-size: 1rem;
   }
+  
+  #footer li {
+  margin: .5rem;
+}
 
 }
 
