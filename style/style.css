@@ -775,9 +775,6 @@ input[type="password"] {
 }
   
   /*ABOUT_US*/
-  .descrSocio {
-    min-height: 20vh;
-  }
   
   .descrSocio>img {
     width: 10vw;
