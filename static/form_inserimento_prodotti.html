@@ -1,5 +1,5 @@
 <div class="contenuto">
-  <a href="menu_admin.php">Ritorna al pannello amministratore</a>
+  <a href="menu_admin.php">Ritorna all'area riservata</a>
   <form method="post" enctype="multipart/form-data" action="./inserimento_prodotto.php" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
     <!--<input type="text" id="verificaJavascriptAttivo" />-->
     <!--<div class="frow clearfix">
@@ -20,27 +20,27 @@
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="nomeProdotto">Nome Prodotto</label>
+        <label for="nomeProdotto">Nome prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" maxlength="50" {{previousNome}} id="nomeProdotto" name="nomeProdotto" placeholder="Scrivi qui" required />
+        <input class="fInputBorder" type="text" maxlength="50" {{previousNome}} id="nomeProdotto" name="nomeProdotto" placeholder="Wing" required />
       </div>
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="marcaProdotto">Marca del prodotto</label>
+        <label for="marcaProdotto">Marca del prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" maxlength="50" {{previousMarca}} id="marcaProdotto" name="marcaProdotto" placeholder="Scrivi qui" required />
+        <input class="fInputBorder" type="text" maxlength="50" {{previousMarca}} id="marcaProdotto" name="marcaProdotto" placeholder="Bside" required />
       </div>
     </div>
     <div class="frow clearfix">
       <div class="col-25">
         <label for="prezzoProdotto"> Prezzo del
-          prodotto</label>
+          prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" required />
+        <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" placeholder="1400,00" required />
       </div>
     </div>
     <div class="frow clearfix">
@@ -62,10 +62,10 @@
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="dataInizioPrezzo">Inserisci la descrizione del prodotto</label>
+        <label for="dataInizioPrezzo">Inserisci la descrizione del prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" {{previousDescrizione}} maxlength="400" id="Descrizione" name="Descrizione" required />
+        <input class="fInputBorder" type="text" {{previousDescrizione}} maxlength="400" id="Descrizione" name="Descrizione" placeholder="Scrivi qui una descrizione" required />
       </div>
     </div>
     <div class="frow clearfix">
@@ -78,7 +78,7 @@
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="immaginePiccolaProdotto">Seleziona l'immagine piccola del prodotto:</label>
+        <label for="immaginePiccolaProdotto">Seleziona l'immagine di anteprima:</label>
       </div>
       <div class="col-75">
         <input class="fInputBorder" type="file" accept="image/*" id="immaginePiccolaProdotto" name="immaginePiccolaProdotto" required />

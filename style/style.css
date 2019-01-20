@@ -142,6 +142,12 @@ a.clickable-content {
   margin: .3rem;
 }
 
+  .header-button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all .35s ease-in-out;
+  }
+
 /* ---------- navigation bar ---------- */
 
 #navbar ul {
@@ -163,6 +169,12 @@ a.clickable-content {
   
   transition: all .35s ease-in-out;
 }
+
+    #navbar a:hover {
+    background-color: #4c4a4a;
+    color: #ffffff;
+    transition: all .35s ease-in-out;
+  }
 
 .current-page {
   font-weight: bold;
@@ -749,18 +761,6 @@ input[type="password"] {
   .header-button {
     font-size: 1rem;
     margin: .6rem;
-  }
-  
-  .header-button:hover {
-    background-color: #fff;
-    color: #000;
-    transition: all .35s ease-in-out;
-  }
-  
-    #navbar a:hover {
-    background-color: #4c4a4a;
-    color: #ffffff;
-    transition: all .35s ease-in-out;
   }
   
   .contenuto {
