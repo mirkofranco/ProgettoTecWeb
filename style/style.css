@@ -148,26 +148,32 @@ a.clickable-content {
   transition: all .35s ease-in-out;
 }
 
-/* ---------- navigation bar ---------- */
+/* pulsanti toggle navbar e sidebar */
 
 label.mobile-toggle {
+  color: green;
 }
 
-input#menu-toggle {
+input#menu-toggle, input#sidebar-toggle {
   display: none;
 }
 
-#menu-toggle:checked+ul {
-  max-height: 999px;
+#menu-toggle:checked+ul, #sidebar-toggle:checked+div {
+  max-height: 9999px;
 }
 
-#navbar ul {
+#navbar ul, #sidebar-catalogo {
   overflow: hidden;
   max-height: 0;
   
   -webkit-transition: max-height 0.3s ease;
   transition: max-height 0.3s ease;
+  
+}
 
+/* ---------- navigation bar ---------- */
+
+#navbar ul {
   line-height: 3rem;
 }
 
@@ -416,13 +422,11 @@ input#menu-toggle {
 /* MENU LATERALE CATALOGO */
 
 #sidebar-catalogo {
-  position: absolute;
+  /* position: absolute;
   top: 30vh;
-  left: 0;
+  left: 0; */
 
-  /* FIXME con 60 sbrodola sul footer. mistero */
-  /* min-height: 59.5vh; */
-  width: 20vw;
+  width: 100%;
 
   background-color: #f1f1f1;
 }
@@ -730,6 +734,10 @@ input[type="password"] {
     padding-right: .8rem;
   }
   
+  #sidebar-catalogo {
+    width: 40vw;
+  }
+  
   .catalogo a {
     font-size: 1rem;
   }
@@ -808,7 +816,11 @@ input[type="password"] {
   .descrSocio>img {
     width: 10vw;
   }
-  
+
+  #sidebar-catalogo {
+    width: 20vw;
+  }
+   
   /*CATALOGO*/
   .catalogo a {
     font-size: 1.3rem;
