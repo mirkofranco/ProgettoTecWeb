@@ -26,7 +26,7 @@ CREATE TABLE PRODOTTO(
 	sottoCategoria integer not null,
 	Nome varchar(20) not null,
 	Marca varchar(20) not null,
-	Prezzo float(2) not null,
+	Prezzo integer not null,
 	DataInizio date not null,
 	isOfferta boolean not null default 0,
 	NomeImmagine varchar(255) not null,
