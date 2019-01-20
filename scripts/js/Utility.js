@@ -2,11 +2,18 @@
 //se js è abilitato, questo attiva una casella di testo sentinella
 
 // l'ho commentato perché da errore quando carico pagine; se non vi serve eliminatelo pure -Luca
-$(
-     function(){
+//$(
+//     function(){
+//         $("#dataInizioPrezzo").datepicker();
+//    }
+//);
+
+function loadDataPicker(){
+    var data = document.getElementById('dataInizioPrezzo');
+    if(data.type != "date"){
          $("#dataInizioPrezzo").datepicker();
     }
-);
+}
 
 
 function checkForm(nomeInput){

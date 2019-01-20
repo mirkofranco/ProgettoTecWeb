@@ -84,6 +84,7 @@
             "{{pageTitle}}" => "Inserimento Prodotti - Studio AR",
             "{{pageDescription}}"=>"Pagina per l'inserimento dei prodotti del sito dello studio AR - architetti riuniti",
             "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
+            "<body>" => "<body onload=\"loadDataPicker()\">",
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{errorForm}}" => $errorForm,
             "{{previousNome}}" => $previousNome,
