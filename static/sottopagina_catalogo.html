@@ -1,0 +1,40 @@
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}}
+</p>
+
+<div id="categoria-catalogo" class="contenuto">
+
+  <h1>{{nomeCategoria}}</h1>
+
+  {{contenutoDinamicoCategoria}}
+  <!-- ESEMPIO DI CONTENUTO DINAMICO:
+  CODICE:
+  "sottocategoria 1"
+  "sottocategoria 2"
+
+  OUTPUT:
+  ......
+  -->
+  <div id="#sottocategoria">
+    <h2>sottocategoria</h2>
+    <div class="flex-container subcategory-container">
+  
+      <div id="$this->idProdotto" class="anteprima-prodotto">
+        <img src="./images/catalogo/thumbnails/letto_wing_bside.jpg" alt="TODO" /> <!-- THUMBNAIL -->
+        
+        <div class="anteprima-testo">
+          <h3>$this->nome</h3>
+          <span title="marca del prodotto"> $this->marca </span>
+          <h4>€ 1400
+            <!-- $this->prezzo -->
+          </h4>
+        </div>
+        <!-- pulsante "ottieni link a prodotto"? TODO? -->
+      </div>
+  
+      <!-- ALTRI PRODOTTI...... -->
+    </div>
+  </div>
+
+  <!-- ALTRE SOTTOCATEGORIE...... -->
+</div>

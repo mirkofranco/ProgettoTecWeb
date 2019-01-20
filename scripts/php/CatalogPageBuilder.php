@@ -23,7 +23,7 @@
 
     /**
      * Costruisce il menu laterale del catalogo aggiungendo categorie e sottocategorie.
-     * Vedi file /static/menu_catalogo.html per un esempio di output
+     * Vedi file /static/sidebar_catalogo.html per un esempio di output
      */
     class SidebarBuilder extends CustomDOMDocument {
 
@@ -105,6 +105,33 @@
         }
 
     }
+    
+  // ESEMPIO DI CONTENUTO DINAMICO
+  // CODICE:
+  // $sidebar = new SidebarBuilder("categoria attuale");
+
+  // $sidebar->addCategory("categoria attuale");
+  // $sidebar->addCategory("altra categoria");
+
+  // $sidebar->addSubCategory("categoria attuale", "Sottocategoria 1");
+  // $sidebar->addSubCategory("categoria attuale", "Sottocategoria 2");
+  // $sidebar->addSubCategory("altra categoria", "altra Sottocategoria")
+
+  // echo $sidebar->buildHtml();
+  
+  // OUTPUT:
+
+  // <div class="sidebar-category-container sidebar-current-page">
+  //   <a href="./categoria_attuale.php"><h2>categoria attuale</h2></a>
+  //   <a href="#sottocategoria-1"><h3>Sottocategoria 1</h3></a>
+  //   <a href="#sottocategoria-2"><h3>Sottocategoria 2</h3></a>
+  // </div>
+  // <div class="sidebar-category-container">
+  //   <a href="./altra_categoria.php"><h2>altra categoria</h2></a>
+  //   <a href="./altra_categoria.php/#altra-sottocategoria"><h3>altra Sottocategoria</h3></a>
+  // </div>
+
+  // (la classe sidebar-current-page è presente solo sulla parte di menu corrispondente alla pagina attuale)
 
     class SubCategoryBuilder extends CustomDOMDocument {
 
