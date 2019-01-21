@@ -15,7 +15,7 @@
         "{{pageTitle}}" => "About Us - Studio AR",
         "{{pageDescription}}"=>"Pagina about us del sito degllo studio AR - architetti riuniti",
         "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
-        "<a href=\"./about_us.php\" lang=\"en\">" => "<a href=\"./about_us.php\" class=\"current-page\">",
+        "<a href=\"./about_us.php\">" => "<a href=\"./about_us.php\" class=\"current-page\">",
         "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));

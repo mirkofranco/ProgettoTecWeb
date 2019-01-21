@@ -1,4 +1,5 @@
 <?php
+// TODO: rinominare index admin a login?
     require_once('./scripts/php/Sessione.php');
     require_once('./scripts/php/Utente.php');
     Sessione::startSession();

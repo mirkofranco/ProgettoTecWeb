@@ -149,6 +149,10 @@
             $this->document->appendChild($this->imgContainer);
         }
 
+        public function addProduct($product) {
+
+        }
+
         public function addImg($src, $alt, $classes = null) {
             $img = $this->document->createElement("img");
 
@@ -161,17 +165,5 @@
 
             $this->imgContainer->appendChild($img);
         }
-
-        // public function appendChild($tag, $value = null, $attributesMap = null) {
-        //     $child = $this->document->createElement($tag, $value);
-
-        //     if (!is_null($attributesMap)) {
-        //         foreach ($attributes as $attributeName => $attributeValue) {
-        //             $child->setAttribute($attributeName, $attributeValue);
-        //         }
-        //     }
-
-        //     $this->document->appendChild($child);
-        // }
     }
 ?>

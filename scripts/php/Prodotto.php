@@ -78,7 +78,7 @@
                     " Prezzo: " . $this -> getPrezzo() . " Data inizio validità prezzo: " . $this -> getDataInizioPrezzo() . " Offerta: " . $this -> getOfferta();
         }
 
-        public function buildHtml() {
+        public function buildHtmlPreview() {
             $document = new DOMDocument('1.0', 'utf-8');
 
             $node = $document->createElement("div");
@@ -88,6 +88,13 @@
             $node->setAttribute("class", "product");
 
             return $document->saveXML($node);
+        }
+
+        public function buildHtmlDetails() {
+          $document = new DOMDocument('1.0', 'utf-8');
+
+          
+          return $document->saveXML($node);
         }
 
 
