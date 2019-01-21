@@ -15,7 +15,7 @@
         "{{pageTitle}}" => "Home - Studio AR",
         "{{pageDescription}}"=>"Studio di architetti esperti di arredamento e di design di interni, che ti possono aiutare a creare la vita dei tuoi sogni in una casa che rispecchia il tuo stile di vita.",
         "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
-        "<a href=\"./index.php\" lang=\"en\">" => "<a href=\"./index.php\" class=\"current-page\" lang=\"en\">",
+        "<a href=\"./index.php\">" => "<a href=\"./index.php\" class=\"current-page\">",
         "<a href=\"./index.php\"><img src=\"./images/logopngB.png\" id=\"logo\" alt=\"Studio Architetti Riuniti\"/></a>" => "<img src=\"./images/logopngB.png\" class=\"current-page\" id=\"logo\" alt=\"Studio Architetti Riuniti\"/>",
         "{{gestioneLogin}}" => $gestioneLogin
     );
