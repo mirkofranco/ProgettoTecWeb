@@ -137,7 +137,6 @@ a.clickable-content {
   
   color: #fff;
   padding: .6rem 1.3rem;
-  /*border-radius: .3rem;*/
   border: .5px solid #fff;
   margin: .3rem;
 }
@@ -151,7 +150,16 @@ a.clickable-content {
 /* pulsanti toggle navbar e sidebar */
 
 label.mobile-toggle {
-  color: green;
+  width: 3em;
+  padding: 0;
+  display: block;
+  margin: .3rem;
+}
+
+.mobile-toggle>img {
+  display: block;
+  width: 100%;
+  margin: auto;
 }
 
 input#menu-toggle, input#sidebar-toggle {
@@ -166,8 +174,8 @@ input#menu-toggle, input#sidebar-toggle {
   overflow: hidden;
   max-height: 0;
   
-  -webkit-transition: max-height 0.3s ease;
-  transition: max-height 0.3s ease;
+  -webkit-transition: max-height 0.7s ease-in-out;
+  transition: max-height 0.7s ease-in-out;
   
 }
 
@@ -879,39 +887,6 @@ input[type="password"] {
   }
   
 }
-
-/*!!!!!!VECCHIE DA RISTRUTTURARE!!!!!!*/
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-/* @media screen and (max-width: 800px) {
-.column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-  } */
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-/* @media screen and (max-width: 600px) {
-.column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-}
-/* } */
-
-/* @media screen and (max-height: 450px) {
-#sidebar-catalogo {
-    padding-top: 15px;
-  }
-
-  #sidebar-catalogo a {
-    font-size: 1.1rem;
-  }
-  } */
-
-/* form responsive */
-/* @media screen and (max-width: 600px) {} */
 
 /*------------------- PRINT STYLE -------------------*/
 
