@@ -17,9 +17,7 @@
 
     // definisce variabili della pagina corrente
     $currentCategory = "Zona Notte";
-
-    $file = ".".$_SERVER["PHP_SELF"];
-
+    $file = "." . $_SERVER["PHP_SELF"];
     $daSostituire = array(
         "{{pageTitle}}" => "$currentCategory - Studio AR",
         "{{pageDescription}}"=>"Pagina del catalogo dedicata alla zona notte dello studio AR - architetti riuniti",
@@ -39,7 +37,6 @@
     $connection->connect();
     // prende dal db una mappa delle categorie, indicizzata sull'id
     $categorie = $connection->mappaCategorie();
-
     // prende dal db una mappa di tutti i prodotti per la categoria attuale, indicizzata sulla sottocategoria
     $productsMap = $connection->mappaProdotti($currentCategory);
     $connection -> close();
