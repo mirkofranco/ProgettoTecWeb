@@ -66,7 +66,7 @@
             "{{successMessage}}" => $successForm,
             "{{gestioneLogin}}" => $gestioneLogin
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html')); //cerca il primo parametro, e nel terzo ci
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html')); //cerca il primo parametro, e nel terzo ci
     //mette quello che trova nel secondo
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/consulenza_online.html'));
     echo file_get_contents('./static/_fine.html');

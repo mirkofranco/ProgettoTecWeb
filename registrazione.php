@@ -62,7 +62,7 @@
         "{{successForm}}" => $successForm,
         "{{gestioneLogin}}" => $gestioneLogin
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/registrazione.html'));
     echo file_get_contents('./static/_fine.html');
 ?>

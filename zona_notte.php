@@ -29,7 +29,7 @@
         "{{gestioneLogin}}" => $gestioneLogin
     );
 
-    $page = file_get_contents('./static/_inizio_user.html').
+    $page = file_get_contents('./static/_inizio.html').
             file_get_contents('./static/sidebar_catalogo.html').
             file_get_contents('./static/sottopagina_catalogo.html').
             file_get_contents("./static/_fine.html");

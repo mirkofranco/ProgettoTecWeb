@@ -17,7 +17,7 @@
         "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "{{gestioneLogin}}" => $gestioneLogin
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio_user.html'));
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
     echo file_get_contents('./static/sidebar_catalogo.html');
     echo file_get_contents('./static/cucine.html');
     echo file_get_contents('./static/_fine.html');
