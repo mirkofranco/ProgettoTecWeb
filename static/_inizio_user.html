@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>{{pageTitle}}</title>
-  <!-- TODO: l'icona di fianco al titolo delle varie pagine -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./icons/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
   <meta name="title" content="{{pageTitle}}" />
   <meta name="description" content="{{pageDescription}}" />
@@ -43,7 +49,7 @@
 
   <!-- barra di navigazione -->
   <nav id="navbar">
-    <label for="menu-toggle" class="mobile-toggle">Toggle menu</label>
+    <label for="menu-toggle" class="mobile-toggle"><img src="./icons/menu_icon.png" alt="menu di navigazione"/></label>
     <input type="checkbox" id="menu-toggle" />
     <ul class="flex-container flex-centered">
       <li class="flex-element"><a href="./index.php"><span lang="en">Home</span></a></li>
