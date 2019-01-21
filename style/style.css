@@ -129,11 +129,11 @@ a.clickable-content {
 }
 
 .header-button {
-  text-align: center; 
+  text-align: center;
   font-size: .8rem;
-  
+
   display: block;
-  
+
   color: #fff;
   padding: .6rem 1.3rem;
   border: .5px solid #fff;
@@ -172,10 +172,10 @@ label.mobile-toggle {
 #navbar ul, #sidebar-catalogo {
   overflow: hidden;
   max-height: 0;
-  
+
   -webkit-transition: max-height 0.7s ease-in-out;
   transition: max-height 0.7s ease-in-out;
-  
+
 }
 
 /* ---------- navigation bar ---------- */
@@ -345,21 +345,21 @@ label.mobile-toggle {
   margin: 2rem;
 }
 
-#descrizioneAzienda > img {
+#descrizioneAzienda>img {
   display: block;
   width: 40vw;
   margin: auto;
   border-radius: 100vh;
 }
 
-#descrizioneAzienda > p {
+#descrizioneAzienda>p {
   padding-top: 2rem;
 }
 
 /*FILE ABOUT_US.HTML*/
 
 #descrAzienda>img {
-  width:100%;
+  width: 100%;
 }
 
 #descrAzienda>div {
@@ -591,25 +591,25 @@ label {
 /* FILE CONTATTI.HTML */
 
 #embeddedMap {
-    position: relative;
+  position: relative;
 
-    /* workaround per mantenere un'aspect ratio fissa a 16:9 */
-    height: 0;
-    padding-top: 56.25%;
-    margin: 2%;
+  /* workaround per mantenere un'aspect ratio fissa a 16:9 */
+  height: 0;
+  padding-top: 56.25%;
+  margin: 2%;
 
-    /* overflow: hidden; */
+  /* overflow: hidden; */
 }
 
 #embeddedMap iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    width: 100%;
-    height: 100%;
-    border: none;
-    margin: auto;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: auto;
 }
 
 .orari-apertura {
@@ -622,7 +622,7 @@ label {
 }
 
 .orari-apertura td, .orari-apertura th {
-    padding: .5rem;
+  padding: .5rem;
 }
 
 /* FILE _FINE.HTML */
@@ -675,7 +675,7 @@ label {
 
 .anteprima-pulsanti {
   display: inline;
-  
+
   padding: .5rem;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
@@ -711,20 +711,20 @@ input[type="password"] {
   }
 
   /*HEADER*/
-    .header-left {
-      width: 30%;
+  .header-left {
+    width: 30%;
   }
-  
+
   .flex-element {
     width: auto;
   }
-  
+
   /*HOME*/
   .slideshow-text {
     font-size: 1.3rem;
   }
-  
-  #descrizioneAzienda > img {
+
+  #descrizioneAzienda>img {
     width: 20vw;
   }
 
@@ -733,15 +733,15 @@ input[type="password"] {
     width: 50%;
     padding-left: .8rem;
   }
-  
+
   .add-padding {
     padding-right: .8rem;
   }
-  
+
   #sidebar-catalogo {
     width: 40vw;
   }
-  
+
   .catalogo a {
     font-size: 1rem;
   }
@@ -764,7 +764,7 @@ input[type="password"] {
   .col-25, .col-75 {
     margin-top: 0;
   }
-  
+
   /*CONTATTI*/
   .padded-text-container {
     padding: 2rem 4rem 0;
@@ -773,7 +773,7 @@ input[type="password"] {
   .orari-apertura {
     font-size: 1rem;
   }
-  
+
   #footer li {
     margin: .5rem;
   }
@@ -785,38 +785,38 @@ input[type="password"] {
   h1 {
     width: 70vw;
     padding: 1.5rem 0 .3rem .5rem;
-    
+
     font-size: 2.5rem;
   }
-  
+
   /*HEADER*/
-   
+
   .header-left {
     width: 25%;
   }
-  
+
   .header-button {
     font-size: 1rem;
     margin: .6rem;
   }
-  
+
   .contenuto {
     width: 70vw;
     margin: auto;
   }
-  
+
   /*HOME*/
   .slideshow-text {
     font-size: 1.5rem;
     padding: 1.5rem;
   }
-  
-  #descrizioneAzienda > img {
+
+  #descrizioneAzienda>img {
     width: 15vw;
-}
-  
+  }
+
   /*ABOUT_US*/
-  
+
   .descrSocio>img {
     width: 10vw;
   }
@@ -824,12 +824,12 @@ input[type="password"] {
   #sidebar-catalogo {
     width: 20vw;
   }
-   
+
   /*CATALOGO*/
   .catalogo a {
     font-size: 1.3rem;
   }
-  
+
   .catalogo a:hover {
     background-color: #fff;
     color: #000;
@@ -853,11 +853,11 @@ input[type="password"] {
   .col-75 {
     width: 75%;
   }
-  
+
   .titoloForm {
     width: auto;
   }
-  
+
   .fInputBorder:hover,
   .fInputBorder:active,
   #femail:hover,
@@ -867,21 +867,21 @@ input[type="password"] {
     border: .5px solid black;
     transition: all .35s ease-in-out;
   }
-  
-  .submit-action:hover {
-  background-color: #4c4a4a;
-  box-shadow: 0 0 6px gray;
-  color: #FFFFFF;
-  transition: all .35s ease-in-out;
 
-  cursor: pointer;
-}
-  
+  .submit-action:hover {
+    background-color: #4c4a4a;
+    box-shadow: 0 0 6px gray;
+    color: #FFFFFF;
+    transition: all .35s ease-in-out;
+
+    cursor: pointer;
+  }
+
   /*FOOTER*/
   #footer {
     height: auto;
   }
-  
+
 }
 
 /*------------------- PRINT STYLE -------------------*/
@@ -895,6 +895,6 @@ input[type="password"] {
   }
 }
 
-.alert{
-    display: none;
+.alert {
+  display: none;
 }

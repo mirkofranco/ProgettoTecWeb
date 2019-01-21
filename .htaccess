@@ -1,2 +1,3 @@
 ErrorDocument 404 http://192.168.64.2/ProgettoTecWeb/404.php
-# ErrorDocument 404 /TODOnomeutentesuservertecweb/404.php
+# TODO configurare su server tecweb
+# ErrorDocument 404 /nomeutentesuservertecweb/404.php 
