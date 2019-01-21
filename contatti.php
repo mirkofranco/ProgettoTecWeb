@@ -14,7 +14,7 @@
 
     $daSostituire = array(
         "{{pageTitle}}" => "Contatti - Studio AR",
-        "{{pageDescription}}"=>"TODO",
+        "{{pageDescription}}"=>"Informazioni utili per contattare lo studio AR - architetti riuniti",
         "<a href=\"./contatti.php\">" => "<a href=\"./contatti.php\" class=\"current-page\">",
         "{{gestioneLogin}}" => $gestioneLogin
     );

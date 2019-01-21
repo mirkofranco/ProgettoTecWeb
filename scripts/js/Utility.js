@@ -105,6 +105,7 @@ function controllaInserimentoProdotto(){
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
 
+// TODO finire questa roba?
 // function handleLinksToSamePage() {
 //   var url = window.location.pathname;
 //   var filename = "." + url.substring(url.lastIndexOf('/'));

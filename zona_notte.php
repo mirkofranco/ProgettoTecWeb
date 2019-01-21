@@ -76,15 +76,5 @@
     // // costruisce l'html di una sottocategoria usando gli elementi aggiunti finora e lo inserisce nella pagina
     // $page = str_replace("{{contenutoDinamicoCategoria}}", $subCategory->buildHtml(), $page);
 
-    // TODO rimuovere questo prima della consegna!
-    // salva file html in ./cache_catalogo/
-    // $cacheFilename = str_replace(" ", "_", strtolower($currentCategory)).".html";
-    // $folder = "cache_catalogo";
-    // if (!is_dir($folder))
-    //     mkdir($folder);
-    // $file = fopen("$folder/$cacheFilename", "w") or die("Cannot create file to write into!");
-    // fwrite($file, str_replace("./", "../", $page));
-
-
     echo $page;
 ?>
