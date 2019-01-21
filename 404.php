@@ -14,7 +14,6 @@
     $daSostituire = array(
         "{{pageTitle}}" => "404: Page Not Found! - Studio AR",
         "{{pageDescription}}" => "pagina di errore 404",
-        "{{pageKeywords}}" => " ",
         "{{gestioneLogin}}" => $gestioneLogin
     );
     $requestedUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

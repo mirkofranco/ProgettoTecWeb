@@ -15,7 +15,6 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Catalogo - Studio AR",
         "{{pageDescription}}"=>"Pagina del catalogo del sito dello studio AR - architetti riuniti",
-        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
         "{{gestioneLogin}}" => $gestioneLogin
     );

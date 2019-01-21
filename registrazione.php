@@ -52,7 +52,6 @@
     $daSostituire =  array(
         "{{pageTitle}}" => "Registrazione - Studio AR",
         "{{pageDescription}}"=>"Pagina di registrazione al sito dello Studio AR - architetti riuniti",
-        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "<body>" => "<body onload=\"jsAttivo()\">",
         "{{errorForm}}" => $errorForm,
         "{{previousNome}}" => $previousNome,

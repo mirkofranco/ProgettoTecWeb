@@ -22,7 +22,6 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Menu Admin - Studio AR",
         "{{pageDescription}}"=>"Pagina del menù degli amministratori del sito dello studio AR - architetti riuniti",
-        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "{{gestioneLogin}}" => $gestioneLogin
     );
 

@@ -14,7 +14,6 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Cucine - Studio AR",
         "{{pageDescription}}"=>"Pagina del catalogo dedicata alle cucine dello studio AR - architetti riuniti",
-        "{{pageKeywords}}"=>"architetti,design,interni,arredamento,stile di vita",
         "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));

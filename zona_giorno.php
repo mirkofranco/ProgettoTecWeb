@@ -15,7 +15,6 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Zona Giorno - Studio AR",
         "{{pageDescription}}"=>"TODO",
-        "{{pageKeywords}}"=>"TODO",
         "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
