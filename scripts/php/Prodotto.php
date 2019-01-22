@@ -78,23 +78,45 @@
                     " Prezzo: " . $this -> getPrezzo() . " Data inizio validità prezzo: " . $this -> getDataInizioPrezzo() . " Offerta: " . $this -> getOfferta();
         }
 
-        public function buildHtmlPreview() {
+        public function getPreviewDomElement() {
             $document = new DOMDocument('1.0', 'utf-8');
+            $document->formatOutput = true;
 
-            $node = $document->createElement("div");
-            $document->appendChild($node);
+            $mainContainer = $document->createElement("div");
+            $mainContainer->setAttribute("id", $this->idProdotto);
+            $mainContainer->setAttribute("class", "anteprima-prodotto");
 
-            $node->setAttribute("id", $this->idProdotto);
-            $node->setAttribute("class", "product");
+            $img = $document->createElement("img");
+            $img->setAttribute("src", "./images/catalogo/".$this->nomeImmaginePiccola);
+            $img->setAttribute("alt", "immagine del prodotto");
 
-            return $document->saveXML($node);
+            $textContainer = $document->createElement("div");
+            $textContainer->setAttribute("class","anteprima-testo");
+
+            $name = $document->createElement("h3", $this->nome);
+
+            $brand = $document->createElement("span", $this->marca);
+            $brand->setAttribute("title", "marca del prodotto");
+
+            $price = $document->createElement("h4", "€ ".$this->prezzo);
+
+            // $document->appendChild($mainContainer);
+            $mainContainer->appendChild($img);
+            $mainContainer->appendChild($textContainer);
+            $textContainer->appendChild($name);
+            $textContainer->appendChild($brand);
+            $textContainer->appendChild($price);
+
+            return $mainContainer;
+            // return $document->saveXML($mainContainer);
         }
 
-        public function buildHtmlDetails() {
+        public function getDetailsDomElement() {
           $document = new DOMDocument('1.0', 'utf-8');
+          $this->document->formatOutput = true;
 
           
-          return $document->saveXML($node);
+          return $document->saveXML($mainContainer);
         }
 
 
