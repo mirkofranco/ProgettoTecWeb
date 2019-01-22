@@ -90,19 +90,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
      * ritorna una mappa di tutti i prodotti di una categoria, indicizzati per la loro sottocategoria
      */
     public function mappaProdotti($categoria) {
-        $query = "  SELECT
-                        subcat.Nome AS sottocat,
-                        p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto
-                    FROM
-                        PRODOTTO p
-                    JOIN CATEGORIA subcat ON
-                        p.sottoCategoria = subcat.IDC
-                    LEFT JOIN CATEGORIA catpadre ON
-                        subcat.IDCatPadre = catpadre.IDC
-                    WHERE
-                        catpadre.Nome = '$categoria' OR subcat.Nome = '$categoria' AND catpadre.IDCatPadre IS NULL
-                    ORDER BY
-                        subcat.IDC, p.IDProdotto";
+        $query = "SELECT subcat.Nome AS sottocat, p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA subcat ON p.sottoCategoria = subcat.IDC JOIN CATEGORIA catpadre ON subcat.IDCatPadre = catpadre.IDC WHERE catpadre.Nome = '$categoria' ORDER BY subcat.IDC, p.IDProdotto";
 
         $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
 

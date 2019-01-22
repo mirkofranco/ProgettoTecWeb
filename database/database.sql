@@ -16,8 +16,8 @@ SET FOREIGN_KEY_CHECKS=1;
 
 CREATE TABLE CATEGORIA(
 	IDC integer auto_increment primary key,
-	Nome varchar(50) not null,
-	IDCatPadre	integer,
+	Nome varchar(50),
+	IDCatPadre integer,
 	foreign key (IDCatPadre) references CATEGORIA(IDC)
 )ENGINE = InnoDB;
 
@@ -129,13 +129,15 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (12, 'Scrivanie', 4);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (13, 'Sedute per ufficio', 4);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (14, 'Armadi', 4);
 
+/* Sottocategoria vuota per cucine */
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (24, NULL, 3);
 
 /* Inserimento prodotti tramite sql FORMATO DATA: 'YYYY-MM-DD'*/
 /*INSERIMENTO ZONA NOTTE*/
 /*INSERIMENTO LETTI*/
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Wing', 'Bside', 1400, '2018-12-22', 0, "letto_wing_bside.jpg", "letto_wing_bside.jpg", 'Ingombro esterno letto: L178xP233xH122 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Happy', 'Bside', 1000, '2018-12-22', 0, "letto_happy_bside.jpg", "letto_happy_bside.jpg", 'Ingombro esterno letto: L183xP232xH88 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Special', 'Bside', 1800, '2018-12-22', 0, "letto_special_bside.jpg", "letto_spacial_bside.jpg", 'Ingombro esterno letto: L250xP250xH112 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Special', 'Bside', 1800, '2018-12-22', 0, "letto_special_bside.jpg", "letto_special_bside.jpg", 'Ingombro esterno letto: L250xP250xH112 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;');
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Pad', 'Colombini', 700, '2018-12-22', 0, "letto_pad_colombini.jpg", "letto_pad_colombini.jpg", 'Ingombro esterno letto: L185xP208xH112 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x190 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: No;');
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Snug', 'Colombini', 850, '2018-12-22', 0, "letto_snug_colombini.jpg", "letto_snug_colombini.jpg", 'Ingombro esterno letto: L190xP213xH101 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x200 (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: No;');
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (5, 'Gruppo Letto Avalon', 'Giellesse', 3500, '2018-12-22', 0, "letto_avalon_giellesse.jpg", "letto_avalon_giellesse.jpg", 'Ingombro esterno letto: L307xP226xH84 (l''altezza si riferisce alla testiera); Dimensioni materasso: 160x190 (non compreso nel prezzo); Materiale: Rovere; Contenitore: Sì;');
@@ -185,11 +187,11 @@ INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (11, 'Libreria Golf - Proposta 4', 'Colombini', 2100, '2018-12-24', 0, "libreria5.jpg", "libreria5.jpg", 'Misure libreria: L365xP33xH195; Misure libreria bassa: L215xP46xH80; Materiale: Melaminico;');
 
 /*INSERIMENTO CUCINE*/
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (3, 'Quadra', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_quadra_colombini.jpg", "cucina_quadra_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (3, 'Paragon', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_paragon_colombini.jpg", "cucina_paragon_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (3, 'Isla', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_isla_colombini.jpg", "cucina_isla_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (3, 'Mida', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_mida_colombini.jpg", "cucina_mida_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (3, 'Lungomare', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_lungomare_colombini.jpg", "cucina_lungomare_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Quadra', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_quadra_colombini.jpg", "cucina_quadra_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Paragon', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_paragon_colombini.jpg", "cucina_paragon_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Isla', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_isla_colombini.jpg", "cucina_isla_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Mida', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_mida_colombini.jpg", "cucina_mida_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Lungomare', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_lungomare_colombini.jpg", "cucina_lungomare_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
 
 /*INSERIMENTO UFFICI*/
 /*INSERIMENTO SEDUTE UFFICIO*/

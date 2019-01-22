@@ -1,6 +1,10 @@
 <?php
-	require_once('./scripts/php/Utente.php');
-	require_once('./scripts/php/Sessione.php');
+    require_once('./scripts/php/catalogo/SideBarBuilder.php');
+    require_once('./scripts/php/catalogo/MainContentBuilder.php');
+    require_once('./scripts/php/connection.php');
+
+    require_once('./scripts/php/Utente.php');
+    require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
     $gestioneLogin = "";
     if(!isset($_SESSION['user'])){
@@ -11,14 +15,52 @@
         }
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
+
+    $currentCategory = "Cucine";
+    $file = "." . $_SERVER["PHP_SELF"];
+
     $daSostituire = array(
-        "{{pageTitle}}" => "Cucine - Studio AR",
-        "{{pageDescription}}"=>"Pagina del catalogo dedicata alle cucine dello studio AR - architetti riuniti",
-        "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
-        "{{gestioneLogin}}" => $gestioneLogin
+      "{{pageTitle}}" => "$currentCategory - Studio AR",
+      "{{pageDescription}}"=> "Pagina del catalogo dedicata alla categoria $currentCategory di prodotti offerti dallo studio AR - architetti riuniti",
+      // "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
+      "{{nomeCategoria}}" => $currentCategory,
+      "{{gestioneLogin}}" => $gestioneLogin
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
-    echo file_get_contents('./static/sidebar_catalogo.html');
-    echo file_get_contents('./static/cucine.html');
-    echo file_get_contents('./static/_fine.html');
+
+    $daSostituire = array(
+      "{{pageTitle}}" => "$currentCategory - Studio AR",
+      "{{pageDescription}}"=> "Pagina del catalogo dedicata alla categoria $currentCategory di prodotti offerti dallo studio AR - architetti riuniti",
+      // "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
+      "{{nomeCategoria}}" => $currentCategory,
+      "{{gestioneLogin}}" => $gestioneLogin
+    );
+
+    $page = str_replace(array_keys($daSostituire),
+                        array_values($daSostituire),
+                          file_get_contents('./static/_inizio.html').
+                          file_get_contents('./static/sottopagina_catalogo.html').
+                          file_get_contents("./static/_fine.html"));
+
+    $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+    $connection->connect();
+    // prende dal db una mappa delle categorie, indicizzata sull'id
+    $categoriesMap = $connection->mappaCategorie();
+    // prende dal db una mappa degli attributi di tutti prodotti appartenenti alla categoria attuale, indicizzata sulle sottocategorie
+    $productsMap = $connection->mappaProdotti($currentCategory);
+    $connection->close();
+
+    // costruisce dinamicamente il contenuto della pagina
+    $mainContentBuilder = new MainContentBuilder($currentCategory);
+
+    // assembla dinamicamente il menu laterale, inserendo le categorie prese dal db
+    $mainContentBuilder->parseCategoriesMap($categoriesMap);
+
+    // inserisce i prodotti presi dal db
+    $mainContentBuilder->parseProductsMap($productsMap);
+
+    // inserisce gli elementi costruiti finora nella pagina
+    $page = str_replace("{{contenutoDinamicoSidebar}}", $mainContentBuilder->getSidebar(), $page);
+    $page = str_replace("{{contenutoDinamicoCategoria}}", $mainContentBuilder->getProducts(), $page);
+
+    echo $page;
 ?>

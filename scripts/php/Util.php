@@ -17,6 +17,20 @@
             $mail->Body = $body;
             return $mail->Send();
         }
+
+        /**
+         * ritorna la stringa argomento in minuscolo econ gli spazi sostituiti da "-".
+         */
+        public static function escapeAttributes($attr) {
+          return strtolower(str_replace(" ", "-", $attr));
+        }
+
+        /**
+         * ritorna la stringa argomento in minuscolo e con gli spazi sostituiti da "_".
+         */
+        public static function escapeLinks($link) {
+          return strtolower(str_replace(" ", "_", $link));
+        }
     }
     //funzione statica che manda la mail
 ?>
