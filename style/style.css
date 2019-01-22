@@ -43,8 +43,7 @@ html, body {
 
 /* stile personalizzato per h1 */
 h1 {
-  width: 95vw;
-  margin: auto;
+  width: 90%;
   padding: 1.5rem 0 .3rem .5rem;
   border-bottom: 1px solid #4c4a4a;
   margin-bottom: 2rem;
@@ -149,9 +148,9 @@ a.clickable-content {
 /* pulsanti toggle navbar e sidebar */
 
 label.mobile-toggle {
+  display: block;
   width: 3em;
   padding: 0;
-  display: block;
   margin: .3rem;
 }
 
@@ -425,12 +424,11 @@ label.mobile-toggle {
   height: 100%;
 }
 
+/* FILE SOTTOPAGINA_CATALOGO.HTML */
+
 /* MENU LATERALE CATALOGO */
 
 #sidebar-catalogo {
-  /* position: absolute;
-  top: 30vh;
-  left: 0; */
 
   width: 100%;
 
@@ -446,11 +444,11 @@ label.mobile-toggle {
 }
 
 #sidebar-catalogo h2 {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
 }
 
 #sidebar-catalogo h3 {
-  font-size: 1vw;
+  font-size: 1.25rem;
 }
 
 #sidebar-catalogo a:hover {
@@ -463,14 +461,47 @@ label.mobile-toggle {
   background-color: yellow;
 }
 
-/* FILE SOTTOPAGINA_CATALOGO.HTML */
+/* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
 
-#categoria-catalogo {
-  width: 55vw;
-  margin: auto;
+#sottopagina-catalogo {
+  padding: 0 2vw;
 }
 
+/* titoli delle sottocategorie */
+#sottopagina-catalogo h2 {
+  width: 80%;
+  border-bottom: .75px solid #4c4a4a;
+  margin-bottom: 1.5rem;
 
+  font-size: 1.5rem;
+}
+
+.anteprima-prodotto {
+  padding: 5px;
+}
+
+.anteprima-prodotto img {
+  width: 100%;
+}
+
+.anteprima-prodotto h3 {
+  display: inline-block;
+
+  font-size: 1.2rem;
+}
+
+.anteprima-prodotto span {
+  padding: .5rem;
+}
+
+.anteprima-prodotto h4 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.subcategory-container {
+  padding-bottom: 1.5rem;
+}
 
 /* FILE CONSULENZA_ONLINE.HTML */
 
@@ -706,7 +737,7 @@ input[type="password"] {
   }
 
   /* resetta l'altezza della navbar */
-  #navbar ul {
+  #navbar ul, #sidebar-catalogo {
     max-height: none;
   }
 
@@ -739,11 +770,23 @@ input[type="password"] {
   }
 
   #sidebar-catalogo {
-    width: 40vw;
+    position: fixed;
+    left: 0;
+
+    width: 30vw;
+    /* width: 40vw; */
   }
 
   .catalogo a {
     font-size: 1rem;
+  }
+
+  #sottopagina-catalogo {
+    margin-left: 30vw;
+  }
+
+  .anteprima-prodotto {
+    max-width: 50%;
   }
 
   /*CONSULENZA ONLINE*/
@@ -803,6 +846,10 @@ input[type="password"] {
   .contenuto {
     width: 70vw;
     margin: auto;
+  }
+
+  #sottopagina-catalogo {
+    width: auto;
   }
 
   /*HOME*/
