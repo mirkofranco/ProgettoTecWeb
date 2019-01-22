@@ -107,8 +107,8 @@ INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALU
 
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (1, 'Zona Notte', NULL);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (2, 'Zona Giorno', NULL);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (3, 'Cucine', NULL);
-INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Uffici', NULL);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (3, 'Cucina', NULL);
+INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (4, 'Ufficio', NULL);
 
 /* INSERIMENTO DELLE SOTTOCATEGORIE */
 

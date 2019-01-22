@@ -16,7 +16,7 @@
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
-    $currentCategory = "Zona Giorno";
+    $currentCategory = "Ufficio";
     $file = "." . $_SERVER["PHP_SELF"];
 
     $daSostituire = array(

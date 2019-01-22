@@ -168,13 +168,13 @@ label.mobile-toggle {
   max-height: 9999px;
 }
 
+/* TODO aggiungere classe "toggleable"???? */
 #navbar ul, #sidebar-catalogo {
   overflow: hidden;
   max-height: 0;
 
   -webkit-transition: max-height 0.7s ease-in-out;
   transition: max-height 0.7s ease-in-out;
-
 }
 
 /* ---------- navigation bar ---------- */
@@ -429,7 +429,6 @@ label.mobile-toggle {
 /* MENU LATERALE CATALOGO */
 
 #sidebar-catalogo {
-
   width: 100%;
 
   background-color: #f1f1f1;
@@ -770,11 +769,7 @@ input[type="password"] {
   }
 
   #sidebar-catalogo {
-    position: fixed;
-    left: 0;
-
     width: 30vw;
-    /* width: 40vw; */
   }
 
   .catalogo a {
