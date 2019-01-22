@@ -395,7 +395,7 @@ label.mobile-toggle {
 
 /* FILE CATALOGO.HTML */
 
-/* FIXME */
+/* FIXME forse non va bene: ref https://stackoverflow.com/a/45384426 */
 .flex-catalogo {
   position: relative;
 
@@ -475,6 +475,7 @@ label.mobile-toggle {
   font-size: 1.5rem;
 }
 
+/* TODO qua ci va lo stile mobile delle sottopagine catalogo */
 .anteprima-prodotto {
   padding: 5px;
 }
@@ -780,9 +781,8 @@ input[type="password"] {
     margin-left: 30vw;
   }
 
-  .anteprima-prodotto {
-    max-width: 50%;
-  }
+  /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
+  .anteprima-prodotto {}
 
   /*CONSULENZA ONLINE*/
   .fcontainer {
@@ -848,9 +848,8 @@ input[type="password"] {
     margin-left: 20vw;
   }
 
-  .anteprima-prodotto {
-    max-width: 33%;
-  }
+  /* TODO qua ci va lo stile desktop delle sottopagine catalogo */
+  .anteprima-prodotto {}
 
   /*HOME*/
   .slideshow-text {

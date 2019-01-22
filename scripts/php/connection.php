@@ -81,7 +81,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre;";
         // FETCH_GROUP indicizza il risultato della query rispetto alla prima colonna;
         // FETCH_UNIQUE semplifica la struttura dell'array ritornato (si può usare perché la prima colonna in questa query ha valori unici)
-        $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_GROUP|\PDO::FETCH_UNIQUE);
+        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_GROUP|\PDO::FETCH_UNIQUE);
 
         return $result;
     }
@@ -92,7 +92,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     public function selectFromProductWhereId($id) {
         $query = "SELECT p.sottoCategoria as idSottoCategoria, sc.Nome as nomeSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria=sc.IDC WHERE p.IDProdotto = $id";
 
-        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_NUM);
+        $result = $this->pdo->query($query)->fetch(\PDO::FETCH_NUM);
 
         return $result;
     }
@@ -103,7 +103,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     public function productsMap($categoria) {
         $query = "SELECT subcat.Nome AS sottocat, p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA subcat ON p.sottoCategoria = subcat.IDC JOIN CATEGORIA catpadre ON subcat.IDCatPadre = catpadre.IDC WHERE catpadre.Nome = '$categoria' ORDER BY subcat.IDC, p.IDProdotto";
 
-        $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
+        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
 
         return $result;
     }
