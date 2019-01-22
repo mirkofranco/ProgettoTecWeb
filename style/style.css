@@ -850,6 +850,11 @@ input[type="password"] {
 
   #sottopagina-catalogo {
     width: auto;
+    margin-left: 20vw;
+  }
+
+  .anteprima-prodotto {
+    max-width: 33%;
   }
 
   /*HOME*/
