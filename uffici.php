@@ -10,22 +10,21 @@
     if(!isset($_SESSION['user'])){
         $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
     }else{
-        if($_SESSION['user'] -> getPermessi() == '11'){
+		if($_SESSION['user'] -> getPermessi() == '11'){
             $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
         }
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
-    // definisce variabili della pagina corrente
-    $currentCategory = "Zona Notte";
+    $currentCategory = "Zona Giorno";
     $file = "." . $_SERVER["PHP_SELF"];
 
     $daSostituire = array(
-        "{{pageTitle}}" => "$currentCategory - Studio AR",
-        "{{pageDescription}}"=> "Pagina del catalogo dedicata alla categoria $currentCategory di prodotti offerti dallo studio AR - architetti riuniti",
-        // "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
-        "{{nomeCategoria}}" => $currentCategory,
-        "{{gestioneLogin}}" => $gestioneLogin
+      "{{pageTitle}}" => "$currentCategory - Studio AR",
+      "{{pageDescription}}"=> "Pagina del catalogo dedicata alla categoria $currentCategory di prodotti offerti dallo studio AR - architetti riuniti",
+      // "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
+      "{{nomeCategoria}}" => $currentCategory,
+      "{{gestioneLogin}}" => $gestioneLogin
     );
 
     $page = str_replace(array_keys($daSostituire),
