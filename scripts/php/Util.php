@@ -21,14 +21,14 @@
         /**
          * ritorna la stringa argomento in minuscolo econ gli spazi sostituiti da "-".
          */
-        public static function escapeAttributes($attr) {
+        public static function customAttributeEncoder($attr) {
           return strtolower(str_replace(" ", "-", $attr));
         }
 
         /**
          * ritorna la stringa argomento in minuscolo e con gli spazi sostituiti da "_".
          */
-        public static function escapeLinks($link) {
+        public static function customLinkEncoder($link) {
           return strtolower(str_replace(" ", "_", $link));
         }
     }

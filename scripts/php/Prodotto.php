@@ -87,7 +87,7 @@
             $mainContainer->setAttribute("class", "anteprima-prodotto");
 
             $img = $document->createElement("img");
-            $img->setAttribute("src", "./images/catalogo/".$this->nomeImmaginePiccola);
+            $img->setAttribute("src", "./images/catalogo/" . $this->nomeImmaginePiccola);
             $img->setAttribute("alt", "immagine del prodotto");
 
             $textContainer = $document->createElement("div");
@@ -95,7 +95,7 @@
 
             $name = $document->createElement("h3", $this->nome);
 
-            $brand = $document->createElement("span", $this->marca);
+            $brand = $document->createElement("span", htmlspecialchars($this->marca));
             $brand->setAttribute("title", "marca del prodotto");
 
             // $document->appendChild($mainContainer);
@@ -106,7 +106,7 @@
 
             // prezzo è l'unico attributo nullabile, quindi lo aggiungiamo al dom solo se esiste
             if (!is_null($this->prezzo)) {
-                $price = $document->createElement("h4", "€ ".$this->prezzo);
+                $price = $document->createElement("h4", "€ " . $this->prezzo);
                 $textContainer->appendChild($price);
             }
 

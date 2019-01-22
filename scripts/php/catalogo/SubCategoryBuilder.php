@@ -18,7 +18,7 @@
           }
 
           $this->mainContainer = $this->document->createElement("div");
-          $this->mainContainer->setAttribute("id", Util::escapeAttributes($name));
+          $this->mainContainer->setAttribute("id", Util::customAttributeEncoder($name));
           
           // crea header con nome della sottocategoria
           $mainHeader = $this->document->createElement("h2", $name);
@@ -45,7 +45,7 @@
     }
 
     // <div id="#sottocategoria">
-    // -------------------            FIXME: subcategory toggle is NOT AN ID!!!!
+    // ------------------- FIXME: subcategory toggle is NOT AN ID!!!!
     //   <label for="subcategory-toggle" class="mobile-toggle">Toggle subcategory</label>
     //   <input type="checkbox" id="subcategory-toggle" />
     //   <h2>sottocategoria</h2>

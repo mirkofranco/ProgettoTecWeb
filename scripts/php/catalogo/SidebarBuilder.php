@@ -25,7 +25,7 @@
               $categoryContainer->setAttribute("class", "sidebar-category-container sidebar-current-page");
               $href = "#";
           } else {
-              $href = "./".Util::escapeLinks($name).".php";
+              $href = "./".Util::customLinkEncoder($name).".php";
               $categoryContainer->setAttribute("class", "sidebar-category-container");
           }
 
@@ -50,10 +50,10 @@
 
           $href = "";
           if ($parent !== $this->currentCategory) {
-              $href .= "./".Util::escapeLinks($parent).".php";
+              $href .= "./".Util::customLinkEncoder($parent).".php";
           }
 
-          $href .= "#".Util::escapeAttributes($name);
+          $href .= "#".Util::customAttributeEncoder($name);
 
           $link = $this->document->createElement("a");
           $link->setAttribute("href", $href);
