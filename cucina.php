@@ -16,7 +16,7 @@
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
-    $currentCategory = "Cucine";
+    $currentCategory = "Cucina";
     $file = "." . $_SERVER["PHP_SELF"];
 
     $daSostituire = array(

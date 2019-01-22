@@ -124,12 +124,12 @@ INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (9, 'Tavoli', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (10, 'Divani', 2);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (11, 'Librerie', 2);
 
-/* Sottocategorie uffici*/
+/* Sottocategorie uffici */
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (12, 'Scrivanie', 4);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (13, 'Sedute per ufficio', 4);
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (14, 'Armadi', 4);
 
-/* Sottocategoria vuota per cucine */
+/* Sottocategoria vuota per le cucine */
 INSERT INTO CATEGORIA (IDC, Nome, IDCatPadre) VALUES (24, NULL, 3);
 
 /* Inserimento prodotti tramite sql FORMATO DATA: 'YYYY-MM-DD'*/
