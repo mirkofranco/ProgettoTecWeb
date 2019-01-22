@@ -98,25 +98,27 @@
             $brand = $document->createElement("span", $this->marca);
             $brand->setAttribute("title", "marca del prodotto");
 
-            $price = $document->createElement("h4", "€ ".$this->prezzo);
-
             // $document->appendChild($mainContainer);
             $mainContainer->appendChild($img);
             $mainContainer->appendChild($textContainer);
             $textContainer->appendChild($name);
             $textContainer->appendChild($brand);
-            $textContainer->appendChild($price);
+
+            // prezzo è l'unico attributo nullabile, quindi lo aggiungiamo al dom solo se esiste
+            if (!is_null($this->prezzo)) {
+                $price = $document->createElement("h4", "€ ".$this->prezzo);
+                $textContainer->appendChild($price);
+            }
 
             return $mainContainer;
-            // return $document->saveXML($mainContainer);
         }
 
         public function getDetailsDomElement() {
-          $document = new DOMDocument('1.0', 'utf-8');
-          $this->document->formatOutput = true;
+            die("NOT IMPLEMENTED");
+            $document = new DOMDocument('1.0', 'utf-8');
+            $this->document->formatOutput = true;
 
-          
-          return $document->saveXML($mainContainer);
+            return $document->saveXML($mainContainer);
         }
 
 

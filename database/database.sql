@@ -26,7 +26,7 @@ CREATE TABLE PRODOTTO(
 	sottoCategoria integer not null,
 	Nome varchar(20) not null,
 	Marca varchar(20) not null,
-	Prezzo integer not null,
+	Prezzo integer,
 	DataInizio date not null,
 	isOfferta boolean not null default 0,
 	NomeImmagine varchar(255) not null,
@@ -187,11 +187,11 @@ INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta
 INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (11, 'Libreria Golf - Proposta 4', 'Colombini', 2100, '2018-12-24', 0, "libreria5.jpg", "libreria5.jpg", 'Misure libreria: L365xP33xH195; Misure libreria bassa: L215xP46xH80; Materiale: Melaminico;');
 
 /*INSERIMENTO CUCINE*/
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Quadra', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_quadra_colombini.jpg", "cucina_quadra_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Paragon', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_paragon_colombini.jpg", "cucina_paragon_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Isla', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_isla_colombini.jpg", "cucina_isla_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Mida', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_mida_colombini.jpg", "cucina_mida_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
-INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Lungomare', 'Colombini Artec', 6000, '2018-12-24', 0, "cucina_lungomare_colombini.jpg", "cucina_lungomare_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Quadra', 'Colombini Artec', NULL, '2018-12-24', 0, "cucina_quadra_colombini.jpg", "cucina_quadra_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Paragon', 'Colombini Artec', NULL, '2018-12-24', 0, "cucina_paragon_colombini.jpg", "cucina_paragon_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Isla', 'Colombini Artec', NULL, '2018-12-24', 0, "cucina_isla_colombini.jpg", "cucina_isla_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Mida', 'Colombini Artec', NULL, '2018-12-24', 0, "cucina_mida_colombini.jpg", "cucina_mida_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
+INSERT INTO PRODOTTO (sottoCategoria, Nome, Marca, Prezzo, DataInizio, isOfferta, NomeImmagine, NomeThumbnail, Descrizione) VALUES (24, 'Lungomare', 'Colombini Artec', NULL, '2018-12-24', 0, "cucina_lungomare_colombini.jpg", "cucina_lungomare_colombini.jpg", 'La seguente è una proposta di arredo. Per ulteriori informazioni richiedere un preventivo');
 
 /*INSERIMENTO UFFICI*/
 /*INSERIMENTO SEDUTE UFFICIO*/
