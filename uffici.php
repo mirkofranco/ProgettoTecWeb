@@ -1,5 +1,5 @@
 <?php
-    require_once('./scripts/php/catalogo/SideBarBuilder.php');
+    require_once('./scripts/php/catalogo/SidebarBuilder.php');
     require_once('./scripts/php/catalogo/MainContentBuilder.php');
     require_once('./scripts/php/connection.php');
 

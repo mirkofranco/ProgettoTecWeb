@@ -17,7 +17,7 @@
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
     $daSostituire = array(
-        "{{pageTitle}}" => "Catalogo Amminstratori - Studio AR",
+        "{{pageTitle}}" => "Catalogo Amministratori - Studio AR",
         "{{pageDescription}}"=>"Pagina per il catalogo degli amministratori del sito dello studio AR - architetti riuniti",
         "{{gestioneLogin}}" => $gestioneLogin
     );

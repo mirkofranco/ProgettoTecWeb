@@ -1,5 +1,5 @@
 <?php
-    require_once('./scripts/php/catalogo/SideBarBuilder.php');
+    require_once('./scripts/php/catalogo/SidebarBuilder.php');
     require_once('./scripts/php/catalogo/MainContentBuilder.php');
     require_once('./scripts/php/connection.php');
 
@@ -18,14 +18,6 @@
 
     $currentCategory = "Cucine";
     $file = "." . $_SERVER["PHP_SELF"];
-
-    $daSostituire = array(
-      "{{pageTitle}}" => "$currentCategory - Studio AR",
-      "{{pageDescription}}"=> "Pagina del catalogo dedicata alla categoria $currentCategory di prodotti offerti dallo studio AR - architetti riuniti",
-      // "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
-      "{{nomeCategoria}}" => $currentCategory,
-      "{{gestioneLogin}}" => $gestioneLogin
-    );
 
     $daSostituire = array(
       "{{pageTitle}}" => "$currentCategory - Studio AR",
