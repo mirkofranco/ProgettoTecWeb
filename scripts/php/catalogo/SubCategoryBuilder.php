@@ -18,6 +18,7 @@
           }
 
           $this->mainContainer = $this->document->createElement("div");
+          // FIXME: il nome della sottocategoria non è unique!!!!
           $this->mainContainer->setAttribute("id", Util::customAttributeEncoder($name));
           
           // crea header con nome della sottocategoria
@@ -52,14 +53,7 @@
     //   <div class="flex-container subcategory-container">
   
     //     <div id="#idProdotto" class="anteprima-prodotto">
-    //       <img src="./images/catalogo/thumbnails/letto_wing_bside.jpg" alt="immagine del prodotto" />
-  
-    //       <div class="anteprima-testo">
-    //         <h3>nome</h3>
-    //         <span title="marca del prodotto"> marca </span>
-    //         <h4>€ 1400</h4>
-    //       </div>
-    //       pulsante "ottieni link a prodotto"? TODO?
+    //     [VEDI FILE /scripts/php/Prodotto.php]
     //     </div>
   
     //     ALTRI PRODOTTI......

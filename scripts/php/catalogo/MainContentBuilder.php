@@ -16,7 +16,7 @@
         }
         
         public function parseProductsMap($productsMap) {
-          $this->subCategoriesHtml = Array();
+          $this->subCategoriesHtml = array();
 
           foreach ($productsMap as $subCategoryName => $products) {
 
@@ -40,7 +40,7 @@
     }
 
     // <div id="#sottocategoria">
-    //   ........
+    //   [VEDI FILE /scripts/php/catalogo/SubCategoryBuilder.php]
     // </div>
-    // ....... ALTRE SOTTOCATEGORIE......
+    // ALTRE SOTTOCATEGORIE......
 ?>

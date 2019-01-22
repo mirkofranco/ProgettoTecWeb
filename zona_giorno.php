@@ -44,9 +44,9 @@
     $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
     $connection->connect();
     // prende dal db una mappa delle categorie, indicizzata sull'id
-    $categoriesMap = $connection->mappaCategorie();
+    $categoriesMap = $connection->categoriesMap();
     // prende dal db una mappa degli attributi di tutti prodotti appartenenti alla categoria attuale, indicizzata sulle sottocategorie
-    $productsMap = $connection->mappaProdotti($currentCategory);
+    $productsMap = $connection->productsMap($currentCategory);
     $connection->close();
 
     // costruisce dinamicamente il contenuto della pagina

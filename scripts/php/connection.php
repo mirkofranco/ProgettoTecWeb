@@ -77,7 +77,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
     /**
      * restituisce una mappa di tutte le categorie, indicizzate sull'id
      */
-    public function mappaCategorie() {
+    public function categoriesMap() {
         $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre;";
         // FETCH_GROUP indicizza il risultato della query rispetto alla prima colonna;
         // FETCH_UNIQUE semplifica la struttura dell'array ritornato (si può usare perché la prima colonna in questa query ha valori unici)
@@ -87,9 +87,20 @@ class MySqlDatabaseConnection extends AbstractConnection{
     }
 
     /**
+     * dato un id, seleziona dal database il prodotto corrispondente e il nome della sua sottocategoria
+     */
+    public function selectFromProductWhereId($id) {
+        $query = "SELECT p.sottoCategoria as idSottoCategoria, sc.Nome as nomeSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria=sc.IDC WHERE p.IDProdotto = $id";
+
+        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_NUM);
+
+        return $result;
+    }
+
+    /**
      * ritorna una mappa di tutti i prodotti di una categoria, indicizzati per la loro sottocategoria
      */
-    public function mappaProdotti($categoria) {
+    public function productsMap($categoria) {
         $query = "SELECT subcat.Nome AS sottocat, p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA subcat ON p.sottoCategoria = subcat.IDC JOIN CATEGORIA catpadre ON subcat.IDCatPadre = catpadre.IDC WHERE catpadre.Nome = '$categoria' ORDER BY subcat.IDC, p.IDProdotto";
 
         $result = $this -> pdo -> query($query) -> fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
