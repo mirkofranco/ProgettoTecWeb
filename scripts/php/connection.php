@@ -78,7 +78,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
      * restituisce una mappa di tutte le categorie, indicizzate sull'id
      */
     public function categoriesMap() {
-        $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre;";
+        $query = "SELECT * FROM CATEGORIA ORDER BY IDCatPadre, IDC;";
         // FETCH_GROUP indicizza il risultato della query rispetto alla prima colonna;
         // FETCH_UNIQUE semplifica la struttura dell'array ritornato (si può usare perché la prima colonna in questa query ha valori unici)
         $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_GROUP|\PDO::FETCH_UNIQUE);
