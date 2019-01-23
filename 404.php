@@ -12,12 +12,14 @@
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
     $daSostituire = array(
-        "{{pageTitle}}" => "404: Page Not Found! - Studio AR",
+        "{{pageTitle}}" => "404: Pagina non trovata - Studio AR",
         "{{pageDescription}}" => "pagina di errore 404",
         "{{gestioneLogin}}" => $gestioneLogin
     );
-    $requestedUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+    http_response_code(404);
 
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
-    echo str_replace("{{requestedUrl}}", $requestedUrl, file_get_contents('./static/404.html'));
+    echo file_get_contents('./static/404.html');
+    echo file_get_contents('./static/_fine.html');
 ?>

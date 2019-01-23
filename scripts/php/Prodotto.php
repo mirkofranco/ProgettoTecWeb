@@ -108,7 +108,6 @@
             $brand->setAttribute("title", "marca del prodotto");
             $textContainer->appendChild($brand);
 
-
             // prezzo è l'unico attributo nullabile, quindi lo aggiungiamo al dom solo se esiste
             if (!is_null($this->prezzo)) {
                 $price = $document->createElement("span", "€ " . $this->prezzo);
