@@ -41,6 +41,11 @@ html, body {
 
 /* FINE RESET CSS */
 
+strong {
+  display: block;
+  text-align: center;
+}
+
 /* stile personalizzato per h1 */
 h1 {
   width: 90%;
@@ -224,6 +229,8 @@ label.mobile-toggle {
 .slideshow-container {
   position: relative;
 
+  /* necessario per degradare lo slideshow elegantemente */
+  display: none;
   /* non ingrandire a più della dimensione delle immagini stesse */
   max-width: 1440px;
   max-height: 810px;

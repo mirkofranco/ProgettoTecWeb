@@ -1,3 +1,5 @@
+document.getElementsByClassName("slideshow-container")[0].style.display = 'block';
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
