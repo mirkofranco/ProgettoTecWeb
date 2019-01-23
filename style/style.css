@@ -490,7 +490,7 @@ label.mobile-toggle {
 
 /* TODO qua ci va lo stile mobile delle sottopagine catalogo */
 .anteprima-prodotto {
-  padding: 5px;
+  
 }
 
 .anteprima-prodotto img {
@@ -798,7 +798,31 @@ input[type="password"] {
 /* ERROR PAGE */
 
 #requested-url-error {
-  background-color: lightgrey;
+  font-weight: bold;
+  display: inline-block;
+}
+
+#error-page-content h1 {
+  border-bottom: none;
+}
+
+#error-page-content a {
+  text-align: center;
+
+  display: inline-block;
+  margin: .5rem;
+  
+  color: #fff;
+  background-color:#4c4a4a;
+  padding: .6rem 1.3rem;
+  border: .5px solid #fff;
+}
+
+#error-page-content a:hover {
+  color: #000;
+  background-color:#fff;
+  border: .5px solid #000;
+  transition: all .35s ease-in-out;
 }
 
 /* -------------------- MEDIA QUERIES (INCREMENTALI)  -------------------- */
@@ -854,6 +878,10 @@ input[type="password"] {
 
   #sottopagina-catalogo {
     margin-left: 30vw;
+  }
+  
+  .subcategory-container a {
+    width: 50%;
   }
 
   /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
