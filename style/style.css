@@ -490,22 +490,38 @@ label.mobile-toggle {
   width: 100%;
 }
 
-.anteprima-prodotto h3 {
+/* stile per nome del prodotto */
+.anteprima-testo h3 {
   display: inline-block;
+  width: 50%;
 
   font-size: 1.2rem;
+  vertical-align: top;
 }
 
-.anteprima-prodotto span {
-  padding: .5rem;
+/* stile per marca del prodotto */
+.anteprima-testo span:nth-of-type(1) {
+  display: inline-block;
+  width: 50%;
+
+  text-align: right;
 }
 
-.anteprima-prodotto h4 {
+/* stile per prezzo del prodotto (se presente) */
+.anteprima-testo span:nth-of-type(2) {
+  display: inline-block;
+
   font-size: 1.1rem;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 /* FILE DETTAGLIO_PRODOTTO.HTML + CONTENUTO DINAMICO */
+
+.pannello-admin {
+  padding:3rem;
+
+  background-color: plum;
+}
 
 .dettaglio-prodotto {
   padding: 1rem;
@@ -518,10 +534,41 @@ label.mobile-toggle {
   padding-right: 1rem;
 }
 
-.dettaglio-testo {}
+.dettaglio-testo {
+  float: left;
 
+  width: 33%;
+}
+
+/* stile per tutti i campi */
+.dettaglio-testo p, .dettaglio-testo span {
+  padding: .25rem 0;
+}
+
+.dettaglio-testo span {
+  display: block;
+}
+
+/* stile per nome del prodotto */
+.dettaglio-testo h3 {
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+}
+
+/* stile per marca del prodotto */
+.dettaglio-testo span:nth-of-type(1) {
+  /* nothing yet */
+}
+
+/* stile per prezzo del prodotto (se presente) */
+.dettaglio-testo span:nth-of-type(2) {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* stile per descrizione del prodotto (se prezzo non c'è è ultimo ma non più terzo!) */
 .dettaglio-testo p {
-  padding: .25rem;
+  /* nothing yet */
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */
