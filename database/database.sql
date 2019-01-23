@@ -24,7 +24,7 @@ CREATE TABLE CATEGORIA(
 CREATE TABLE PRODOTTO(
 	IDProdotto integer auto_increment primary key,
 	sottoCategoria integer not null,
-	Nome varchar(20) not null,
+	Nome varchar(50) not null,
 	Marca varchar(20) not null,
 	Prezzo integer,
 	DataInizio date not null,
