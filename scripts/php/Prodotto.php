@@ -82,7 +82,7 @@
             $document = new DOMDocument('1.0', 'utf-8');
             $document->formatOutput = true;
 
-            // FIXME: così prima viene letto "vai ai dettagli di.." ma non ho ancora visto l'elemento; non è molto accessibile....
+            // FIXME: così prima viene letto "vai ai dettagli di.." ma non ho ancora visto l'elemento; forse non è molto accessibile....
             $detailsLink = $document->createElement("a");
             $detailsLink->setAttribute("href","./dettaglio_prodotto.php?id=" . $this->idProdotto);
             $detailsLink->setAttribute("title", "vai alla pagina dei dettagli di questo prodotto");
@@ -98,7 +98,7 @@
             $mainContainer->appendChild($img);
 
             $textContainer = $document->createElement("div");
-            $textContainer->setAttribute("class","anteprima-testo");
+            $textContainer->setAttribute("class", "anteprima-testo");
             $mainContainer->appendChild($textContainer);
 
             $name = $document->createElement("h3", $this->nome);

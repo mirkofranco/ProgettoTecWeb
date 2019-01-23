@@ -7,20 +7,20 @@ require_once './scripts/php/Utente.php';
 require_once './scripts/php/Sessione.php';
 Sessione::startSession();
 $gestioneLogin = "";
+$funzioniAdmin = "";
 if (!isset($_SESSION['user'])) {
     $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
+
+        $funzioniAdmin .= "<div class=\"pannello-admin\"> TODO pulsanti admin modifica ed elimina </div>";
     }
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
 
-// parsing della stringa di query;
-$queryString = array();
-parse_str($_SERVER["QUERY_STRING"], $queryString);
-
-if (!(array_key_exists('id', $queryString) && is_numeric($queryString['id']))) {
+// cerco l'attributo id nella query string
+if (!(array_key_exists('id', $_REQUEST) && is_numeric($_REQUEST['id']))) {
     // FIXME: quale dei due argomenti usare?
     // header("HTTP/1.0 404 Not Found");
     header("Location: ./404.php", 404);
@@ -29,7 +29,7 @@ if (!(array_key_exists('id', $queryString) && is_numeric($queryString['id']))) {
 
 $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
 $connection->connect();
-$attributes = $connection->selectFromProductWhereId($queryString['id']);
+$attributes = $connection->selectFromProductsWhereId($_REQUEST['id']);
 $connection->close();
 
 // controllo se l'id corrisponde a un prodotto
@@ -50,6 +50,7 @@ $daSostituire = array(
     "{{pageTitle}}" => $product->getNome() . " - Dettaglio prodotto - Studio AR",
     "{{pageDescription}}" => "Pagina di dettaglio per un prodotto venduto dallo studio AR - architetti riuniti",
     "{{gestioneLogin}}" => $gestioneLogin,
+    "{{funzioniAdmin}}" => $funzioniAdmin,
     "{{nomeCategoria}}" => $categoryName,
     "{{nomeSottoCategoria}}" => $subCategoryName,
     "{{nomeProdotto}}" => $product->getNome() . " (dettaglio)",
