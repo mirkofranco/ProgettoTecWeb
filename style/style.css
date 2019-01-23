@@ -462,6 +462,11 @@ label.mobile-toggle {
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
 
+/* FIXME: tutti i prodotti sembrano essere già visitati perchè l'url è unico.... */
+.subcategory-container a {
+  color: inherit;
+}
+
 #sottopagina-catalogo {
   padding: 0 2vw;
 }
@@ -469,6 +474,7 @@ label.mobile-toggle {
 /* titoli delle sottocategorie */
 #sottopagina-catalogo h2 {
   width: 80%;
+  padding-top: .5rem;
   border-bottom: .75px solid #4c4a4a;
   margin-bottom: 1.5rem;
 
@@ -499,8 +505,23 @@ label.mobile-toggle {
   font-weight: normal;
 }
 
-.subcategory-container {
-  padding-bottom: 1.5rem;
+/* FILE DETTAGLIO_PRODOTTO.HTML + CONTENUTO DINAMICO */
+
+.dettaglio-prodotto {
+  padding: 1rem;
+}
+
+.dettaglio-prodotto img {
+  float: left;
+
+  width: 66%;
+  padding-right: 1rem;
+}
+
+.dettaglio-testo {}
+
+.dettaglio-testo p {
+  padding: .25rem;
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */

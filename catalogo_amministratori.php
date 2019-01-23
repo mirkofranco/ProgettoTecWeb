@@ -4,7 +4,7 @@
     Sessione::startSession();
     if(isset($_SESSION['user'])){
         if($_SESSION['user'] -> getPermessi() == '01'){
-            header("location: index.php");
+            header("location: ./index.php");
         }
     }
     $gestioneLogin = "";

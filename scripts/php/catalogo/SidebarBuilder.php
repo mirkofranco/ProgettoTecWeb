@@ -1,7 +1,7 @@
 <?php
     require_once("CustomDomDocument.php");
     require_once(__DIR__."/../Util.php");
-    
+
     /**
      * Costruisce il menu laterale del catalogo aggiungendo categorie e sottocategorie.
      */
@@ -31,8 +31,6 @@
 
           $link = $this->document->createElement("a");
           $link->setAttribute("href", $href);
-          // alt text vuoto perchè il testo di questo link è già descrittivo
-          $link->setAttribute("alt", " ");
 
           $h2 = $this->document->createElement("h2", $name);
 
@@ -57,9 +55,7 @@
 
           $link = $this->document->createElement("a");
           $link->setAttribute("href", $href);
-          // alt text vuoto perchè il testo di questo link è già descrittivo
-          $link->setAttribute("alt", " ");
-          
+
           $h3 = $this->document->createElement("h3", $name);
           
           $parentCategory->appendChild($link);

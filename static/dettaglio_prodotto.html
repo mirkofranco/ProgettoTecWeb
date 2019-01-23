@@ -1,20 +1,15 @@
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}} &gt; {{nomeSottoCategoria}} &gt; {{nomeProdotto}}
+</p>
+
 <div class="contenuto">
+  
+  <a href="{{linkSottoCategoria}}" title="torna alla sezione del catalogo in cui c'è questo prodotto">torna a {{nomeCategoria}} &gt; {{nomeSottoCategoria}} </a>
 
-  <div class="dettaglio-prodotto">
-    <img src="./images/catalogo/letto_wing_bside.jpg" alt="immagine del prodotto" />
+  {{dettaglioProdotto}}
 
-    <div class="dettaglio-testo">
-      <h3>$this->nome</h3>
-      <span title="marca del prodotto"> $this->marca </span>
-      <span title="prezzo del prodotto"> € $this->prezzo </span>
-      <span title="descrizione del prodotto">
-        Ingombro esterno letto: L178xP233xH122 (laltezza si riferisce alla testiera); Dimensioni materasso: 160x200
-        (non compreso nel prezzo); Materiale: Tessuto a scelta a campionario; Contenitore: Sì;')
-      </span>
-    </div>
-  </div>
-
+  <!-- TODO: box commenti sotto al prodotto; ricordarsi di rimuovere stile inline! -->
   <div contenteditable="true">
-    questo è uno spazio per inserire un commento TODO
+    questo è uno spazio per inserire un commento
   </div>
 </div>

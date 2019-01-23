@@ -90,7 +90,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
      * dato un id, seleziona dal database il prodotto corrispondente e il nome della sua sottocategoria
      */
     public function selectFromProductWhereId($id) {
-        $query = "SELECT p.sottoCategoria as idSottoCategoria, sc.Nome as nomeSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria=sc.IDC WHERE p.IDProdotto = $id";
+        $query = "SELECT cp.Nome AS nomeCategoriaPadre, sc.Nome AS nomeSottoCategoria, p.sottoCategoria AS idSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria = sc.IDC JOIN CATEGORIA cp ON sc.IDCatPadre = cp.IDC WHERE p.IDProdotto = $id";
 
         $result = $this->pdo->query($query)->fetch(\PDO::FETCH_NUM);
 
