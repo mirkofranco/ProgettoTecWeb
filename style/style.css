@@ -885,7 +885,9 @@ input[type="password"] {
   .subcategory-container {}
 
   /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
-  .anteprima-prodotto {}
+  .anteprima-prodotto {
+    width: 50%;
+  }
 
   /*CONSULENZA ONLINE*/
   .fcontainer {
