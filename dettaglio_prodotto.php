@@ -55,7 +55,7 @@ $daSostituire = array(
     "{{nomeSottoCategoria}}" => $subCategoryName,
     "{{nomeProdotto}}" => $product->getNome() . " (dettaglio)",
     "{{linkSottoCategoria}}" => "./" . Util::customLinkEncoder($categoryName) . ".php#" . Util::customAttributeEncoder($subCategoryName),
-    "{{dettaglioProdotto}}" => $product->getDetailsHtml(),
+    "{{dettaglioProdotto}}" => $product->getDettaglioProdotto(),
 );
 
 $page = str_replace(array_keys($daSostituire), array_values($daSostituire),

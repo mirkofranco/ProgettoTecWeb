@@ -34,7 +34,7 @@
       public function addNewProduct($productAttributes) {
         $product = new Prodotto(...$productAttributes);
 
-        $tempNode = $this->document->importNode($product->getPreviewDomElement(), TRUE);
+        $tempNode = $this->document->importNode($product->getAnteprimaProdotto(), TRUE);
 
         $this->productsContainer->appendChild($tempNode);
       }

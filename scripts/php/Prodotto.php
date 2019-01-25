@@ -78,7 +78,10 @@
                     " Prezzo: " . $this -> getPrezzo() . " Data inizio validità prezzo: " . $this -> getDataInizioPrezzo() . " Offerta: " . $this -> getOfferta();
         }
 
-        public function getPreviewDomElement() {
+        /**
+         * restituisce un DOMElement contenente la struttura html dell'anteprima di questo prodotto
+         */
+        public function getAnteprimaProdotto() {
             $document = new DOMDocument('1.0', 'utf-8');
             $document->formatOutput = true;
 
@@ -129,7 +132,10 @@
         //   </a>
         // </div>
 
-        public function getDetailsHtml() {
+        /**
+         * restituisce il codice HTML da inserire nella pagina dettaglio di questo prodotto
+         */
+        public function getDettaglioProdotto() {
 
             $document = new DOMDocument('1.0', 'utf-8');
             $document->formatOutput = true;
