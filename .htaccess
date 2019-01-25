@@ -1,6 +1,6 @@
 ErrorDocument 404 http://192.168.64.2/ProgettoTecWeb/404.php
 ErrorDocument 404 http://127.0.0.1:8000/edsa-Progetto%20TecWeb/404.php
-ErrorDocument 404 /ercolel/404.php 
+ErrorDocument 404 /ercolel/404.php
 # TODO aggiungete tutti i vostri nomi utenti così funziona dappertutto
 
 # TODO usare o no?
