@@ -82,24 +82,24 @@
             $document = new DOMDocument('1.0', 'utf-8');
             $document->formatOutput = true;
 
+            $mainContainer = $document->createElement("div");
+            $mainContainer->setAttribute("id", $this->idProdotto);
+            $mainContainer->setAttribute("class", "anteprima-prodotto");
+
             // FIXME: così prima viene letto "vai ai dettagli di.." ma non ho ancora visto l'elemento; forse non è molto accessibile....
             $detailsLink = $document->createElement("a");
             $detailsLink->setAttribute("href","./dettaglio_prodotto.php?id=" . $this->idProdotto);
             $detailsLink->setAttribute("title", "vai alla pagina dei dettagli di questo prodotto");
-
-            $mainContainer = $document->createElement("div");
-            $mainContainer->setAttribute("id", $this->idProdotto);
-            $mainContainer->setAttribute("class", "anteprima-prodotto");
-            $detailsLink->appendChild($mainContainer);
+            $mainContainer->appendChild($detailsLink);
 
             $img = $document->createElement("img");
             $img->setAttribute("src", "./images/catalogo/" . $this->nomeImmaginePiccola);
             $img->setAttribute("alt", "immagine del prodotto");
-            $mainContainer->appendChild($img);
+            $detailsLink->appendChild($img);
 
             $textContainer = $document->createElement("div");
             $textContainer->setAttribute("class", "anteprima-testo");
-            $mainContainer->appendChild($textContainer);
+            $detailsLink->appendChild($textContainer);
 
             $name = $document->createElement("h3", $this->nome);
             $textContainer->appendChild($name);
@@ -114,11 +114,11 @@
                 $textContainer->appendChild($price);
             }
 
-            return $detailsLink;
+            return $mainContainer;
         }
 
-        // <a href="./dettaglio_prodotto.php?id=..." title="vai alla pagina dei dettagli di questo prodotto">
-        //   <div id="#idProdotto" class="anteprima-prodotto">
+        // <div id="$this->idProdotto" class="anteprima-prodotto">
+        //   <a href="./dettaglio_prodotto.php?id=$this->idProdotto" title="vai alla pagina dei dettagli di questo prodotto">
         //     <img src="./images/catalogo/thumbnails/$this->nomeImmaginePiccola" alt="immagine del prodotto" />
         //     <div class="anteprima-testo">
         //       <h3>nome</h3>
@@ -126,8 +126,8 @@
         //       <span title="prezzo del prodotto">€ 1400</h4>
         //     </div>
         //     pulsante "ottieni link a prodotto"? TODO?
-        //   </div>
-        // </a>
+        //   </a>
+        // </div>
 
         public function getDetailsHtml() {
 

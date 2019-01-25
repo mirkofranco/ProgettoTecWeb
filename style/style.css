@@ -468,11 +468,8 @@ label.mobile-toggle {
 }
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
-
-/* FIXME: tutti i prodotti sembrano essere già visitati perchè l'url è unico.... */
-.subcategory-container a {
-  color: inherit;
-}
+  /* stile del contenitore */
+  .subcategory-container a {}
 
 #sottopagina-catalogo {
   padding: 0 2vw;
@@ -490,7 +487,16 @@ label.mobile-toggle {
 
 /* TODO qua ci va lo stile mobile delle sottopagine catalogo */
 .anteprima-prodotto {
+  width: 100%;
+}
   
+.anteprima-prodotto a {
+  display: block;
+}
+
+/* FIXME: tutti i prodotti sembrano essere già visitati perchè l'url è unico, trovare una soluzione? */
+.anteprima-prodotto a {
+  color: inherit;
 }
 
 .anteprima-prodotto img {
@@ -875,9 +881,8 @@ input[type="password"] {
     margin-left: 30vw;
   }
   
-  .subcategory-container a {
-    width: 50%;
-  }
+  /* stile del contenitore */
+  .subcategory-container {}
 
   /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {}
