@@ -8,12 +8,16 @@ require_once './scripts/php/Sessione.php';
 Sessione::startSession();
 $gestioneLogin = "";
 $funzioniAdmin = "";
+$inserimentoCommenti = "";
 if (!isset($_SESSION['user'])) {
     $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
         $funzioniAdmin .= "<div class=\"pannello-admin\"> <a href=\"eliminaProdotto.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
+    }
+    if($_SESSION['user'] -> getPermessi() == '01'){
+        $inserimentoCommenti = "<div contenteditable = \"true\">Contenuto editabile </div>";
     }
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
@@ -55,6 +59,7 @@ $daSostituire = array(
     "{{nomeProdotto}}" => $product->getNome() . " (dettaglio)",
     "{{linkSottoCategoria}}" => "./" . Util::customLinkEncoder($categoryName) . ".php#" . Util::customAttributeEncoder($subCategoryName),
     "{{dettaglioProdotto}}" => $product->getDettaglioProdotto(),
+    "{{inserimentoCommenti}}" => $inserimentoCommenti
 );
 
 $page = str_replace(array_keys($daSostituire), array_values($daSostituire),
