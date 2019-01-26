@@ -14,11 +14,8 @@ if (!isset($_SESSION['user'])) {
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
-<<<<<<< HEAD
         $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
-=======
         $funzioniAdmin .= "<div class=\"pannello-admin\"> <a href=\"eliminaProdotto.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
->>>>>>> 6577ee7364eff33e9938c6c4b5ab6384667216ee
     }
     if($_SESSION['user'] -> getPermessi() == '01'){
         $inserimentoCommenti = "<div contenteditable = \"true\">Contenuto editabile </div>";
