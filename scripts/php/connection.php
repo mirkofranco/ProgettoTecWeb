@@ -115,6 +115,11 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $result;
     }
 
+    public function deleteProdotto($id){
+        $toDelete = "DELETE FROM PRODOTTO WHERE IDProdotto = $id";
+        $stmt = $this -> pdo -> prepare($toDelete);
+        $stmt -> execute(); 
+    }
     /* Chiude la connessione */
     public function close(){
         $pdo = null;
