@@ -201,11 +201,12 @@ label.mobile-toggle {
 #navbar a {
   display: block;
   padding: 0 1rem;
+  color: #000;
 }
 
 #navbar a:hover {
   background-color: #4c4a4a;
-  color: #ffffff;
+  color: #fff;
   transition: all .35s ease-in-out;
 }
 
@@ -446,7 +447,7 @@ label.mobile-toggle {
   padding: 8px;
   padding-left: 32px;
 
-  color: black;
+  color: #000;
 }
 
 #sidebar-catalogo h2 {
@@ -458,13 +459,11 @@ label.mobile-toggle {
 }
 
 #sidebar-catalogo a:hover {
-  color: #636363;
-
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 .sidebar-current-page {
-  background-color: yellow;
+  background-color: #4c4a4a;
 }
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
@@ -487,12 +486,16 @@ label.mobile-toggle {
 
 /* TODO qua ci va lo stile mobile delle sottopagine catalogo */
 .anteprima-prodotto {
-  width: 100%;
+  display: block;
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
 }
   
+/*SERVE AVENDOLO GIA' MESSO SU ANTEPRIMA-PRODOTTO?
 .anteprima-prodotto a {
   display: block;
-}
+}*/
 
 /* FIXME: tutti i prodotti sembrano essere già visitati perchè l'url è unico, trovare una soluzione? */
 .anteprima-prodotto a {
@@ -541,16 +544,11 @@ label.mobile-toggle {
 }
 
 .dettaglio-prodotto img {
-  float: left;
-
-  width: 66%;
-  padding-right: 1rem;
+  width: 100%;
 }
 
-.dettaglio-testo {
-  float: left;
-
-  width: 33%;
+.dettaglio-prodotto h3 {
+  padding-top: 1rem;
 }
 
 /* stile per tutti i campi */
@@ -830,7 +828,6 @@ input[type="password"] {
 
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
-
   /* rimuove il pulsante per nascondere la navbar */
   label.mobile-toggle {
     display: none;
@@ -871,6 +868,7 @@ input[type="password"] {
 
   #sidebar-catalogo {
     width: 30vw;
+    float: left;
   }
 
   .catalogo a {
@@ -887,6 +885,7 @@ input[type="password"] {
   /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {
     width: 50%;
+    margin: inherit;
   }
 
   /*CONSULENZA ONLINE*/
@@ -954,8 +953,10 @@ input[type="password"] {
   }
 
   /* TODO qua ci va lo stile desktop delle sottopagine catalogo */
-  .anteprima-prodotto {}
-
+  .anteprima-prodotto {
+    width: 30%;
+  }
+  
   /*HOME*/
   .slideshow-text {
     font-size: 1.5rem;
