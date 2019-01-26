@@ -546,9 +546,15 @@ label.mobile-toggle {
 /* FILE DETTAGLIO_PRODOTTO.HTML + CONTENUTO DINAMICO */
 
 .pannello-admin {
-  padding: 3rem;
   margin:1rem;
   float:right;
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.pannello-admin a {
+  color:black;
 }
 
 .dettaglio-prodotto {
