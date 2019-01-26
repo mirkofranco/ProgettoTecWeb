@@ -15,6 +15,7 @@ if (!isset($_SESSION['user'])) {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
         $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
+        $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Modifica</a>  </div>";
     }
     if($_SESSION['user'] -> getPermessi() == '01'){
         $inserimentoCommenti = "<div contenteditable = \"true\" id=\"commento\">Contenuto editabile</div><form><input type=\"button\" id=\"invia\" name=\"invia\" onclick=\"inserisciCommento(" . $_GET['id'] . ")\" value=\"Inserisci commento\" /></form>";

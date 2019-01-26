@@ -12,22 +12,20 @@
 
       public function __construct($name) {
           parent::__construct();
-          // caso limite: sottocategoria senza nome;
-          if (is_null($name)) {
-            $name = " ";
-          }
 
           $this->mainContainer = $this->document->createElement("div");
-          // FIXME: il nome della sottocategoria non è unique!!!!
-          $this->mainContainer->setAttribute("id", Util::customAttributeEncoder($name));
-          
-          // crea header con nome della sottocategoria
-          $mainHeader = $this->document->createElement("h2", $name);
-          
+
+          // caso limite: sottocategoria senza nome;
+          if ($name !== '') {
+            // FIXME: il nome della sottocategoria non è unique!!!!
+            $this->mainContainer->setAttribute("id", Util::customAttributeEncoder($name));
+            
+            // crea header con nome della sottocategoria
+            $mainHeader = $this->document->createElement("h2", $name);
+            $this->mainContainer->appendChild($mainHeader);
+          }
           $this->productsContainer = $this->document->createElement("div", "\n");
           $this->productsContainer->setAttribute("class", "flex-container subcategory-container");
-          
-          $this->mainContainer->appendChild($mainHeader);
           $this->mainContainer->appendChild($this->productsContainer);
       }
 
