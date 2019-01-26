@@ -24,11 +24,17 @@ ul, ol {
 
 html {
   box-sizing: border-box;
+
   font-size: 100%;
 }
 
 body, textarea {
   font-family: 'Questrial', sans-serif, Arial;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 p, dd {
@@ -745,6 +751,8 @@ label {
 /* FOOTER */
 
 #footer {
+  margin-top: auto;
+
   background-color: #4c4a4a;
 }
 
@@ -949,7 +957,7 @@ input[type="password"] {
 
   .contenuto {
     width: 70vw;
-    margin: auto;
+    margin: 0 auto;
   }
 
   #sottopagina-catalogo {
@@ -961,7 +969,7 @@ input[type="password"] {
   .anteprima-prodotto {
     width: 30%;
   }
-  
+
   /*HOME*/
   .slideshow-text {
     font-size: 1.5rem;
