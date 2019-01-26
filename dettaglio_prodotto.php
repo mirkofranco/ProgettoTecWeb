@@ -13,7 +13,7 @@ if (!isset($_SESSION['user'])) {
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
-        $funzioniAdmin .= "<div class=\"pannello-admin\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
+        $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
     }
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
