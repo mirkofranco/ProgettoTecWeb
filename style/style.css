@@ -502,7 +502,7 @@ label.mobile-toggle {
   margin: auto;
   padding: 1rem;
 }
-  
+
 /*SERVE AVENDOLO GIA' MESSO SU ANTEPRIMA-PRODOTTO?
 .anteprima-prodotto a {
   display: block;
@@ -546,8 +546,8 @@ label.mobile-toggle {
 
 .pannello-admin {
   padding: 3rem;
-
-  background-color: plum;
+  margin:1rem;
+  float:right;
 }
 
 .dettaglio-prodotto {
@@ -823,7 +823,7 @@ input[type="password"] {
 
   display: inline-block;
   margin: .5rem;
-  
+
   color: #fff;
   background-color: #4c4a4a;
   padding: .6rem 1.3rem;
@@ -891,7 +891,7 @@ input[type="password"] {
   #sottopagina-catalogo {
     margin-left: 30vw;
   }
-  
+
   /* stile del contenitore */
   .subcategory-container {}
 
