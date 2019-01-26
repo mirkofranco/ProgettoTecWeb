@@ -459,11 +459,15 @@ label.mobile-toggle {
 }
 
 #sidebar-catalogo a:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 .sidebar-current-page {
   background-color: #4c4a4a;
+}
+
+.sidebar-current-page h2, .sidebar-current-page h3 {
+  color: #fff;
 }
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
