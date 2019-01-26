@@ -17,10 +17,11 @@ if (!isset($_SESSION['user'])) {
         $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
     }
     if($_SESSION['user'] -> getPermessi() == '01'){
-        $inserimentoCommenti = "<div contenteditable = \"true\">Contenuto editabile</div>";
+        $inserimentoCommenti = "<div contenteditable = \"true\" id=\"commento\">Contenuto editabile</div><form><input type=\"button\" id=\"invia\" name=\"invia\" onclick=\"inserisciCommento(" . $_GET['id'] . ")\" value=\"Inserisci commento\" /></form>";
     }
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
+
 
 // cerco l'attributo id nella query string
 if (!(array_key_exists('id', $_REQUEST) && is_numeric($_REQUEST['id']))) {

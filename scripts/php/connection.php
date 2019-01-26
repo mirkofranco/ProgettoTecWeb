@@ -51,7 +51,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $stmt = $this -> pdo -> prepare($query);
         $stmt -> execute();
         $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        return count($result) == 1 ? new Utente($result[0]['Nome'], $result[0]['Cognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi']) : null;
+        return count($result) == 1 ? new Utente($result[0]['Nome'], $result[0]['Cognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi'], $result[0]['UID']) : null;
     }
 
     public function listaSottoCategorie(){
@@ -118,8 +118,16 @@ class MySqlDatabaseConnection extends AbstractConnection{
     public function deleteProdotto($id){
         $toDelete = "DELETE FROM PRODOTTO WHERE IDProdotto = $id";
         $stmt = $this -> pdo -> prepare($toDelete);
-        $stmt -> execute(); 
+        $stmt -> execute();
     }
+
+    public function inserisciCommento($idProdotto, $idUtente, $commento){
+        $toInsert = "INSERT INTO COMMENTI(UID, IDProdotto, Commento) VALUES(?, ?, ?)";
+        $stmt = $this -> pdo -> prepare($toInsert);
+        $result = $stmt -> exec([$idProdotto, $idUtente, $commento]);
+        return $result;
+    }
+
     /* Chiude la connessione */
     public function close(){
         $pdo = null;

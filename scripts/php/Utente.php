@@ -7,14 +7,16 @@
         private $password;
         private $mail;
         private $permessi;
+        private $identificatoreUnico;
 
-        public function __construct($nome, $cognome,  $username, $password, $mail, $permessi = "01"){
+        public function __construct($nome, $cognome,  $username, $password, $mail, $permessi = "01", $identificatoreUnico = null){
             $this -> nome = $nome;
             $this -> Cognome = $cognome;
             $this -> username = $username;
             $this -> password = $password;
             $this -> mail = $mail;
             $this -> permessi = $permessi;
+            $this ->  identificatoreUnico =  $identificatoreUnico;
         }
 
 
@@ -28,7 +30,7 @@
         }
 
         public function getIdentifier(){
-            return $this -> indentificatoreUnico;
+            return $this -> identificatoreUnico;
         }
 
         public function getUsername(){

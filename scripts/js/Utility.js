@@ -105,6 +105,31 @@ function controllaInserimentoProdotto(){
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
 
+var richiesta;
+
+function inserisciCommento(id){
+    if(window.XMLHttpRequest){
+        richiesta = new XMLHttpRequest();
+    }else{
+        //for IE5, IE6
+        richiesta = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var url = "inserisciCommento.php?id=" +  encodeURIComponent(document.getElementsByClassName("dettaglio-prodotto")[0].id) + "&" + "commento=" + encodeURIComponent(document.getElementById("commento").innerHTML) ;
+    alert(url);
+    richiesta.open("GET", url, true);
+    richiesta.onreadystatechange = risultatoCommento;
+    richiesta.send(null);
+}
+
+function risultatoCommento(){
+    if( richiesta.readyState == 4 && richiesta.status == 200){
+        alert(richiesta.responseXML);
+        /*if(richiesta.responseXML) == "0"){
+            alert("Qualcosa è andato storto");
+        }*/
+    }
+}
+
 // TODO finire questa roba?
 // function handleLinksToSamePage() {
 //   var url = window.location.pathname;
@@ -114,7 +139,7 @@ function controllaInserimentoProdotto(){
 //     var parent = element.parentNode;
 //     parent.classList.add("current-page")
 
-//     while (element.firstChild) 
+//     while (element.firstChild)
 //       parent.insertBefore(element.firstChild, element);
 
 //     parent.removeChild(element);
