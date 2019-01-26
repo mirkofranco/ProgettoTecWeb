@@ -468,6 +468,7 @@ label.mobile-toggle {
 
 .sidebar-current-page h2, .sidebar-current-page h3 {
   color: #fff;
+  font-weight: normal;
 }
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
