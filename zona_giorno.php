@@ -30,7 +30,7 @@
     $daSostituire = array(
       "{{pageTitle}}" => "$currentCategory - Studio AR",
       "{{pageDescription}}"=> "Pagina del catalogo dedicata alla categoria $currentCategory di prodotti offerti dallo studio AR - architetti riuniti",
-      // "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
+      "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
       "{{nomeCategoria}}" => $currentCategory,
       "{{gestioneLogin}}" => $gestioneLogin
     );

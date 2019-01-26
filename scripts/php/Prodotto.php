@@ -105,15 +105,18 @@
             $detailsLink->appendChild($textContainer);
 
             $name = $document->createElement("h3", $this->nome);
+            $name->setAttribute("class", "prodotto-info-importante");
             $textContainer->appendChild($name);
 
             $brand = $document->createElement("span", htmlspecialchars($this->marca));
             $brand->setAttribute("title", "marca del prodotto");
+            $brand->setAttribute("class", "prodotto-info-normale");
             $textContainer->appendChild($brand);
 
             // prezzo è l'unico attributo nullabile, quindi lo aggiungiamo al dom solo se esiste
             if (!is_null($this->prezzo)) {
                 $price = $document->createElement("span", "€ " . $this->prezzo);
+                $price->setAttribute("class", "prodotto-info-importante");
                 $textContainer->appendChild($price);
             }
 
@@ -124,9 +127,9 @@
         //   <a href="./dettaglio_prodotto.php?id=$this->idProdotto" title="vai alla pagina dei dettagli di questo prodotto">
         //     <img src="./images/catalogo/thumbnails/$this->nomeImmaginePiccola" alt="immagine del prodotto" />
         //     <div class="anteprima-testo">
-        //       <h3>nome</h3>
-        //       <span title="marca del prodotto"> marca </span>
-        //       <span title="prezzo del prodotto">€ 1400</h4>
+        //       <h3 class="prodotto-info-importante">nome</h3>
+        //       <span title="marca del prodotto" class="prodotto-info-normale"> marca </span>
+        //       <span title="prezzo del prodotto" class="prodotto-info-importante">€ 1400</h4>
         //     </div>
         //     pulsante "ottieni link a prodotto"? TODO?
         //   </a>
@@ -154,20 +157,25 @@
             $mainContainer->appendChild($textContainer);
 
             $name = $document->createElement("h3", $this->nome);
+            $name->setAttribute("class", "prodotto-info-importante");
             $textContainer->appendChild($name);
      
             $brand = $document->createElement("span", htmlspecialchars($this->marca));
             $brand->setAttribute("title", "marca del prodotto");
+            $brand->setAttribute("class", "prodotto-info-normale");
             $textContainer->appendChild($brand);
 
             // prezzo è l'unico attributo nullabile, quindi lo aggiungiamo al dom solo se esiste
             if (!is_null($this->prezzo)) {
                 $price = $document->createElement("span", "€ " . $this->prezzo);
+                $price->setAttribute("class", "prodotto-info-importante");
+
                 $textContainer->appendChild($price);
             }
 
             $description = $document->createElement("p", $this->descrizione);
             $description->setAttribute("title", "descrizione del prodotto");
+            $brand->setAttribute("class", "prodotto-info-normale");
             $textContainer->appendChild($description);
 
             return $document->saveXML($mainContainer);
@@ -176,10 +184,10 @@
         // <div class="dettaglio-prodotto clearfix">
         //   <img src="./images/catalogo/$this->nomeImmagine" alt="immagine del prodotto" />
         //   <div class="dettaglio-testo">
-        //     <h3>$this->nome</h3>
-        //     <span title="marca del prodotto">$this->marca</span>
-        //     <span title="prezzo del prodotto">€ $this->prezzo</span>
-        //     <p title="descrizione del prodotto">
+        //     <h3 class="prodotto-info-importante">$this->nome</h3>
+        //     <span title="marca del prodotto" class="prodotto-info-normale">$this->marca</span>
+        //     <span title="prezzo del prodotto" class="prodotto-info-importante">€ $this->prezzo</span>
+        //     <p title="descrizione del prodotto" class="prodotto-info-normale">
         //       $this->descrizione
         //     </p>
         //   </div>
