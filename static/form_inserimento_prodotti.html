@@ -23,7 +23,7 @@
         <label for="nomeProdotto">Nome prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" maxlength="50" {{previousNome}} id="nomeProdotto" name="nomeProdotto" placeholder="Wing" required />
+        <input class="fInputBorder" type="text" maxlength="50" {{previousNome}} id="nomeProdotto" name="nomeProdotto" placeholder="Wing" required="required" />
       </div>
     </div>
     <div class="frow clearfix">
@@ -31,7 +31,7 @@
         <label for="marcaProdotto">Marca del prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" maxlength="50" {{previousMarca}} id="marcaProdotto" name="marcaProdotto" placeholder="Bside" required />
+        <input class="fInputBorder" type="text" maxlength="50" {{previousMarca}} id="marcaProdotto" name="marcaProdotto" placeholder="Bside" required="required" />
       </div>
     </div>
     <div class="frow clearfix">
@@ -40,7 +40,7 @@
           prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" placeholder="1400" required />
+        <input class="fInputBorder" type="number" {{previousPrezzo}} min="0" id="prezzoProdotto" name="prezzoProdotto" placeholder="1400" required="required" />
       </div>
     </div>
     <div class="frow clearfix">
@@ -48,8 +48,10 @@
         <label for="isOfferta">Il prodotto è in offerta?</label>
       </div>
       <div class="col-75">
-        <input  type="radio" name="isOfferta" value="0" checked>No</input>
-        <input  type="radio" name="isOfferta" value="1">Si</input>
+        <input type="radio" name="isOfferta" id="is-offerta-no" value="0" checked="checked" />
+        <label for="is-offerta-no">No</label>
+        <input type="radio" name="isOfferta" id="is-offerta-si" value="1" />
+        <label for="is-offerta-si">Si</label>
       </div>
     </div>
     <div class="frow clearfix">
@@ -57,7 +59,7 @@
         <label for="dataInizioPrezzo">Data inizio validità prezzo </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="date" {{previousData}} id="dataInizioPrezzo" name="dataInizioPrezzo" required />
+        <input class="fInputBorder" type="date" {{previousData}} id="dataInizioPrezzo" name="dataInizioPrezzo" required="required" />
       </div>
     </div>
     <div class="frow clearfix">
@@ -65,7 +67,7 @@
         <label for="dataInizioPrezzo">Inserisci la descrizione del prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" {{previousDescrizione}} maxlength="400" id="Descrizione" name="Descrizione" placeholder="Scrivi qui una descrizione" required />
+        <input class="fInputBorder" type="text" {{previousDescrizione}} maxlength="400" id="Descrizione" name="Descrizione" placeholder="Scrivi qui una descrizione" required="required" />
       </div>
     </div>
     <div class="frow clearfix">
@@ -73,7 +75,7 @@
         <label for="immagineProdotto">Seleziona l'immagine principale del prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="file" accept="image/*" id="immagineProdotto" name="immagineProdotto" required />
+        <input class="fInputBorder" type="file" accept="image/*" id="immagineProdotto" name="immagineProdotto" required="required" />
       </div>
     </div>
     <div class="frow clearfix">
@@ -81,7 +83,7 @@
         <label for="immaginePiccolaProdotto">Seleziona l'immagine di anteprima:</label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="file" accept="image/*" id="immaginePiccolaProdotto" name="immaginePiccolaProdotto" required />
+        <input class="fInputBorder" type="file" accept="image/*" id="immaginePiccolaProdotto" name="immaginePiccolaProdotto" required="required" />
       </div>
       <div class="messaggio-errore-form">{{errorForm}}</div>
       <div class="messaggio-successo-form">{{successForm}}</div>

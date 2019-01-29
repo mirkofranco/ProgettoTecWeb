@@ -7,7 +7,7 @@
   <form name="registrazione" id="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione();" method="post" class="fcontainer">
     <div class="frow clearfix">
         <div class="col-75">
-          <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled>
+          <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled="disabled" />
         </div>
     </div>
     <div class="frow clearfix">
@@ -15,7 +15,7 @@
         <label for="nome">Nome:</label>
       </div>
       <div class="col-75">
-        <input id="fname" maxlength="20" class="fInputBorder" type="text" name="nome"  {{previousNome}} placeholder="Scrivi qui il tuo nome" required />
+        <input id="fname" maxlength="20" class="fInputBorder" type="text" name="nome"  {{previousNome}} placeholder="Scrivi qui il tuo nome" required="required" />
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         <label for="cognome">Cognome:</label>
       </div>
       <div class="col-75">
-        <input id="fcognome" maxlength="20" class="fInputBorder" type="text" name="cognome" {{previousCognome}} placeholder="Scrivi qui il tuo cognome" required />
+        <input id="fcognome" maxlength="20" class="fInputBorder" type="text" name="cognome" {{previousCognome}} placeholder="Scrivi qui il tuo cognome" required="required" />
       </div>
     </div>
 
@@ -34,7 +34,7 @@
         <label for="email">Username:</label>
       </div>
       <div class="col-75">
-        <input id="fusername" class="fInputBorder" type="text" name="username" {{previousUsername}} placeholder="Scrivi qui il tuo username" required />
+        <input id="fusername" class="fInputBorder" type="text" name="username" {{previousUsername}} placeholder="Scrivi qui il tuo username" required="required" />
       </div>
     </div>
 
@@ -43,7 +43,7 @@
         <label for="email">Email:</label>
       </div>
       <div class="col-75">
-        <input id="femail" class="fInputBorder" type="email" name="email" {{previousEmail}} placeholder="Scrivi qui la tua email" required />
+        <input id="femail" class="fInputBorder" type="email" name="email" {{previousEmail}} placeholder="Scrivi qui la tua email" required="required" />
       </div>
     </div>
 
@@ -52,7 +52,7 @@
         <label for="password">Password:</label>
       </div>
       <div class="col-75">
-        <input id="fpsw" maxlength="20" class="fInputBorder" type="password" name="password" placeholder="Scrivi qui la tua password" required />
+        <input id="fpsw" maxlength="20" class="fInputBorder" type="password" name="password" placeholder="Scrivi qui la tua password" required="required" />
       </div>
     </div>
 

@@ -3,7 +3,7 @@
 </p>
 <div class="contenuto bg-pagina-consulenze">
 
-  <form method="post" class="fcontainer" action= "./consulenza_online.php" onsubmit="return controllaConsulenza();">
+  <form method="post" class="fcontainer" action="./consulenza_online.php" onsubmit="return controllaConsulenza();">
     <!-- il file .php però non esiste -->
     <h1 class="titoloForm">Richiedi una consulenza compilando il modulo, ti risponderemo il prima possibile!</h1>
 
@@ -14,7 +14,7 @@
         <label for="fname"> Nome: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required>
+        <input class="fInputBorder" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required="required" />
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         <label for="femail"> E-Mail: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required>
+        <input class="fInputBorder" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required="required" />
       </div>
     </div>
 
@@ -44,14 +44,14 @@
         <label for="comment">La tua richiesta:</label>
       </div>
       <div class="col-75">
-        <textarea id="comment" class="fTextBox fInputBorder" name="comment" maxlength="10000" placeholder="Scrivi qui" required>{{previousCommento}}</textarea>
+        <textarea id="comment" class="fTextBox fInputBorder" name="comment" maxlength="10000" placeholder="Scrivi qui" required="required">{{previousCommento}}</textarea>
       </div>
 
       <div class="frow clearfix">
         <div class="messaggio-errore-form" id="messaggio-errore-form"> {{errorForm}} </div>
         <div class="messaggio-successo-form" id="messaggio-successo-form"> {{successMessage}} </div>
       </div>
-       <input type="submit" value="Richiedi Consulenza" name="chiediConsulenza" class="submit-action">
+      <input type="submit" value="Richiedi Consulenza" name="chiediConsulenza" class="submit-action" />
     </div>
   </form>
 </div>
