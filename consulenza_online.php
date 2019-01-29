@@ -7,8 +7,8 @@
     $connection -> connect();
     $listaCategorie = $connection -> listaCategorie();
     $connection -> close();
-    $elencoCategorie = "<select class=\"fInputBorder\" id=\"fcat\" name=\"fcat\" required>";
-    $elencoCategorie .= "<option disabled selected hidden value> -- Seleziona un'opzione dalla lista -- </option>";
+    $elencoCategorie = "<select class=\"fInputBorder\" id=\"fcat\" name=\"fcat\" required=\"required\">";
+    $elencoCategorie .= "<option disabled=\"disabled\" selected=\"selected\" hidden=\"hidden\" value> -- Seleziona un'opzione dalla lista -- </option>";
     foreach ($listaCategorie as $categoria) {
         $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
         if(isset($_POST['fcat']) && $_POST['fcat'] == $categoria['CodiceCategoria']){
