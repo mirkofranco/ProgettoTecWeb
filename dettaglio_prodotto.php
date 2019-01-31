@@ -15,7 +15,7 @@ if (!isset($_SESSION['user'])) {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
         $funzioniAdmin = "<div class=\"pannello-admin\">
-                        <div class=\"submit-action\"><a href=\"modificaProdotto.php?id=$_GET[id]\">Modifica</a></div>
+                        <div class=\"submit-action\"><a href=\"modifica_prodotto.php?id=$_GET[id]\">Modifica</a></div>
                         <div class=\"submit-action\"><a href=\"eliminaProdotto.php?id=$_GET[id]\">Elimina</a></div>
                         </div>";
     }

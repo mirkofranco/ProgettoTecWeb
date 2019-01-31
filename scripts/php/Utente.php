@@ -58,7 +58,7 @@
         }
 
         public function __toString(){
-            return "Identificatote: " . $this -> indentificatoreUnico . " Username: " . $this -> username ;
+            return "Identificatore: " . $this -> indentificatoreUnico . " Username: " . $this -> username ;
         }
 
     }

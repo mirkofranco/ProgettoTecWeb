@@ -1,24 +1,10 @@
 <?php
-# FIXME questa pagina e tutte quelle con funzioni riservate all'admin funzionano anche senza essere loggati
-	require_once('./scripts/php/Sessione.php');
-	require_once('./scripts/php/Utente.php');
-	Sessione::startSession();
-	if(isset($_SESSION['user'])){
-		if($_SESSION['user'] -> getPermessi() == '01'){
-			header("location: ./index.php");
-		}
-	}
 	require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
-    $gestioneLogin = "";
-    if(!isset($_SESSION['user'])){
-        $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
-    }else{
-		if($_SESSION['user'] -> getPermessi() == '11'){
-            $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
-        }
-        $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
-    }
+    Sessione::reservedPage();
+
+    $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
+    $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 
     $daSostituire = array(
         "{{pageTitle}}" => "Menu Admin - Studio AR",
