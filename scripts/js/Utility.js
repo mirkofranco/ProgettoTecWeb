@@ -106,7 +106,7 @@ document.getElementById("send-comment").onclick = function() {
     request = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-  request.open("POST", "inserisciCommento.php", true);
+  request.open("POST", "inserisci_commento.php", true);
   request.setRequestHeader("Content-type", "application/json");
   request.onreadystatechange = commentSentCallback;
 
