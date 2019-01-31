@@ -1,4 +1,5 @@
 <?php
+# FIXME questa pagina e tutte quelle con funzioni riservate all'admin funzionano anche senza essere loggati
 	require_once('./scripts/php/Sessione.php');
 	require_once('./scripts/php/Utente.php');
 	Sessione::startSession();
