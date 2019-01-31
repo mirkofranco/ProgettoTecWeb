@@ -456,7 +456,7 @@ label.mobile-toggle {
 }
 
 #sidebar-catalogo .sidebar-current-page a:hover {
-color: #fff;
+  color: #fff;
 }
 
 .sidebar-current-page {
@@ -469,8 +469,8 @@ color: #fff;
 }
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
-  /* stile del contenitore */
-  .subcategory-container a {}
+/* stile del contenitore */
+/* .subcategory-container a {} */
 
 #sottopagina-catalogo {
   padding: 0 2vw;
@@ -574,9 +574,7 @@ color: #fff;
 }
 
 /* stile per marca del prodotto */
-.dettaglio-testo span:nth-of-type(1) {
-  /* nothing yet */
-}
+/* .dettaglio-testo span:nth-of-type(1) {} */
 
 /* stile per prezzo del prodotto (se presente) */
 .dettaglio-testo span:nth-of-type(2) {
@@ -585,8 +583,33 @@ color: #fff;
 }
 
 /* stile per descrizione del prodotto (se prezzo non c'è è ultimo ma non più terzo!) */
-.dettaglio-testo p {
-  /* nothing yet */
+/* .dettaglio-testo p {} */
+
+/* stile commenti */
+/* TODO */
+
+.box-commenti {
+  width: 300px;
+  border: 1px solid black;
+  margin: 1em auto;
+}
+
+.box-commenti form input {
+  width: auto;
+  float: right;
+
+  margin: .5em;
+}
+
+.commento {
+  border: 2px solid black;
+}
+
+.commento[contenteditable="true"] {
+  /* background-color: grey; */
+  height: 50px;
+  border: 2px solid black;
+  margin: 1em;
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */
@@ -895,7 +918,7 @@ input[type="password"] {
   }
 
   /* stile del contenitore */
-  .subcategory-container {}
+  /* .subcategory-container {} */
 
   /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {

@@ -1,20 +1,10 @@
 
-//se js è abilitato, questo attiva una casella di testo sentinella
-
-// l'ho commentato perché da errore quando carico pagine; se non vi serve eliminatelo pure -Luca
-//$(
-//     function(){
-//         $("#dataInizioPrezzo").datepicker();
-//    }
-//);
-
 function loadDataPicker(){
     var data = document.getElementById('dataInizioPrezzo');
     if(data.type != "date"){
          $("#dataInizioPrezzo").datepicker();
     }
 }
-
 
 function checkForm(nomeInput){
     togliErrore(nomeInput);
@@ -105,29 +95,39 @@ function controllaInserimentoProdotto(){
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
 
-var richiesta;
 
-function inserisciCommento(id){
-    if(window.XMLHttpRequest){
-        richiesta = new XMLHttpRequest();
-    }else{
-        //for IE5, IE6
-        richiesta = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    var url = "inserisciCommento.php?id=" +  encodeURIComponent(document.getElementsByClassName("dettaglio-prodotto")[0].id) + "&" + "commento=" + encodeURIComponent(document.getElementById("commento").innerHTML) ;
-    alert(url);
-    richiesta.open("GET", url, true);
-    richiesta.onreadystatechange = risultatoCommento;
-    richiesta.send(null);
-}
+document.getElementById("send-comment").onclick = function() {
+  var request;
 
-function risultatoCommento(){
-    if( richiesta.readyState == 4 && richiesta.status == 200){
-        alert(richiesta.responseXML);
-        /*if(richiesta.responseXML) == "0"){
-            alert("Qualcosa è andato storto");
-        }*/
+  if (window.XMLHttpRequest) {
+    request = new XMLHttpRequest();
+  } else {
+    // supporto per IE5, IE6
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+  request.open("POST", "inserisciCommento.php", true);
+  request.setRequestHeader("Content-type", "application/json");
+  request.onreadystatechange = commentSentCallback;
+
+  var body = {
+    productId: document.getElementsByClassName("dettaglio-prodotto")[0].id,
+    comment: document.getElementById("new-comment").innerHTML
+  };
+
+  request.send(JSON.stringify(body));
+};
+
+function commentSentCallback() {
+  if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+
+    if (this.responseText==0) {
+      alert("qualcosa è andato storto");
+      return;
     }
+
+    document.getElementById("new-comment").contentEditable = false;
+  }
 }
 
 // TODO finire questa roba?

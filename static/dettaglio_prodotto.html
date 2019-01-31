@@ -11,6 +11,14 @@
   {{dettaglioProdotto}}
 
   <!-- TODO: box commenti sotto al prodotto-->
-  {{elencoCommenti}}
-  {{inserimentoCommenti}}
+  <div class="box-commenti clearfix">
+    {{elencoCommenti}}
+
+    <div contenteditable="true" id="new-comment" class="commento"></div>
+    <form>
+      <!-- TODO tabfocus? -->
+      <input type="button" id="send-comment" name="send-comment" value="Invia" />
+    </form>
+  </div>
+
 </div>
