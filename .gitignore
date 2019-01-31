@@ -5,3 +5,6 @@
 *.css.map
 *.07cf
 cache_catalogo
+
+# ignore some erclu files
+database/reset_products*
