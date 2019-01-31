@@ -1,4 +1,5 @@
 <?php
+#FIXME usare sessione reservedpage per limitare accesso alla pagina su questa e tutte le altre pagine admin
     require_once('./scripts/php/Sessione.php');
     require_once('./scripts/php/Utente.php');
     Sessione::startSession();
