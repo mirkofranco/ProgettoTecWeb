@@ -14,8 +14,10 @@ if (!isset($_SESSION['user'])) {
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
-        $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Elimina</a>  </div>";
-        $funzioniAdmin .= "<div class=\"pannello-admin submit-action\"> <a href=\"elimina.php?id=". $_GET['id'] . "\">Modifica</a>  </div>";
+        $funzioniAdmin = "<div class=\"pannello-admin\">
+                        <div class=\"submit-action\"><a href=\"modificaProdotto.php?id=$_GET[id]\">Modifica</a></div>
+                        <div class=\"submit-action\"><a href=\"eliminaProdotto.php?id=$_GET[id]\">Elimina</a></div>
+                        </div>";
     }
     if($_SESSION['user'] -> getPermessi() == '01'){
         $inserimentoCommenti = "<div contenteditable = \"true\" id=\"commento\">Contenuto editabile</div><form><input type=\"button\" id=\"invia\" name=\"invia\" onclick=\"inserisciCommento(" . $_GET['id'] . ")\" value=\"Inserisci commento\" /></form>";
@@ -26,8 +28,6 @@ if (!isset($_SESSION['user'])) {
 
 // cerco l'attributo id nella query string
 if (!(array_key_exists('id', $_REQUEST) && is_numeric($_REQUEST['id']))) {
-    // FIXME: quale dei due argomenti usare?
-    // header("HTTP/1.0 404 Not Found");
     header("Location: ./404.php", 404);
     exit;
 }
@@ -39,8 +39,6 @@ $connection->close();
 
 // controllo se l'id corrisponde a un prodotto
 if (!$attributes) {
-    // FIXME: quale dei due argomenti usare?
-    // header("HTTP/1.0 404 Not Found");
     header("Location: ./404.php", 404);
     exit;
 }

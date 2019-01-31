@@ -118,14 +118,17 @@ class MySqlDatabaseConnection extends AbstractConnection{
     public function deleteProdotto($id){
         $toDelete = "DELETE FROM PRODOTTO WHERE IDProdotto = $id";
         $stmt = $this -> pdo -> prepare($toDelete);
-        $stmt -> execute();
+
+        // ritorno lo stato per controllare se ci sono stati errori
+        return $stmt->execute();
     }
 
-    public function inserisciCommento($idProdotto, $idUtente, $commento){
+    public function inserisciCommento($idUtente, $idProdotto, $commento){
         $toInsert = "INSERT INTO COMMENTI(UID, IDProdotto, Commento) VALUES(?, ?, ?)";
         $stmt = $this -> pdo -> prepare($toInsert);
-        $result = $stmt -> exec([$idProdotto, $idUtente, $commento]);
-        return $result;
+        
+        // ritorno lo stato per controllare se ci sono stati errori
+        return $stmt->execute([$idUtente, $idProdotto, $commento]);
     }
 
     /* Chiude la connessione */
