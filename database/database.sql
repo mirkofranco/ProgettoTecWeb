@@ -53,18 +53,17 @@ CREATE TABLE UTENTE(
 	Cognome varchar(20) not null,
 	Username varchar(20) not null unique,
 	Password varchar(100) not null,
-	Mail varchar(30) not null,
+	Mail varchar(30) not null unique,
 	/* 0: pagine amministrazione, 1: utente normale */
 	Permessi varchar(2) not null default '01'
 )ENGINE = InnoDB;
 
 CREATE TABLE COMMENTI(
-	IDCommento integer auto_increment,
+	IDCommento integer auto_increment primary key,
 	UID integer not null,
 	IDProdotto integer not null,
 	Commento varchar(512) not null,
-	primary key(IDCommento),
-	unique(UID, IDProdotto),
+
 	foreign key (UID) references UTENTE(UID) ON DELETE CASCADE,
 	foreign key (IDProdotto) references PRODOTTO(IDProdotto) ON DELETE CASCADE
 )ENGINE = InnoDB;
