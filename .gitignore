@@ -7,4 +7,5 @@
 cache_catalogo
 
 # ignore some erclu files
-database/reset_products*
+database/*.ps1
+database/reset_products.sql
