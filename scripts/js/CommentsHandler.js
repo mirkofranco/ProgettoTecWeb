@@ -44,4 +44,5 @@ function commentSentCallback() {
         hidethis.classList.add("hidden");
         hidethis.setAttribute("hidden", "hidden");
     }
+    // TODO aggiungere spazio per nuovo commento....
 }

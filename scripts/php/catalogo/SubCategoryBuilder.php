@@ -17,7 +17,6 @@
 
           // caso limite: sottocategoria senza nome;
           if ($name !== '') {
-            // FIXME: il nome della sottocategoria non è unique!!!!
             $this->mainContainer->setAttribute("id", Util::customAttributeEncoder($name));
             
             // crea header con nome della sottocategoria

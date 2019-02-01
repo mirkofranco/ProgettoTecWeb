@@ -457,7 +457,12 @@ label[for="sidebar-toggle"] {
 
 /* FIXME: tutti i prodotti sembrano essere già visitati perchè l'url è unico, trovare una soluzione? */
 .anteprima-prodotto a {
+  display: block;
   color: inherit;
+}
+
+.anteprima-prodotto a:hover {
+  /* TODO: mettere in evidenza il fatto che i prodotti sono cliccabili */
 }
 
 .anteprima-prodotto img {
@@ -606,6 +611,9 @@ label[for="sidebar-toggle"] {
 div[contenteditable="true"] {
   min-height: 50px;
   border: .5px solid black;
+
+  white-space: pre;
+  cursor: text;
 }
 
 div[contenteditable="true"]:hover {
