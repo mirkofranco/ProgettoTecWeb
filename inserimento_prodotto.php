@@ -1,13 +1,11 @@
 <?php
-#FIXME usare sessione reservedpage per limitare accesso alla pagina su questa e tutte le altre pagine admin
     require_once('./scripts/php/Sessione.php');
-    require_once('./scripts/php/Utente.php');
     Sessione::startSession();
-    if(isset($_SESSION['user'])){
-        if($_SESSION['user'] -> getPermessi() == '01'){
-            header("location: index.php");
-        }
-    }
+    Sessione::reservedPage();
+
+    $gestioneLogin = "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
+    $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+
     require_once('./scripts/php/connection.php');
     require_once('./scripts/php/Prodotto.php');
     $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
@@ -67,18 +65,6 @@
             $previousData =  "value=\"". $_POST['dataInizioPrezzo']. "\"";
             $previousDescrizione =  "value=\"". $_POST['Descrizione']. "\"";
         }
-    }
-
-    require_once('./scripts/php/Sessione.php');
-    Sessione::startSession();
-    $gestioneLogin = "";
-    if(!isset($_SESSION['user'])){
-        $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
-    }else{
-        if($_SESSION['user'] -> getPermessi() == '11'){
-            $gestioneLogin .= "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
-        }
-        $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
     $daSostituire = array(

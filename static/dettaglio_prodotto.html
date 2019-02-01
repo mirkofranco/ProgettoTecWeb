@@ -12,7 +12,6 @@
 
   {{dettaglioProdotto}}
 
-  <!-- TODO: box commenti sotto al prodotto-->
   <section class="box-commenti">
     <h2>Commenti</h2>
     {{elencoCommenti}}
@@ -21,6 +20,7 @@
       <div class="autore-commento">
         {{testoAutore}}
       </div>
+      <!-- TODO textarea meglio? -->
       <div contenteditable="true" id="new-comment" class="testo-commento"></div>
       <!-- TODO tabfocus? -->
       <input type="button" id="send-comment" class="submit-action" name="send-comment" value="Invia" />

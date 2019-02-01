@@ -1,5 +1,5 @@
 <?php
-	require_once('./scripts/php/Sessione.php');
+    require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
     Sessione::reservedPage();
 
