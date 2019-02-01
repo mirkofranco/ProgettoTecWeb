@@ -1,8 +1,8 @@
 <p class="breadcrumb">
   Ti trovi in: <span lang="en">Home</span>
 </p>
-<!-- FIXME: tutti i div contenuto in main contenuto -->
-<div class="contenuto">
+<!-- FIXME: cambiare div in elementi semantici -->
+<main class="contenuto">
 
   <!-- box con lo slideshow. le proprietà style=".." sono aggiunte via js. -->
   <div class="slideshow-container">
@@ -31,17 +31,18 @@
     </div>
   </div>
 
-  <script src="./scripts/js/slideshow.js"></script>
 
   <noscript>
     <img src="./images/slideshow1.jpg" class="imgSlideshow" alt="slideshow immagini"/>
     <strong>per vedere la nostra galleria di immagini, abilita JavaScript su questo sito.</strong>
   </noscript>
 
-  <!-- box descrizione azienda con foto -->
+  <!-- FIXME descrizioneAzienda e descrAzienda -->
   <div id="descrizioneAzienda">
     <img src="./images/studioar_square2.jpg" alt="foto dell'entrata del negozio" />
     <p>Lo scopo dello Studio Architetti Riuniti è quello di offrire consulenze e proposte di arredamenti per interni di design valorizzando le caratteristiche di ogni ambiente nella sua unicità e tenendo conto delle tendenze del momento, senza pero' mai dimenticare che la classe è senza tempo. </p>
   </div>
 
-</div>
+</main>
+
+<script src="./scripts/js/slideshow.js"></script>
