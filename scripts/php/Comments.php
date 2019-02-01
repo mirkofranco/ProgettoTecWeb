@@ -1,6 +1,9 @@
 <?php
 require_once "catalogo/CustomDomDocument.php";
 
+/**
+ * Classe che assembla la lista di commenti relativa a un prodotto
+ */
 class CommentsListBuilder extends CustomDomDocument {
     private $productId;
 
@@ -36,24 +39,12 @@ class CommentsListBuilder extends CustomDomDocument {
 
 }
 
-class Comment {
-    private $user;
-    private $productId;
-    private $message;
-
-    public function __construct($user, $productId, $message) {
-        $this->user = $user;
-        $this->productId = $productId;
-        $this->message = $message;
-
-    }
-}
 
 // <div class="commento clearfix">
 //   <div class="autore-commento">
-// xxxx ha scritto:
+//     nome cognome (username) ha scritto:
 //   </div>
 //   <div class="testo-commento">
-
+//     lorem ipsum etc
 //   </div>
 // </div>

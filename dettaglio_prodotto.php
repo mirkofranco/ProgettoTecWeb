@@ -33,14 +33,14 @@ if (!isset($_SESSION['user'])) {
 
 $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
 $connection->connect();
-$productAttributes = $connection->selectFromProductsWhereId($productId);
+$productAttributes = $connection->getProduct($productId);
 // controllo se esiste un prodotto con quell'id
 if (!$productAttributes) {
     header("Location: ./404.php", 404);
     exit;
 }
 
-$commentsList = $connection->getCommentsAndUsernamesForProduct($productId);
+$commentsList = $connection->getCommentsAndUsernames($productId);
 $connection->close();
 
 // nome della sottocategoria del prodotto attuale
