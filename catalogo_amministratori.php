@@ -9,10 +9,10 @@
     }
     $gestioneLogin = "";
     if(!isset($_SESSION['user'])){
-        $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+        $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
     }else{
         if($_SESSION['user'] -> getPermessi() == '11'){
-            $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
+            $gestioneLogin .= "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
         }
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
@@ -22,10 +22,10 @@
         "{{gestioneLogin}}" => $gestioneLogin
     );
     if(!isset($_SESSION['user'])){
-        $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+        $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
     }else{
 		if($_SESSION['user'] -> getPermessi() == '11'){
-            $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
+            $gestioneLogin .= "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
         }
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
