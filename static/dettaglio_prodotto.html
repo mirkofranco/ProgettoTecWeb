@@ -1,10 +1,9 @@
 <p class="breadcrumb">
-  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}} &gt; {{nomeSottoCategoria}} &gt; {{nomeProdotto}}
+  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}} {{nomeSottoCategoria}} &gt; {{nomeProdotto}} <br />
+  <a href="{{linkSottoCategoria}}" title="torna alla sezione del catalogo in cui c'è questo prodotto">torna a {{nomeCategoria}} {{nomeSottoCategoria}} </a>
 </p>
 
 <div class="contenuto">
-
-  <a href="{{linkSottoCategoria}}" title="torna alla sezione del catalogo in cui c'è questo prodotto">torna a {{nomeCategoria}} &gt; {{nomeSottoCategoria}} </a>
 
   {{funzioniAdmin}}
 
@@ -15,14 +14,14 @@
     {{elencoCommenti}}
 
     <div class="commento clearfix">
-    	<div class="autore-commento">
+      <div class="autore-commento">
         {{usernameAttuale}}
-    	</div>
-    	<div contenteditable="true" id="new-comment" class="testo-commento"></div>
-    	<form>
-    	  <!-- TODO tabfocus? -->
-    	  <input type="button" id="send-comment" name="send-comment" value="Invia" />
-    	</form>
+      </div>
+      <div contenteditable="true" id="new-comment" class="testo-commento"></div>
+      <form>
+        <!-- TODO tabfocus? -->
+        <input type="button" id="send-comment" name="send-comment" value="Invia" />
+      </form>
     </div>
   </section>
 
