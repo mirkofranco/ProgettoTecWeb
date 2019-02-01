@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])) {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
         $funzioniAdmin = "<div class=\"pannello-admin\">
                             <a href=\"modifica_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Modifica</a>
-                            <a href=\"elimina_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Elimina</a>
+                            <a href=\"elimina_prodotto.php?id=$_GET[id]&previous=$_SERVER[HTTP_REFERER]\" class=\"submit-action\">Elimina</a>
                           </div>";
     }
     $authorText = "scrivi un commento come ". $_SESSION['user']->getUsername().":";

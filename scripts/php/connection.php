@@ -122,7 +122,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $stmt = $this -> pdo -> prepare($toDelete);
 
         // ritorno lo stato per controllare se ci sono stati errori
-        return $stmt->execute($id);
+        return $stmt->execute(array($id));
     }
 
     /** inserisce un commento nel database */
