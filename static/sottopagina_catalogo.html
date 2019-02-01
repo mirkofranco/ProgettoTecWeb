@@ -2,18 +2,18 @@
   Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}}
 </p>
 
-<label for="sidebar-toggle" class="mobile-toggle">Toggle sidebar</label>
+<div id="sottopagina-catalogo" class="contenuto clearfix">
+  <label for="sidebar-toggle" class="mobile-toggle">Toggle sidebar</label>
 <input type="checkbox" id="sidebar-toggle" />
 <div id="sidebar-catalogo">
-
   <a href="./catalogo.php">ritorna al Catalogo</a>
-  {{contenutoDinamicoSidebar}}
+    {{contenutoDinamicoSidebar}}
 </div>
 
-<div id="sottopagina-catalogo" class="contenuto">
-
+<div id="contenuto-catalogo">
   <h1>{{nomeCategoria}}</h1>
 
   {{contenutoDinamicoCategoria}}
+</div>
 
 </div>
