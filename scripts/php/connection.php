@@ -8,7 +8,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
      *   1. Il nome del server
      *   2. Il nome del database
      *   3. Le credenziali per l'accesso al database 
-    */
+     */
     public function __construct($hostname, $databaseName, $username, $password){
         parent::__construct($hostname, $databaseName, $username, $password); //parent chiama il costruttore della classe base
     }//__construct
@@ -48,10 +48,11 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /** ritorna l'oggetto utente che ha password e username dati, o null se non esiste */
     public function searchUtenteForLogin($username, $password){
-        $query = "SELECT * FROM UTENTE WHERE Username = \"$username\"  AND Password = \"$password\" ;";
+        $query = "SELECT * FROM UTENTE WHERE Username = ? AND Password = ? ;";
         $stmt = $this -> pdo -> prepare($query);
-        $stmt -> execute();
+        $stmt -> execute(array($username, $password));
         $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
         return count($result) == 1 ? new Utente($result[0]['Nome'], $result[0]['Cognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi'], $result[0]['UID']) : null;
     }
 
@@ -89,17 +90,22 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /** dato un id, seleziona dal database il prodotto corrispondente e il nome della sua sottocategoria */
     public function getProduct($id) {
+        $query = "SELECT cp.Nome AS nomeCategoriaPadre, sc.Nome AS nomeSottoCategoria, p.sottoCategoria AS idSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria = sc.IDC JOIN CATEGORIA cp ON sc.IDCatPadre = cp.IDC WHERE p.IDProdotto = ?";
 
-        return $result;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute(array($id));
+
+        return $statement->fetch(\PDO::FETCH_NUM);
     }
 
     /** ritorna una mappa di tutti i prodotti di una categoria, indicizzati per la loro sottocategoria */
     public function productsMap($categoria) {
-        $query = "SELECT subcat.Nome AS sottocat, p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA subcat ON p.sottoCategoria = subcat.IDC JOIN CATEGORIA catpadre ON subcat.IDCatPadre = catpadre.IDC WHERE catpadre.Nome = '$categoria' ORDER BY subcat.IDC, p.IDProdotto";
+        $query = "SELECT subcat.Nome AS sottocat, p.sottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA subcat ON p.sottoCategoria = subcat.IDC JOIN CATEGORIA catpadre ON subcat.IDCatPadre = catpadre.IDC WHERE catpadre.Nome = ? ORDER BY subcat.IDC, p.IDProdotto";
 
-        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
+        $statement = $this->pdo->prepare($query);
+        $statement->execute(array($categoria));
 
-        return $result;
+        return $statement->fetchAll(\PDO::FETCH_NUM|\PDO::FETCH_GROUP);
     }
 
     /** inserisce un utente nel database */
@@ -112,11 +118,11 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /** elimina un prodotto dal database */
     public function deleteProdotto($id){
-        $toDelete = "DELETE FROM PRODOTTO WHERE IDProdotto = $id";
+        $toDelete = "DELETE FROM PRODOTTO WHERE IDProdotto = ?";
         $stmt = $this -> pdo -> prepare($toDelete);
 
         // ritorno lo stato per controllare se ci sono stati errori
-        return $stmt->execute();
+        return $stmt->execute($id);
     }
 
     /** inserisce un commento nel database */
@@ -130,10 +136,12 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /** ritorna tutti i commenti e i loro autori per un prodotto */
     public function getCommentsAndUsernames($productId) {
+        $query = "SELECT u.Username AS username, c.Commento as commentBody FROM COMMENTI c, UTENTE u WHERE c.UID = u.UID AND c.IDProdotto = ? ORDER BY c.IDCommento";
 
-        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_ASSOC);
+        $statement = $this->pdo->prepare($query);
+        $statement->execute(array($productId));
 
-        return $result;
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /** Chiude la connessione */
