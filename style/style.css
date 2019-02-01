@@ -91,9 +91,7 @@ a.clickable-content {
 
 /* contenitore riutilizzabile per wrapped flexbox */
 .flex-container {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 

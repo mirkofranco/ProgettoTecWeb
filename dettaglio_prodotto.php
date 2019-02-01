@@ -13,21 +13,21 @@ require_once "./scripts/php/Util.php";
 Sessione::startSession();
 
 $productId = $_REQUEST['id'];
-$stringaUsername = "";
+$authorText = "";
 $gestioneLogin = "";
 $funzioniAdmin = "";
 if (!isset($_SESSION['user'])) {
-    $stringaUsername = "Fai login o registrati per scrivere commenti";
+    $authorText = "Fai login o registrati per scrivere commenti";
     $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
         $funzioniAdmin = "<div class=\"pannello-admin\">
-                            <a href=\"modifica_prodotto.php?id=$_GET[id]\"  class=\"submit-action\">Modifica</a>
+                            <a href=\"modifica_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Modifica</a>
                             <a href=\"elimina_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Elimina</a>
                           </div>";
     }
-    $stringaUsername = "scrivi un commento come ". $_SESSION['user']->getUsername().":";
+    $authorText = "scrivi un commento come ". $_SESSION['user']->getUsername().":";
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
 
@@ -64,7 +64,7 @@ $daSostituire = array(
     "{{linkSottoCategoria}}" => "./" . Util::customLinkEncoder($categoryName) . ".php#" . Util::customAttributeEncoder($subCategoryName),
     "{{dettaglioProdotto}}" => $product->getDettaglioProdotto(),
     "{{elencoCommenti}}" => $commentsBuilder->buildHtml(),
-    "{{usernameAttuale}}" => $stringaUsername
+    "{{testoAutore}}" => $authorText
 );
 
 $page = str_replace(array_keys($daSostituire), array_values($daSostituire),

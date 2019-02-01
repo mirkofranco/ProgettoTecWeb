@@ -1,9 +1,12 @@
 <p class="breadcrumb">
   Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}} {{nomeSottoCategoria}} &gt; {{nomeProdotto}} <br />
+</p>
 
 <div class="contenuto">
 
-  <a href="{{linkSottoCategoria}}" class="link-dettaglio-prodotto" title="torna alla sezione del catalogo in cui c'è questo prodotto">torna a {{nomeCategoria}} &gt; {{nomeSottoCategoria}} </a>
+  <a href="{{linkSottoCategoria}}" class="link-dettaglio-prodotto" title="torna alla sezione del catalogo in cui c'è questo prodotto">
+    torna a {{nomeCategoria}} {{nomeSottoCategoria}}
+  </a>
 
   {{funzioniAdmin}}
 
@@ -16,13 +19,11 @@
 
     <div class="commento clearfix">
       <div class="autore-commento">
-        {{usernameAttuale}}
+        {{testoAutore}}
       </div>
       <div contenteditable="true" id="new-comment" class="testo-commento"></div>
-      <form>
-        <!-- TODO tabfocus? -->
-        <input type="submit" id="send-comment" class="submit-action" name="send-comment" value="Invia" />
-      </form>
+      <!-- TODO tabfocus? -->
+      <input type="button" id="send-comment" class="submit-action" name="send-comment" value="Invia" />
     </div>
   </section>
 
