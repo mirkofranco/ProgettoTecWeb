@@ -598,21 +598,20 @@ label.mobile-toggle {
   width: auto;
 }
 
-
 .commento {
   padding: .5rem;
 }
 
 #new-comment {
-  /* margin: 1em; */
+  margin: .5em;
+  padding: 0;
 }
 
 div[contenteditable="true"] {
   min-height: 50px;
-  border: 1px solid grey;
+  border: 1px solid black;
 
   background-color: lightgrey;
-
 }
 
 .autore-commento {
