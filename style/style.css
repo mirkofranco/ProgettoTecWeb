@@ -68,11 +68,11 @@ a {
   text-decoration: none;
 }
 
-a:link {}
+/* a:link {}
 
 a:visited {}
 
-a:hover, a:active {}
+a:hover, a:active {} */
 
 /* --------------- REUSABLE CLASSES --------------- */
 
@@ -114,6 +114,10 @@ a.clickable-content {
   display: table;
 
   content: "";
+}
+
+.hidden {
+  display: none;
 }
 
 /* FILE _INIZIO.HTML */
@@ -185,7 +189,6 @@ label.mobile-toggle {
   overflow: hidden;
   max-height: 0;
 
-  -webkit-transition: max-height 0.7s ease-in-out;
   transition: max-height 0.7s ease-in-out;
 }
 
@@ -329,20 +332,8 @@ label.mobile-toggle {
 
 /*Animazione che controlla il fading*/
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
 }
 
 @keyframes fade {
@@ -426,11 +417,10 @@ label.mobile-toggle {
 
   display: block;
   padding: .8rem 1.5rem;
-  /*border-radius: .3rem;*/
   border: .5px solid #fff;
 
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: #fff;
   font-size: 1.2rem;
 }
 
@@ -466,7 +456,11 @@ label.mobile-toggle {
 }
 
 #sidebar-catalogo a:hover {
-  /*text-decoration: underline;*/
+  text-decoration: underline;
+}
+
+#sidebar-catalogo .sidebar-current-page a:hover {
+  color: #fff;
 }
 
 .sidebar-current-page {
@@ -479,8 +473,8 @@ label.mobile-toggle {
 }
 
 /* CONTENUTO DINAMICO SOTTOPAGINE CATALOGO */
-  /* stile del contenitore */
-  .subcategory-container a {}
+/* stile del contenitore */
+/* .subcategory-container a {} */
 
 #sottopagina-catalogo {
   padding: 0 2vw;
@@ -546,15 +540,14 @@ label.mobile-toggle {
 /* FILE DETTAGLIO_PRODOTTO.HTML + CONTENUTO DINAMICO */
 
 .pannello-admin {
-  margin:1rem;
-  float:right;
+  margin: 1rem;
+  float: right;
   position: relative;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
-.pannello-admin a {
-  color:black;
+.pannello-admin .submit-action {
+  display: inline-block;
+  margin: .5em;
 }
 
 .dettaglio-prodotto {
@@ -585,9 +578,7 @@ label.mobile-toggle {
 }
 
 /* stile per marca del prodotto */
-.dettaglio-testo span:nth-of-type(1) {
-  /* nothing yet */
-}
+/* .dettaglio-testo span:nth-of-type(1) {} */
 
 /* stile per prezzo del prodotto (se presente) */
 .dettaglio-testo span:nth-of-type(2) {
@@ -596,8 +587,54 @@ label.mobile-toggle {
 }
 
 /* stile per descrizione del prodotto (se prezzo non c'è è ultimo ma non più terzo!) */
-.dettaglio-testo p {
-  /* nothing yet */
+/* .dettaglio-testo p {} */
+
+/* stile commenti */
+/* TODO */
+
+.box-commenti {
+  /* width: 300px; */
+  border: 1px solid black;
+  margin: 1em auto;
+}
+
+.box-commenti form {
+  float: right;
+
+  margin: 1em;
+}
+
+.box-commenti form input {
+  /* resetta la larghezza */
+  width: auto;
+}
+
+
+.commento {
+  padding: .5rem;
+}
+
+#new-comment {
+  /* margin: 1em; */
+}
+
+div[contenteditable="true"] {
+  min-height: 50px;
+  border: 1px solid grey;
+
+  background-color: lightgrey;
+
+}
+
+.autore-commento {
+  padding: .5em;
+  border-bottom: 1px solid black;
+
+  color: grey;
+}
+
+.testo-commento {
+  padding: .5em;
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */
@@ -628,6 +665,11 @@ textarea {
   width: 100%;
   padding: .7rem;
   border: .5px solid #f1f1f1;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
 }
 
 textarea {
@@ -848,6 +890,7 @@ input[type="password"] {
 
 /*PER TABLET (PORTRAIT)*/
 @media only screen and (min-width: 768px) {
+
   /* rimuove il pulsante per nascondere la navbar */
   label.mobile-toggle {
     display: none;
@@ -921,7 +964,7 @@ input[type="password"] {
     
   }
   /* stile del contenitore */
-  .subcategory-container {}
+  /* .subcategory-container {} */
 
   /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {

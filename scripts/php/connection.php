@@ -131,6 +131,15 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $stmt->execute([$idUtente, $idProdotto, $commento]);
     }
 
+    public function getCommentsAndUsernamesForProduct($productId) {
+        // $query = "SELECT u.Nome AS authorName, u.Cognome AS authorSurname, c.Commento as commentBody FROM COMMENTI c, UTENTE u WHERE c.UID = u.UID AND c.IDProdotto = $productId ORDER BY c.IDCommento";
+        $query = "SELECT u.Username AS username, c.Commento as commentBody FROM COMMENTI c, UTENTE u WHERE c.UID = u.UID AND c.IDProdotto = $productId ORDER BY c.IDCommento";
+
+        $result = $this->pdo->query($query)->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     /* Chiude la connessione */
     public function close(){
         $pdo = null;

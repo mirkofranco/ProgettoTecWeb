@@ -1,53 +1,56 @@
 <?php
-require_once "./scripts/php/connection.php";
-require_once "./scripts/php/Prodotto.php";
-require_once "./scripts/php/Util.php";
-
-require_once './scripts/php/Utente.php';
-require_once './scripts/php/Sessione.php';
-Sessione::startSession();
-$gestioneLogin = "";
-$funzioniAdmin = "";
-$inserimentoCommenti = "";
-if (!isset($_SESSION['user'])) {
-    $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
-} else {
-    if ($_SESSION['user']->getPermessi() == '11') {
-        $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
-        $funzioniAdmin = "<div class=\"pannello-admin\">
-                        <div class=\"submit-action\"><a href=\"modifica_prodotto.php?id=$_GET[id]\">Modifica</a></div>
-                        <div class=\"submit-action\"><a href=\"elimina_prodotto.php?id=$_GET[id]\">Elimina</a></div>
-                        </div>";
-    }
-    if($_SESSION['user'] -> getPermessi() == '01'){
-        $inserimentoCommenti = "<div contenteditable = \"true\" id=\"commento\">Contenuto editabile</div><form><input type=\"button\" id=\"invia\" name=\"invia\" onclick=\"inserisciCommento(" . $_GET['id'] . ")\" value=\"Inserisci commento\" /></form>";
-    }
-    $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
-}
-
-
 // cerco l'attributo id nella query string
 if (!(array_key_exists('id', $_REQUEST) && is_numeric($_REQUEST['id']))) {
     header("Location: ./404.php", 404);
     exit;
 }
 
+require_once "./scripts/php/Comments.php";
+require_once "./scripts/php/connection.php";
+require_once "./scripts/php/Prodotto.php";
+require_once './scripts/php/Sessione.php';
+require_once "./scripts/php/Util.php";
+Sessione::startSession();
+
+$productId = $_REQUEST['id'];
+$stringaUsername = "";
+$gestioneLogin = "";
+$funzioniAdmin = "";
+if (!isset($_SESSION['user'])) {
+    $stringaUsername = "Fai login o registrati per scrivere commenti";
+    $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+} else {
+    if ($_SESSION['user']->getPermessi() == '11') {
+        $gestioneLogin .= "<a href=\"index_admin.php\" class=\"header-button\">Area riservata</a>";
+        $funzioniAdmin = "<div class=\"pannello-admin\">
+                            <a href=\"modifica_prodotto.php?id=$_GET[id]\"  class=\"submit-action\">Modifica</a>
+                            <a href=\"elimina_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Elimina</a>
+                          </div>";
+    }
+    $stringaUsername = "scrivi un commento come ". $_SESSION['user']->getUsername().":";
+    $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+}
+
 $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
 $connection->connect();
-$attributes = $connection->selectFromProductsWhereId($_REQUEST['id']);
-$connection->close();
-
-// controllo se l'id corrisponde a un prodotto
-if (!$attributes) {
+$productAttributes = $connection->selectFromProductsWhereId($productId);
+// controllo se esiste un prodotto con quell'id
+if (!$productAttributes) {
     header("Location: ./404.php", 404);
     exit;
 }
 
-// nome della sottocategoria del prodotto attuale
-$categoryName = $attributes[0];
-$subCategoryName = $attributes[1];
+$commentsList = $connection->getCommentsAndUsernamesForProduct($productId);
+$connection->close();
 
-$product = new Prodotto(...array_slice($attributes, 2));
+// nome della sottocategoria del prodotto attuale
+$categoryName = $productAttributes[0];
+$subCategoryName = $productAttributes[1];
+
+$product = new Prodotto(...array_slice($productAttributes, 2));
+
+$commentsBuilder = new CommentsListBuilder($product->getID());
+$commentsBuilder->addCommentsList($commentsList);
 
 $daSostituire = array(
     "{{pageTitle}}" => $product->getNome() . " - Dettaglio prodotto - Studio AR",
@@ -59,12 +62,11 @@ $daSostituire = array(
     "{{nomeProdotto}}" => $product->getNome() . " (dettaglio)",
     "{{linkSottoCategoria}}" => "./" . Util::customLinkEncoder($categoryName) . ".php#" . Util::customAttributeEncoder($subCategoryName),
     "{{dettaglioProdotto}}" => $product->getDettaglioProdotto(),
-    "{{inserimentoCommenti}}" => $inserimentoCommenti
+    "{{elencoCommenti}}" => $commentsBuilder->buildHtml(),
+    "{{usernameAttuale}}" => $stringaUsername
 );
 
 $page = str_replace(array_keys($daSostituire), array_values($daSostituire),
     file_get_contents('./static/_inizio.html') . file_get_contents('./static/dettaglio_prodotto.html') . file_get_contents("./static/_fine.html"));
-
-// TODO pulsanti modifica/elimina....
 
 echo $page;
