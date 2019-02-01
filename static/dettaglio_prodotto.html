@@ -11,6 +11,7 @@
 
   <!-- TODO: box commenti sotto al prodotto-->
   <section class="box-commenti">
+    <h2>Commenti</h2>
     {{elencoCommenti}}
 
     <div class="commento clearfix">
@@ -20,7 +21,7 @@
       <div contenteditable="true" id="new-comment" class="testo-commento"></div>
       <form>
         <!-- TODO tabfocus? -->
-        <input type="button" id="send-comment" name="send-comment" value="Invia" />
+        <input type="submit" id="send-comment" class="submit-action" name="send-comment" value="Invia" />
       </form>
     </div>
   </section>
