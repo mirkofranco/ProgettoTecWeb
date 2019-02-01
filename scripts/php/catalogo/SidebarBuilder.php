@@ -83,16 +83,6 @@
               }
           }
       }
-      
-      public function buildHtml() {
-        $result = array();
-
-        foreach ($this->document->childNodes as $childNode) {
-            $result[] = $this->document->saveXML($childNode);
-        }
-
-        return join("\n", $result);
-    }
   }
   
 // ESEMPIO DI CONTENUTO DINAMICO

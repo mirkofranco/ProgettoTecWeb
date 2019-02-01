@@ -115,6 +115,10 @@ document.getElementById("send-comment").onclick = function() {
     comment: document.getElementById("new-comment").innerHTML
   };
 
+  if (!body.comment) { // se il campo è vuoto non inviare nulla
+      return;
+  }
+
   request.send(JSON.stringify(body));
 };
 
@@ -126,7 +130,10 @@ function commentSentCallback() {
       return;
     }
 
-    document.getElementById("new-comment").contentEditable = false;
+    document.getElementById("new-comment").removeAttribute("contenteditable"); 
+    var hidethis = document.getElementById("send-comment").parentElement;
+    hidethis.classList.add("hidden");
+    hidethis.setAttribute("hidden","hidden");
   }
 }
 

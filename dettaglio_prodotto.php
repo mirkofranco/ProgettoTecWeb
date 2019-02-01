@@ -12,9 +12,12 @@ require_once './scripts/php/Sessione.php';
 require_once "./scripts/php/Util.php";
 Sessione::startSession();
 
+$productId = $_REQUEST['id'];
+$stringaUsername = "";
 $gestioneLogin = "";
 $funzioniAdmin = "";
 if (!isset($_SESSION['user'])) {
+    $stringaUsername = "Fai login o registrati per scrivere commenti";
     $gestioneLogin = "<a href=\"index_admin.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
 } else {
     if ($_SESSION['user']->getPermessi() == '11') {
@@ -24,28 +27,30 @@ if (!isset($_SESSION['user'])) {
                             <a href=\"elimina_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Elimina</a>
                           </div>";
     }
+    $stringaUsername = "scrivi un commento come ". $_SESSION['user']->getUsername().":";
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
 
 $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
 $connection->connect();
-$attributes = $connection->selectFromProductsWhereId($_REQUEST['id']);
-$commentsList = $connection;
-$connection->close();
-
-// controllo se l'id corrisponde a un prodotto
-if (!$attributes) {
+$productAttributes = $connection->selectFromProductsWhereId($productId);
+// controllo se esiste un prodotto con quell'id
+if (!$productAttributes) {
     header("Location: ./404.php", 404);
     exit;
 }
 
-// nome della sottocategoria del prodotto attuale
-$categoryName = $attributes[0];
-$subCategoryName = $attributes[1];
+$commentsList = $connection->getCommentsAndUsernamesForProduct($productId);
+$connection->close();
 
-$product = new Prodotto(...array_slice($attributes, 2));
+// nome della sottocategoria del prodotto attuale
+$categoryName = $productAttributes[0];
+$subCategoryName = $productAttributes[1];
+
+$product = new Prodotto(...array_slice($productAttributes, 2));
 
 $commentsBuilder = new CommentsListBuilder($product->getID());
+$commentsBuilder->addCommentsList($commentsList);
 
 $daSostituire = array(
     "{{pageTitle}}" => $product->getNome() . " - Dettaglio prodotto - Studio AR",
@@ -57,7 +62,8 @@ $daSostituire = array(
     "{{nomeProdotto}}" => $product->getNome() . " (dettaglio)",
     "{{linkSottoCategoria}}" => "./" . Util::customLinkEncoder($categoryName) . ".php#" . Util::customAttributeEncoder($subCategoryName),
     "{{dettaglioProdotto}}" => $product->getDettaglioProdotto(),
-    "{{elencoCommenti}}" => "",
+    "{{elencoCommenti}}" => $commentsBuilder->buildHtml(),
+    "{{usernameAttuale}}" => $stringaUsername
 );
 
 $page = str_replace(array_keys($daSostituire), array_values($daSostituire),

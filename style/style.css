@@ -116,6 +116,10 @@ a.clickable-content {
   content: "";
 }
 
+.hidden {
+  display: none;
+}
+
 /* FILE _INIZIO.HTML */
 
 /* ---------- header ---------- */
@@ -589,27 +593,48 @@ label.mobile-toggle {
 /* TODO */
 
 .box-commenti {
-  width: 300px;
+  /* width: 300px; */
   border: 1px solid black;
   margin: 1em auto;
 }
 
-.box-commenti form input {
-  width: auto;
+.box-commenti form {
   float: right;
 
-  margin: .5em;
+  margin: 1em;
 }
+
+.box-commenti form input {
+  /* resetta la larghezza */
+  width: auto;
+}
+
 
 .commento {
-  border: 2px solid black;
+  padding: .5rem;
 }
 
-.commento[contenteditable="true"] {
-  /* background-color: grey; */
-  height: 50px;
-  border: 2px solid black;
-  margin: 1em;
+#new-comment {
+  /* margin: 1em; */
+}
+
+div[contenteditable="true"] {
+  min-height: 50px;
+  border: 1px solid grey;
+
+  background-color: lightgrey;
+
+}
+
+.autore-commento {
+  padding: .5em;
+  border-bottom: 1px solid black;
+
+  color: grey;
+}
+
+.testo-commento {
+  padding: .5em;
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */

@@ -10,9 +10,28 @@ class CommentsListBuilder extends CustomDomDocument {
     }
 
     public function addCommentsList($commentsList) {
+        if (empty($commentsList)) {
+            return;
+        }
+
+        foreach ($commentsList as $comment) {
+            $this->addComment($comment["username"], $comment["commentBody"]);
+        }
+
     }
 
-    private function addComment($comment) {
+    private function addComment($author, $commentBody) {
+        $container = $this->document->createElement("div");
+        $container->setAttribute("class", "commento");
+        $this->document->appendChild($container);
+
+        $authorElement = $this->document->createElement("div", $author . " ha scritto:");
+        $authorElement->setAttribute("class", "autore-commento");
+        $container->appendChild($authorElement);
+
+        $textElement = $this->document->createElement("div", $commentBody);
+        $textElement->setAttribute("class", "testo-commento");
+        $container->appendChild($textElement);
     }
 
 }
