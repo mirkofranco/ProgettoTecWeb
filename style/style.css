@@ -44,8 +44,8 @@ html, body {
 
 /* attacca il footer sul fondo della pagina se c'è poco contenuto */
 body {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
 }
 
 strong {
@@ -928,19 +928,40 @@ input[type="password"] {
     padding-right: .8rem;
   }
 
-  #sidebar-catalogo {
-    width: 30vw;
-    float: left;
-  }
-
   .catalogo a {
     font-size: 1rem;
   }
 
   #sottopagina-catalogo {
-    margin-left: 30vw;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: box;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+    box-orient: horizontal;
+  }
+  
+  #sidebar-catalogo {
+    width: 100px;
+    -ms-flex: 0 100px;
+    -webkit-box-flex:  0;
+    -moz-box-flex:  0;
+    -ms-box-flex:  0;
+    box-flex:  0; 
   }
 
+  #contenuto-catalogo {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;  
+    
+  }
   /* stile del contenitore */
   /* .subcategory-container {} */
 
@@ -1011,7 +1032,6 @@ input[type="password"] {
 
   #sottopagina-catalogo {
     width: auto;
-    margin-left: 20vw;
   }
 
   /* TODO qua ci va lo stile desktop delle sottopagine catalogo */
