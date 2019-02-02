@@ -143,9 +143,7 @@ a.clickable-content {
 .header-button {
   text-align: center;
   font-size: .8rem;
-
   display: block;
-
   color: #fff;
   padding: .6rem 1.3rem;
   border: .5px solid #fff;
@@ -547,6 +545,15 @@ label[for="sidebar-toggle"] {
   margin: .5em;
 }
 
+.contenuto>a {
+  width: 50vw;
+  font-size: .8rem;
+  padding: .6rem 1.3rem;
+  margin: 1rem;
+  color: #000;
+  border: .5px solid #000;
+}
+
 .dettaglio-prodotto {
   padding: 1rem;
 }
@@ -570,7 +577,7 @@ label[for="sidebar-toggle"] {
 
 /* stile per nome del prodotto */
 .dettaglio-testo h3 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   padding-bottom: 1rem;
 }
 
@@ -591,6 +598,14 @@ label[for="sidebar-toggle"] {
 
 .box-commenti {
   margin: 1em auto;
+}
+
+.box-commenti h4 {
+  font-size: 1.5rem;
+  width: 90%;
+  padding: 1.5rem 0 .3rem .5rem;
+  border-bottom: 1px solid #4c4a4a;
+  margin-bottom: 1rem;
 }
 
 .commento {
