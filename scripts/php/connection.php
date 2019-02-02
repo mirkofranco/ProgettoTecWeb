@@ -136,7 +136,7 @@ class MySqlDatabaseConnection extends AbstractConnection{
 
     /** ritorna tutti i commenti e i loro autori per un prodotto */
     public function getCommentsAndUsernames($productId) {
-        $query = "SELECT u.Username AS username, c.Commento as commentBody FROM COMMENTI c, UTENTE u WHERE c.UID = u.UID AND c.IDProdotto = ? ORDER BY c.IDCommento";
+        $query = "SELECT u.Nome as name, u.Cognome as surname, u.Username AS username, c.Commento as commentBody FROM COMMENTI c, UTENTE u WHERE c.UID = u.UID AND c.IDProdotto = ? ORDER BY c.IDCommento";
 
         $statement = $this->pdo->prepare($query);
         $statement->execute(array($productId));

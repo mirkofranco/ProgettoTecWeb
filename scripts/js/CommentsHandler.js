@@ -1,7 +1,11 @@
-var deleteButton = document.getElementsByClassName("pannello-admin")[0].getElementsByTagName("a")[1];
-if (deleteButton) {
-    deleteButton.onclick = function() {
-        return confirm("sei sicuro di voler eliminare questo prodotto?");
+var adminButtons = document.getElementsByClassName("pannello-admin")[0];
+if (adminButtons) {
+    var deleteButton = adminButtons.getElementsByTagName("a")[1];
+
+    if (deleteButton) {
+        deleteButton.onclick = function() {
+            return confirm("sei sicuro di voler eliminare questo prodotto?");
+        }
     }
 }
 
@@ -40,8 +44,8 @@ function commentSentCallback() {
         }
 
         document.getElementById("new-comment").removeAttribute("contenteditable");
-        var hidethis = document.getElementById("send-comment").parentElement;
-        hidethis.classList.add("hidden");
+        var hidethis = document.getElementById("send-comment");
+        hidethis.classList.replace("submit-action", "hidden")
         hidethis.setAttribute("hidden", "hidden");
     }
     // TODO aggiungere spazio per nuovo commento....

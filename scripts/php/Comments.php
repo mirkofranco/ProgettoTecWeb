@@ -3,7 +3,7 @@ require_once "catalogo/CustomDomDocument.php";
 
 /**
  * Classe che assembla la lista di commenti relativa a un prodotto.
- * Eredita tale e quale da CustomDomDocument il metodo buildHtml.
+ * Eredita da CustomDomDocument il metodo buildHtml.
  */
 class CommentsListBuilder extends CustomDomDocument {
     private $productId;
@@ -22,7 +22,7 @@ class CommentsListBuilder extends CustomDomDocument {
         }
 
         foreach ($commentsList as $comment) {
-            $this->addComment($comment["username"], $comment["commentBody"]);
+            $this->addComment($comment["name"], $comment["surname"], $comment["username"], $comment["commentBody"]);
         }
 
     }
@@ -30,12 +30,12 @@ class CommentsListBuilder extends CustomDomDocument {
     /**
      * aggiunge un singolo commento
      */
-    private function addComment($author, $commentBody) {
+    private function addComment($name, $surname, $username, $commentBody) {
         $container = $this->document->createElement("div");
         $container->setAttribute("class", "commento");
         $this->document->appendChild($container);
 
-        $authorElement = $this->document->createElement("div", $author . " ha scritto:");
+        $authorElement = $this->document->createElement("div", "$name $surname ($username) ha scritto:");
         $authorElement->setAttribute("class", "autore-commento");
         $container->appendChild($authorElement);
 
