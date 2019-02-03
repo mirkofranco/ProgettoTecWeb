@@ -33,7 +33,7 @@
                           file_get_contents('./static/sottopagina_catalogo.html').
                           file_get_contents("./static/_fine.html"));
 
-    $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+    $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
     $connection->connect();
     // prende dal db una mappa delle categorie, indicizzata sull'id
     $categoriesMap = $connection->categoriesMap();

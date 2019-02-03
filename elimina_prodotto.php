@@ -4,7 +4,7 @@ Sessione::startSession();
 Sessione::reservedPage();
 
 require_once './scripts/php/connection.php';
-$connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+$connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
 $connection->connect();
 $result = $connection->deleteProdotto($_GET['id']);
 $connection->close();

@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
 
-$connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+$connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
 $connection->connect();
 $productAttributes = $connection->getProduct($productId);
 // controllo se esiste un prodotto con quell'id

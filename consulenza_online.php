@@ -3,7 +3,7 @@
     require_once('./scripts/php/connection.php');
     require_once('./scripts/php/Sessione.php');
     Sessione::startSession();
-    $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+    $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
     $connection -> connect();
     $listaCategorie = $connection -> listaCategorie();
     $connection -> close();
