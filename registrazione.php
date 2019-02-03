@@ -7,9 +7,10 @@
     $previousUsername = "";
     $previousEmail = "";
     $successForm = "";
+    // FIXME nomi e cognomi con spazi
     if(isset($_POST['registrati'])){
-        if(strlen($_POST['nome']) < 4){
-            $errorForm .= "Il nome deve contenere almeno quattro caratteri<br/>";
+        if(strlen($_POST['nome']) < 3){
+            $errorForm .= "Il nome deve contenere almeno tre caratteri<br/>";
         }
         if(strlen($_POST['cognome']) < 4){
             $errorForm .= "Il cognome deve contenere almeno quattro caratteri<br/>";
