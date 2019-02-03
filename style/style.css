@@ -549,15 +549,23 @@ label[for="sidebar-toggle"] {
   font-size: .8rem;
   padding: .6rem 1.3rem;
   margin: 1rem;
-  color: #000;
-  border: .5px solid #000;
+  border: 1px solid #4c4a4a;
+  
+  background-color: #f1f1f1;
+  color: black;
+  box-shadow: 0 0 6px gray;
+  
+  cursor: pointer;
+
 }
 
 .link-dettaglio-prodotto:hover {
-  color: #fff;
-  background-color: #4c4a4a;
-  border: .5px solid #4c4a4a;
-  transition: all .35s ease-in-out;
+    background-color: #4c4a4a;
+    box-shadow: 0 0 6px gray;
+    color: #fff;
+    transition: all .35s ease-in-out;
+
+    cursor: pointer;
 }
 
 .dettaglio-prodotto {
@@ -636,8 +644,6 @@ div[contenteditable="true"] {
 }
 
 div[contenteditable="true"]:hover {
-  /* questa riga qui sotto non faceva nulla, l'ho commentata cancellala se non ti serve */
-  /* border: .5px solid black; */
   transition: all .35s ease-in-out;
 }
 
