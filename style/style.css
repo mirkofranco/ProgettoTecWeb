@@ -205,13 +205,13 @@ label[for="sidebar-toggle"] {
   transition: all .35s ease-in-out;
 }
 
-#navbar a {
+#navbar .prova {
   display: block;
   padding: 0 1rem;
   color: #000;
 }
 
-#navbar a:hover {
+#navbar .prova:hover {
   background-color: #4c4a4a;
   color: #fff;
   transition: all .35s ease-in-out;
@@ -1030,7 +1030,7 @@ input[type="password"] {
   }
   
   /*pannello area riservata admin*/
-  a.submit-action {
+  .menu-admin .submit-action {
   width: 30vw;
 }
 
@@ -1138,7 +1138,7 @@ input[type="password"] {
   }
   
   /*pannello area riservata admin*/
-  a.submit-action {
+  .menu-admin .submit-action {
     width: 20vw;
 }
 
