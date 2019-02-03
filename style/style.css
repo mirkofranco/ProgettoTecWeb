@@ -713,14 +713,11 @@ label {
   border: 1px solid #4c4a4a;
   margin-left: auto;
   margin-right: auto;
-
   background-color: #f1f1f1;
   color: black;
   box-shadow: 0 0 6px gray;
-
   text-align: center;
   font-size: .8rem;
-
   cursor: pointer;
 }
 
@@ -1031,6 +1028,11 @@ input[type="password"] {
   .col-25, .col-75 {
     margin-top: 0;
   }
+  
+  /*pannello area riservata admin*/
+  a.submit-action {
+  width: 30vw;
+}
 
   /*CONTATTI*/
   .padded-text-container {
@@ -1134,6 +1136,11 @@ input[type="password"] {
   .titoloForm {
     width: auto;
   }
+  
+  /*pannello area riservata admin*/
+  a.submit-action {
+    width: 20vw;
+}
 
   /*FOOTER*/
   #footer {
