@@ -205,13 +205,13 @@ label[for="sidebar-toggle"] {
   transition: all .35s ease-in-out;
 }
 
-#navbar .prova {
+#navbar .navbar-element {
   display: block;
   padding: 0 1rem;
   color: #000;
 }
 
-#navbar .prova:hover {
+#navbar .navbar-element:hover {
   background-color: #4c4a4a;
   color: #fff;
   transition: all .35s ease-in-out;
