@@ -15,7 +15,7 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Contatti - Studio AR",
         "{{pageDescription}}"=>"Informazioni utili per contattare lo studio AR - architetti riuniti",
-        "<a href=\"./contatti.php\">" => "<a href=\"./contatti.php\" class=\"current-page\">",
+        "<li class=\"flex-element\"><a href=\"./contatti.php\"><span class=\"navbar-element\">Contatti</span></a></li>" => "<li class=\"flex-element current-page\"><span class=\"navbar-element\">Contatti</span></li>",
         "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));

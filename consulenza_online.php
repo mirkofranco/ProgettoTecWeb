@@ -59,7 +59,7 @@
     $daSostituire = array(
             "{{pageTitle}}" => "Consulenza Online - Studio AR",
             "{{pageDescription}}"=>"Pagina di consulenza online per lo studio AR - architetti riuniti",
-            "<a href=\"./consulenza_online.php\">" => "<a href=\"./consulenza_online.php\" class=\"current-page\">",
+            "<li class=\"flex-element\"><a href=\"./consulenza_online.php\"><span class=\"navbar-element\">Consulenza <span lang=\"en\">Online</span></span></a></li>" => "<li class=\"flex-element current-page\"><span class=\"navbar-element\">Consulenza <span lang=\"en\">Online</span></span></li>",
             "{{errorForm}}" => $errorForm,
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{previousNome}}" => $previousNome,

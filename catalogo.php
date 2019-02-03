@@ -15,7 +15,7 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Catalogo - Studio AR",
         "{{pageDescription}}"=>"Pagina del catalogo del sito dello studio AR - architetti riuniti",
-        "<a href=\"./catalogo.php\">" => "<a href=\"./catalogo.php\" class=\"current-page\">",
+        "<li class=\"flex-element\"><a href=\"./catalogo.php\"><span class=\"navbar-element\">Catalogo</span></a></li>" => "<li class=\"flex-element current-page\"><span class=\"navbar-element\">Catalogo</span></li>" ,
         "{{gestioneLogin}}" => $gestioneLogin
     );
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
