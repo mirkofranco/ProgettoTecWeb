@@ -98,9 +98,9 @@ END; $$
 DELIMITER ;
 
 /* password admin -> md5("admin") */
-INSERT INTO UTENTE (UID, Nome, Cognome,  Username, Password, Mail, Permessi) VALUES (1, 'admin', "nome", 'cognome', '21232F297A57A5A743894A0E4A801FC3', 'admin@admin.it', '11');
+INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALUES (1, "nome", 'cognome', 'admin', '21232F297A57A5A743894A0E4A801FC3', 'admin@admin.it', '11');
 /* password user -> md5("user") */
-INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALUES (2, 'user', "nome", 'cognome', 'EE11CBB19052E40B07AAC0CA060C23EE', 'user@user.it', '01');
+INSERT INTO UTENTE (UID, Nome, Cognome, Username, Password, Mail, Permessi) VALUES (2, "nome", 'cognome', 'user', 'EE11CBB19052E40B07AAC0CA060C23EE', 'user@user.it', '01');
 
 /* INSERIMENTO DELLE CATEGORIE PRINCIPALI */
 
