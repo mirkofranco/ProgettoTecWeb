@@ -13,7 +13,7 @@
       public function __construct($name) {
           parent::__construct();
 
-          $this->mainContainer = $this->document->createElement("div");
+          $this->mainContainer = $this->document->createElement("section");
 
           // caso limite: sottocategoria senza nome;
           if ($name !== '') {

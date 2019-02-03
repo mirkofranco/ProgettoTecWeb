@@ -94,19 +94,3 @@ function controllaInserimentoProdotto(){
     var risultatoDescrizione = checkDescrizioneProdotto(descrizione);
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
-
-// TODO finire questa roba?
-// function handleLinksToSamePage() {
-//   var url = window.location.pathname;
-//   var filename = "." + url.substring(url.lastIndexOf('/'));
-
-//   document.querySelectorAll('a[href="'+filename+'"]').forEach(element => {
-//     var parent = element.parentNode;
-//     parent.classList.add("current-page")
-
-//     while (element.firstChild)
-//       parent.insertBefore(element.firstChild, element);
-
-//     parent.removeChild(element);
-//   });
-// }

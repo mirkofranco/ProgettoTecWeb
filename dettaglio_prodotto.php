@@ -18,7 +18,8 @@ $gestioneLogin = "";
 $funzioniAdmin = "";
 $buttonInvioCommenti = "<div contenteditable=\"true\" id=\"new-comment\" class=\"testo-commento\"></div><input type=\"button\" id=\"send-comment\" class=\"submit-action\" name=\"send-comment\" value=\"Invia\" />";
 if (!isset($_SESSION['user'])) {
-    $authorText = "Fai login o registrati per scrivere commenti";
+    $authorText = "Fai <a href=\"login.php\">login</a> o <a href=\"registrazione.php\">registrati</a> per scrivere commenti";
+
     $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
     $buttonInvioCommenti = "";
 } else {
