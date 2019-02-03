@@ -16,21 +16,21 @@ $productId = $_REQUEST['id'];
 $authorText = "";
 $gestioneLogin = "";
 $funzioniAdmin = "";
-
+$buttonInvioCommenti = "<div contenteditable=\"true\" id=\"new-comment\" class=\"testo-commento\"></div><input type=\"button\" id=\"send-comment\" class=\"submit-action\" name=\"send-comment\" value=\"Invia\" />";
 if (!isset($_SESSION['user'])) {
     $authorText = "Fai login o registrati per scrivere commenti";
     $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+    $buttonInvioCommenti = "";
 } else {
     $currentUser = $_SESSION['user'];
-
     if ($currentUser->getPermessi() == '11') {
         $gestioneLogin .= "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
         $funzioniAdmin = "<div class=\"pannello-admin\">
                             <a href=\"modifica_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Modifica</a>
                             <a href=\"elimina_prodotto.php?id=$_GET[id]&previous=$_SERVER[HTTP_REFERER]\" class=\"submit-action\">Elimina</a>
                           </div>";
+        $buttonInvioCommenti = "";
     }
-
     $authorText = $currentUser->getNome(). " ". $currentUser->getCognome()." (".$currentUser->getUsername(). ")";
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
@@ -69,6 +69,7 @@ $daSostituire = array(
     "{{linkSottoCategoria}}" => "./" . Util::customLinkEncoder($categoryName) . ".php#" . Util::customAttributeEncoder($subCategoryName),
     "{{dettaglioProdotto}}" => $product->getDettaglioProdotto(),
     "{{elencoCommenti}}" => $commentsBuilder->buildHtml(),
+    "{{invioCommento}}" => $buttonInvioCommenti,
     "{{testoAutore}}" => $authorText
 );
 
