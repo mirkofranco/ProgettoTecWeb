@@ -21,7 +21,7 @@ if (isset($_SESSION['user'])) {
     }
 }
 
-$gestioneLogin = "";
+$gestioneLogin = "<a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
 
 $previousUN = isset($_POST['username']) ? "value=\"" . $_POST['username'] . "\"" : "";
 $daSostituire = array(

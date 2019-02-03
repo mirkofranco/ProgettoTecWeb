@@ -53,7 +53,7 @@
         if($_SESSION['user'] -> getPermessi() == '11'){
             $gestioneLogin .= "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
         }
-        $gestioneLogin = "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+        $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
     $daSostituire = array(
