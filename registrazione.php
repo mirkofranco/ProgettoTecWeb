@@ -7,9 +7,10 @@
     $previousUsername = "";
     $previousEmail = "";
     $successForm = "";
+    // FIXME nomi e cognomi con spazi
     if(isset($_POST['registrati'])){
-        if(strlen($_POST['nome']) < 4){
-            $errorForm .= "Il nome deve contenere almeno quattro caratteri<br/>";
+        if(strlen($_POST['nome']) < 3){
+            $errorForm .= "Il nome deve contenere almeno tre caratteri<br/>";
         }
         if(strlen($_POST['cognome']) < 4){
             $errorForm .= "Il cognome deve contenere almeno quattro caratteri<br/>";
@@ -46,7 +47,7 @@
         $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
     }else{
         if($_SESSION['user'] -> getPermessi() == '11'){
-            $gestioneLogin .= "<a href=\"login.php\" class=\"header-button\">Area riservata</a>";
+            $gestioneLogin .= "<a href=\"menu_admin.php\" class=\"header-button\">Area riservata</a>";
         }
         $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
