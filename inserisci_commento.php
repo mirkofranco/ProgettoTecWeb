@@ -11,7 +11,7 @@ $productId = $body["productId"];
 $userId = $_SESSION['user']->getIdentifier();
 $comment = $body["comment"];
 
-$connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+$connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranci", "Aideebe4esooDuqu");
 $connection->connect();
 $result = $connection->inserisciCommento($userId, $productId, $comment);
 $connection->close();

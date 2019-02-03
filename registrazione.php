@@ -22,7 +22,7 @@
             $errorForm .= "La password deve contenere almeno quattro caratteri<br/>";
         }
         if($errorForm == ""){
-            $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+            $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
             $connection -> connect();
             if($connection -> insertUtente(new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email'])) ){
                 $successForm .= "Complimenti! Utente inserito correttamente!";

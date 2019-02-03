@@ -22,7 +22,7 @@
 
 
         public static function login($username, $password){
-            $connection = new MySqlDatabaseConnection("localhost", "DatabaseTecnologieWeb", "root", "");
+            $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
             $connection -> connect();
             $login = $connection -> searchUtenteForLogin($username, $password);
             $connection -> close();
