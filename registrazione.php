@@ -35,6 +35,8 @@
             $previousUsername = isset($_POST['username']) ? "value=\"". $_POST['username']. "\"" : "" ;
             $previousEmail = isset($_POST['email']) ? "value=\"". $_POST['email']. "\"" : "" ;
         }
+    } else {
+        $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
     }
 
     require_once('./scripts/php/Sessione.php');
