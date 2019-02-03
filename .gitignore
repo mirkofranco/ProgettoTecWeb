@@ -8,5 +8,4 @@ cache_catalogo
 
 # ignore some erclu files
 database/*.ps1
-database/reset_products.sql
 zzzzz_info.php
