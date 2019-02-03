@@ -24,5 +24,25 @@
         public abstract function selectAllProdotti();
 
         public abstract function searchUtenteForLogin($username, $password);
+
+        public abstract function listaSottoCategorie();
+
+        public abstract function listaCategorie();
+
+        public abstract function categoriesMap();
+
+        public abstract function getProduct($id);
+
+        public abstract function productsMap($categoria);
+
+        public abstract function insertUtente($utente);
+
+        public abstract function deleteProdotto($id);
+
+        public abstract function inserisciCommento($idUtente, $idProdotto, $commento);
+
+        public abstract function getCommentsAndUsernames($productId);
+
+
     }
 ?>
