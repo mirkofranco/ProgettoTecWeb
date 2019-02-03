@@ -62,16 +62,9 @@ h1 {
   font-size: 2rem;
 }
 
-/* TODO: stile generico ed univoco per i link */
 a {
   text-decoration: none;
 }
-
-/* a:link {}
-
-a:visited {}
-
-a:hover, a:active {} */
 
 /* --------------- REUSABLE CLASSES --------------- */
 
@@ -143,9 +136,7 @@ a.clickable-content {
 .header-button {
   text-align: center;
   font-size: .8rem;
-
   display: block;
-
   color: #fff;
   padding: .6rem 1.3rem;
   border: .5px solid #fff;
@@ -168,14 +159,18 @@ label.mobile-toggle {
 
 /* stile specifico toggle navbar */
 label[for="menu-toggle"]>img {
-  /* width: 100%; */
   width: 3em;
   margin: auto;
 }
 
 /* stile specifico toggle sidebar */
 label[for="sidebar-toggle"] {
-  /* TODO */
+  padding: .6rem 1.3rem;
+  margin: .3rem;
+  border: .5px solid #000;
+  
+  background-color: #f1f1f1;
+  box-shadow: 0 0 6px gray;
 }
 
 #menu-toggle, #sidebar-toggle {
@@ -443,7 +438,7 @@ label[for="sidebar-toggle"] {
   font-size: 1.5rem;
 }
 
-/* TODO qua ci va lo stile mobile delle sottopagine catalogo */
+/*stile mobile delle sottopagine catalogo */
 #contenuto-catalogo {
   padding: 0 1rem;
 }
@@ -462,7 +457,9 @@ label[for="sidebar-toggle"] {
 }
 
 .anteprima-prodotto a:hover {
-  /* TODO: mettere in evidenza il fatto che i prodotti sono cliccabili */
+  padding: 1rem;
+  box-shadow: 0 0 6px gray;
+  transition: all .35s ease-in-out;
 }
 
 .anteprima-prodotto img {
@@ -547,6 +544,30 @@ label[for="sidebar-toggle"] {
   margin: .5em;
 }
 
+.link-dettaglio-prodotto {
+  width: 50vw;
+  font-size: .8rem;
+  padding: .6rem 1.3rem;
+  margin: 1rem;
+  border: 1px solid #4c4a4a;
+  
+  background-color: #f1f1f1;
+  color: black;
+  box-shadow: 0 0 6px gray;
+  
+  cursor: pointer;
+
+}
+
+.link-dettaglio-prodotto:hover {
+    background-color: #4c4a4a;
+    box-shadow: 0 0 6px gray;
+    color: #fff;
+    transition: all .35s ease-in-out;
+
+    cursor: pointer;
+}
+
 .dettaglio-prodotto {
   padding: 1rem;
 }
@@ -570,7 +591,7 @@ label[for="sidebar-toggle"] {
 
 /* stile per nome del prodotto */
 .dettaglio-testo h3 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   padding-bottom: 1rem;
 }
 
@@ -587,10 +608,16 @@ label[for="sidebar-toggle"] {
 /* .dettaglio-testo p {} */
 
 /* stile commenti */
-/* TODO */
-
 .box-commenti {
   margin: 1em auto;
+}
+
+.box-commenti h4 {
+  font-size: 1.5rem;
+  width: 90%;
+  padding: 1.5rem 0 .3rem .5rem;
+  border-bottom: 1px solid #4c4a4a;
+  margin-bottom: 1rem;
 }
 
 .commento {
@@ -617,8 +644,6 @@ div[contenteditable="true"] {
 }
 
 div[contenteditable="true"]:hover {
-  /* questa riga qui sotto non faceva nulla, l'ho commentata cancellala se non ti serve */
-  /* border: .5px solid black; */
   transition: all .35s ease-in-out;
 }
 
@@ -698,6 +723,25 @@ label {
 
   cursor: pointer;
 }
+
+  .fInputBorder:hover,
+  .fInputBorder:active,
+  #femail:hover,
+  #femail:active,
+  #fname:hover,
+  #fname:active {
+    border: .5px solid black;
+    transition: all .35s ease-in-out;
+  }
+
+  .submit-action:hover, label[for="sidebar-toggle"]:hover {
+    background-color: #4c4a4a;
+    box-shadow: 0 0 6px gray;
+    color: #fff;
+    transition: all .35s ease-in-out;
+
+    cursor: pointer;
+  }
 
 .fcontainer {
   padding: 1rem;
@@ -949,7 +993,6 @@ input[type="password"] {
     -moz-box-flex: 0;
     -ms-box-flex: 0;
     box-flex: 0;
-
     width: 30vw;
     height: min-content;
     padding: 1em 0;
@@ -964,9 +1007,7 @@ input[type="password"] {
   }
 
   /* stile del contenitore */
-  /* .subcategory-container {} */
-
-  /* TODO qua ci va lo stile tablet delle sottopagine catalogo */
+  /*stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {
     width: 50%;
     margin: inherit;
@@ -1035,7 +1076,7 @@ input[type="password"] {
     width: auto;
   }
 
-  /* TODO qua ci va lo stile desktop delle sottopagine catalogo */
+  /*stile desktop delle sottopagine catalogo */
   .anteprima-prodotto {
     width: 30%;
   }
@@ -1093,25 +1134,6 @@ input[type="password"] {
     width: auto;
   }
 
-  .fInputBorder:hover,
-  .fInputBorder:active,
-  #femail:hover,
-  #femail:active,
-  #fname:hover,
-  #fname:active {
-    border: .5px solid black;
-    transition: all .35s ease-in-out;
-  }
-
-  .submit-action:hover {
-    background-color: #4c4a4a;
-    box-shadow: 0 0 6px gray;
-    color: #FFFFFF;
-    transition: all .35s ease-in-out;
-
-    cursor: pointer;
-  }
-
   /*FOOTER*/
   #footer {
     height: auto;
@@ -1121,7 +1143,7 @@ input[type="password"] {
 
 /*------------------- PRINT STYLE -------------------*/
 
-/* TODO print style should go at the end of our unique stylesheet! */
+/* TODO print style!!*/
 
 /* aggiunge l'indirizzo del link nel testo stampato */
 @media print {
