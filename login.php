@@ -2,7 +2,7 @@
 require_once './scripts/php/Sessione.php';
 require_once './scripts/php/Utente.php';
 Sessione::startSession();
-
+//FIXME: rimettere pulsante registrati
 $errorLogin = "";
 if (isset($_POST['login'])) {
     $utente = Utente::login($_POST['username'], md5($_POST['Password']));

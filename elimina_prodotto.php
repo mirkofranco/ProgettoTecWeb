@@ -16,3 +16,5 @@ if ($result) {
 } else {
     echo "Qualcosa è andato storto. Contatta il tuo sysadmin di fiducia, oppure <a href=\"./index.php\">torna alla home</a>";
 }
+
+// FIXME: eliminare anche l'immagine!
