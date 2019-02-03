@@ -29,7 +29,6 @@ if (!isset($_SESSION['user'])) {
                             <a href=\"modifica_prodotto.php?id=$_GET[id]\" class=\"submit-action\">Modifica</a>
                             <a href=\"elimina_prodotto.php?id=$_GET[id]&previous=$_SERVER[HTTP_REFERER]\" class=\"submit-action\">Elimina</a>
                           </div>";
-        $buttonInvioCommenti = "";
     }
     $authorText = $currentUser->getNome(). " ". $currentUser->getCognome()." (".$currentUser->getUsername(). ")";
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
