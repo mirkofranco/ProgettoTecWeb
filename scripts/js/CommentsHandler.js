@@ -9,31 +9,34 @@ if (adminButtons) {
     }
 }
 
-document.getElementById("send-comment").onclick = function() {
-    var request;
+var sendButton = document.getElementById("send-comment");
 
-    if (window.XMLHttpRequest) {
-        request = new XMLHttpRequest();
-    } else {
-        // supporto per IE5, IE6
-        request = new ActiveXObject("Microsoft.XMLHTTP");
-    }
+if (sendButton)
+    sendButton.onclick = function() {
+        var request;
 
-    request.open("POST", "inserisci_commento.php", true);
-    request.setRequestHeader("Content-type", "application/json");
-    request.onreadystatechange = commentSentCallback;
+        if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else {
+            // supporto per IE5, IE6
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
 
-    var body = {
-        productId: document.getElementsByClassName("dettaglio-prodotto")[0].id,
-        comment: document.getElementById("new-comment").innerHTML
+        request.open("POST", "inserisci_commento.php", true);
+        request.setRequestHeader("Content-type", "application/json");
+        request.onreadystatechange = commentSentCallback;
+
+        var body = {
+            productId: document.getElementsByClassName("dettaglio-prodotto")[0].id,
+            comment: document.getElementById("new-comment").innerHTML
+        };
+
+        if (!body.comment) { // se il campo è vuoto non inviare nulla
+            return;
+        }
+
+        request.send(JSON.stringify(body));
     };
-
-    if (!body.comment) { // se il campo è vuoto non inviare nulla
-        return;
-    }
-
-    request.send(JSON.stringify(body));
-};
 
 function commentSentCallback() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
