@@ -42,13 +42,9 @@
 
     }
 
-    // <div id="#sottocategoria">
-    // ------------------- FIXME: subcategory toggle is NOT AN ID!!!!
-    //   <label for="subcategory-toggle" class="mobile-toggle">Toggle subcategory</label>
-    //   <input type="checkbox" id="subcategory-toggle" />
+    // <section id="#sottocategoria">
     //   <h2>sottocategoria</h2>
-    //   <div class="flex-container subcategory-container">
-  
+    //   <div class="flex-container subcategory-container">  
     //     <div id="#idProdotto" class="anteprima-prodotto">
     //     [VEDI FILE /scripts/php/Prodotto.php]
     //     </div>

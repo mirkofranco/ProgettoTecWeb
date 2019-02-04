@@ -18,3 +18,4 @@ if ($result) {
 }
 
 // FIXME: eliminare anche l'immagine!
+// FIXME: immagine letto_tais_colombini.jpg inutilizzata

@@ -56,7 +56,6 @@ $product = new Prodotto(...array_slice($productAttributes, 2));
 $commentsBuilder = new CommentsListBuilder($product->getID());
 $commentsBuilder->addCommentsList($commentsList);
 
-// FIXME: disabilitare pulsante invia se non loggato.....
 $daSostituire = array(
     "{{pageTitle}}" => $product->getNome() . " - Dettaglio prodotto - Studio AR",
     "{{pageDescription}}" => "Pagina di dettaglio per un prodotto venduto dallo studio AR - architetti riuniti",

@@ -399,8 +399,6 @@ label[for="sidebar-toggle"] {
 }
 
 /* FILE CATALOGO.HTML */
-
-/* FIXME forse non va bene: ref https://stackoverflow.com/a/45384426 */
 .flex-catalogo {
   position: relative;
 

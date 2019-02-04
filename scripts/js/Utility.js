@@ -1,63 +1,75 @@
-
-function loadDataPicker(){
+function loadDataPicker() {
     var data = document.getElementById('dataInizioPrezzo');
-    if(data.type != "date"){
-         $("#dataInizioPrezzo").datepicker();
+    if (data.type != "date") {
+        $("#dataInizioPrezzo").datepicker();
     }
 }
 
-function checkForm(nomeInput){
+function checkFieldWithSpaces(nomeInput) {
+    togliErrore(nomeInput);
+    // almeno due caratteri
+    var pattern = new RegExp('^[a-zA-Zàòùèì ]{2,}$')
+    // rimuove spazi iniziali e finali
+    if (pattern.test(nomeInput.value.trim())) {
+        return true;
+    } else {
+        mostraErrore(nomeInput, "Il campo deve contenere almeno due caratteri");
+        return false;
+    }
+}
+
+function checkForm(nomeInput) {
     togliErrore(nomeInput);
     var pattern = new RegExp('^[a-zA-Z]{4,}$')
-    if (pattern.test(nomeInput.value)){
+    if (pattern.test(nomeInput.value)) {
         return true;
-    }else{
+    } else {
         mostraErrore(nomeInput, "Il campo deve contenere almeno 4 caratteri");
         return false;
     }
 }
 
-function checkPassowrd(nomeInput){
+function checkPassword(nomeInput) {
     togliErrore(nomeInput)
     var pattern = new RegExp('^[a-zA-Z0-9]{4,}$');
-    if(pattern.test(nomeInput.value)){
+    if (pattern.test(nomeInput.value)) {
         return true;
-    }else{
+    } else {
         mostraErrore(nomeInput, "La password deve contenere almeno 4 caratteri alfanumerici");
         return false;
     }
 }
 
-function checkCommento(nomeInput){
+function checkCommento(nomeInput) {
     togliErrore(nomeInput);
     var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèìé"]{20,}$');
-    if(pattern.test(nomeInput.value)){
+    if (pattern.test(nomeInput.value)) {
         return true;
-    }else{
+    } else {
         mostraErrore(nomeInput, "Il commento deve contenere almeno 20 caratteri");
         return false;
     }
 }
 
-function checkDescrizioneProdotto(nomeInput){
+function checkDescrizioneProdotto(nomeInput) {
     togliErrore(nomeInput);
     var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{10,}$');
-    if(pattern.test(nomeInput.value)){
+    if (pattern.test(nomeInput.value)) {
         return true;
-    }else {
+    } else {
         mostraErrore(nomeInput, "La descrizione deve contenere almeno 10 caratteri");
         return false;
     }
 }
 
-function togliErrore(input){
+function togliErrore(input) {
     var parent = input.parentNode;
-    if(parent.children.length > 1){
+    if (parent.children.length > 1) {
         parent.removeChild(parent.children[1]);
     }
 }
 
-function mostraErrore(input, testo){
+function mostraErrore(input, testo) {
     var parent = input.parentNode;
     var span = document.createElement("span");
     span.className = "messaggio-errore-form";
@@ -65,19 +77,19 @@ function mostraErrore(input, testo){
     parent.appendChild(span);
 }
 
-function controllaRegistrazione(){
+function controllaRegistrazione() {
     var nome = document.getElementById('fname');
     var cognome = document.getElementById('fcognome');
     var username = document.getElementById('fusername');
     var password = document.getElementById('fpsw');
-    var risultatoTestNome = checkForm(nome);
-    var risultatoTestCognome = checkForm(cognome);
+    var risultatoTestNome = checkFieldWithSpaces(nome);
+    var risultatoTestCognome = checkFieldWithSpaces(cognome);
     var risultatoTestUsername = checkForm(username);
-    var risultatoTestPassword = checkPassowrd(password);
+    var risultatoTestPassword = checkPassword(password);
     return risultatoTestNome && risultatoTestCognome && risultatoTestUsername && risultatoTestPassword;
 }
 
-function controllaConsulenza(){
+function controllaConsulenza() {
     var nome = document.getElementById('fname');
     var commento = document.getElementById('comment');
     var risultatoNome = checkForm(nome);
@@ -85,12 +97,12 @@ function controllaConsulenza(){
     return risultatoNome && risutatoCommento;
 }
 
-function controllaInserimentoProdotto(){
+function controllaInserimentoProdotto() {
     var nome = document.getElementById('nomeProdotto');
     var marca = document.getElementById('marcaProdotto');
     var descrizione = document.getElementById('Descrizione');
-    var risultatoNome = checkForm(nome);
-    var risultatoMarca = checkForm(marca);
+    var risultatoNome = checkFieldWithSpaces(nome);
+    var risultatoMarca = checkFieldWithSpaces(marca);
     var risultatoDescrizione = checkDescrizioneProdotto(descrizione);
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
