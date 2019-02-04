@@ -143,7 +143,7 @@
             $document = new DOMDocument('1.0', 'utf-8');
             $document->formatOutput = true;
 
-            $mainContainer = $document->createElement("div");
+            $mainContainer = $document->createElement("section");
             $mainContainer->setAttribute("id", $this->idProdotto);
             $mainContainer->setAttribute("class", "dettaglio-prodotto clearfix");
 
