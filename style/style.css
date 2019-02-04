@@ -635,7 +635,7 @@ label[for="sidebar-toggle"] {
   margin: .5em;
 }
 
-div[contenteditable="true"] {
+#new-comment[contenteditable="true"] {
   min-height: 50px;
   border: .5px solid black;
 
@@ -643,7 +643,7 @@ div[contenteditable="true"] {
   cursor: text;
 }
 
-div[contenteditable="true"]:hover {
+#new-comment[contenteditable="true"]:hover {
   transition: all .35s ease-in-out;
 }
 
@@ -930,7 +930,7 @@ input[type="password"] {
 @media only screen and (min-width: 768px) {
 
   /* rimuove il pulsante per nascondere la navbar */
-  label.mobile-toggle {
+  .mobile-toggle {
     display: none;
   }
 
