@@ -69,7 +69,7 @@ a {
 /* --------------- REUSABLE CLASSES --------------- */
 
 /* classe da applicare a link che contengono elementi complessi */
-a.clickable-content {
+.clickable-content {
   display: inline-block;
 }
 
@@ -134,13 +134,15 @@ a.clickable-content {
 }
 
 .header-button {
-  text-align: center;
-  font-size: .8rem;
   display: block;
-  color: #fff;
+
   padding: .6rem 1.3rem;
   border: .5px solid #fff;
   margin: .3rem;
+
+  text-align: center;
+  font-size: .8rem;
+  color: #fff;
 }
 
 .header-button:hover {
@@ -152,7 +154,7 @@ a.clickable-content {
 /* pulsanti toggle navbar e sidebar */
 
 /* stile comune a entrambi */
-label.mobile-toggle {
+.mobile-toggle {
   padding: 0;
   margin: .3rem;
 }
@@ -168,7 +170,7 @@ label[for="sidebar-toggle"] {
   padding: .6rem 1.3rem;
   margin: .3rem;
   border: .5px solid #000;
-  
+
   background-color: #f1f1f1;
   box-shadow: 0 0 6px gray;
 }
@@ -287,7 +289,8 @@ label[for="sidebar-toggle"] {
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /*Testo all'interno dello slideshow*/
@@ -416,7 +419,9 @@ label[for="sidebar-toggle"] {
   padding: .8rem 1.5rem;
   border: .5px solid #fff;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+
   color: #fff;
   font-size: 1.2rem;
 }
@@ -550,22 +555,22 @@ label[for="sidebar-toggle"] {
   padding: .6rem 1.3rem;
   margin: 1rem;
   border: 1px solid #4c4a4a;
-  
+
   background-color: #f1f1f1;
   color: black;
   box-shadow: 0 0 6px gray;
-  
+
   cursor: pointer;
 
 }
 
 .link-dettaglio-prodotto:hover {
-    background-color: #4c4a4a;
-    box-shadow: 0 0 6px gray;
-    color: #fff;
-    transition: all .35s ease-in-out;
+  background-color: #4c4a4a;
+  box-shadow: 0 0 6px gray;
+  color: #fff;
+  transition: all .35s ease-in-out;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dettaglio-prodotto {
@@ -721,24 +726,24 @@ label {
   cursor: pointer;
 }
 
-  .fInputBorder:hover,
-  .fInputBorder:active,
-  #femail:hover,
-  #femail:active,
-  #fname:hover,
-  #fname:active {
-    border: .5px solid black;
-    transition: all .35s ease-in-out;
-  }
+.fInputBorder:hover,
+.fInputBorder:active,
+#femail:hover,
+#femail:active,
+#fname:hover,
+#fname:active {
+  border: .5px solid black;
+  transition: all .35s ease-in-out;
+}
 
-  .submit-action:hover, label[for="sidebar-toggle"]:hover {
-    background-color: #4c4a4a;
-    box-shadow: 0 0 6px gray;
-    color: #fff;
-    transition: all .35s ease-in-out;
+.submit-action:hover, label[for="sidebar-toggle"]:hover {
+  background-color: #4c4a4a;
+  box-shadow: 0 0 6px gray;
+  color: #fff;
+  transition: all .35s ease-in-out;
 
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 
 .fcontainer {
   padding: 1rem;
@@ -990,6 +995,7 @@ input[type="password"] {
     -moz-box-flex: 0;
     -ms-box-flex: 0;
     box-flex: 0;
+
     width: 30vw;
     height: min-content;
     padding: 1em 0;
@@ -1028,11 +1034,11 @@ input[type="password"] {
   .col-25, .col-75 {
     margin-top: 0;
   }
-  
+
   /*pannello area riservata admin*/
   .menu-admin .submit-action {
-  width: 30vw;
-}
+    width: 30vw;
+  }
 
   /*CONTATTI*/
   .padded-text-container {
@@ -1136,11 +1142,11 @@ input[type="password"] {
   .titoloForm {
     width: auto;
   }
-  
+
   /*pannello area riservata admin*/
   .menu-admin .submit-action {
     width: 20vw;
-}
+  }
 
   /*FOOTER*/
   #footer {
