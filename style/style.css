@@ -982,19 +982,23 @@ input[type="password"] {
     display: -moz-box;
     display: -ms-box;
     display: box;
+    /* FIXME display box non è una proprietà riconosciuta */
+    /* display: flex; */
     -ms-flex-direction: row;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
     -ms-box-orient: horizontal;
     box-orient: horizontal;
+    /* flex-direction: row; */
   }
 
   #sidebar-catalogo {
-    -ms-flex: 0 100px;
+    /* -ms-flex: 0 100px;
     -webkit-box-flex: 0;
     -moz-box-flex: 0;
     -ms-box-flex: 0;
     box-flex: 0;
+    flex-shrink: 0; */
 
     width: 30vw;
     height: min-content;
