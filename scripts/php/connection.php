@@ -1,6 +1,7 @@
 <?php
 require_once('AbstractConnection.php');
 require_once('Utente.php');
+
 class MySqlDatabaseConnection extends AbstractConnection{
 
     /**
@@ -32,6 +33,28 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $okai = $stmt -> execute([$prodotto -> getCategoria(), $prodotto -> getNome(), $prodotto -> getMarca(), $prodotto -> getPrezzo(), $prodotto -> getDataInizioPrezzo(), $prodotto -> getOfferta(), $prodotto -> getNomeImmagine(), $prodotto -> getNomeImmaginePiccola(),  $prodotto->getDescrizione()]);
 
         return $okai;
+    }
+
+    /** modifica un prodotto esistente; */
+    public function updateProduct($product) {
+        $newValues = array(
+            ':newSubcat' => $product->getCategoria(),
+            ':newName' => $product->getNome(),
+            ':brand' => $product->getMarca(),
+            ':newPrice' => $product->getPrezzo(),
+            ':newDate' => $product->getDataInizioPrezzo(),
+            ':newIsDiscounted' => $product->getOfferta(),
+            ':newImageName' => $product->getNomeImmagine(),
+            ':newImageThumbnailName' => $product->getNomeImmaginePiccola(),
+            ':newDescription' => $product->getDescrizione(),
+            ':id' => $product->getID()
+        );
+
+        $query = "UPDATE `PRODOTTO` SET `sottoCategoria` = :newSubcat, `Nome` = :newName, `Marca` = :brand, `Prezzo` = :newPrice, `DataInizio` = :newDate, `isOfferta` = :newIsDiscounted, `NomeImmagine` = :newImageName, `NomeThumbnail` = :newImageThumbnailName, `Descrizione` = :newDescription WHERE `PRODOTTO`.`IDProdotto` = :id";
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute($newValues);
     }
 
     // PRE: l'oggetto di invocazione è la connessione al database

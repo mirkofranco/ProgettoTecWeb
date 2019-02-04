@@ -30,11 +30,11 @@
     $previousDescrizione = "";
     $successForm = "";
     if(isset($_POST['inserisciProdotto'])){
-        if(strlen($_POST['nomeProdotto']) < 4){
-            $errorForm .= "Il nome del prodotto deve contenere almeno 3 caratteri<br/>";
+        if(strlen($_POST['nomeProdotto']) < 3){
+            $errorForm .= "Il nome del prodotto deve contenere almeno tre caratteri<br/>";
         }
-        if(strlen($_POST['marcaProdotto']) < 4){
-            $errorForm .= "La marca del prodotto deve contenere almeno 3 caratteri<br/>";
+        if(strlen($_POST['marcaProdotto']) < 3){
+            $errorForm .= "La marca del prodotto deve contenere almeno tre caratteri<br/>";
         }
         if(strlen($_POST['Descrizione']) < 10){
             $errorForm .= "La descrizione deve contenere almeno 10 caratteri<br/>";
