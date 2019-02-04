@@ -11,7 +11,6 @@
   box-sizing: inherit;
 }
 
-
 /* Avoid browser default inconsistent heading and pre/code font-sizes */
 h2, h3, h4, h5, h6, pre, code, td {
   font-size: 1em;
@@ -977,40 +976,18 @@ input[type="password"] {
   }
 
   #sottopagina-catalogo {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-box;
-    display: box;
-    /* FIXME display box non è una proprietà riconosciuta */
-    /* display: flex; */
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -ms-box-orient: horizontal;
-    box-orient: horizontal;
-    /* flex-direction: row; */
+    position: relative;
   }
 
   #sidebar-catalogo {
-    /* -ms-flex: 0 100px;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -ms-box-flex: 0;
-    box-flex: 0;
-    flex-shrink: 0; */
+    position: absolute;
 
     width: 30vw;
-    height: min-content;
     padding: 1em 0;
   }
 
   #contenuto-catalogo {
-    -ms-flex: 1;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -ms-box-flex: 1;
-    box-flex: 1;
+    margin-left: 30vw;
   }
 
   /* stile del contenitore */
@@ -1084,11 +1061,19 @@ input[type="password"] {
     margin: 0 auto;
   }
 
+  /*stile desktop delle sottopagine catalogo */
   #sottopagina-catalogo {
     width: auto;
   }
 
-  /*stile desktop delle sottopagine catalogo */
+  #sidebar-catalogo {
+    width: 20vw;
+  }
+
+  #contenuto-catalogo {
+    margin-left: 20vw;
+  }
+
   .anteprima-prodotto {
     width: 30%;
   }
@@ -1104,13 +1089,8 @@ input[type="password"] {
   }
 
   /*ABOUT_US*/
-
   .descrSocio>img {
     width: 10vw;
-  }
-
-  #sidebar-catalogo {
-    width: 20vw;
   }
 
   /*CATALOGO*/
