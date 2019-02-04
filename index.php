@@ -19,12 +19,6 @@
         "{{gestioneLogin}}" => $gestioneLogin
     );
 
-    // $baseFilename = basename($_SERVER["PHP_SELF"],".php");
-    // // regex per rimuovere i link circolari;
-    // $pattern = '/<a.*?href="\.\/' . $baseFilename . '\.php".*>(?: |\n)*(.+?)(?: |\n)*<\/a>/s';
-    // $replace = '<div class="current-page">$1</div>';
-
-    // echo str_replace(array_keys($daSostituire), array_values($daSostituire), preg_replace($pattern, $replace, file_get_contents('./static/_inizio.html')));
     echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
     echo file_get_contents('./static/index.html');
     echo file_get_contents('./static/_fine.html');

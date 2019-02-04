@@ -1,9 +1,15 @@
 function loadDataPicker() {
     var data = document.getElementById('data-inizio-prezzo');
+
     if (data.type != "date") {
-        $("#data-inizio-prezzo").datepicker();
+        $(data).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            dateFormat: "dd-mm-yy"
+        });
     }
-} // FIXME: jquery è usata solo qui???
+}
 
 function checkFieldWithSpaces(nomeInput) {
     togliErrore(nomeInput);
