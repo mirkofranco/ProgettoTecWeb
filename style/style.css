@@ -670,7 +670,7 @@ label[for="sidebar-toggle"] {
 
 /* FORM CONSULENZE */
 
-.titoloForm {
+.form-titolo {
   width: 70vw;
   padding: 30px;
   border-bottom: #fff;
@@ -723,8 +723,8 @@ label {
   cursor: pointer;
 }
 
-.fInputBorder:hover,
-.fInputBorder:active,
+.form-input-border:hover,
+.form-input-border:active,
 #femail:hover,
 #femail:active,
 #fname:hover,
@@ -781,8 +781,8 @@ label {
   margin: .5rem 1rem;
 }
 
-.fTextBox,
-.fInputBorder,
+.form-textarea,
+.form-input-border,
 #fcat,
 #fname,
 #femail {
@@ -1113,7 +1113,7 @@ input[type="password"] {
     width: 75%;
   }
 
-  .titoloForm {
+  .form-titolo {
     width: auto;
   }
 
