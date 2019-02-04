@@ -76,3 +76,5 @@ $page = str_replace(array_keys($daSostituire), array_values($daSostituire),
     file_get_contents('./static/_inizio.html') . file_get_contents('./static/dettaglio_prodotto.html') . file_get_contents("./static/_fine.html"));
 
 echo $page;
+
+// FIXME: prodotto in offerta???

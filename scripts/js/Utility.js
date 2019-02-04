@@ -1,9 +1,9 @@
 function loadDataPicker() {
-    var data = document.getElementById('dataInizioPrezzo');
+    var data = document.getElementById('data-inizio-prezzo');
     if (data.type != "date") {
-        $("#dataInizioPrezzo").datepicker();
+        $("#data-inizio-prezzo").datepicker();
     }
-}
+} // FIXME: jquery è usata solo qui???
 
 function checkFieldWithSpaces(nomeInput) {
     togliErrore(nomeInput);
@@ -98,9 +98,9 @@ function controllaConsulenza() {
 }
 
 function controllaInserimentoProdotto() {
-    var nome = document.getElementById('nomeProdotto');
-    var marca = document.getElementById('marcaProdotto');
-    var descrizione = document.getElementById('Descrizione');
+    var nome = document.getElementById('nome-prodotto');
+    var marca = document.getElementById('marca-prodotto');
+    var descrizione = document.getElementById('descrizione-prodotto');
     var risultatoNome = checkFieldWithSpaces(nome);
     var risultatoMarca = checkFieldWithSpaces(marca);
     var risultatoDescrizione = checkDescrizioneProdotto(descrizione);
