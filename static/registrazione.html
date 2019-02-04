@@ -2,20 +2,19 @@
   Ti trovi nella pagina di registrazione
 </p>
 
+<!-- FIXME div-soup -->
 <main class="contenuto">
   <h1>Registrati</h1>
   <form name="registrazione" id="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione();" method="post" class="fcontainer">
-    <div class="frow clearfix">
-        <div class="col-75">
-          <input class="fInputBorder jsIsActive" type="text" id="forJs" name="forJs" disabled="disabled" />
-        </div>
-    </div>
+
+    <input class="hidden" hidden="hidden" type="text" id="forJs" name="forJs" disabled="disabled" />
+
     <div class="frow clearfix">
       <div class="col-25">
         <label for="nome">Nome:</label>
       </div>
       <div class="col-75">
-        <input id="fname" maxlength="20" class="fInputBorder" type="text" name="nome"  {{previousNome}} placeholder="Scrivi qui il tuo nome" required="required" />
+        <input id="fname" maxlength="20" class="fInputBorder" type="text" name="nome" {{previousNome}} placeholder="Scrivi qui il tuo nome" required="required" />
       </div>
     </div>
 
@@ -27,7 +26,6 @@
         <input id="fcognome" maxlength="20" class="fInputBorder" type="text" name="cognome" {{previousCognome}} placeholder="Scrivi qui il tuo cognome" required="required" />
       </div>
     </div>
-
 
     <div class="frow clearfix">
       <div class="col-25">

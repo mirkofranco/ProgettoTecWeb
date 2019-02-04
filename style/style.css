@@ -793,11 +793,6 @@ label {
   height: 100%;
 }
 
-.jsIsActive {
-  display: none;
-}
-
-
 /* FILE CONTATTI.HTML */
 
 #embedded-map {
@@ -808,6 +803,7 @@ label {
   padding-top: 56.25%;
   margin: 2%;
 
+  /* FIXME????? */
   /* overflow: hidden; */
 }
 
@@ -859,10 +855,6 @@ label {
 }
 
 /* AMMINISTRAZIONE */
-
-#verificaJavascriptAttivo {
-  display: none;
-}
 
 /* CATALOGO AMMINISTRAZIONE */
 

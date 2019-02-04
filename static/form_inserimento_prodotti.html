@@ -1,14 +1,8 @@
 <main class="contenuto">
   <form method="post" enctype="multipart/form-data" action="./inserimento_prodotto.php" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
-    <!--<input type="text" id="verificaJavascriptAttivo" />-->
-    <!--<div class="frow clearfix">
-      <div class="col-25">
-        <label for="idProdotto">IDProdotto</label>
-      </div>
-      <div class="col-75">
-        <input class="fInputBorder" type="text" maxlength="10" {{previousCodProd}} id="idProdotto" name="idProdotto" placeholder="Scrivi qui" required />
-      </div>
-    </div>-->
+
+    <input class="hidden" hidden="hidden" type="text" id="forJs" name="forJs" disabled="disabled" />
+
     <div class="frow clearfix">
       <div class="col-25">
         <label for="nomeCategoria">Categoria Prodotto</label>
