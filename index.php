@@ -14,7 +14,7 @@
     $daSostituire = array(
         "{{pageTitle}}" => "Home - Studio AR",
         "{{pageDescription}}"=>"Studio di architetti esperti di arredamento e di design di interni, che ti possono aiutare a creare la vita dei tuoi sogni in una casa che rispecchia il tuo stile di vita.",
-        "<li class=\"flex-element\"><a href=\"./index.php\"><span lang=\"en\" class=\"navbar-element\">Home</span></a></li>" => "<li class=\"flex-element current-page\"><span lang=\"en\" class=\"navbar-element\">Home</span></a></li>",
+        "<li class=\"flex-element\"><a href=\"./index.php\"><span lang=\"en\" class=\"navbar-element\">Home</span></a></li>" => "<li class=\"flex-element current-page\"><span lang=\"en\" class=\"navbar-element\">Home</span></li>",
         "<a href=\"./index.php\" class=\"clickable-content\">\n        <img src=\"./images/logo/logo.png\" id=\"logo\" alt=\"Studio Architetti Riuniti\" />\n      </a>" => "<img src=\"./images/logo/logo.png\" id=\"logo\" alt=\"Studio Architetti Riuniti\" />",
         "{{gestioneLogin}}" => $gestioneLogin
     );
