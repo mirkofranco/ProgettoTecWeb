@@ -13,7 +13,7 @@
   "id-class-ad-disabled": false, // can't use "ad" word in classes and ids (irrelevant?)
   "id-class-value": "dash", // classes and ids should have dash-separated words
   "id-unique": true,
-  "inline-script-disabled": true,
+  "inline-script-disabled": false,
   "inline-style-disabled": true,
   "space-tab-mixed-disabled": "space",
   "spec-char-escape": true,
