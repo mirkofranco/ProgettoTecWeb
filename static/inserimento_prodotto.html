@@ -1,5 +1,6 @@
 <main class="contenuto">
-  <form method="post" enctype="multipart/form-data" action="./inserimento_prodotto.php" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
+  <!-- se l'attributo action non è impostato, il form manda una post verso la pagina in cui è contenuto -->
+  <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
 
     <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
     
@@ -31,8 +32,7 @@
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="prezzo-prodotto"> Prezzo del
-          prodotto:</label>
+        <label for="prezzo-prodotto"> Prezzo del prodotto:</label>
       </div>
       <div class="col-75">
         <input class="form-input-border" type="number" {{previousPrezzo}} min="0" id="prezzo-prodotto" name="prezzoProdotto" placeholder="1400" required="required" />
@@ -43,9 +43,9 @@
         Il prodotto è in offerta?
       </div>
       <div class="col-75">
-        <input type="radio" name="isOfferta" id="is-offerta-no" value="0" checked="checked" />
+        <input type="radio" name="isOfferta" id="is-offerta-no" value="0" {{previousIsOffertaNo}} />
         <label for="is-offerta-no">No</label>
-        <input type="radio" name="isOfferta" id="is-offerta-si" value="1" />
+        <input type="radio" name="isOfferta" id="is-offerta-si" value="1" {{previousIsOffertaSi}} />
         <label for="is-offerta-si">Si</label>
       </div>
     </div>
@@ -61,7 +61,7 @@
       <div class="col-25">
         <label for="descrizione-prodotto">Inserisci la descrizione del prodotto:</label>
       </div>
-      <div class="col-75">
+      <div class="col-75"> <!-- FIXME: questo campo deve essere più alto! textarea? -->
         <input class="form-input-border" type="text" {{previousDescrizione}} maxlength="400" id="descrizione-prodotto" name="Descrizione" placeholder="Scrivi qui una descrizione" required="required" />
       </div>
     </div>
@@ -70,20 +70,22 @@
         <label for="immagine-prodotto">Seleziona l'immagine principale del prodotto:</label>
       </div>
       <div class="col-75">
-        <input class="form-input-border" type="file" accept="image/*" id="immagine-prodotto" name="immagineProdotto" required="required" />
+        <!-- {{previousImmagine}} -->
+        <input class="form-input-border" type="file" accept="image/*" id="immagine-prodotto" name="immagineProdotto" {{imageRequired}}} />
       </div>
     </div>
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="immagine-piccola-rodotto">Seleziona l'immagine di anteprima:</label>
+        <label for="immagine-piccola-prodotto">Seleziona l'immagine di anteprima:</label>
       </div>
       <div class="col-75">
-        <input class="form-input-border" type="file" accept="image/*" id="immagine-piccola-prodotto" name="immaginePiccolaProdotto" required="required" />
+        <!-- {{previousImmaginePiccola}} -->
+        <input class="form-input-border" type="file" accept="image/*" id="immagine-piccola-prodotto" name="immaginePiccolaProdotto" {{imageRequired}}} />
       </div>
       <div class="messaggio-errore-form">{{errorForm}}</div>
       <div class="messaggio-successo-form">{{successForm}}</div>
     </div>
-    <button type="submit" name="inserisciProdotto" class="submit-action">Inserisci prodotto</button>
+    <input type="submit" name="inserisciProdotto" class="submit-action" value="{{submitText}}"/>
   </form>
 </main>
 

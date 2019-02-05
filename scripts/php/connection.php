@@ -44,17 +44,31 @@ class MySqlDatabaseConnection extends AbstractConnection{
             ':newPrice' => $product->getPrezzo(),
             ':newDate' => $product->getDataInizioPrezzo(),
             ':newIsDiscounted' => $product->getOfferta(),
-            ':newImageName' => $product->getNomeImmagine(),
-            ':newImageThumbnailName' => $product->getNomeImmaginePiccola(),
             ':newDescription' => $product->getDescrizione(),
             ':id' => $product->getID()
         );
 
-        $query = "UPDATE `PRODOTTO` SET `sottoCategoria` = :newSubcat, `Nome` = :newName, `Marca` = :brand, `Prezzo` = :newPrice, `DataInizio` = :newDate, `isOfferta` = :newIsDiscounted, `NomeImmagine` = :newImageName, `NomeThumbnail` = :newImageThumbnailName, `Descrizione` = :newDescription WHERE `PRODOTTO`.`IDProdotto` = :id";
+        $query = "UPDATE `PRODOTTO` SET `sottoCategoria` = :newSubcat, `Nome` = :newName, `Marca` = :brand, `Prezzo` = :newPrice, `DataInizio` = :newDate, `isOfferta` = :newIsDiscounted, `Descrizione` = :newDescription WHERE `PRODOTTO`.`IDProdotto` = :id";
 
         $statement = $this->pdo->prepare($query);
 
-        return $statement->execute($newValues);
+        $imageResult = true;
+
+        if (!$product->getNomeImmagine()=='' && !$product->getNomeImmaginePiccola()=='') {
+            $newImages = array(
+                ':newImageName' => $product->getNomeImmagine(),
+                ':newImageThumbnailName' => $product->getNomeImmaginePiccola(),
+                ':id' => $product->getID()
+            );
+
+            $imageQuery = "UPDATE `PRODOTTO` SET `NomeImmagine` = :newImageName, `NomeThumbnail` = :newImageThumbnailName,WHERE `PRODOTTO`.`IDProdotto` = :id";
+
+            $imageStatement = $this->pdo->prepare($imageQuery);
+
+            $imageResult = $imageStatement->execute($newImages);
+        }
+
+        return $statement->execute($newValues) && $imageResult;
     }
 
     // PRE: l'oggetto di invocazione è la connessione al database
@@ -114,6 +128,16 @@ class MySqlDatabaseConnection extends AbstractConnection{
     /** dato un id, seleziona dal database il prodotto corrispondente e il nome della sua sottocategoria */
     public function getProduct($id) {
         $query = "SELECT cp.Nome AS nomeCategoriaPadre, sc.Nome AS nomeSottoCategoria, p.sottoCategoria AS idSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria = sc.IDC JOIN CATEGORIA cp ON sc.IDCatPadre = cp.IDC WHERE p.IDProdotto = ?";
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute(array($id));
+
+        return $statement->fetch(\PDO::FETCH_NUM);
+    }
+
+    /** ritorna gli url delle immagini  */
+    public function getProductImages($id) {
+        $query = "SELECT p.NomeImmagine, p.NomeThumbnail FROM PRODOTTO p WHERE p.IDProdotto = ?";
 
         $statement = $this->pdo->prepare($query);
         $statement->execute(array($id));

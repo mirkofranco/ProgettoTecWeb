@@ -11,18 +11,19 @@ function loadDataPicker() {
     }
 }
 
-function checkFieldWithSpaces(nomeInput) {
+function checkFieldWithSpaces(nomeInput, howMany = 2) {
     togliErrore(nomeInput);
     // almeno due caratteri
-    var pattern = new RegExp('^[a-zA-Zàòùèì ]{2,}$')
+    var pattern = new RegExp('^[a-zA-Zàòùèì ]{' + howMany + ',}$')
     // rimuove spazi iniziali e finali
     if (pattern.test(nomeInput.value.trim())) {
         return true;
     } else {
-        mostraErrore(nomeInput, "Il campo deve contenere almeno due caratteri");
+        mostraErrore(nomeInput, "Il campo deve contenere almeno " + howMany + " caratteri");
         return false;
     }
 }
+
 
 function checkForm(nomeInput) {
     togliErrore(nomeInput);
@@ -46,9 +47,9 @@ function checkPassword(nomeInput) {
     }
 }
 
-function checkCommento(nomeInput) {
+function checkTextarea(nomeInput) {
     togliErrore(nomeInput);
-    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèìé"]{20,}$');
+    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:\-_àòùèìé"]{20,}$');
     if (pattern.test(nomeInput.value)) {
         return true;
     } else {
@@ -59,7 +60,8 @@ function checkCommento(nomeInput) {
 
 function checkDescrizioneProdotto(nomeInput) {
     togliErrore(nomeInput);
-    var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:-_àòùèì"]{10,}$');
+    // var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:\-_àòùèì"]{10,}$');
+    var pattern = new RegExp('^.{10,}$');
     if (pattern.test(nomeInput.value)) {
         return true;
     } else {
@@ -99,16 +101,16 @@ function controllaConsulenza() {
     var nome = document.getElementById('fname');
     var commento = document.getElementById('comment');
     var risultatoNome = checkForm(nome);
-    var risutatoCommento = checkCommento(commento);
-    return risultatoNome && risutatoCommento;
+    var risutatoTextarea = checkTextarea(commento);
+    return risultatoNome && risutatoTextarea;
 }
 
 function controllaInserimentoProdotto() {
     var nome = document.getElementById('nome-prodotto');
     var marca = document.getElementById('marca-prodotto');
     var descrizione = document.getElementById('descrizione-prodotto');
-    var risultatoNome = checkFieldWithSpaces(nome);
-    var risultatoMarca = checkFieldWithSpaces(marca);
+    var risultatoNome = checkFieldWithSpaces(nome, 4);
+    var risultatoMarca = checkFieldWithSpaces(marca, 4);
     var risultatoDescrizione = checkDescrizioneProdotto(descrizione);
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
