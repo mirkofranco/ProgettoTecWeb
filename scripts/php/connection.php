@@ -21,7 +21,8 @@ class MySqlDatabaseConnection extends AbstractConnection{
             $this -> pdo = new PDO(('mysql:dbname=' . $this -> databaseName . ';host=' . $this -> hostname . ';charset=utf8'), $this -> username, $this -> password);
             $this -> pdo -> setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         }catch(PDOException $e){
-            echo "Si è verificato un errore";
+            echo "<script>alert(\"Si è verificato un errore connettendosi al database\");</script>";
+            exit;
         }//trycatch
     }//connect*/
 
