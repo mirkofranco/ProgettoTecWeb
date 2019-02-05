@@ -19,12 +19,12 @@ $connection->close();
 
 $deleteResult = true;
 
-$trashFolder = "./old-images/";
+$trashFolder = "./deleted-catalog-images/";
 if (!is_dir($trashFolder)) {
     mkdir($trashFolder);
-    if (!is_dir("./thumbnails")) {
-        mkdir("./thumbnails");
-    }
+}
+if (!is_dir("./deleted-catalog-images/thumbnails")) {
+    mkdir("./deleted-catalog-images/thumbnails");
 }
 
 foreach ($images as $value) {
@@ -38,5 +38,3 @@ if ($result && $deleteResult) {
 } else {
     echo "Qualcosa è andato storto. Contatta il tuo sysadmin di fiducia, oppure <a href=\"./index.php\">torna alla home</a>";
 }
-
-// FIXME: immagine letto_tais_colombini.jpg inutilizzata
