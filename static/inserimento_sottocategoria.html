@@ -1,0 +1,28 @@
+<main class="contenuto">
+  <!-- se l'attributo action non è impostato, il form manda una post verso la pagina in cui è contenuto -->
+  <form method="post" enctype="multipart/form-data" onsubmit="alert('TODO');" class="fcontainer">
+
+    <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nomeCategoriaPadre">Categoria Padre</label>
+      </div>
+      <div class="col-75">
+        {{elencoCategoriePadre}}
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nome-prodotto">Nome nuova sottocategoria:</label>
+      </div>
+      <div class="col-75">
+        <input class="form-input-border" type="text" maxlength="50" {{previousNomeSottoCategoria}} id="nome-nuova" name="nomeSottoCategoria" placeholder="Esempio: Letti" required="required" />
+      </div>
+      <div class="messaggio-errore-form">{{errorForm}}</div>
+      <div class="messaggio-successo-form">{{successForm}}</div>
+    </div>
+
+    <input type="submit" name="inserisciSottoCategoria" class="submit-action" value="Inserisci sottocategoria" />
+  </form>
+</main>

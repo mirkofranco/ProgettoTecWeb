@@ -126,6 +126,14 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $result;
     }
 
+    public function insertSubCategory($name, $ParentId) {
+        $query = "INSERT INTO CATEGORIA (Nome, IDCatPadre) VALUES (?, ?)";
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute(array($name, $ParentId));
+    }
+
     /** dato un id, seleziona dal database il prodotto corrispondente e il nome della sua sottocategoria */
     public function getProduct($id) {
         $query = "SELECT cp.Nome AS nomeCategoriaPadre, sc.Nome AS nomeSottoCategoria, p.sottoCategoria AS idSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria = sc.IDC JOIN CATEGORIA cp ON sc.IDCatPadre = cp.IDC WHERE p.IDProdotto = ?";
