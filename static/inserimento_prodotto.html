@@ -3,7 +3,7 @@
   <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
 
     <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
-    
+
     <input class="hidden" hidden="hidden" type="number" maxlength="10" name="idProdotto" {{idProdotto}} required="required" readonly="readonly" />
 
     <div class="frow clearfix">
@@ -82,9 +82,11 @@
         <!-- {{previousImmaginePiccola}} -->
         <input class="form-input-border" type="file" accept="image/*" id="immagine-piccola-prodotto" name="immaginePiccolaProdotto" {{imageRequired}}} />
       </div>
-      <div class="messaggio-errore-form">{{errorForm}}</div>
-      <div class="messaggio-successo-form">{{successForm}}</div>
     </div>
+
+    <div class="messaggio-errore-form">{{errorForm}}</div>
+    <div class="messaggio-successo-form">{{successForm}}</div>
+    
     <input type="submit" name="inserisciProdotto" class="submit-action" value="{{submitText}}"/>
   </form>
 </main>

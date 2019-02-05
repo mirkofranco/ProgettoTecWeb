@@ -114,3 +114,9 @@ function controllaInserimentoProdotto() {
     var risultatoDescrizione = checkDescrizioneProdotto(descrizione);
     return risultatoNome && risultatoMarca && risultatoDescrizione;
 }
+
+function controllaInserimentoSottoCategoria() {
+    var nome = document.getElementById('nome-nuova');
+
+    return checkFieldWithSpaces(nome, 2);
+}
