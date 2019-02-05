@@ -118,11 +118,11 @@ if (isset($_POST['inserisciProdotto'])) {
             move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name']);
         }
     } else {
-        $previousNome = "value=\"" . $_POST['nomeProdotto'] . "\"";
-        $previousMarca = "value=\"" . $_POST['marcaProdotto'] . "\"";
-        $previousPrezzo = "value=\"" . $_POST['prezzoProdotto'] . "\"";
-        $previousData = "value=\"" . $_POST['dataInizioPrezzo'] . "\"";
-        $previousDescrizione = "value=\"" . $_POST['Descrizione'] . "\"";
+        $previousNome = wrapValue($_POST['nomeProdotto']);
+        $previousMarca = wrapValue($_POST['marcaProdotto']);
+        $previousPrezzo = wrapValue($_POST['prezzoProdotto']);
+        $previousData = wrapValue($_POST['dataInizioPrezzo']);
+        $previousDescrizione = wrapValue($_POST['Descrizione']);
     }
 }
 

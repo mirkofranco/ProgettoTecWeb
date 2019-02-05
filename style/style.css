@@ -714,12 +714,12 @@ label {
 .submit-action {
   display: block;
 
-  /* sovrascrive lo stile generico input,...{} */
+  /* sovrascrive lo stile generico input,...{...} */
   width: auto;
   padding: .8rem 1.5rem;
   border: 1px solid #4c4a4a;
-  margin-left: auto;
-  margin-right: auto;
+  margin: .5rem auto;
+
   background-color: #f1f1f1;
   color: black;
   box-shadow: 0 0 6px gray;

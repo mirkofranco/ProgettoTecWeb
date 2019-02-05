@@ -18,7 +18,7 @@
     if(isset($_POST['fcat'])){
         $previousCategoria = $_POST['fcat'];
     } else {
-        $elencoCategorie .= "<option disabled=\"disabled\" selected=\"selected\" value=\"\"> -- select an option -- </option>";
+        $elencoCategorie .= "<option disabled=\"disabled\" selected=\"selected\" value=\"\">-- seleziona un opzione dalla lista --</option>";
     }
 
     foreach ($listaCategorie as $categoria) {
