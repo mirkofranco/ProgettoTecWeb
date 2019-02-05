@@ -1,4 +1,4 @@
-var currentSlide;
+var slideIndex;
 showSlideshowContainer();
 
 function showSlideshowContainer() {
@@ -7,12 +7,16 @@ function showSlideshowContainer() {
     container.classList.remove("hidden");
     container.removeAttribute("hidden");
 
-    currentSlide = 0;
-    showSlides(currentSlide);
+    slideIndex = 0;
+    showSlides(slideIndex);
 }
 
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
 function plusSlides(n) {
-    showSlides(currentSlide += n);
+    showSlides(slideIndex += n);
 }
 
 function showSlides(n) {
@@ -24,10 +28,10 @@ function showSlides(n) {
     }
 
     if (n >= slides.length) {
-        currentSlide = 0;
+        slideIndex = 0;
     }
     if (n < 0) {
-        currentSlide = slides.length - 1;
+        slideIndex = slides.length - 1;
     }
     for (var i = 0; i < slides.length; i++) {
         hide(slides[i]);
@@ -35,9 +39,9 @@ function showSlides(n) {
         dots[i].classList.remove("dotactive");
     }
 
-    show(slides[currentSlide]);
+    show(slides[slideIndex]);
 
-    dots[currentSlide].classList.add("dotactive");
+    dots[slideIndex].classList.add("dotactive");
 }
 
 function hide(element) {
