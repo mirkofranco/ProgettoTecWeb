@@ -659,6 +659,15 @@ label[for="sidebar-toggle"] {
   padding: .5em;
 }
 
+.autore-commento a {
+  text-decoration: underline;
+  color: grey;
+}
+
+.autore-commento a:hover {
+  color: #000;
+}
+
 /* FILE CONSULENZA_ONLINE.HTML */
 
 .bg-pagina-consulenze {
