@@ -237,9 +237,7 @@ label[for="sidebar-toggle"] {
 
 .slideshow-container {
   position: relative;
-
-  /* necessario per degradare lo slideshow elegantemente */
-  display: none;
+  
   /* non ingrandire a più della dimensione delle immagini stesse */
   max-width: 1440px;
   max-height: 810px;
@@ -252,7 +250,6 @@ label[for="sidebar-toggle"] {
 }
 
 .slideshow-element {
-  display: none;
   position: relative;
 }
 
