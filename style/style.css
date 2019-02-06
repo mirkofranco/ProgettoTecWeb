@@ -989,6 +989,7 @@ input[type="password"] {
       top: 0;
 
       height: 100vh;
+      overflow-y: scroll;
     }
   }
 
