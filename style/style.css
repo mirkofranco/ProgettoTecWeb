@@ -310,14 +310,15 @@ label[for="sidebar-toggle"] {
 /*Indicatori a fondo slideshow*/
 .dot {
   display: inline-block;
-  height: .3rem;
-  width: .3rem;
-  padding: .3rem;
-  border-radius: 50%;
+  height: .5rem;
+  width: .5rem;
+  padding: 0;
+  border-radius: 60%;
   margin: 0 .5rem;
   transition: background-color 0.6s ease;
 
   background-color: #bbb;
+  border: none;
   cursor: pointer;
 }
 
