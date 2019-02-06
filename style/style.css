@@ -310,8 +310,9 @@ label[for="sidebar-toggle"] {
 /*Indicatori a fondo slideshow*/
 .dot {
   display: inline-block;
-  height: 1rem;
-  width: 1rem;
+  height: .3rem;
+  width: .3rem;
+  padding: .3rem;
   border-radius: 50%;
   margin: 0 .5rem;
   transition: background-color 0.6s ease;
@@ -665,7 +666,6 @@ label[for="sidebar-toggle"] {
 }
 
 /* FILE CONSULENZA_ONLINE.HTML */
-
 .bg-pagina-consulenze {
   background-image: url("../images/consulenza_o.jpg");
   background-position: top;
