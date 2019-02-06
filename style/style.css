@@ -275,18 +275,14 @@ label[for="sidebar-toggle"] {
 
   user-select: none;
   cursor: pointer;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .next {
   right: 0;
 
   border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
 }
 
 /*Testo all'interno dello slideshow*/
