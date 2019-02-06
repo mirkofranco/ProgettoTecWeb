@@ -978,6 +978,16 @@ input[type="password"] {
     padding: 1em 0;
   }
 
+  @supports(position: sticky) {
+    #sidebar-catalogo {
+      position: sticky;
+      float: left;
+      top: 0;
+
+      height: 100vh;
+    }
+  }
+
   #contenuto-catalogo {
     margin-left: 30vw;
   }
