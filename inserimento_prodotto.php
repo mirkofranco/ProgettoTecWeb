@@ -22,11 +22,13 @@
     }
 
     foreach ($listaCategorie as $categoria) {
-        $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
-        if($previousCategoria == $categoria['CodiceCategoria']){
-            $elencoCategorie .= " selected=\"selected\"";
+        if($categoria['NomeCategoria'] != NULL){
+            $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
+            if($previousCategoria == $categoria['CodiceCategoria']){
+                $elencoCategorie .= " selected=\"selected\"";
+            }
+            $elencoCategorie .= ">" . $categoria['NomeCategoria'] . "</option>";
         }
-        $elencoCategorie .= ">" . $categoria['NomeCategoria'] . "</option>";
     }
 
     $elencoCategorie .= "</select>";

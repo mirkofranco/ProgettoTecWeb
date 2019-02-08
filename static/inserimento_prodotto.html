@@ -2,14 +2,13 @@
   <!-- se l'attributo action non è impostato, il form manda una post verso la pagina in cui è contenuto -->
   <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
 
-    <!-- FIXME rimuovere? -->
-    <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
 
-    <input class="hidden" hidden="hidden" type="number" maxlength="10" name="idProdotto" {{idProdotto}} required="required" readonly="readonly" />
+
+    <!--<input class="hidden" hidden="hidden" type="number" maxlength="10" name="idProdotto" {{idProdotto}} required="required" readonly="readonly" />-->
 
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="nomeCategoria">Categoria Prodotto</label>
+        <label for="fcat">Categoria Prodotto</label>
       </div>
       <div class="col-75">
         {{elencoCategorie}}
@@ -87,7 +86,7 @@
 
     <div class="messaggio-errore-form">{{errorForm}}</div>
     <div class="messaggio-successo-form">{{successForm}}</div>
-    
+
     <input type="submit" name="inserisciProdotto" class="submit-action" value="{{submitText}}"/>
   </form>
 </main>
