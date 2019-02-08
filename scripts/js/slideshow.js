@@ -1,11 +1,9 @@
 
-
 var slideIndex;
 showSlideshowContainer();
 
 function showSlideshowContainer() {
     var container = document.getElementsByClassName("slideshow-container")[0];
-
 
     container.classList.remove("hidden");
     container.removeAttribute("hidden");
