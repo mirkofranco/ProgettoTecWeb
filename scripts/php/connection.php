@@ -1,6 +1,7 @@
 <?php
 require_once('AbstractConnection.php');
 require_once('Utente.php');
+
 class MySqlDatabaseConnection extends AbstractConnection{
 
     /**
@@ -20,7 +21,8 @@ class MySqlDatabaseConnection extends AbstractConnection{
             $this -> pdo = new PDO(('mysql:dbname=' . $this -> databaseName . ';host=' . $this -> hostname . ';charset=utf8'), $this -> username, $this -> password);
             $this -> pdo -> setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         }catch(PDOException $e){
-            echo "Si è verificato un errore";
+            echo "<script>alert(\"Si è verificato un errore connettendosi al database\");</script>";
+            exit;
         }//trycatch
     }//connect*/
 
@@ -32,6 +34,42 @@ class MySqlDatabaseConnection extends AbstractConnection{
         $okai = $stmt -> execute([$prodotto -> getCategoria(), $prodotto -> getNome(), $prodotto -> getMarca(), $prodotto -> getPrezzo(), $prodotto -> getDataInizioPrezzo(), $prodotto -> getOfferta(), $prodotto -> getNomeImmagine(), $prodotto -> getNomeImmaginePiccola(),  $prodotto->getDescrizione()]);
 
         return $okai;
+    }
+
+    /** modifica un prodotto esistente; */
+    public function updateProduct($product) {
+        $newValues = array(
+            ':newSubcat' => $product->getCategoria(),
+            ':newName' => $product->getNome(),
+            ':brand' => $product->getMarca(),
+            ':newPrice' => $product->getPrezzo(),
+            ':newDate' => $product->getDataInizioPrezzo(),
+            ':newIsDiscounted' => $product->getOfferta(),
+            ':newDescription' => $product->getDescrizione(),
+            ':id' => $product->getID()
+        );
+
+        $query = "UPDATE `PRODOTTO` SET `sottoCategoria` = :newSubcat, `Nome` = :newName, `Marca` = :brand, `Prezzo` = :newPrice, `DataInizio` = :newDate, `isOfferta` = :newIsDiscounted, `Descrizione` = :newDescription WHERE `PRODOTTO`.`IDProdotto` = :id";
+
+        $statement = $this->pdo->prepare($query);
+
+        $imageResult = true;
+
+        if (!$product->getNomeImmagine()=='' && !$product->getNomeImmaginePiccola()=='') {
+            $newImages = array(
+                ':newImageName' => $product->getNomeImmagine(),
+                ':newImageThumbnailName' => $product->getNomeImmaginePiccola(),
+                ':id' => $product->getID()
+            );
+
+            $imageQuery = "UPDATE `PRODOTTO` SET `NomeImmagine` = :newImageName, `NomeThumbnail` = :newImageThumbnailName,WHERE `PRODOTTO`.`IDProdotto` = :id";
+
+            $imageStatement = $this->pdo->prepare($imageQuery);
+
+            $imageResult = $imageStatement->execute($newImages);
+        }
+
+        return $statement->execute($newValues) && $imageResult;
     }
 
     // PRE: l'oggetto di invocazione è la connessione al database
@@ -88,9 +126,27 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return $result;
     }
 
+    public function insertSubCategory($name, $ParentId) {
+        $query = "INSERT INTO CATEGORIA (Nome, IDCatPadre) VALUES (?, ?)";
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute(array($name, $ParentId));
+    }
+
     /** dato un id, seleziona dal database il prodotto corrispondente e il nome della sua sottocategoria */
     public function getProduct($id) {
         $query = "SELECT cp.Nome AS nomeCategoriaPadre, sc.Nome AS nomeSottoCategoria, p.sottoCategoria AS idSottoCategoria, p.Nome, p.Marca, p.Prezzo, p.DataInizio, p.isOfferta, p.NomeImmagine, p.NomeThumbnail, p.Descrizione, p.IDProdotto FROM PRODOTTO p JOIN CATEGORIA sc ON p.sottoCategoria = sc.IDC JOIN CATEGORIA cp ON sc.IDCatPadre = cp.IDC WHERE p.IDProdotto = ?";
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute(array($id));
+
+        return $statement->fetch(\PDO::FETCH_NUM);
+    }
+
+    /** ritorna gli url delle immagini  */
+    public function getProductImages($id) {
+        $query = "SELECT p.NomeImmagine, p.NomeThumbnail FROM PRODOTTO p WHERE p.IDProdotto = ?";
 
         $statement = $this->pdo->prepare($query);
         $statement->execute(array($id));

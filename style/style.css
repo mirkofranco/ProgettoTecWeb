@@ -238,8 +238,6 @@ label[for="sidebar-toggle"] {
 .slideshow-container {
   position: relative;
 
-  /* necessario per degradare lo slideshow elegantemente */
-  display: none;
   /* non ingrandire a più della dimensione delle immagini stesse */
   max-width: 1440px;
   max-height: 810px;
@@ -252,7 +250,6 @@ label[for="sidebar-toggle"] {
 }
 
 .slideshow-element {
-  display: none;
   position: relative;
 }
 
@@ -278,18 +275,14 @@ label[for="sidebar-toggle"] {
 
   user-select: none;
   cursor: pointer;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .next {
   right: 0;
 
   border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
 }
 
 /*Testo all'interno dello slideshow*/
@@ -305,22 +298,23 @@ label[for="sidebar-toggle"] {
 }
 
 .dot-container {
-  margin-top: 10px;
-  margin-bottom: 10px;
-
+  margin: .7rem 0;
+  
   text-align: center;
 }
 
 /*Indicatori a fondo slideshow*/
 .dot {
   display: inline-block;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  margin: 8px;
+  height: .5rem;
+  width: .5rem;
+  padding: 0;
+  border-radius: 60%;
+  margin: 0 .5rem;
   transition: background-color 0.6s ease;
 
   background-color: #bbb;
+  border: none;
   cursor: pointer;
 }
 
@@ -659,8 +653,16 @@ label[for="sidebar-toggle"] {
   padding: .5em;
 }
 
-/* FILE CONSULENZA_ONLINE.HTML */
+.autore-commento a {
+  text-decoration: underline;
+  color: grey;
+}
 
+.autore-commento a:hover {
+  color: #000;
+}
+
+/* FILE CONSULENZA_ONLINE.HTML */
 .bg-pagina-consulenze {
   background-image: url("../images/consulenza_o.jpg");
   background-position: top;
@@ -670,7 +672,7 @@ label[for="sidebar-toggle"] {
 
 /* FORM CONSULENZE */
 
-.titoloForm {
+.form-titolo {
   width: 70vw;
   padding: 30px;
   border-bottom: #fff;
@@ -709,12 +711,12 @@ label {
 .submit-action {
   display: block;
 
-  /* sovrascrive lo stile generico input,...{} */
+  /* sovrascrive lo stile generico input,...{...} */
   width: auto;
   padding: .8rem 1.5rem;
   border: 1px solid #4c4a4a;
-  margin-left: auto;
-  margin-right: auto;
+  margin: .5rem auto;
+
   background-color: #f1f1f1;
   color: black;
   box-shadow: 0 0 6px gray;
@@ -723,8 +725,8 @@ label {
   cursor: pointer;
 }
 
-.fInputBorder:hover,
-.fInputBorder:active,
+.form-input-border:hover,
+.form-input-border:active,
 #femail:hover,
 #femail:active,
 #fname:hover,
@@ -781,8 +783,8 @@ label {
   margin: .5rem 1rem;
 }
 
-.fTextBox,
-.fInputBorder,
+.form-textarea,
+.form-input-border,
 #fcat,
 #fname,
 #femail {
@@ -792,11 +794,6 @@ label {
 #fcat {
   height: 100%;
 }
-
-.jsIsActive {
-  display: none;
-}
-
 
 /* FILE CONTATTI.HTML */
 
@@ -808,6 +805,7 @@ label {
   padding-top: 56.25%;
   margin: 2%;
 
+  /* FIXME????? */
   /* overflow: hidden; */
 }
 
@@ -859,10 +857,6 @@ label {
 }
 
 /* AMMINISTRAZIONE */
-
-#verificaJavascriptAttivo {
-  display: none;
-}
 
 /* CATALOGO AMMINISTRAZIONE */
 
@@ -982,6 +976,17 @@ input[type="password"] {
 
     width: 30vw;
     padding: 1em 0;
+  }
+
+  @supports(position: sticky) {
+    #sidebar-catalogo {
+      position: sticky;
+      float: left;
+      top: 0;
+
+      height: 100vh;
+      overflow-y: scroll;
+    }
   }
 
   #contenuto-catalogo {
@@ -1121,7 +1126,7 @@ input[type="password"] {
     width: 75%;
   }
 
-  .titoloForm {
+  .form-titolo {
     width: auto;
   }
 

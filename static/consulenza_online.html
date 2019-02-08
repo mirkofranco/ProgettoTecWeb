@@ -5,7 +5,7 @@
 
   <form method="post" class="fcontainer" action="./consulenza_online.php" onsubmit="return controllaConsulenza();">
     <!-- il file .php però non esiste -->
-    <h1 class="titoloForm">Richiedi una consulenza compilando il modulo, ti risponderemo il prima possibile!</h1>
+    <h1 class="form-titolo">Richiedi una consulenza compilando il modulo, ti risponderemo il prima possibile!</h1>
 
     <!-- prima riga: NOME -->
     <div class="frow clearfix">
@@ -14,7 +14,7 @@
         <label for="fname"> Nome: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required="required" />
+        <input class="form-input-border" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required="required" />
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         <label for="femail"> E-Mail: </label>
       </div>
       <div class="col-75">
-        <input class="fInputBorder" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required="required" />
+        <input class="form-input-border" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required="required" />
       </div>
     </div>
 
@@ -44,7 +44,7 @@
         <label for="comment">La tua richiesta:</label>
       </div>
       <div class="col-75">
-        <textarea id="comment" class="fTextBox fInputBorder" name="comment" maxlength="10000" placeholder="Scrivi qui" required="required">{{previousCommento}}</textarea>
+        <textarea id="comment" class="form-textarea form-input-border" name="comment" maxlength="10000" placeholder="Scrivi qui" required="required">{{previousCommento}}</textarea>
       </div>
 
       <div class="frow clearfix">

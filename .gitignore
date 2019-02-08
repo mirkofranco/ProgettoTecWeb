@@ -5,7 +5,3 @@
 *.css.map
 *.07cf
 cache_catalogo
-
-# ignore some erclu files
-database/*.ps1
-zzzzz_info.php

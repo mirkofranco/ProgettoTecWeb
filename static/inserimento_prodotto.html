@@ -1,0 +1,98 @@
+<main class="contenuto">
+  <!-- se l'attributo action non è impostato, il form manda una post verso la pagina in cui è contenuto -->
+  <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
+
+    <!-- FIXME rimuovere? -->
+    <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
+
+    <input class="hidden" hidden="hidden" type="number" maxlength="10" name="idProdotto" {{idProdotto}} required="required" readonly="readonly" />
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nomeCategoria">Categoria Prodotto</label>
+      </div>
+      <div class="col-75">
+        {{elencoCategorie}}
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nome-prodotto">Nome prodotto:</label>
+      </div>
+      <div class="col-75">
+        <input class="form-input-border" type="text" maxlength="50" {{previousNome}} id="nome-prodotto" name="nomeProdotto" placeholder="Esempio: Wing" required="required" />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="marca-prodotto">Marca del prodotto:</label>
+      </div>
+      <div class="col-75">
+        <input class="form-input-border" type="text" maxlength="50" {{previousMarca}} id="marca-prodotto" name="marcaProdotto" placeholder="Esempio: Bside" required="required" />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="prezzo-prodotto"> Prezzo del prodotto:</label>
+      </div>
+      <div class="col-75">
+        <input class="form-input-border" type="number" {{previousPrezzo}} min="0" id="prezzo-prodotto" name="prezzoProdotto" placeholder="Esempio: 1400" required="required" />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        Il prodotto è in offerta?
+      </div>
+      <div class="col-75">
+        <input type="radio" name="isOfferta" id="is-offerta-no" value="0" {{previousIsOffertaNo}} />
+        <label for="is-offerta-no">No</label>
+        <input type="radio" name="isOfferta" id="is-offerta-si" value="1" {{previousIsOffertaSi}} />
+        <label for="is-offerta-si">Si</label>
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="data-inizio-prezzo">Data inizio validità prezzo </label>
+      </div>
+      <div class="col-75">
+        <input class="form-input-border" type="date" {{previousData}} id="data-inizio-prezzo" name="dataInizioPrezzo" required="required" />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="descrizione-prodotto">Inserisci la descrizione del prodotto:</label>
+      </div>
+      <div class="col-75"> <!-- FIXME: questo campo deve essere più alto! textarea? -->
+        <input class="form-input-border" type="text" {{previousDescrizione}} maxlength="400" id="descrizione-prodotto" name="Descrizione" placeholder="Scrivi qui una descrizione" required="required" />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="immagine-prodotto">Seleziona l'immagine principale del prodotto:</label>
+      </div>
+      <div class="col-75">
+        <!-- {{previousImmagine}} -->
+        <input class="form-input-border" type="file" accept="image/*" id="immagine-prodotto" name="immagineProdotto" {{imageRequired}}} />
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="immagine-piccola-prodotto">Seleziona l'immagine di anteprima:</label>
+      </div>
+      <div class="col-75">
+        <!-- {{previousImmaginePiccola}} -->
+        <input class="form-input-border" type="file" accept="image/*" id="immagine-piccola-prodotto" name="immaginePiccolaProdotto" {{imageRequired}}} />
+      </div>
+    </div>
+
+    <div class="messaggio-errore-form">{{errorForm}}</div>
+    <div class="messaggio-successo-form">{{successForm}}</div>
+    
+    <input type="submit" name="inserisciProdotto" class="submit-action" value="{{submitText}}"/>
+  </form>
+</main>
+
+<!-- JQUERY + JQUERY-UI (date-picker alternativo) -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="./scripts/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="./scripts/js/jquery-ui-1.12.1.custom/jquery-ui.min.css" />

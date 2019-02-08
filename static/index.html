@@ -4,7 +4,7 @@
 <main id="contenuto" class="contenuto">
 
   <!-- box con lo slideshow. le proprietà style=".." sono aggiunte via js. -->
-  <div id="contenutoSlider" class="slideshow-container">
+  <div class="slideshow-container hidden" hidden="hidden">
 
     <div class="slideshow-element fade">
       <img src="./images/slideshow1.jpg" class="slideshow-image" alt="una camera da letto con vista"/>
@@ -24,9 +24,9 @@
     <a class="next" onclick="plusSlides(1)">&#10095;</a> <!-- freccia a destra: ❯ -->
 
     <div class="dot-container">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+      <input type="button" class="dot" onclick="currentSlide(0)" title="mostra la prima slide"/>
+      <input type="button" class="dot" onclick="currentSlide(1)" title="mostra la seconda slide"/>
+      <input type="button" class="dot" onclick="currentSlide(2)" title="mostra la terza slide"/>
     </div>
   </div>
 

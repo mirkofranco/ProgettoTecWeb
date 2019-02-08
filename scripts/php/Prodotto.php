@@ -117,6 +117,11 @@
             if (!is_null($this->prezzo)) {
                 $price = $document->createElement("span", "€ " . $this->prezzo);
                 $price->setAttribute("class", "prodotto-info-importante");
+
+                if ($this->offerta == '1') {
+                    $price->nodeValue .= " (attualmente in offerta)";
+                }
+
                 $textContainer->appendChild($price);
             }
 
@@ -169,6 +174,9 @@
             if (!is_null($this->prezzo)) {
                 $price = $document->createElement("span", "€ " . $this->prezzo);
                 $price->setAttribute("class", "prodotto-info-importante");
+                if ($this->offerta == '1') {
+                    $price->nodeValue .= " (questo prodotto è in offerta per un tempo limitato)";
+                }
 
                 $textContainer->appendChild($price);
             }

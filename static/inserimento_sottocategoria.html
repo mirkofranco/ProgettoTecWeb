@@ -1,0 +1,29 @@
+<main class="contenuto">
+  <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoSottoCategoria();" class="fcontainer">
+
+    <!-- FIXME rimuovere? -->
+    <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
+
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nomeCategoriaPadre">Categoria Padre</label>
+      </div>
+      <div class="col-75">
+        {{elencoCategoriePadre}}
+      </div>
+    </div>
+    <div class="frow clearfix">
+      <div class="col-25">
+        <label for="nome-nuova">Nome nuova sottocategoria:</label>
+      </div>
+      <div class="col-75">
+        <input class="form-input-border" type="text" maxlength="50" {{previousNomeSottoCategoria}} id="nome-nuova" name="nomeSottoCategoria" placeholder="Esempio: Letti" required="required" />
+      </div>
+    </div>
+
+    <div class="messaggio-errore-form">{{errorForm}}</div>
+    <div class="messaggio-successo-form">{{successForm}}</div>
+
+    <input type="submit" name="inserisciSottoCategoria" class="submit-action" value="Inserisci sottocategoria" />
+  </form>
+</main>
