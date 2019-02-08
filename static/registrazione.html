@@ -6,13 +6,12 @@
   <h1>Registrati</h1>
   <form name="registrazione" id="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione();" method="post" class="fcontainer">
 
-    <!-- FIXME rimuovere? -->
-    <input class="hidden" hidden="hidden" type="text" id="for-js" name="forJs" readonly="readonly" />
+
 
     <div class="frow clearfix">
       <!-- FIXME questi div qua andrebbero tolti e le classi spostate sul figlio  -->
       <div class="col-25">
-        <label for="nome">Nome:</label>
+        <label for="fname">Nome:</label>
       </div>
       <div class="col-75">
         <input id="fname" maxlength="20" class="form-input-border" type="text" name="nome" {{previousNome}} placeholder="Scrivi qui il tuo nome" required="required" />
@@ -21,7 +20,7 @@
 
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="cognome">Cognome:</label>
+        <label for="fcognome">Cognome:</label>
       </div>
       <div class="col-75">
         <input id="fcognome" maxlength="20" class="form-input-border" type="text" name="cognome" {{previousCognome}} placeholder="Scrivi qui il tuo cognome" required="required" />
@@ -30,7 +29,7 @@
 
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="email">Username:</label>
+        <label for="fusername">Username:</label>
       </div>
       <div class="col-75">
         <input id="fusername" class="form-input-border" type="text" name="username" {{previousUsername}} placeholder="Scrivi qui il tuo username" required="required" />
@@ -39,7 +38,7 @@
 
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="email">Email:</label>
+        <label for="femail">Email:</label>
       </div>
       <div class="col-75">
         <input id="femail" class="form-input-border" type="email" name="email" {{previousEmail}} placeholder="Scrivi qui la tua email" required="required" />
@@ -48,7 +47,7 @@
 
     <div class="frow clearfix">
       <div class="col-25">
-        <label for="password">Password:</label>
+        <label for="fpsw">Password:</label>
       </div>
       <div class="col-75">
         <input id="fpsw" maxlength="20" class="form-input-border" type="password" name="password" placeholder="Scrivi qui la tua password" required="required" />
