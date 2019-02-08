@@ -10,10 +10,17 @@ if (isset($_POST['login'])) {
         $errorLogin = "Nome utente e\o password non corretti";
     } else {
         $_SESSION['user'] = $utente;
-        header("Location: ". $_SESSION['previousPage']);
     }
 } else {
-    $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
+    if (array_key_exists('HTTP_REFERER', $_SERVER)) {
+        $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
+    } else {
+        $_SESSION['previousPage'] = "./index.php";
+    }
+}
+
+if (isset($_SESSION['user'])) {
+    header("Location: ./index.php");
 }
 
 $gestioneLogin = "<a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";

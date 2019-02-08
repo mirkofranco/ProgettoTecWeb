@@ -1,6 +1,9 @@
 <?php
-    require_once('./scripts/php/Utente.php');
     require_once('./scripts/php/connection.php');
+    require_once('./scripts/php/Utente.php');
+    require_once './scripts/php/Sessione.php';
+    Sessione::startSession();
+
     $errorForm = "";
     $previousNome = "";
     $previousCognome = "";
@@ -20,11 +23,13 @@
         if(strlen($_POST['password']) < 4){
             $errorForm .= "La password deve contenere almeno quattro caratteri<br/>";
         }
+
         if($errorForm == ""){
             $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
             $connection -> connect();
-            if($connection -> insertUtente(new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email'])) ){
-                $successForm .= "Complimenti! Utente inserito correttamente!";
+            $user = new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email']);
+            if($connection -> insertUtente($user) ){
+                $_SESSION['user'] = $user;
             }else{
                 $errorForm .= "Si è verificato un errore durante l'inserimento. Riprova!";
             }
@@ -36,25 +41,22 @@
             $previousEmail = isset($_POST['email']) ? "value=\"". $_POST['email']. "\"" : "" ;
         }
     } else {
-        $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
-    }
-
-    require_once('./scripts/php/Sessione.php');
-    Sessione::startSession();
-    $gestioneLogin = "";
-    if(!isset($_SESSION['user'])){
-        $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a>";
-    }else{
-        if($_SESSION['user'] -> getPermessi() == '11'){
-            $gestioneLogin .= "<a href=\"menu_admin.php\" class=\"header-button\">Area riservata</a>";
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
+        } else {
+            $_SESSION['previousPage'] = "./index.php";
         }
-        $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
     }
 
-    $daSostituire =  array(
+    if (isset($_SESSION['user'])) {
+        header("Location: " . $_SESSION['previousPage']);
+    }
+
+    $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a>";
+
+    $daSostituire = array(
         "{{pageTitle}}" => "Registrazione - Studio AR",
         "{{pageDescription}}"=>"Pagina di registrazione al sito dello Studio AR - architetti riuniti",
-        "<body>" => "<body onload=\"jsAttivo()\">",
         "{{errorForm}}" => $errorForm,
         "{{previousNome}}" => $previousNome,
         "{{previousCognome}}" => $previousCognome,
