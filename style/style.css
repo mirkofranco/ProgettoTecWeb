@@ -182,7 +182,6 @@ label[for="sidebar-toggle"] {
   max-height: 9999px;
 }
 
-/* TODO aggiungere classe "toggleable"???? */
 #navbar ul, #sidebar-catalogo {
   overflow: hidden;
   max-height: 0;
