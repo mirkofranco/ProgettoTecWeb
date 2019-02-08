@@ -299,7 +299,7 @@ label[for="sidebar-toggle"] {
 
 .dot-container {
   margin: .7rem 0;
-  
+
   text-align: center;
 }
 
@@ -373,7 +373,7 @@ label[for="sidebar-toggle"] {
   padding-bottom: 4rem;
 }
 
-.descrizione-socio>img {
+.img-socio {
   width: 15vw;
   border-radius: 100vh;
   margin: 1rem;
@@ -391,6 +391,8 @@ label[for="sidebar-toggle"] {
 .move-right {
   float: right;
 }
+
+
 
 /* FILE CATALOGO.HTML */
 .flex-catalogo {
