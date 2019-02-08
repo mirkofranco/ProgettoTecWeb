@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
 }
 
 if (isset($_SESSION['user'])) {
-    header("Location: ./index.php");
+    header("Location: " . $_SESSION['previousPage']);
 }
 
 $gestioneLogin = "<a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";

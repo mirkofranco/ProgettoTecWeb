@@ -93,6 +93,7 @@
             "{{gestioneLogin}}" => $gestioneLogin,
             "{{elencoCategorie}}" => $elencoCategorie,
             "{{errorForm}}" => $errorForm,
+            "{{idProdotto}}" => "",
             "{{previousNome}}" => $previousNome,
             "{{previousMarca}}" => $previousMarca,
             "{{previousPrezzo}}" => $previousPrezzo,
