@@ -1122,7 +1122,6 @@ input[type="password"] {
   /*CONSULENZA ONLINE*/
   .bg-pagina-consulenze {
     width: 100%;
-    /* FIXME pagine alte sbarella il flexbox?? */
     height: 100%;
   }
 
