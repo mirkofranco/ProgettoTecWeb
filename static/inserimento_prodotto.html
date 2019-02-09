@@ -1,8 +1,10 @@
 <main class="contenuto">
+  <h1>Inserisci/modifica un prodotto</h1>
   <!-- se l'attributo action non è impostato, il form manda una post verso la pagina in cui è contenuto -->
   <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoProdotto();" class="fcontainer">
 
-    <input class="hidden" hidden="hidden" type="number" name="idProdotto" {{idProdotto}} required="required" readonly="readonly" />
+    <label for="id-prodotto" class="hidden" hidden="hidden" >id del prodotto da modificare; nascosto e in sola lettura</label>
+    <input id="id-prodotto" class="hidden" hidden="hidden" type="number" name="idProdotto" {{idProdotto}} required="required" readonly="readonly" />
 
     <div class="frow clearfix">
       <div class="col-25">
@@ -40,12 +42,13 @@
       <div class="col-25">
         Il prodotto è in offerta?
       </div>
-      <div class="col-75">
+      <fieldset class="col-75">
+        <legend class="hidden-but-accessible">Il prodotto è in offerta?</legend>
         <input type="radio" name="isOfferta" id="is-offerta-no" value="0" {{previousIsOffertaNo}} />
         <label for="is-offerta-no">No</label>
         <input type="radio" name="isOfferta" id="is-offerta-si" value="1" {{previousIsOffertaSi}} />
         <label for="is-offerta-si">Si</label>
-      </div>
+      </fieldset>
     </div>
     <div class="frow clearfix">
       <div class="col-25">

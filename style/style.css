@@ -21,6 +21,11 @@ ul, ol {
   list-style: none;
 }
 
+/* Reset cross-browser fieldset behaviour */
+fieldset {
+  border: none;
+}
+
 html {
   box-sizing: border-box;
 
@@ -643,7 +648,6 @@ label[for="sidebar-toggle"] {
   min-height: 50px;
   border: .5px solid black;
 
-  white-space: pre;
   cursor: text;
 }
 
@@ -659,6 +663,8 @@ label[for="sidebar-toggle"] {
 
 .testo-commento {
   padding: .5em;
+
+  white-space: pre;
 }
 
 .autore-commento a {
@@ -1116,7 +1122,6 @@ input[type="password"] {
   /*CONSULENZA ONLINE*/
   .bg-pagina-consulenze {
     width: 100%;
-    /* FIXME pagine alte sbarella il flexbox?? */
     height: 100%;
   }
 
