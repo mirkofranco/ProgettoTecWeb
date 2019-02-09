@@ -12,7 +12,7 @@ $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "
 $connection->connect();
 $listaCategoriePadre = $connection->listaCategorie();
 
-$elencoCategoriePadre = "<select id=\"nomeCategoriaPadre\" name=\"codiceCategoriaPadre\" required=\"required\">";
+$elencoCategoriePadre = "<select id=\"nomeCategoriaPadre\" class=\"col-75\" name=\"codiceCategoriaPadre\" required=\"required\">";
 
 $previousCategoriaPadre = "";
 if (isset($_POST['codiceCategoriaPadre'])) {

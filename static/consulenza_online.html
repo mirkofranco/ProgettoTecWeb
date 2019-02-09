@@ -4,48 +4,32 @@
 <main class="contenuto bg-pagina-consulenze">
 
   <form method="post" class="fcontainer" action="./consulenza_online.php" onsubmit="return controllaConsulenza();">
-    <!-- il file .php però non esiste -->
+
     <h1 class="form-titolo">Richiedi una consulenza compilando il modulo, ti risponderemo il prima possibile!</h1>
 
     <!-- prima riga: NOME -->
     <div class="frow clearfix">
-      <!-- FIXME questi div qua andrebbero tolti e le classi spostate sul figlio -->
-      <div class="col-25">
-        <label for="fname"> Nome: </label>
-      </div>
-      <div class="col-75">
-        <input class="form-input-border" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required="required" />
-      </div>
+      <label for="fname" class="col-25"> Nome: </label>
+      <input class="form-input-border col-75" type="text" id="fname" name="firstName" {{previousNome}} maxlength="20" placeholder="Inserisci il tuo nome" required="required" />
     </div>
 
     <!-- seconda riga: EMAIL -->
     <div class="frow clearfix">
-      <div class="col-25">
-        <label for="femail"> E-Mail: </label>
-      </div>
-      <div class="col-75">
-        <input class="form-input-border" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required="required" />
-      </div>
+      <label for="femail" class="col-25"> E-Mail: </label>
+      <input class="form-input-border col-75" type="email" id="femail" name="email" {{previousMail}} maxlength="30" placeholder="Inserisci la tua email" required="required" />
     </div>
 
     <!-- terza riga: CATEGORIA -->
     <div class="frow clearfix">
-      <div class="col-25">
-        <label for="fcat">In cosa possiamo aiutarti:</label>
-      </div>
-      <div class="col-75">
-        {{elencoCategorie}}
-      </div>
+      <label for="fcat" class="col-25">In cosa possiamo aiutarti:</label>
+      {{elencoCategorie}}
     </div>
 
     <!-- quarta riga: COMMENTO -->
     <div class="frow clearfix">
-      <div class="col-25">
-        <label for="comment">La tua richiesta:</label>
-      </div>
-      <div class="col-75">
-        <textarea id="comment" class="form-textarea form-input-border" name="comment" maxlength="10000" placeholder="Scrivi qui" required="required">{{previousCommento}}</textarea>
-      </div>
+
+      <label for="comment" class="col-25">La tua richiesta:</label>
+      <textarea id="comment" class="form-textarea form-input-border col-75" name="comment" maxlength="10000" placeholder="Scrivi qui" required="required">{{previousCommento}}</textarea>
 
       <div class="frow clearfix">
         <div class="messaggio-errore-form" id="messaggio-errore-form"> {{errorForm}} </div>

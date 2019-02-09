@@ -51,12 +51,9 @@ if ($product->getOfferta() == '0') {
 
 $commonPath = "./images/catalogo/";
 
-$previousImage = '<a href="' . $commonPath . $product->getNomeImmagine() . '" alt="immagine precedente" download="' . $product->getNomeImmagine() . '">scarica la vecchia immagine di questo prodotto</a>';
-$previousImageThumbnail = '<a href="' . $commonPath . $product->getNomeImmaginePiccola() . '" alt="miniatura precedente" download="' . $product->getNomeImmaginePiccola() . '">scarica la vecchia miniatura di questo prodotto</a>';
-
 $listaCategorie = $connection->listaSottoCategorie();
 
-$elencoCategorie = "<select id=\"fcat\" name=\"fcat\" required=\"required\">";
+$elencoCategorie = "<select id=\"fcat\" name=\"fcat\" class=\"col-75\" required=\"required\">";
 foreach ($listaCategorie as $categoria) {
     $elencoCategorie .= "<option value=\"" . $categoria['CodiceCategoria'] . "\"";
     if ($previousCategoria == $categoria['CodiceCategoria']) {
@@ -139,8 +136,6 @@ $daSostituire = array(
     "{{previousIsOffertaNo}}" => $previousIsOfferta['no'],
     "{{previousData}}" => $previousData,
     "{{previousDescrizione}}" => $previousDescrizione,
-    "{{previousImmagine}}" => $previousImage,
-    "{{previousImmaginePiccola}}" => $previousImageThumbnail,
     "{{imageRequired}}}" => "",
     "{{successForm}}" => $successForm,
     "{{gestioneLogin}}" => $gestioneLogin,

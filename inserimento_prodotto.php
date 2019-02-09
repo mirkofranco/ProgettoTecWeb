@@ -12,7 +12,7 @@
     $connection -> connect();
     $listaCategorie = $connection -> listaSottoCategorie();
 
-    $elencoCategorie = "<select id=\"fcat\" name=\"fcat\" required=\"required\">";
+    $elencoCategorie = "<select id=\"fcat\" class=\"col-75\" name=\"fcat\" required=\"required\">";
 
     $previousCategoria = "";
     if(isset($_POST['fcat'])){
