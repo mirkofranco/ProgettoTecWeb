@@ -21,6 +21,11 @@ ul, ol {
   list-style: none;
 }
 
+/* Reset cross-browser fieldset behaviour */
+fieldset {
+  border: none;
+}
+
 html {
   box-sizing: border-box;
 
