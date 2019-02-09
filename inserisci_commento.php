@@ -1,8 +1,11 @@
 <?php
-// TODO: controllare che l'utente sia autenticato;
 require_once "./scripts/php/connection.php";
 require_once "./scripts/php/Sessione.php";
 Sessione::startSession();
+if (!isset($_SESSION['user'])) {
+    echo 0;
+    die;
+}
 
 $inputJSON = file_get_contents('php://input');
 $body = json_decode($inputJSON, true);

@@ -456,7 +456,6 @@ label[for="sidebar-toggle"] {
   padding: 1rem;
 }
 
-/* FIXME: tutti i prodotti sembrano essere già visitati perchè l'url è unico, trovare una soluzione? */
 .anteprima-prodotto a {
   display: block;
   color: inherit;
@@ -1117,6 +1116,7 @@ input[type="password"] {
   /*CONSULENZA ONLINE*/
   .bg-pagina-consulenze {
     width: 100%;
+    /* FIXME pagine alte sbarella il flexbox?? */
     height: 100%;
   }
 

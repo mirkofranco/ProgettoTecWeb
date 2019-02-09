@@ -89,7 +89,6 @@
             $mainContainer->setAttribute("id", $this->idProdotto);
             $mainContainer->setAttribute("class", "anteprima-prodotto");
 
-            // FIXME: così prima viene letto "vai ai dettagli di.." ma non ho ancora visto l'elemento; forse non è molto accessibile....
             $detailsLink = $document->createElement("a");
             $detailsLink->setAttribute("href","./dettaglio_prodotto.php?id=" . $this->idProdotto);
             $detailsLink->setAttribute("title", "vai alla pagina dei dettagli di questo prodotto");
