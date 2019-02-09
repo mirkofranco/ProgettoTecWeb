@@ -1158,6 +1158,87 @@ input[type="password"] {
   a[href]:after {
     content: " ("attr(href)") ";
   }
+
+@page :left {
+  margin-left: 2.5cm;
+}
+
+@page :right {
+  margin-left: 2.5cm;
+}
+
+
+  html,
+  body {
+    background-color: white;
+    /* questi sotto servono per impedire che si generi una pagina in più a caso nella stampa */
+    height:100vh; 
+    margin: 0 !important; 
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  #logo {
+    content:url('../images/logo/logo_stampa.png');
+    height: 20%;
+
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  nav {
+    display: none;
+
+  }
+
+  .breadcrumb {
+    display: none;
+    /*text-align: left;*/
+  }
+
+  .slideshow-container {
+    display: none;
+    box-sizing: 0;
+  }
+
+  #descrizione-azienda-index img {
+    display: none;
+  }
+
+  #footer p{
+    color: black;
+  }
+
+  #footer img, a { /* così però sparisce anche la mail! lasciamo così? */
+    display: none;
+  }
+
+  #descrizione.azienda img {
+    display: right;
+    height: 50%;
+  }
+
+  .contenuto img{ 
+    display: none;
+
+  }
+
+  .padded-text-container {
+    padding-top: 0;
+  }
+  .orari-apertura {
+    margin-top: 0;
+    page-break-inside: avoid;
+    /*page-break-before: avoid;*/
+    /*page-break-after: avoid;*/
+  }
+
+  .print:last-child {
+     page-break-after: auto;
+}
+
 }
 
 .alert {
