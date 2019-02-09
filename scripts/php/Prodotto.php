@@ -85,7 +85,7 @@
             $document = new DOMDocument('1.0', 'utf-8');
             $document->formatOutput = true;
 
-            $mainContainer = $document->createElement("div");
+            $mainContainer = $document->createElement("section");
             $mainContainer->setAttribute("id", $this->idProdotto);
             $mainContainer->setAttribute("class", "anteprima-prodotto");
 
@@ -97,7 +97,7 @@
 
             $img = $document->createElement("img");
             $img->setAttribute("src", "./images/catalogo/" . $this->nomeImmaginePiccola);
-            $img->setAttribute("alt", "immagine del prodotto");
+            $img->setAttribute("alt", "");
             $detailsLink->appendChild($img);
 
             $textContainer = $document->createElement("div");
@@ -109,7 +109,7 @@
             $textContainer->appendChild($name);
 
             $brand = $document->createElement("span", htmlspecialchars($this->marca));
-            $brand->setAttribute("title", "marca del prodotto");
+            $brand->setAttribute("title", "marca");
             $brand->setAttribute("class", "prodotto-info-normale");
             $textContainer->appendChild($brand);
 
@@ -127,18 +127,6 @@
 
             return $mainContainer;
         }
-
-        // <div id="$this->idProdotto" class="anteprima-prodotto">
-        //   <a href="./dettaglio_prodotto.php?id=$this->idProdotto" title="vai alla pagina dei dettagli di questo prodotto">
-        //     <img src="./images/catalogo/thumbnails/$this->nomeImmaginePiccola" alt="immagine del prodotto" />
-        //     <div class="anteprima-testo">
-        //       <h3 class="prodotto-info-importante">nome</h3>
-        //       <span title="marca del prodotto" class="prodotto-info-normale"> marca </span>
-        //       <span title="prezzo del prodotto" class="prodotto-info-importante">€ 1400</h4>
-        //     </div>
-        //     pulsante "ottieni link a prodotto"? TODO?
-        //   </a>
-        // </div>
 
         /**
          * restituisce il codice HTML da inserire nella pagina dettaglio di questo prodotto
@@ -161,12 +149,12 @@
             $textContainer->setAttribute("class","dettaglio-testo");
             $mainContainer->appendChild($textContainer);
 
-            $name = $document->createElement("h3", $this->nome);
+            $name = $document->createElement("h1", $this->nome);
             $name->setAttribute("class", "prodotto-info-importante");
             $textContainer->appendChild($name);
      
             $brand = $document->createElement("span", htmlspecialchars($this->marca));
-            $brand->setAttribute("title", "marca del prodotto");
+            $brand->setAttribute("title", "marca");
             $brand->setAttribute("class", "prodotto-info-normale");
             $textContainer->appendChild($brand);
 
@@ -182,24 +170,12 @@
             }
 
             $description = $document->createElement("p", $this->descrizione);
-            $description->setAttribute("title", "descrizione del prodotto");
+            $description->setAttribute("title", "descrizione");
             $brand->setAttribute("class", "prodotto-info-normale");
             $textContainer->appendChild($description);
 
             return $document->saveXML($mainContainer);
         }
-
-        // <div class="dettaglio-prodotto clearfix">
-        //   <img src="./images/catalogo/$this->nomeImmagine" alt="immagine del prodotto" />
-        //   <div class="dettaglio-testo">
-        //     <h3 class="prodotto-info-importante">$this->nome</h3>
-        //     <span title="marca del prodotto" class="prodotto-info-normale">$this->marca</span>
-        //     <span title="prezzo del prodotto" class="prodotto-info-importante">€ $this->prezzo</span>
-        //     <p title="descrizione del prodotto" class="prodotto-info-normale">
-        //       $this->descrizione
-        //     </p>
-        //   </div>
-        // </div>
 
     }
 ?>

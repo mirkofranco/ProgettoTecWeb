@@ -109,6 +109,15 @@ a {
   display: none;
 }
 
+.hidden-but-accessible {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* FILE _INIZIO.HTML */
 
 /* ---------- header ---------- */
@@ -178,7 +187,7 @@ label[for="sidebar-toggle"] {
   display: none;
 }
 
-#menu-toggle:checked+ul, #sidebar-toggle:checked+nav {
+#menu-toggle:checked+ul, #sidebar-toggle:checked+#sidebar-catalogo {
   max-height: 9999px;
 }
 
@@ -573,10 +582,6 @@ label[for="sidebar-toggle"] {
   width: 100%;
 }
 
-.dettaglio-prodotto h3 {
-  padding-top: 1rem;
-}
-
 /* stile per tutti i campi */
 .dettaglio-testo p, .dettaglio-testo span {
   padding: .25rem 0;
@@ -587,9 +592,13 @@ label[for="sidebar-toggle"] {
 }
 
 /* stile per nome del prodotto */
-.dettaglio-testo h3 {
+.dettaglio-testo h1 {
   font-size: 2rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+
+  /* sovrascrivo h1 generico */
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 /* stile per marca del prodotto */
@@ -609,12 +618,11 @@ label[for="sidebar-toggle"] {
   margin: 1em auto;
 }
 
-.box-commenti h4 {
-  font-size: 1.5rem;
-  width: 90%;
+.box-commenti h1 {
   padding: 1.5rem 0 .3rem .5rem;
-  border-bottom: 1px solid #4c4a4a;
   margin-bottom: 1rem;
+
+  font-size: 1.5rem;
 }
 
 .commento {
@@ -973,6 +981,7 @@ input[type="password"] {
 
   #sidebar-catalogo {
     position: absolute;
+    top: 0;
 
     width: 30vw;
     padding: 1em 0;
@@ -982,7 +991,6 @@ input[type="password"] {
     #sidebar-catalogo {
       position: sticky;
       float: left;
-      top: 0;
 
       height: 100vh;
       overflow-y: scroll;
@@ -1042,9 +1050,8 @@ input[type="password"] {
 /*PER DESKTOP E TABLET (LANDSCAPE) */
 @media only screen and (min-width: 1024px) {
   h1 {
-    width: 70vw;
+    width: 100%;
     padding: 1.5rem 0 .3rem .5rem;
-
     font-size: 2.5rem;
   }
 

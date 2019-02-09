@@ -7,15 +7,17 @@
     Menu Catalogo
   </label>
   <input type="checkbox" id="sidebar-toggle" />
-  <nav id="sidebar-catalogo">
-    <a href="./catalogo.php">ritorna al Catalogo</a>
-    {{contenutoDinamicoSidebar}}
-  </nav>
+  <aside id="sidebar-catalogo">
+    <h1 class="hidden-but-accessible">Menu di navigazione del catalogo</h1>
+    <nav>
+      <a href="./catalogo.php">ritorna al Catalogo</a>
+      {{contenutoDinamicoSidebar}}
+    </nav>
+  </aside>
 
   <section id="contenuto-catalogo">
     <h1>{{nomeCategoria}}</h1>
 
-<!-- FIXME: cambiare div in elementi semantici -->
     {{contenutoDinamicoCategoria}}
   </section>
 
