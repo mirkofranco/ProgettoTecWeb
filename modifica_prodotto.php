@@ -42,7 +42,7 @@ $previousNome = wrapValue($product->getNome());
 $previousMarca = wrapValue($product->getMarca());
 $previousPrezzo = wrapValue($product->getPrezzo());
 $previousData = wrapValue($product->getDataInizioPrezzo());
-$previousDescrizione = wrapValue($product->getDescrizione());
+$previousDescrizione = $product->getDescrizione();
 
 $previousIsOfferta = array('si' => '', 'no' => '');
 if ($product->getOfferta() == '0') {
@@ -117,13 +117,12 @@ if (isset($_POST['inserisciProdotto'])) {
             move_uploaded_file($tmp, $uploadDir . $_FILES['immagineProdotto']['name']);
             move_uploaded_file($tmpPiccola, $uploarDirPiccole . $_FILES['immaginePiccolaProdotto']['name']);
         }
-    } else {
+    }
         $previousNome = wrapValue($_POST['nomeProdotto']);
         $previousMarca = wrapValue($_POST['marcaProdotto']);
         $previousPrezzo = wrapValue($_POST['prezzoProdotto']);
         $previousData = wrapValue($_POST['dataInizioPrezzo']);
-        $previousDescrizione = wrapValue($_POST['Descrizione']);
-    }
+        $previousDescrizione = $_POST['Descrizione'];
 }
 
 $connection->close();

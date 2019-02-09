@@ -76,7 +76,7 @@
             $previousMarca =  "value=\"". $_POST['marcaProdotto']. "\"";
             $previousPrezzo = "value=\"". $_POST['prezzoProdotto']. "\"";
             $previousData =  "value=\"". $_POST['dataInizioPrezzo']. "\"";
-            $previousDescrizione =  "value=\"". $_POST['Descrizione']. "\"";
+            $previousDescrizione = $_POST['Descrizione'];
 
             if ($_POST['isOfferta'] == '1') {
                 $previousIsOfferta['si'] = "checked=\"checked\"";

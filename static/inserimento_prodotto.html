@@ -59,8 +59,8 @@
       <div class="col-25">
         <label for="descrizione-prodotto">Inserisci la descrizione del prodotto:</label>
       </div>
-      <div class="col-75"> <!-- FIXME: questo campo deve essere più alto! textarea? -->
-        <input class="form-input-border" type="text" {{previousDescrizione}} maxlength="400" id="descrizione-prodotto" name="Descrizione" placeholder="Scrivi qui una descrizione" required="required" />
+      <div class="col-75">
+        <textarea id="descrizione-prodotto" class="form-textarea form-input-border" name="Descrizione" maxlength="400" placeholder="Scrivi qui una descrizione" required="required">{{previousDescrizione}}</textarea>
       </div>
     </div>
     <div class="frow clearfix">

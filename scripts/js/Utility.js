@@ -60,9 +60,7 @@ function checkTextarea(nomeInput) {
 
 function checkDescrizioneProdotto(nomeInput) {
     togliErrore(nomeInput);
-    // var pattern = new RegExp('^[a-zA-Z0-9 ?!()".;,:\-_àòùèì"]{10,}$');
-    var pattern = new RegExp('^.{10,}$');
-    if (pattern.test(nomeInput.value)) {
+    if (nomeInput.value.length>10) {
         return true;
     } else {
         mostraErrore(nomeInput, "La descrizione deve contenere almeno 10 caratteri");
