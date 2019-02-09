@@ -13,7 +13,11 @@ $body = json_decode($inputJSON, true);
 $productId = $body["productId"];
 $userId = $_SESSION['user']->getIdentifier();
 // sanitizzazione commento per prevenire HTML injection
-$comment = str_replace(array("<script>", "</script>"), "" , $body["comment"]);
+$sanitize = array(
+    "<script>" => "",
+    "</script>" => ""
+);
+$comment = str_replace(array_keys($sanitize), array_values($sanitize) , $body["comment"]);
 
 $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
 $connection->connect();

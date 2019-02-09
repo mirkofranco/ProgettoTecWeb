@@ -5,8 +5,6 @@ require_once './scripts/php/Sessione.php';
 Sessione::startSession();
 Sessione::reservedPage();
 
-//TODO eliminare immagini se nuova immagine != vecchia; 
-
 // controlla che la query string contenga un id
 if (!(array_key_exists('id', $_REQUEST) && is_numeric($_REQUEST['id']))) {
     header("Location: ./404.php", 404);
