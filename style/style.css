@@ -1176,11 +1176,15 @@ input[type="password"] {
   html,
   body {
     background-color: white;
-    /* questi sotto servono per impedire che si generi una pagina in più a caso nella stampa */
+    /* questi sotto servono per impedire che si generi una pagina in più per sbaglio
+       nella stampa, ma il problema è che non genera la seconda pagina di about us
+       non mi viene in mente una soluzione :(
+
     height:100vh; 
     margin: 0 !important; 
     padding: 0 !important;
     overflow: hidden;
+    */
   }
 
   #logo {
@@ -1233,16 +1237,28 @@ input[type="password"] {
   .padded-text-container {
     padding-top: 0;
   }
+  
   .orari-apertura {
     margin-top: 0;
     page-break-inside: avoid;
-    /*page-break-before: avoid;*/
-    /*page-break-after: avoid;*/
   }
 
-  .print:last-child {
-     page-break-after: auto;
-}
+  .dettaglio-prodotto img {
+    display: initial !important;
+    width: 90%;
+  }
+
+  .box-commenti {
+    display: none;
+  }
+
+  .link-dettaglio-prodotto {
+    display: none;
+  }
+
+  .pannello-admin {
+    display: none;
+  }
 
 }
 
