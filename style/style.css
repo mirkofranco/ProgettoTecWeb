@@ -806,8 +806,7 @@ label {
   padding-top: 56.25%;
   margin: 2%;
 
-  /* FIXME????? */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #embedded-map iframe {

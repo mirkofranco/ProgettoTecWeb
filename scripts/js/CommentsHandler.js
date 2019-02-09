@@ -26,9 +26,12 @@ if (sendButton)
         request.setRequestHeader("Content-type", "application/json");
         request.onreadystatechange = commentSentCallback;
 
+        var newComment = document.getElementById("new-comment");
+        // IE fallback
+        var textContent = newComment.textContent || newComment.innerText;
         var body = {
             productId: document.getElementsByClassName("dettaglio-prodotto")[0].id,
-            comment: document.getElementById("new-comment").innerHTML
+            comment: textContent
         };
 
         if (!body.comment) { // se il campo è vuoto non inviare nulla
@@ -46,10 +49,19 @@ function commentSentCallback() {
             return;
         }
 
-        document.getElementById("new-comment").removeAttribute("contenteditable");
-        var hidethis = document.getElementById("send-comment");
-        hidethis.classList.replace("submit-action", "hidden")
-        hidethis.setAttribute("hidden", "hidden");
+        var sentComment = document.getElementById("new-comment");
+        sentComment.removeAttribute("contenteditable");
+
+        var authorText = sentComment.previousElementSibling ;
+        // IE fallback
+        var text = authorText.textContent || authorText.innerText;
+        authorText.innerHTML = text.replace("Scrivi un commento come: ", "") + "ha scritto: ";
+
+        var newNode = document.createElement("div");
+        newNode.id="send-comment";
+        newNode.innerHTML = "ricarica la pagina per inviare altri commenti";
+        
+        var sendButton = document.getElementById("send-comment");
+        sendButton.replaceWith(newNode);
     }
-    // TODO aggiungere spazio per nuovo commento....
 }

@@ -31,7 +31,7 @@ if (!isset($_SESSION['user'])) {
                             <a href=\"elimina_prodotto.php?id=$_GET[id]&previous=$_SERVER[HTTP_REFERER]\" class=\"submit-action\">Elimina</a>
                           </div>";
     }
-    $authorText = $currentUser->getNome(). " ". $currentUser->getCognome()." (".$currentUser->getUsername(). ")";
+    $authorText = "Scrivi un commento come: " . $currentUser->getNome(). " ". $currentUser->getCognome()." (".$currentUser->getUsername(). ")";
     $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
 }
 
@@ -76,5 +76,3 @@ $page = str_replace(array_keys($daSostituire), array_values($daSostituire),
     file_get_contents('./static/_inizio.html') . file_get_contents('./static/dettaglio_prodotto.html') . file_get_contents("./static/_fine.html"));
 
 echo $page;
-
-// FIXME: prodotto in offerta???
