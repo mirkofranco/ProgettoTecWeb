@@ -1117,21 +1117,19 @@ label, legend {
 
 /*------------------- PRINT STYLE -------------------*/
 
-/* TODO print style!!*/
-
 /* aggiunge l'indirizzo del link nel testo stampato */
 @media print {
   /* a[href]:after {
     content: " ("attr(href)") ";
   } */
 
-@page :left {
-  margin-left: 2.5cm;
-}
+  @page :left {
+    margin-left: 2.5cm;
+  }
 
-@page :right {
-  margin-left: 2.5cm;
-}
+  @page :right {
+    margin-left: 2.5cm;
+  }
 
 
   html,
@@ -1149,7 +1147,7 @@ label, legend {
   }
 
   #logo {
-    content:url('../images/logo/logo_stampa.png');
+    content: url('../images/logo/logo_stampa.png');
     height: 20%;
 
   }
@@ -1177,11 +1175,12 @@ label, legend {
     display: none;
   }
 
-  #footer p{
+  #footer p {
     color: black;
   }
 
-  #footer img, a { /* così però sparisce anche la mail! lasciamo così? */
+  #footer img, a {
+    /* FIXME così però sparisce anche la mail! lasciamo così? */
     display: none;
   }
 
@@ -1190,7 +1189,7 @@ label, legend {
     height: 50%;
   }
 
-  .contenuto img{ 
+  .contenuto img {
     display: none;
 
   }
@@ -1198,13 +1197,14 @@ label, legend {
   .padded-text-container {
     padding-top: 0;
   }
-  
+
   .orari-apertura {
     margin-top: 0;
     page-break-inside: avoid;
   }
 
   .dettaglio-prodotto img {
+    /* FIXME l'utilizzo di important è sconsigliato dalle linee guida per il css; credo che non passi la validazione w3c */
     display: initial !important;
     width: 90%;
   }
