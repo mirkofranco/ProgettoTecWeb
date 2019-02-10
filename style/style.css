@@ -689,7 +689,7 @@ label[for="sidebar-toggle"] {
 .testo-commento {
   padding: .5em;
 
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .autore-commento a {
@@ -1000,6 +1000,7 @@ label, legend {
   /*stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {
     width: 50%;
+    margin: inherit;
   }
 
   /*CONSULENZA ONLINE*/
