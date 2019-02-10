@@ -689,7 +689,7 @@ label[for="sidebar-toggle"] {
 .testo-commento {
   padding: .5em;
 
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .autore-commento a {
