@@ -288,6 +288,7 @@ label[for="sidebar-toggle"] {
 
   user-select: none;
   cursor: pointer;
+  /* fallback perché IE non supporta rgba */
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.6);
 }
@@ -302,6 +303,7 @@ label[for="sidebar-toggle"] {
 .slideshow-text {
   position: absolute;
   top: 0;
+  /* fallback perché IE non supporta rgba */
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.6);
   color: #f2f2f2;
@@ -425,6 +427,7 @@ label[for="sidebar-toggle"] {
   padding: .8rem 1.5rem;
   border: .5px solid #fff;
 
+  /* fallback perché IE non supporta rgba */
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.6);
 
