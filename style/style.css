@@ -1120,7 +1120,6 @@ label, legend {
 
 /*------------------- PRINT STYLE -------------------*/
 
-/* aggiunge l'indirizzo del link nel testo stampato */
 @media print {
   @page :left {
     margin-left: 2.5cm;
