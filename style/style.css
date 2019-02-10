@@ -1122,10 +1122,6 @@ label, legend {
 
 /* aggiunge l'indirizzo del link nel testo stampato */
 @media print {
-  /* a[href]:after {
-    content: " ("attr(href)") ";
-  } */
-
   @page :left {
     margin-left: 2.5cm;
   }
