@@ -30,6 +30,7 @@
             $user = new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email']);
             if($connection -> insertUtente($user) ){
                 $_SESSION['user'] = $user;
+                $successForm="Complimenti, la registrazione è avvenuta con successo!";
             }else{
                 $errorForm .= "Si è verificato un errore durante l'inserimento. Riprova!";
             }

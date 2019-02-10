@@ -1148,7 +1148,7 @@ label, legend {
 
   #logo {
     content: url('../images/logo/logo_stampa.png');
-    height: 20%;
+    height: 10%;
 
   }
 
@@ -1163,7 +1163,6 @@ label, legend {
 
   .breadcrumb {
     display: none;
-    /*text-align: left;*/
   }
 
   .slideshow-container {
@@ -1174,14 +1173,9 @@ label, legend {
   #descrizione-azienda-index img {
     display: none;
   }
-
-  #footer p {
-    color: black;
-  }
-
-  #footer img, a {
-    /* FIXME così però sparisce anche la mail! lasciamo così? */
-    display: none;
+  
+  .descrizione-socio {
+    padding: .5rem;
   }
 
   #descrizione.azienda img {
@@ -1220,5 +1214,15 @@ label, legend {
   .pannello-admin {
     display: none;
   }
+  
+  #footer p {
+    color: black;
+    float: left;
+  }
+
+  #footer img {
+    display: none;
+  }
+
 
 }
