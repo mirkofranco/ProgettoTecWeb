@@ -8,7 +8,8 @@
 
 /* improved box-sizing behaviour */
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /* Avoid browser default inconsistent heading and pre/code font-sizes */
@@ -27,7 +28,8 @@ fieldset {
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 
   font-size: 100%;
 }
@@ -48,8 +50,13 @@ html, body {
 
 /* attacca il footer sul fondo della pagina se c'è poco contenuto */
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 strong {
@@ -88,12 +95,17 @@ a {
 
 /* contenitore riutilizzabile per wrapped flexbox */
 .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-centered {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .flex-element {
@@ -168,6 +180,7 @@ a {
 .header-button:hover {
   background-color: #fff;
   color: #000;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
@@ -193,7 +206,8 @@ label[for="sidebar-toggle"] {
 
   background-color: #f1f1f1;
   color: #000;
-  box-shadow: 0 0 6px gray;
+  -webkit-box-shadow: 0 0 6px gray;
+          box-shadow: 0 0 6px gray;
 }
 
 #menu-toggle, #sidebar-toggle {
@@ -207,6 +221,8 @@ label[for="sidebar-toggle"] {
 #navbar ul, #sidebar-catalogo {
   overflow: hidden;
   max-height: 0;
+
+  -webkit-transition: max-height 0.7s ease-in-out;
 
   transition: max-height 0.7s ease-in-out;
 }
@@ -225,6 +241,8 @@ label[for="sidebar-toggle"] {
   color: #000;
   font-size: 1.1rem;
 
+  -webkit-transition: all .35s ease-in-out;
+
   transition: all .35s ease-in-out;
 }
 
@@ -239,6 +257,7 @@ label[for="sidebar-toggle"] {
 #navbar .navbar-element:hover {
   background-color: #4c4a4a;
   color: #fff;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
@@ -288,6 +307,7 @@ label[for="sidebar-toggle"] {
   top: 50%;
 
   width: auto;
+  -webkit-transition: 0.6s ease;
   transition: 0.6s ease;
   padding: 16px;
   border-radius: 0 3px 3px 0;
@@ -298,7 +318,13 @@ label[for="sidebar-toggle"] {
   font-weight: bold;
   font-size: 1.1rem;
 
-  user-select: none;
+  -webkit-user-select: none;
+
+     -moz-user-select: none;
+
+      -ms-user-select: none;
+
+          user-select: none;
   cursor: pointer;
   /* fallback perché IE non supporta rgba */
   background: rgb(0, 0, 0);
@@ -339,6 +365,7 @@ label[for="sidebar-toggle"] {
   border: none;
   border-radius: 60%;
   margin: 0 .5rem;
+  -webkit-transition: background-color 0.6s ease;
   transition: background-color 0.6s ease;
 
   background-color: #bbb;
@@ -355,8 +382,20 @@ label[for="sidebar-toggle"] {
 
 /*Animazione che controlla il fading*/
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
@@ -436,7 +475,8 @@ label[for="sidebar-toggle"] {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 
   display: block;
   padding: .8rem 1.5rem;
@@ -487,7 +527,9 @@ label[for="sidebar-toggle"] {
 
 .anteprima-prodotto a:hover {
   padding: 1rem;
-  box-shadow: 0 0 6px gray;
+  -webkit-box-shadow: 0 0 6px gray;
+          box-shadow: 0 0 6px gray;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
@@ -587,7 +629,8 @@ label[for="sidebar-toggle"] {
 
   background-color: #f1f1f1;
   color: black;
-  box-shadow: 0 0 6px gray;
+  -webkit-box-shadow: 0 0 6px gray;
+          box-shadow: 0 0 6px gray;
 
   cursor: pointer;
 
@@ -596,7 +639,9 @@ label[for="sidebar-toggle"] {
 .link-dettaglio-prodotto:hover {
   background-color: #4c4a4a;
   color: #fff;
-  box-shadow: 0 0 6px gray;
+  -webkit-box-shadow: 0 0 6px gray;
+          box-shadow: 0 0 6px gray;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 
   cursor: pointer;
@@ -676,6 +721,7 @@ label[for="sidebar-toggle"] {
 }
 
 #new-comment[contenteditable="true"]:hover {
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
@@ -760,7 +806,8 @@ label, legend {
 
   background-color: #f1f1f1;
   color: black;
-  box-shadow: 0 0 6px gray;
+  -webkit-box-shadow: 0 0 6px gray;
+          box-shadow: 0 0 6px gray;
   text-align: center;
   font-size: .8rem;
   cursor: pointer;
@@ -773,13 +820,16 @@ label, legend {
 #fname:hover,
 #fname:active {
   border: .5px solid black;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
 .submit-action:hover, label[for="sidebar-toggle"]:hover {
   background-color: #4c4a4a;
   color: #fff;
-  box-shadow: 0 0 6px gray;
+  -webkit-box-shadow: 0 0 6px gray;
+          box-shadow: 0 0 6px gray;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 
   cursor: pointer;
@@ -920,6 +970,7 @@ label, legend {
 
   background-color: #fff;
   color: #000;
+  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
@@ -982,8 +1033,9 @@ label, legend {
     padding: 1em 0;
   }
 
-  @supports(position: sticky) {
+  @supports((position: -webkit-sticky) or (position: sticky)) {
     #sidebar-catalogo {
+      position: -webkit-sticky;
       position: sticky;
       float: left;
 
@@ -1106,6 +1158,7 @@ label, legend {
   .catalogo a:hover {
     background-color: #fff;
     color: #000;
+    -webkit-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out;
   }
 
