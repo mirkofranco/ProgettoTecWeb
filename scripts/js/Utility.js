@@ -69,9 +69,9 @@ function checkDescrizioneProdotto(nomeInput) {
 }
 
 function togliErrore(input) {
-    var parent = input.parentNode;
-    if (parent.children.length > 1) {
-        parent.removeChild(parent.children[1]);
+    var sibling = input.nextElementSibling;
+    if (sibling && sibling.className.includes("messaggio-errore-form")) {
+        sibling.parentNode.removeChild(sibling);
     }
 }
 
