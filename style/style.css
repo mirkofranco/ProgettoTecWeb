@@ -118,8 +118,13 @@ a {
   position: absolute;
   left: -9999px;
   top: auto;
+
   width: 1px;
   height: 1px;
+  padding: 0;
+  border: none;
+  margin: 0;
+
   overflow: hidden;
 }
 
@@ -213,7 +218,7 @@ label[for="sidebar-toggle"] {
   /* elimina il padding di flex-element */
   padding: 0;
 
-  color: black;
+  color: #000;
   font-size: 1.1rem;
 
   transition: all .35s ease-in-out;
@@ -363,7 +368,7 @@ label[for="sidebar-toggle"] {
   display: block;
   width: 40vw;
   margin: auto;
-  border-radius: 100vh;
+  border-radius: 100%;
 }
 
 #descrizione-azienda-index>p {
@@ -385,13 +390,13 @@ label[for="sidebar-toggle"] {
 }
 
 .descrizione-socio {
-  padding: 2rem;
-  padding-bottom: 4rem;
+  /* bottom 4 rem */
+  padding: 2rem 2rem 4rem;
 }
 
 .img-socio {
   width: 15vw;
-  border-radius: 100vh;
+  border-radius: 100%;
   margin: 1rem;
 }
 
@@ -514,8 +519,7 @@ label[for="sidebar-toggle"] {
 
 #sidebar-catalogo a {
   display: block;
-  padding: 8px;
-  padding-left: 32px;
+  padding: 8px 8px 8px 32px;
 
   color: #000;
 }
@@ -766,9 +770,7 @@ label, legend {
   padding: 1rem;
   border: 1px solid #a4a4a4;
   width: 80%;
-  margin: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin: 5vh auto;
 
   background-color: white;
 }
