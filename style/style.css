@@ -139,6 +139,7 @@ a {
 
 .header {
   background-color: #4c4a4a;
+  color: inherit;
 }
 
 .header-left {
@@ -160,6 +161,7 @@ a {
 
   text-align: center;
   font-size: .8rem;
+  background-color: inherit;
   color: #fff;
 }
 
@@ -190,6 +192,7 @@ label[for="sidebar-toggle"] {
   border: .5px solid #000;
 
   background-color: #f1f1f1;
+  color: #000;
   box-shadow: 0 0 6px gray;
 }
 
@@ -218,6 +221,7 @@ label[for="sidebar-toggle"] {
   /* elimina il padding di flex-element */
   padding: 0;
 
+  background-color: inherit;
   color: #000;
   font-size: 1.1rem;
 
@@ -227,6 +231,8 @@ label[for="sidebar-toggle"] {
 #navbar .navbar-element {
   display: block;
   padding: 0 1rem;
+
+  background-color: inherit;
   color: #000;
 }
 
@@ -287,6 +293,7 @@ label[for="sidebar-toggle"] {
   border-radius: 0 3px 3px 0;
   margin-top: -22px;
 
+  background-color: inherit;
   color: white;
   font-weight: bold;
   font-size: 1.1rem;
@@ -335,6 +342,7 @@ label[for="sidebar-toggle"] {
   transition: background-color 0.6s ease;
 
   background-color: #bbb;
+  color: inherit;
 
   cursor: pointer;
 }
@@ -342,6 +350,7 @@ label[for="sidebar-toggle"] {
 .dotactive,
 .dot:hover {
   background-color: #717171;
+  color: inherit;
 }
 
 /*Animazione che controlla il fading*/
@@ -436,7 +445,6 @@ label[for="sidebar-toggle"] {
   /* fallback perché IE non supporta rgba */
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.6);
-
   color: #fff;
   font-size: 1.2rem;
 }
@@ -472,6 +480,8 @@ label[for="sidebar-toggle"] {
 
 .anteprima-prodotto a {
   display: block;
+
+  background-color: inherit;
   color: inherit;
 }
 
@@ -514,13 +524,16 @@ label[for="sidebar-toggle"] {
 
 #sidebar-catalogo {
   width: 100%;
+
   background-color: #f1f1f1;
+  color: inherit;
 }
 
 #sidebar-catalogo a {
   display: block;
   padding: 8px 8px 8px 32px;
 
+  background-color: inherit;
   color: #000;
 }
 
@@ -537,14 +550,17 @@ label[for="sidebar-toggle"] {
 }
 
 #sidebar-catalogo .sidebar-current-page a:hover {
+  background-color: inherit;
   color: #fff;
 }
 
 .sidebar-current-page {
   background-color: #4c4a4a;
+  color: inherit;
 }
 
 .sidebar-current-page h2, .sidebar-current-page h3 {
+  background-color: inherit;
   color: #fff;
   font-weight: normal;
 }
@@ -666,6 +682,7 @@ label[for="sidebar-toggle"] {
 .autore-commento {
   padding: .5em;
 
+  background-color: inherit;
   color: grey;
 }
 
@@ -676,11 +693,13 @@ label[for="sidebar-toggle"] {
 }
 
 .autore-commento a {
-  text-decoration: underline;
+  background-color: inherit;
   color: grey;
+  text-decoration: underline;
 }
 
 .autore-commento a:hover {
+  background-color: inherit;
   color: #000;
 }
 
@@ -773,6 +792,7 @@ label, legend {
   margin: 5vh auto;
 
   background-color: white;
+  color: inherit;
 }
 
 /* colonne di larghezza 25% e 75%*/
@@ -786,6 +806,7 @@ label, legend {
 /*messaggio di errore nei form*/
 .messaggio-errore-form {
   line-height: 2rem;
+  background-color: inherit;
   color: red;
   text-align: left;
   font-weight: bold;
@@ -794,6 +815,7 @@ label, legend {
 /*messaggio di successo dell'invio nei form*/
 .messaggio-successo-form {
   line-height: 2rem;
+  background-color: inherit;
   color: green;
   text-align: left;
   font-weight: bold;
@@ -860,6 +882,7 @@ label, legend {
   margin-top: auto;
 
   background-color: #4c4a4a;
+  color: inherit;
 }
 
 #footer img {
@@ -1135,7 +1158,8 @@ label, legend {
 
   html,
   body {
-    background-color: white;
+    background-color: #fff;
+    color: #000;
     /* questi sotto servono per impedire che si generi una pagina in più per sbaglio
        nella stampa, ma il problema è che non genera la seconda pagina di about us
        non mi viene in mente una soluzione :(
@@ -1209,6 +1233,7 @@ label, legend {
   }
 
   #footer p {
+    background-color: white;
     color: black;
     float: left;
   }
