@@ -324,12 +324,13 @@ label[for="sidebar-toggle"] {
   height: .5rem;
   width: .5rem;
   padding: 0;
+  border: none;
   border-radius: 60%;
   margin: 0 .5rem;
   transition: background-color 0.6s ease;
 
   background-color: #bbb;
-  border: none;
+
   cursor: pointer;
 }
 
@@ -574,8 +575,8 @@ label[for="sidebar-toggle"] {
 
 .link-dettaglio-prodotto:hover {
   background-color: #4c4a4a;
-  box-shadow: 0 0 6px gray;
   color: #fff;
+  box-shadow: 0 0 6px gray;
   transition: all .35s ease-in-out;
 
   cursor: pointer;
@@ -754,8 +755,8 @@ label, legend {
 
 .submit-action:hover, label[for="sidebar-toggle"]:hover {
   background-color: #4c4a4a;
-  box-shadow: 0 0 6px gray;
   color: #fff;
+  box-shadow: 0 0 6px gray;
   transition: all .35s ease-in-out;
 
   cursor: pointer;
@@ -879,21 +880,21 @@ label, legend {
 }
 
 #error-page-content a {
-  text-align: center;
-
   display: inline-block;
   margin: .5rem;
-
-  color: #fff;
-  background-color: #4c4a4a;
   padding: .6rem 1.3rem;
   border: .5px solid #fff;
+
+  background-color: #4c4a4a;
+  color: #fff;
+  text-align: center;
 }
 
 #error-page-content a:hover {
-  color: #000;
-  background-color: #fff;
   border: .5px solid #000;
+
+  background-color: #fff;
+  color: #000;
   transition: all .35s ease-in-out;
 }
 
@@ -962,7 +963,7 @@ label, legend {
       float: left;
 
       height: 100vh;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
   }
 
@@ -1170,11 +1171,11 @@ label, legend {
   #descrizione-azienda-index img {
     display: none;
   }
-  
+
   .descrizione-socio, .descrizione-azienda {
     padding: .5rem;
   }
-  
+
   .contenuto img {
     display: none;
   }
@@ -1204,7 +1205,7 @@ label, legend {
   .pannello-admin {
     display: none;
   }
-  
+
   #footer p {
     color: black;
     float: left;
