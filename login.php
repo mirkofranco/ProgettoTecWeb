@@ -12,15 +12,23 @@ if (isset($_POST['login'])) {
         $_SESSION['user'] = $utente;
     }
 } else {
-    if (array_key_exists('HTTP_REFERER', $_SERVER)) {
-        $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        // aggiorna previous page solo se non corrispondono alla pagina di login o registrazione
+        if (strpos($_SERVER['HTTP_REFERER'], "login") === false &&
+            strpos($_SERVER['HTTP_REFERER'], "registrazione") === false) {
+            $_SESSION['previousPage'] = $_SERVER['HTTP_REFERER'];
+        }
     } else {
         $_SESSION['previousPage'] = "./index.php";
     }
 }
 
+// se il login/registrazione è andato a buon fine, elimina la variabile e redirige alla pagina precedente
 if (isset($_SESSION['user'])) {
-    header("Location: " . $_SESSION['previousPage']);
+    $temp = $_SESSION['previousPage'];
+    unset($_SESSION['previousPage']);
+
+    header("Location: " . $temp);
 }
 
 $gestioneLogin = "<a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
