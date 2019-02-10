@@ -1000,7 +1000,6 @@ label, legend {
   /*stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {
     width: 50%;
-    margin: inherit;
   }
 
   /*CONSULENZA ONLINE*/
@@ -1147,14 +1146,11 @@ label, legend {
 /*------------------- PRINT STYLE -------------------*/
 
 @media print {
-  @page :left {
-    margin-left: 2.5cm;
-  }
 
-  @page :right {
-    margin-left: 2.5cm;
+  @page {
+    size: A4;
+    margin: 2.5cm;
   }
-
 
   html,
   body {
@@ -1174,7 +1170,6 @@ label, legend {
   #logo {
     content: url('../images/logo/logo_stampa.png');
     height: 10%;
-
   }
 
   .header-right {
