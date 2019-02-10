@@ -1000,6 +1000,7 @@ label, legend {
   /*stile tablet delle sottopagine catalogo */
   .anteprima-prodotto {
     width: 50%;
+    margin: inherit;
   }
 
   /*CONSULENZA ONLINE*/
