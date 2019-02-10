@@ -19,7 +19,7 @@ function checkFieldWithSpaces(nomeInput, howMany = 2) {
     if (pattern.test(nomeInput.value.trim())) {
         return true;
     } else {
-        mostraErrore(nomeInput, "Il campo deve contenere almeno " + howMany + " caratteri");
+        //mostraErrore(nomeInput, "Il campo deve contenere almeno " + howMany + " caratteri");
         return false;
     }
 }
@@ -31,7 +31,7 @@ function checkForm(nomeInput) {
     if (pattern.test(nomeInput.value)) {
         return true;
     } else {
-        mostraErrore(nomeInput, "Il campo deve contenere almeno 4 caratteri");
+        //mostraErrore(nomeInput, "Il campo deve contenere almeno 4 caratteri");
         return false;
     }
 }
@@ -42,7 +42,7 @@ function checkPassword(nomeInput) {
     if (pattern.test(nomeInput.value)) {
         return true;
     } else {
-        mostraErrore(nomeInput, "La password deve contenere almeno 4 caratteri alfanumerici");
+        //mostraErrore(nomeInput, "La password deve contenere almeno 4 caratteri alfanumerici");
         return false;
     }
 }
