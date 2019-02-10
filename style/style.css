@@ -1167,25 +1167,18 @@ label, legend {
 
   .slideshow-container {
     display: none;
-    box-sizing: 0;
   }
 
   #descrizione-azienda-index img {
     display: none;
   }
   
-  .descrizione-socio {
+  .descrizione-socio, .descrizione-azienda {
     padding: .5rem;
   }
-
-  #descrizione.azienda img {
-    display: right;
-    height: 50%;
-  }
-
+  
   .contenuto img {
     display: none;
-
   }
 
   .padded-text-container {
@@ -1198,8 +1191,7 @@ label, legend {
   }
 
   .dettaglio-prodotto img {
-    /* FIXME l'utilizzo di important è sconsigliato dalle linee guida per il css; credo che non passi la validazione w3c */
-    display: initial !important;
+    display: initial;
     width: 90%;
   }
 
