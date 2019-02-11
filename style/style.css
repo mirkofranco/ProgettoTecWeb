@@ -1165,6 +1165,7 @@ label, legend {
   /*CONSULENZA ONLINE*/
   .bg-pagina-consulenze {
     width: 100%;
+    height: 100%;
   }
 
   .fcontainer {
