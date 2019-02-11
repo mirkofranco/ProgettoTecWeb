@@ -24,10 +24,21 @@
             $errorForm .= "La password deve contenere almeno quattro caratteri<br/>";
         }
 
-        if($errorForm == ""){
-            $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
-            $connection -> connect();
-            $user = new Utente($_POST['nome'], $_POST['cognome'], $_POST['username'], md5($_POST['password']), $_POST['email']);
+        $connection = new MySqlDatabaseConnection("localhost", "mifranco", "mifranco", "Aideebe4esooDuqu");
+        $connection -> connect();
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $checkExisting = $connection->checkExistingUsernameAndEmail($username, $email);
+
+        if ($checkExisting[0] > 0) {
+            $errorForm .= "Esiste già un utente con questo username<br />";
+        }
+        if ($checkExisting[1] > 0) {
+            $errorForm .= "Esiste già un utente con questo indirizzo email<br />";
+        }
+
+        if($errorForm == "") {
+            $user = new Utente($_POST['nome'], $_POST['cognome'], $username , md5($_POST['password']), $email);
             if($connection -> insertUtente($user) ){
                 $_SESSION['user'] = $user;
                 $successForm="Complimenti, la registrazione è avvenuta con successo!";

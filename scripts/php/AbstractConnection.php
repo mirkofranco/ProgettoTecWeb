@@ -25,6 +25,8 @@
 
         public abstract function searchUtenteForLogin($username, $password);
 
+        public abstract function checkExistingUsernameAndEmail($username, $email);
+
         public abstract function listaSottoCategorie();
 
         public abstract function listaCategorie();

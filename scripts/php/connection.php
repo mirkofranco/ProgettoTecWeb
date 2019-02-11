@@ -94,6 +94,17 @@ class MySqlDatabaseConnection extends AbstractConnection{
         return count($result) == 1 ? new Utente($result[0]['Nome'], $result[0]['Cognome'], $result[0]['Username'], $result[0]['Password'], $result[0]['Mail'], $result[0]['Permessi'], $result[0]['UID']) : null;
     }
 
+    public function checkExistingUsernameAndEmail($username, $email) {
+        $query = "SELECT COUNT(*) AS `existing` FROM UTENTE WHERE Username = ? UNION ALL SELECT COUNT(*) AS `existing` FROM UTENTE WHERE Mail = ? ";
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute(array($username, $email));
+
+        $result = $statement->fetchAll(PDO::FETCH_COLUMN);
+
+        return $result;
+    }
+
     /** ritorna solo le sottocategorie */
     public function listaSottoCategorie(){
         $query = "SELECT IDC, Nome FROM CATEGORIA WHERE IDCatPadre IS NOT NULL;";
