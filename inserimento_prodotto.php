@@ -54,8 +54,8 @@
         if(strlen($_POST['Descrizione']) < 10){
             $errorForm .= "La descrizione deve contenere almeno 10 caratteri<br/>";
         }
-        $uploadDir = '../ProgettoTecWeb/images/catalogo/';
-        $uploarDirPiccole = '../ProgettoTecWeb/images/catalogo/thumbnails/';
+        $uploadDir = './images/catalogo/';
+        $uploarDirPiccole = './images/catalogo/thumbnails/';
         $tmp = $_FILES['immagineProdotto']['tmp_name'];
         $tmpPiccola = $_FILES['immaginePiccolaProdotto']['tmp_name'];
         if(file_exists($uploadDir . $_FILES['immagineProdotto']['name'])){
