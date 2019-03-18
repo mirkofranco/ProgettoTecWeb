@@ -1,0 +1,23 @@
+<p class="breadcrumb">
+  Ti trovi nella pagina di login
+</p>
+<main class="contenuto">
+  <h1>Login</h1>
+  <form name="login" method="post" class="fcontainer">
+
+    <div class="frow clearfix">
+      <label for="fname" class="col-25">Nome utente:</label>
+      <input id="fname" class="form-input-border col-75" type="text" name="username" {{previousUN}} placeholder="Scrivi qui il tuo nome utente" required="required" autofocus="autofocus" />
+    </div>
+
+    <div class="frow clearfix">
+      <label for="femail" class="col-25">Password:</label>
+      <input id="femail" class="form-input-border col-75" type="password" name="Password" placeholder="Scrivi qui la tua password" required="required" />
+    </div>
+
+    <div class="frow clearfix">
+      <div class="messaggio-errore-form">{{errorForm}}</div>
+      <input type="submit" name="login" value="Login" class="submit-action" />
+    </div>
+  </form>
+</main>

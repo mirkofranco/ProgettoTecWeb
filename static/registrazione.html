@@ -1,0 +1,41 @@
+<p class="breadcrumb">
+  Ti trovi nella pagina di registrazione
+</p>
+
+<main class="contenuto">
+  <h1>Registrati</h1>
+  <form name="registrazione" id="registrazione" action="./registrazione.php" onsubmit="return controllaRegistrazione();" method="post" class="fcontainer">
+
+    <div class="frow clearfix">
+      <label for="fname" class="col-25">Nome:</label>
+      <input id="fname" maxlength="20" class="form-input-border col-75" type="text" name="nome" {{previousNome}} placeholder="Scrivi qui il tuo nome" required="required" />
+    </div>
+
+    <div class="frow clearfix">
+      <label for="fcognome" class="col-25">Cognome:</label>
+      <input id="fcognome" maxlength="20" class="form-input-border col-75" type="text" name="cognome" {{previousCognome}} placeholder="Scrivi qui il tuo cognome" required="required" />
+    </div>
+
+    <div class="frow clearfix">
+      <label for="fusername" class="col-25">Username:</label>
+      <input id="fusername" class="form-input-border col-75" type="text" name="username" {{previousUsername}} placeholder="Scrivi qui il tuo username" required="required" />
+    </div>
+
+    <div class="frow clearfix">
+      <label for="femail" class="col-25">Email:</label>
+      <input id="femail" class="form-input-border col-75" type="email" name="email" {{previousEmail}} placeholder="Scrivi qui la tua email" required="required" />
+    </div>
+
+    <div class="frow clearfix">
+      <label for="fpsw" class="col-25">Password:</label>
+      <input id="fpsw" maxlength="20" class="form-input-border col-75" type="password" name="password" placeholder="Scrivi qui la tua password" required="required" />
+    </div>
+
+    <div class="frow clearfix">
+      <div class="messaggio-errore-form">{{errorForm}}</div>
+      <div class="messaggio-successo-form">{{successForm}}</div>
+      <input type="submit" name="registrati" value="Registrati" class="submit-action" />
+    </div>
+
+  </form>
+</main>

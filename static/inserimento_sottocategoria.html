@@ -1,0 +1,20 @@
+<main class="contenuto">
+  <h1>Inserimento nuova sottocategoria</h1>
+  <form method="post" enctype="multipart/form-data" onsubmit="return controllaInserimentoSottoCategoria();" class="fcontainer">
+
+    <div class="frow clearfix">
+      <label for="nomeCategoriaPadre" class="col-25">Categoria Padre</label>
+      {{elencoCategoriePadre}}
+    </div>
+
+    <div class="frow clearfix">
+      <label for="nome-nuova" class="col-25">Nome nuova sotto-categoria:</label>
+      <input class="form-input-border col-75" type="text" maxlength="50" {{previousNomeSottoCategoria}} id="nome-nuova" name="nomeSottoCategoria" placeholder="Esempio: Letti" required="required" />
+    </div>
+
+    <div class="messaggio-errore-form">{{errorForm}}</div>
+    <div class="messaggio-successo-form">{{successForm}}</div>
+
+    <input type="submit" name="inserisciSottoCategoria" class="submit-action" value="Inserisci sottocategoria" />
+  </form>
+</main>

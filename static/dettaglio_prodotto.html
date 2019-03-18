@@ -1,0 +1,32 @@
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}} {{nomeSottoCategoria}} &gt; {{nomeProdotto}} <br />
+</p>
+
+<main class="contenuto">
+
+  <a href="{{linkSottoCategoria}}" class="link-dettaglio-prodotto" title="torna alla sezione del catalogo in cui c'è questo prodotto">
+    torna a {{nomeCategoria}} {{nomeSottoCategoria}}
+  </a>
+
+  {{funzioniAdmin}}
+
+  {{dettaglioProdotto}}
+
+  <section class="box-commenti">
+    <h1>Commenti</h1>
+    {{elencoCommenti}}
+
+    <div class="commento clearfix">
+      <noscript>
+        <p class="messaggio-errore-form">Abilita JavaScript per inviare commenti!</p>
+      </noscript>
+      <div class="autore-commento">
+        {{testoAutore}}
+      </div>
+      {{invioCommento}}
+    </div>
+  </section>
+
+</main>
+
+<script src="./scripts/js/CommentsHandler.min.js" async="async"></script>

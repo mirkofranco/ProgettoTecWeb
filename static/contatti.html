@@ -1,21 +1,49 @@
-<div class="contenuto">
-    <div id="mappa">
-        <p>Mappa</p>
-    </div>
-    <div clas="testo">
-            <p>
-                <h1>Come Trovarci:</h1> <br/>
-                Via San Francesco D'Assisi, 12<br/> 34133 Trieste (TS)
-            </p>
-            <p><h1>Orari di apertura:</h1> <br/>
-            Luned&igrave;: Chiuso<br/>
-            Marted&igrave;: 9:00 - 12:30 16:00 - 19:30<br/>
-            Mercoled&igrave;: 9:00 - 12:30 16:00 - 19:30<br/>
-            Gioved&igrave;: 9:00 - 12:30 16:00 - 19:30<br/>
-            Venerd&igrave; 9:00 - 12:30 16:00 - 19:30<br/>
-            Sabato: 9:00 - 12:30 16:00 - 19:30<br/>
-            Domenica: Chiuso</p>
-            <p>Telefono: +39 040 370 545 <br/>
-                    Email: studioar@hotmail.it </p>
-    </div>
-</div>
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span> &gt; Contatti
+</p>
+<main class="contenuto">
+
+  <h1>Come trovarci</h1>
+
+  <div id="embedded-map" class="hidden" hidden="hidden">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2788.9025953161986!2d13.7760927!3d45.6527778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b6b12ca607f85%3A0x5ae0a67562181a12!2sStudio+A.R.+Di+Piero+Fabro%26C+Sas!5e0!3m2!1sen!2sit!4v1544883804866">
+    </iframe>
+  </div>
+  <noscript>
+    Per scoprire dove trovarci, <a href="https://goo.gl/maps/9FWV5p2E2cT2">visita questo link!</a>
+  </noscript>
+
+  <div class="padded-text-container">
+    <h2>Dove siamo:</h2>
+    <p>
+      Via San Francesco D'Assisi, 12 <br />
+      34133 Trieste (TS)
+    </p>
+  </div>
+
+  <div class="padded-text-container">
+    <h2>Contatti utili:</h2>
+    <p>
+      Telefono: +39 040 370 545
+      <br />
+      Email: studioar@hotmail.it
+    </p>
+  </div>
+
+  <div class="padded-text-container">
+    <h2>Orari di apertura:</h2>
+
+    <table class="orari-apertura">
+      <tr> <th> Lunedì </th> <td colspan="2"> Chiuso </td> </tr>
+      <tr> <th> Martedì </th> <td> mattina: 9:00 - 12:30 </td> <td> pomeriggio: 16:00 - 19:30 </td> </tr>
+      <tr> <th> Mercoledì </th> <td> mattina: 9:00 - 12:30 </td> <td> pomeriggio: 16:00 - 19:30 </td> </tr>
+      <tr> <th> Giovedì </th> <td> mattina: 9:00 - 12:30 </td> <td> pomeriggio: 16:00 - 19:30 </td> </tr>
+      <tr> <th> Venerdì </th> <td> mattina: 9:00 - 12:30 </td> <td> pomeriggio: 16:00 - 19:30 </td> </tr>
+      <tr> <th> Sabato </th> <td> mattina: 9:00 - 12:30 </td> <td> pomeriggio: 16:00 - 19:30 </td> </tr>
+      <tr> <th> Domenica </th> <td colspan="2"> Chiuso </td> </tr>
+    </table>
+  </div>
+
+</main>
+
+<script src="./scripts/js/ShowMap.js"></script>

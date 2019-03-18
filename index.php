@@ -1,11 +1,25 @@
 <?php
+    require_once('./scripts/php/Sessione.php');
+    require_once('./scripts/php/Utente.php');
+    Sessione::startSession();
+    $gestioneLogin = "";
+    if(!isset($_SESSION['user'])){
+        $gestioneLogin = "<a href=\"login.php\" class=\"header-button\" >Login</a><a href=\"registrazione.php\" class=\"header-button\" >Registrati</a>";
+    }else{
+        if($_SESSION['user'] -> getPermessi() == '11'){
+            $gestioneLogin .= "<a href=\"menu_admin.php\" class=\"header-button\">Area riservata</a>";
+        }
+        $gestioneLogin .= "<a href=\"logout.php\" class=\"header-button\">Logout</a>";
+    }
     $daSostituire = array(
-        "Titolo" => "Home - Studio AR",
-        "<a href=\"./index.php\">" => "<a href=\"./index.php\" class=\"active\">",
-        "<a href=\"index.php\"><img src=\"./images/logopngB.png\" id=\"logo\" alt=\"Studio Architetti Riuniti\"/></a>" => "<img src=\"./images/logopngB.png\" class=\"active\" id=\"logo\" alt=\"Studio Architetti Riuniti\"/>"
-        /*"<li xml:lang=\"en\"><a href=\"./index.php\">Home</a></li>" => "<li xml:lang=\"en\">Home</li>"*/
+        "{{pageTitle}}" => "Home - Studio AR",
+        "{{pageDescription}}"=>"Studio di architetti esperti di arredamento e di design di interni, che ti possono aiutare a creare la vita dei tuoi sogni in una casa che rispecchia il tuo stile di vita.",
+        "<li class=\"flex-element\"><a href=\"./index.php\"><span lang=\"en\" class=\"navbar-element\">Home</span></a></li>" => "<li class=\"flex-element current-page\"><span lang=\"en\" class=\"navbar-element\">Home</span></li>",
+        "<a href=\"./index.php\" class=\"clickable-content\">\n        <img src=\"./images/logo/logo.png\" id=\"logo\" alt=\"Studio Architetti Riuniti\" />\n      </a>" => "<img src=\"./images/logo/logo.png\" id=\"logo\" alt=\"Studio Architetti Riuniti\" />",
+        "{{gestioneLogin}}" => $gestioneLogin
     );
-    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/inizioU.html'));
+
+    echo str_replace(array_keys($daSostituire), array_values($daSostituire), file_get_contents('./static/_inizio.html'));
     echo file_get_contents('./static/index.html');
-    echo file_get_contents('static/fineU.html');
+    echo file_get_contents('./static/_fine.html');
 ?>

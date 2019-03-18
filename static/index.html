@@ -1,53 +1,48 @@
-<div class="contenuto">
-    <!-- box con lo slideshow -->
-    <div class="slideshow-container">
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 3</div>
-                <img src="images/slideshow1.jpg" class="imgSlideshow">
-                <div class="text">Caption Text</div>
-            </div>
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span>
+</p>
+<main id="contenuto" class="contenuto">
+  <h1 class="hidden-but-accessible">Pagina iniziale dello Studio AR</h1>
 
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 3</div>
-                <img src="images/slideshow2.jpg" class="imgSlideshow">
-                <div class="text">Caption Two</div>
-            </div>
+  <div class="slideshow-container hidden" hidden="hidden">
 
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 3</div>
-                <img src="images/slideshow3.jpg" class="imgSlideshow">
-                <div class="text">Caption Three</div>
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="slideshow-element fade">
+      <img src="./images/slideshow1.jpg" class="slideshow-image" alt="una camera da letto con vista" />
+      <div class="slideshow-text">La casa dei tuoi sogni a casa tua</div>
     </div>
 
-    <div class="containerdot">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+    <div class="slideshow-element fade">
+      <img src="./images/slideshow2.jpg" class="slideshow-image" alt="un divano di fronte a un quadro" />
+      <div class="slideshow-text">La tua oasi di pace</div>
     </div>
 
-    <script src="./scripts/js/slideshow.js" type="text/javascript"></script>
-
-
-    <!-- box descrizione azienda con foto -->
-    <div id="descrizioneAzienda">
-        <div class="img">
-            <img src=" " alt="foto dell'entrata del negozio"/>
-        </div>
-        <div class="testo">
-            <p>Descrizione dell'azienda</p>
-        </div>
-
+    <div class="slideshow-element fade">
+      <img src="./images/slideshow3.jpg" class="slideshow-image" alt="una cucina" />
+      <div class="slideshow-text">La tua ricetta per la felicità</div>
     </div>
-    <!-- box offerte e prodotti venduti -->
-    <div id="prodottiIndex">
-        <div class="offerte">
-            <img src="" alt="Collegamento alle offerte"/>
-        </div>
-        <div class="offerte">
-            <img src="" alt="Collegamento ai prodotti più venduti"/>
-        </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- freccia a sinistra: ❮ -->
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> <!-- freccia a destra: ❯ -->
+
+    <div class="dot-container">
+      <input type="button" class="dot" onclick="currentSlide(0)" title="mostra la prima slide" value="." />
+      <input type="button" class="dot" onclick="currentSlide(1)" title="mostra la seconda slide" value="." />
+      <input type="button" class="dot" onclick="currentSlide(2)" title="mostra la terza slide" value="." />
     </div>
-</div>
+  </div>
+
+  <noscript>
+    <strong>per vedere l'intera galleria di immagini di questa pagina, abilita JavaScript nel sito.</strong>
+    <div class="slideshow-element fade">
+      <img src="./images/slideshow1.jpg" class="slideshow-image" alt="una camera da letto con vista" />
+      <div class="slideshow-text">La casa dei tuoi sogni a casa tua</div>
+    </div>
+  </noscript>
+
+  <div id="descrizione-azienda-index">
+    <img src="./images/studioar_square2.jpg" alt="foto dell'entrata del negozio" />
+    <p>Lo scopo dello Studio Architetti Riuniti è quello di offrire consulenze e proposte di arredamenti per interni di design valorizzando le caratteristiche di ogni ambiente nella sua unicità e tenendo conto delle tendenze del momento, senza però mai dimenticare che la classe è senza tempo. </p>
+  </div>
+
+</main>
+
+<script src="./scripts/js/slideshow.min.js"></script>

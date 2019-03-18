@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{pageTitle}}</title>
+
+  <link rel="shortcut icon" type="image/png" href="./icons/faviconar.png" />
+
+  <meta name="title" content="{{pageTitle}}" />
+  <meta name="description" content="{{pageDescription}}" />
+  <meta name="keywords" content="architetti,design,interni,arredamento,stile di vita" />
+  <meta name="author" content="Elisabetta Piombin, Mirko Franco, Nicoletta Fabro, Luca Ercole" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TODO: minify css & js !!! -->
+  <!-- TODO: prefix css -->
+  <link rel="stylesheet" href="./style/style.css" />
+
+  <!--GOOGLE WEB FONTS-->
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet" />
+
+</head>
+
+<body>
+  <header class="header clearfix">
+    <div class="header-left">
+      <a href="./index.php" class="clickable-content">
+        <img src="./images/logo/logo.png" id="logo" alt="Studio Architetti Riuniti" />
+      </a>
+    </div>
+    <div class="header-right">
+      {{gestioneLogin}}
+    </div>
+  </header>
+
+  <!-- barra di navigazione -->
+  <nav id="navbar">
+    <label for="menu-toggle" class="mobile-toggle" title="cambia la visibilità della barra di navigazione del sito">
+      <img src="./icons/menu_icon.png" alt="menu di navigazione" />
+    </label>
+    <input type="checkbox" id="menu-toggle" />
+    <ul class="flex-container flex-centered">
+      <li class="flex-element"><a href="./index.php"><span lang="en" class="navbar-element">Home</span></a></li>
+
+      <li class="flex-element"><a href="./about_us.php"><span lang="en" class="navbar-element">About Us</span></a></li>
+
+      <li class="flex-element"><a href="./catalogo.php"><span class="navbar-element">Catalogo</span></a></li>
+
+      <li class="flex-element"><a href="./consulenza_online.php"><span class="navbar-element">Consulenza <span lang="en">Online</span></span></a></li>
+
+      <li class="flex-element"><a href="./contatti.php"><span class="navbar-element">Contatti</span></a></li>
+    </ul>
+  </nav>

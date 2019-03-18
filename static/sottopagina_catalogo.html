@@ -1,0 +1,24 @@
+<p class="breadcrumb">
+  Ti trovi in: <span lang="en">Home</span> &gt; Catalogo &gt; {{nomeCategoria}}
+</p>
+
+<main id="sottopagina-catalogo">
+  <label for="sidebar-toggle" class="mobile-toggle" title="cambia la visibilità della barra di navigazione del catalogo">
+    Menu Catalogo
+  </label>
+  <input type="checkbox" id="sidebar-toggle" />
+  <aside id="sidebar-catalogo">
+    <h1 class="hidden-but-accessible">Menu di navigazione del catalogo</h1>
+    <nav>
+      <a href="./catalogo.php">ritorna al Catalogo</a>
+      {{contenutoDinamicoSidebar}}
+    </nav>
+  </aside>
+
+  <section id="contenuto-catalogo">
+    <h1>{{nomeCategoria}}</h1>
+
+    {{contenutoDinamicoCategoria}}
+  </section>
+
+</main>
